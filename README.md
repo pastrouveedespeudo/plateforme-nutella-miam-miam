@@ -1,5 +1,5 @@
 # plateforme-nutella-miam-miam
 
-#reste 4 mois de thune fonce
+#jcommence a le comprendre ce batard, jlentendais a sa voix qu'il l'avait fait expres de mettre une erruer
 
-#faire la page d'acceuil avec la mise en page demandée
+#30 minutes a chercher 
