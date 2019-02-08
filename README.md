@@ -13,3 +13,5 @@
 #, jme met a mi temps et jirai faire la formation
 
 #de deux ans pour l'ia et LA j'aurai la classe
+
+#atta atta si bien les ia c grave  relou
