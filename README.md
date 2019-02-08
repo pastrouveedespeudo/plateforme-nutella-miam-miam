@@ -1,5 +1,7 @@
 # plateforme-nutella-miam-miam
 
-#jcommence a le comprendre ce batard, jlentendais a sa voix qu'il l'avait fait expres de mettre une erruer
+#pour l'instant c comme flask avec des truk bizard des fois
 
-#30 minutes a chercher 
+#par contre mes doigts se tordent au debut jtrouvais ca trop classe ca me faisais des doigts de bucheron
+
+#mais jcommence a me focus dessus
