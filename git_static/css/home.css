@@ -131,12 +131,23 @@ header.masthead {
 }
 
 
-#remi_sous_picture
+.remi_sous_picture{
+  text-decoration: underline;
+  font-size:20px; 
+}
 
-#colette_sous_picture
+.colette_sous_picture{
+  text-decoration: underline;
+  font-size:20px;
+}
 
 
-
+#coletteTexte{
+  font-size:20px;
+}
+#remTexte{
+  font-size:20px;
+}
 
 
 
