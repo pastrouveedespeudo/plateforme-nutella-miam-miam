@@ -1,11 +1,7 @@
 # plateforme-nutella-miam-miam
 
-#tu sais jamais si la coleur est bonne... le pire c'est quand y'a deux couleurs qui vont trop biens...
+#supprimer la page css(les truk qui te servent pas)
 
-#ou deux teintes qui se suivent qui vont bien, des fois c une evidence ! mais du genre saumon ou dark orange la...
+#comprendre le truk des colonnes
 
-#du coup j'hesite a faire pleins de page de menu (et jmet des menu moche pour influencer son choix par la suite,
-
-#du genre ouais on est daccord
-
-#je savais que sté pas a votre gout, oui je pense pareil hihihi)
+#commencer la deuxieme page
