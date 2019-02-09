@@ -1,3 +1,5 @@
 # plateforme-nutella-miam-miam
 
-#apprendre bootstrap 
+#faire responsive sur toutes tes pages
+
+#on a le droit aux  bidouilles alors nik input disable
