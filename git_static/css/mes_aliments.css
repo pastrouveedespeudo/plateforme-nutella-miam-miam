@@ -110,9 +110,18 @@ h6 {
   margin-right:350px;
 }
 
+#rectangle_image{
+  background:black;
+  line-height:300px;
+  text-align:center;
+}
 
 
-
+#alimentRecherche{
+  height: 50px;
+  width: 300px;
+  text-align:center;
+}
 
 
 
