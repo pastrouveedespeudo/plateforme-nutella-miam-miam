@@ -1,0 +1,141 @@
+
+#navbarTop{
+  background-color: #FFA07A;
+}
+
+#row{
+ margin-left:10px;
+}
+
+#pur_beurre_logo{
+  width: 30px;
+  height: 30px;
+}
+
+#nom{
+  margin-left:20px;
+  font-size:20px;
+}
+
+
+#row2{
+  margin-left:auto;
+}
+
+.inputChercher{
+  text-align:center;
+  margin-top:12px;
+  background: #A9A9A9;
+  border: 1px solid;
+  font-style:italic;
+  
+}
+
+#compte{
+  background-size: cover;
+  margin-left:20px;
+  width: 45px;
+  height: 50px;
+
+}
+
+#carotte{
+   background-size: cover;
+   margin-left:15px;
+   width: 60px;
+   height: 45px;
+}
+
+
+#deco{
+   background-size: cover;
+   margin-left:15px;
+   width: 50x;
+   height: 50px;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+
+
+
+.input_top_haut_droit{
+  text-align:center;
+  background: #A9A9A9;
+  border: 1px solid;
+  width:550px;
+  height:50px;
+  font-style:italic;
+  font-size:20px;
+}
+
+
+
+.bg-primary {
+  background-color: #F05F40 !important;
+}
+
+
+#contactP{
+  font-size:20px;
+}
+
+#mail{
+  width: 40px;
+  height: 40px;
+
+}
+
+#phone{
+  width: 40px;
+  height: 40px;
+
+}
+
+.mentions{
+  margin-left:300px;
+}
+
+
+.contact{
+  margin-right:350px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
