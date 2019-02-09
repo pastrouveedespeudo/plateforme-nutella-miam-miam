@@ -1,3 +1,3 @@
 # plateforme-nutella-miam-miam
 
-#telecharge les icones sur le site javais pas capter
+#bouaaa jy comprend rien a leur colonne de merde c un mini peu chiant 
