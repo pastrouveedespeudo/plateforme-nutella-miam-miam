@@ -5,19 +5,22 @@
  */
 
 
+#navbarTop{
+  background-color: #FFA07A;
+}
+
 #row{
  margin-left:10px;
 }
 
 #pur_beurre_logo{
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
 }
 
 #nom{
   margin-left:20px;
-  margin-top:auto;
-  font-size:25px;
+  font-size:20px;
 }
 
 
