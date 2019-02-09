@@ -35,6 +35,7 @@
   margin-top:12px;
   background: #A9A9A9;
   border: 1px solid;
+  font-style:italic;
   
 }
 
@@ -97,13 +98,16 @@ header.masthead {
   text-align:center;
   background: #A9A9A9;
   border: 1px solid;
+  width:550px;
+  height:50px;
+  font-style:italic;
 }
-
 
 
 .input_desous_h2{
   background: #D3D3D3;
   border: 1px solid;
+  height:50px;
 }
 
 
@@ -148,6 +152,36 @@ header.masthead {
 #remTexte{
   font-size:20px;
 }
+
+#contactP{
+  font-size:20px;
+}
+
+#mail{
+  width: 40px;
+  height: 40px;
+
+}
+
+#phone{
+  width: 40px;
+  height: 40px;
+
+}
+
+.mentions{
+    margin-left:300px;
+}
+
+
+.contact{
+  margin-right:350px;
+
+}
+
+
+
+
 
 
 
