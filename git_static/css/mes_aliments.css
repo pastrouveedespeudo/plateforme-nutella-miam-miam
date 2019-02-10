@@ -98,14 +98,14 @@ h6 {
 }
 
 #mentions{
-  margin-left:300px;
+  text-align:center;
 }
-
 
 #contact{
-  margin-right:350px;
-}
+ text-align:center;
+  
 
+}
 
 #block{
   background-color: #FFA07A;
@@ -115,6 +115,7 @@ h6 {
   background-color: #FFA07A;
   
 }
+
 
 
 
@@ -173,7 +174,24 @@ h6 {
   width:250px;
   height:250px;
   background:#060;
+  z-index:1;
 }
+
+#rond{
+    position:absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #0159b3;
+    border-radius: 50%;
+    z-index:2;
+    top:0px;
+    right:0px;
+    margin-right:60px;
+    text-align:center;
+}
+
+
+
 #im3{
   text-align: center;
   margin:0 auto;
@@ -204,11 +222,17 @@ h6 {
 }
 
 
+#nomAliment{
+  text-align:center
+}
 
 
 
-
-
+#barreBas{
+  height:100px;
+  background:#060;
+  
+}
 
 
 
