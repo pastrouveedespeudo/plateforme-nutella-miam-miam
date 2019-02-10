@@ -1,11 +1,14 @@
 
+
+
+
 {%load static%}
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  
+
   <meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,7 +17,7 @@
   
   <link rel ="stylesheet" href="{% static  'ccss/home.css'%}">
   
-  <title>Mes_aliment</title>
+  <title>Colette&Remi</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -29,12 +32,12 @@
 
   <!-- Custom styles for this template -->
   
-  <link href="{% static 'css/mes_aliments.css' %}" rel="stylesheet">
+  <link href="{% static 'css/aliments.css' %}" rel="stylesheet">
 
 </head>
 
-
 <body id="page-top">
+
 
 
     <div class="container-fluid" id="Menu-TOP">
@@ -54,73 +57,137 @@
                </div>
            </div>  
         </div>
-    </div>
 
+
+
+
+
+
+  <header class="masthead text-center d-flex">
+    <div class="container my-auto">
+      <div class="row">
+        <div id="ali">
+          <h1 class="titreUn" id="titreUn">
+            <strong>Aliment Recherché</strong>
+          </h1>
+          <hr>
+  </header>
+
+
+
+
+
+  <section class="bg-primary" id="about">
   
-    <div class="container-fluid">
-        <div class="row" id="row2">
+    <div class="container">
+    
+      <div class="row">
+      
+        <div class="col-lg-8 mx-auto text-center">
         
-           <div class="col-md-12" id="block3">
-              <input type='text' id="AlimentRecherche" placeholder="Aliment recherché" disabled="disabled>
-           </div>
+            <div class="container-fluid">
+                <div class="row" id="row3">
+                    
+                   <div class="col-md-6 col-xs-12" id="block10">
+                       <h1>Nutriscore<br> A B C D E</h1>
+                   </div>
 
+                   
+                    <div class="col-md-6 col-xs-12" id="block12" >
+                      <h1>Repères nutritionels<br>pour 100 g</h1>  
+                   </div>
+
+ 
+                        
+                  <div class="col-md-12 col-xs-12" id="block13">
+                     <input type="button" value="Voir la fiche d'OpenFactFoods" id="button"/>
+                  </div>
+                   
+                
+                   
+                </div>
+           </div>
+                  
         </div>
-    </div>
+      </div>
+ 
+  </section>
 
 
 
-    <div class="container-fluid">
-        <div class="row" id="row3">
-            
-           <div class="col-md-6 col-xs-12" id="block10">
-               <h1>Nutriscore<br> A B C D E</h1>
-           </div>
 
 
 
-            <div class="col-md-6 col-xs-12" id="block12" >
-              <h1>Repères nutritionels<br>pour 100 g</h1>  
-           </div>
-
+  <section id="contact">
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+        
+          <h2 class="section-heading">Contactez - nous !</h2>
+          
+          <hr class="my-4">
+          
+          <p class="mb-5" id="contactP">Un produit sain c'est bien ! Un produit merveilleux c'est encore MIEUX !</p>
+          
         </div>
+        
+      </div>
+
+
+      
+      <div class="row">
+      
+        <div class="col-lg-4 ml-auto text-center">
+        
+          <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
+          <img class="phone" id="phone" src="static/img/portfolio/bas/phone.png">
+          <p>123-456-6789</p>
+          
+        </div>
+
+        
+        <div class="col-lg-4 mr-auto text-center">
+        
+          <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
+          
+          <img class="mail" id="mail" src="static/img/portfolio/bas/mail.png">
+          <p>
+            <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+          </p>
+        </div>
+
+
+      </div>
     </div>
+  </section>
 
 
     
-    <div class="container-fluid">
-        <div class="row" id="row10" style="text-align:center">
-            
-           <div class="col-md-12 col-xs-12" id="block13">
-               <input type="button" value="Voir la fiche d'OpenFactFoods" id="button"/>
-           </div>
+  <hr color:black>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-bot" id="mainNav">
+  
+    <div class="container">
 
-        </div>
-    </div>
-
-
-   <br><br><br><br><br><br><br><br><br><br><br>
-   <br><br><br><br><br><br><br><br><br><br><br>
-   <hr color:black>
-    <div class="container-fluid" id="bas">
-      <div class="row">
-        <div class="col-md-6" id="mentions">
-          <a href="#">Mentions légales</a>
+        <div class="mentions">
+          <a class="compte_top_haut_droit" id="compte_top_haut_droit" href="#">Mentions légales</a>
         </div>
 
           
-        <div class="col-md-6" id="contact">
-          <a href="#">Contact</a>
+        <div class="contact">
+          <a class="aliments_top_haut_droit" id="aliments_top_haut_droit" href="#">Contact</a>
         </div>
 
     
     </div>
-  </div>
- <br><br>
+  </nav>
 
 
 
 
-    
+
+
+
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
