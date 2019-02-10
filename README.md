@@ -1,21 +1,13 @@
 # plateforme-nutella-miam-miam
 
-#chui pas sur mais depuis hier jcommence a prendre des manieres
+#nutriscore adbcde on affiche la lettre en logo
 
-#jme suis meme arraché les poiles de nez et dieu sait que j'aime pas ca tellement ca fait mal
+#faire le footer de mes_aliments
 
-#j'ai beintot compris mais voila...
+#home faire responsive
 
-#et aussi les différents truk block 1 block 2, t'es oblifé de faire un margin top
+#finir la derniere page et faire les assoc
 
-#normalement on peut block block 
+#faire js
 
-#finir les pages et go js
-
-#ou avant faire les liens
-
-#ou chpas
-
-#jcrois jfais des div en trop et jpourrai faire des li, y'a les @media et aussi le truk parent enfant
-
-#et pleuins dautre truk
+#mock // openfactfood
