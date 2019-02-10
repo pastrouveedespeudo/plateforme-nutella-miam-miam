@@ -3,10 +3,6 @@
   background-color: #FFA07A;
 }
 
-#row{
- margin-left:10px;
-}
-
 #pur_beurre_logo{
   width: 30px;
   height: 30px;
@@ -18,12 +14,12 @@
 }
 
 
-#row2{
-  margin-left:auto;
-}
 
-.inputChercher{
+
+
+#inputChercher{
   text-align:center;
+  margin-left:10px;
   margin-top:12px;
   background: #A9A9A9;
   border: 1px solid;
@@ -32,16 +28,16 @@
 }
 
 #compte{
-  background-size: cover;
-  margin-left:20px;
-  width: 45px;
-  height: 50px;
+   background-size: cover;
+   margin-left:15px;
+   width: 45px;
+   height: 50px;
 
 }
 
 #carotte{
    background-size: cover;
-   margin-left:15px;
+   margin-left:10px;
    width: 60px;
    height: 45px;
 }
@@ -49,8 +45,8 @@
 
 #deco{
    background-size: cover;
-   margin-left:15px;
-   width: 50x;
+   margin-left:10px;
+   width: 500x;
    height: 50px;
 }
 
@@ -101,26 +97,110 @@ h6 {
 
 }
 
-.mentions{
+#mentions{
   margin-left:300px;
 }
 
 
-.contact{
+#contact{
   margin-right:350px;
 }
 
-#rectangle_image{
-  background:black;
-  line-height:300px;
-  text-align:center;
+
+#block{
+  background-color: #FFA07A;
+}
+
+#block2{
+  background-color: #FFA07A;
+  
 }
 
 
-#alimentRecherche{
-  height: 50px;
-  width: 300px;
+
+#row1{
+ height:70px;
+}
+
+
+
+
+#row2{
+ background:black;
+ height:200px;
+}
+
+#block3{
   text-align:center;
+  margin-top:60px;
+  
+}
+
+#AlimentRecherche{
+   text-align:center;
+   width:280px;
+   height:70px;
+   background-color:#b3b3b3
+
+}
+
+
+#row3{
+  margin-top:70px;
+}
+
+
+#block4{
+  width:100%;
+  height:400px;
+  padding:40px;
+
+  
+
+}
+
+#im1{
+  text-align: center;
+  margin:0 auto;
+  width:250px;
+  height:250px;
+  background:#060;
+}
+
+#im2{
+  text-align: center;
+  margin:0 auto;
+  width:250px;
+  height:250px;
+  background:#060;
+}
+#im3{
+  text-align: center;
+  margin:0 auto;
+  width:250px;
+  height:250px;
+  background:#060;
+}
+#im4{
+  text-align: center;
+  margin:0 auto;
+  width:250px;
+  height:250px;
+  background:#060;
+}
+#im5{
+  text-align: center;
+  margin:0 auto;
+  width:250px;
+  height:250px;
+  background:#060;
+}
+#im6{
+  text-align: center;
+  margin:0 auto;
+  width:250px;
+  height:250px;;
+  background:#060;
 }
 
 
