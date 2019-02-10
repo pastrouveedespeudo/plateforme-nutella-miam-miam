@@ -1,0 +1,205 @@
+
+
+
+
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+  <link rel ="stylesheet" href="{% static  'ccss/home.css'%}">
+  
+  <title>Colette&Remi</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="{% static 'vendor/fontawesome-free/css/all.min.css" rel="stylesheet' %}" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link href="{% static 'vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  
+  <link href="{% static 'css/mon_compte.css' %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbarTop">
+
+  
+      <div class="row" id="row">
+        <a><img class="pur_beurre_logo" id="pur_beurre_logo" src="static/img/portfolio/menu-haut/pur_beurre.png"></a>
+        <a class="nom" id="nom">Pur Beurre</a>
+      </div>
+
+      <div class="text-right" id="row2">
+        <ul class="nav navbar-nav">
+          <li><a><input class="inputChercher" type="text" placeholder="Chercher"/></a></li>
+          <li><a href='/mon_compte'><img class="compte" id="compte" src="static/img/portfolio/menu-haut/compte.png"></a></li>
+          <li><a href='/mes_aliments'><img class="carotte" id="carotte" src="static/img/portfolio/menu-haut/carotte.png"></a></li>
+
+          
+          <li><img class="deco" id="deco" src="static/img/portfolio/menu-haut/deco.png"></a></li>
+        </ul>
+      </div>
+       
+  
+  </nav>
+
+
+
+
+
+  <header class="masthead text-center d-flex">
+    <div class="container my-auto">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1 id="titreUn">
+            <strong>ALOY !</strong>
+          </h1>
+          <hr>
+        </div>
+
+
+        
+        <div class="col-lg-8 mx-auto">
+          <div class="text-faded mb-5">
+              <h2 id="texteMilieu">Jean baptiste servais</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+  <section class="bg-primary" id="about">
+  
+    <div class="container">
+    
+      <div class="row">
+      
+        <div class="col-lg-8 mx-auto text-center">
+        
+          <h2 class="section-heading text-white" id="yo">Mail</h2>
+          <hr class="light my-4">
+          
+          <p class="text-faded mb-4" id="coletteTexte">
+           <strong>Info sur toi</strong>
+          </p>
+
+
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <section id="contact">
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+        
+          <h2 class="section-heading">Contactez - nous !</h2>
+          
+          <hr class="my-4">
+          
+          <p class="mb-5" id="contactP">Un produit sain c'est bien ! Un produit merveilleux c'est encore MIEUX !</p>
+          
+        </div>
+        
+      </div>
+
+
+      
+      <div class="row">
+      
+        <div class="col-lg-4 ml-auto text-center">
+        
+          <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
+          <img class="phone" id="phone" src="static/img/portfolio/bas/phone.png">
+          <p>123-456-6789</p>
+          
+        </div>
+
+        
+        <div class="col-lg-4 mr-auto text-center">
+        
+          <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
+          
+          <img class="mail" id="mail" src="static/img/portfolio/bas/mail.png">
+          <p>
+            <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+    
+  <hr color:black>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-bot" id="mainNav">
+  
+    <div class="container">
+
+        <div class="mentions">
+          <a class="compte_top_haut_droit" id="compte_top_haut_droit" href="#">Mentions légales</a>
+        </div>
+
+          
+        <div class="contact">
+          <a class="aliments_top_haut_droit" id="aliments_top_haut_droit" href="#">Contact</a>
+        </div>
+
+    
+    </div>
+  </nav>
+
+
+
+
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'vendor/scrollreveal/scrollreveal.min.js' %}"></script>
+  <script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="{% static 'js/creative.min.js' %}"></script>
+
+</body>
+
+</html>
