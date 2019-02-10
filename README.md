@@ -1,5 +1,3 @@
 # plateforme-nutella-miam-miam
 
-#faire responsive sur toutes tes pages
-
-#on a le droit aux  bidouilles alors nik input disable
+#jcrois c mieux que python ce bordel
