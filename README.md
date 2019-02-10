@@ -1,5 +1,11 @@
 # plateforme-nutella-miam-miam
 
-#par contre ca marche pas dans ma feuille css et ca c horrible
+#j'ai beintot compris mais voila...
 
-#j'ai honte mes classes jleur foutait mes id...
+#finir les pages et go js
+
+#ou avant faire les liens
+
+#ou chpas
+
+
