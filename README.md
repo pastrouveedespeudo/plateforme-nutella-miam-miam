@@ -1,9 +1,9 @@
 # plateforme-nutella-miam-miam
 
-#faut rajouter une div pour les fond
+#oooooooooook
 
-#re re voir le truk application jcrois j'ai merdé
+#rajouter le load statique a tous les autres pages
 
-#avant de faire les interactions
+#récupérer les info avec js de l'inscription et les mettre en base de donnée, MAIS je sais pas si 
 
-#rajoute un truk download image et ptetre mettre des titres en chaque fomulaire mais jtrouve ca beau
+#j'ai le droit de le faire avec mysql connector ou si je dois faire leur truk django...
