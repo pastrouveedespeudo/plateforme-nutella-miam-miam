@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -92,6 +90,7 @@
         
           <div class="col-lg-4 col-sm-12">
             <form action="contact"  method="post">
+              {% csrf_token %}
               {{ form.nom }}
               <input type="submit" id="Nombutton" value="Entree"><br><br>
             </form>
@@ -100,16 +99,18 @@
 
         <div class="col-lg-4 col-sm-12">      
             <form action="contact"  method="post">
+              {% csrf_token %}
               {{ form.prenom}}
-              <input type="button" id="Prenombutton" value="Entree"><br><br>
+              <input type="submit" id="Prenombutton" value="Entree"><br><br>
             </form>
         </div>
 
           
           <div class="col-lg-4 col-sm-12">
             <form action="contact"  method="post">
+              {% csrf_token %}
               {{ form.password }}
-              <input type="button" id="passbut" value="Entree">
+              <input type="submit" id="passbut" value="Entree">
             </form>
         </div>    
      </div>
@@ -134,14 +135,16 @@
         
         <div class="col-lg-4 col-sm-12">
          <form action="contact"  method="post">
+            {% csrf_token %}
             {{ form.email }}
-            <input type="button" id="Nombuttonemail" value="Entree"><br><br>
+            <input type="submit" id="Nombuttonemail" value="Entree"><br><br>
          </form>
         </div>
 
 
         <div class="col-lg-8 col-sm-12">
           <form action="contact"  method="post">
+              {% csrf_token %}
               {{ form.addresse }}
           </form>
         </div>
@@ -158,12 +161,14 @@
 
          <div class="col-lg-4 col-sm-12">
             <form action="contact"  method="post">
+              {% csrf_token %}
               {{ form.ville }}
             </form>
          </div>
 
           <div class="col-lg-4 col-sm-12">
             <form action="contact"  method="post">
+              {% csrf_token %}
               {{ form.code_postale }}
             </form>
           </div>
@@ -183,7 +188,7 @@
 
 
          <div class="col-lg-6 col-sm-12">
-            <input type="button" id="buttonadresse" value="Valider">
+            <input type="submit" id="buttonadresse" value="Valider">
          </div>
       </div>
     </div>
@@ -196,23 +201,26 @@
           
         <div class="col-lg-4 col-sm-12">
           <form action="contact"  method="post">
+              {% csrf_token %}
               {{ form.sexe }}
-              <input type="button" id="Nombuttonsexe" value="Entree"><br><br>
+              <input type="submit" id="Nombuttonsexe" value="Entree"><br><br>
           </form>
         </div>
 
 
         <div class="col-lg-4 col-sm-12">            
             <form action="contact"  method="post">
+              {% csrf_token %}
               {{ form.date }}
-              <input type="button" id="Nombuttondate" value="Entree"><br><br>
+              <input type="submit" id="Nombuttondate" value="Entree"><br><br>
             </form>
         </div>
 
         <div class="col-lg-4 col-sm-12">
             <form action="contact"  method="post">
+              {% csrf_token %}
               {{ form.statut }}
-              <input type="button" id="Nombuttonstatut" value="Entree"><br><br>
+              <input type="submit" id="Nombuttonstatut" value="Entree"><br><br>
             </form>
         </div>
 
@@ -228,7 +236,10 @@
         <div class="col-lg-2 col-sm-12"></div>
 
         <div class="col-lg-8 col-sm-12">
-          <input type="button" id="Nombuttonvalider" value="Valider formulaire"><br><br>
+          <form action="contact"  method="post">
+          {% csrf_token %}
+          <input type="submit" id="Nombuttonvalider" value="Valider formulaire"><br><br>
+          </form>
         </div>
 
         <div class="col-lg-2 col-sm-12"></div>
