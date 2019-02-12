@@ -1,4 +1,6 @@
 # plateforme-nutella-miam-miam
 
 
-#trouver comment centrer, mettre en base de donnée mtn (mais jcrois on a pas le droit)
+#falalit juste faire ca grrrrrrrrr
+
+#faire les conditions mtn d'inscription fin les exception quoi purée ^^
