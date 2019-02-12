@@ -1,0 +1,43 @@
+from django.shortcuts import render
+from django.db import models
+from .models import compte
+from django import forms
+from .forms import ContactForm
+from .forms import compte_utilisateur
+from django.urls import path
+
+def mon_compte(request):
+    return render(request, 'pages/mon_compte.html')
+
+
+def login(request):
+    return render(request, 'pages/login.html')
+
+
+def inscription(request):
+    form = compte_utilisateur(request.POST or None)
+    if form.is_valid():
+        
+        nom = form.cleaned_data['sujet']
+        prenom = form.cleaned_data['sujet']
+        password = form.cleaned_data['sujet']
+
+        email = form.cleaned_data['sujet']
+
+        addresse = form.cleaned_data['sujet']
+        ville = form.cleaned_data['sujet']
+        code_postale = form.cleaned_data['sujet']
+
+        sexe = form.cleaned_data['sujet']
+        date = form.cleaned_data['sujet']
+        statut = form.cleaned_data['sujet']
+        print("kikette")
+
+        
+        envoi = True
+    return render(request, 'pages/inscription.html',locals())
+
+
+
+
+
