@@ -1,7 +1,9 @@
 # plateforme-nutella-miam-miam
 
-#oooooooooook
+#par contre jcomprend pas pk c'est si compliqué jprefere flask
 
-#rajouter le load statique a tous les autres pages
+#voir comment on met les post des info en base de donnée mtn nik django !
 
-#bon ben faire le truk inscription avec ORM 
+#javais pas compris qu'il fallait pas de js mais du coup mes champs de saisie jles fais en hhtml ou depuis view....
+
+#oh c la galere l'informatique
