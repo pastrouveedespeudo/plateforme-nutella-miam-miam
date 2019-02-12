@@ -1,14 +1,30 @@
 # plateforme-nutella-miam-miam
 
 
-#falalit juste faire ca grrrrrrrrr
+#base de donnée
 
-#faire les conditions mtn d'inscription fin les exception quoi purée ^^
+#la remplir
 
-#ouais fin t'avais pas compris, un modele pour les data, un form pour le formulaire,
+#algo chercher
 
-#on clean les data, on les affiches, on demande le formulaire, on demande l adatabase et voila !
+#condition inscription
 
-#gg insconscient, pcqu'une dissert je sais tj pas les faire, 8*6 je sais toujorus pas par coeur la table de neuf
+#loggin
 
-#heuresement que j'ai mes doigts
+#mettre les images des truk avec js aliment et image profil
+
+
+
+#--------fais le avant la soutenance pour ty remettre------
+
+#dynamique url
+
+#menu ttes les pages
+
+#interaction pageS
+
+#message inscirption
+
+#message loggin
+
+#mettre en ligne mais ca chai pas faire
