@@ -12,7 +12,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   
-  <link rel ="stylesheet" href="/static/ccss/home.css">
+ 
   
   <title>Colette&Remi</title>
 
@@ -20,7 +20,7 @@
   <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="/static/vendor/fontawesome-free/css/all.min.css%22%20rel%3D%22stylesheet" type="text/css">
+  <link href="{% static 'vendor/fontawesome-free/css/all.min.css%22%20rel%3D%22stylesheet'}" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
@@ -30,7 +30,6 @@
   <!-- Custom styles for this template -->
   
   <link href="/static/css/inscription.css" rel="stylesheet">
-  <link href="/static/js/inscription.js" rel="stylesheet">
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -57,18 +56,18 @@
         <div class="row" id="row1">
 
            <div class="col-md-7" id="block">
-              <a href='/'><img  id="pur_beurre_logo" src="static/img/portfolio/menu-haut/pur_beurre.png"></a>
+              <a href='/'><img  id="pur_beurre_logo" src="/static/img/portfolio/menu-haut/pur_beurre.png"></a>
               <a  id="nom">Pur Beurre</a>
            </div>
 
            <div class="col-md-5" id="block2">
                <div id="droiteMenuTop">
                    <a><input id="inputChercher" type="text" placeholder="Chercher"/></a>
-                   <a href='/mon_compte'><img id="compte" src="static/img/portfolio/menu-haut/compte.png"></a>
-                   <a href='/mes_aliments'><img id="carotte" src="static/img/portfolio/menu-haut/carotte.png"></a>
-                   <a href='/login'><img id="login" src="static/img/portfolio/menu-haut/login.png"></a>
-                   <a href='/inscription'><img id="inscription" src="static/img/portfolio/menu-haut/inscription2.png"></a>
-                   <a><img id="deco" src="static/img/portfolio/menu-haut/deco.png"></a>
+                   <a href='/mon_compte'><img id="compte" src="/static/img/portfolio/menu-haut/compte.png"></a>
+                   <a href='/mes_aliments'><img id="carotte" src="/static/img/portfolio/menu-haut/carotte.png"></a>
+                   <a href='/login'><img id="login" src="/static/img/portfolio/menu-haut/login.png"></a>
+                   <a href='/inscription'><img id="inscription" src="/static/img/portfolio/menu-haut/inscription2.png"></a>
+                   <a><img id="deco" src="/static/img/portfolio/menu-haut/deco.png"></a>
                </div>
            </div>  
         </div>
@@ -83,30 +82,35 @@
 
 
 
-
   <section class="bg-primary" id="about">
 
 
-    
+
     <div class="container" id="con">
         <div class="row">
 
         
           <div class="col-lg-4 col-sm-12">
-              <input id="name" placeholder="Nom">
-              <input type="button" id="Nombutton" value="Entree"><br><br>
+            <form action="contact"  method="post">
+              {{ form.nom }}
+              <input type="submit" id="Nombutton" value="Entree"><br><br>
+            </form>
           </div>
 
 
         <div class="col-lg-4 col-sm-12">      
-          <input id="Prenom" placeholder="Prenom">
-          <input type="button" id="Prenombutton" value="Entree"><br><br>
+            <form action="contact"  method="post">
+              {{ form.prenom}}
+              <input type="button" id="Prenombutton" value="Entree"><br><br>
+            </form>
         </div>
 
           
           <div class="col-lg-4 col-sm-12">
-              <input id="password" value="password">
+            <form action="contact"  method="post">
+              {{ form.password }}
               <input type="button" id="passbut" value="Entree">
+            </form>
         </div>    
      </div>
     
@@ -129,13 +133,17 @@
       <div class="row">
         
         <div class="col-lg-4 col-sm-12">
-            <input id="emaill" placeholder="email">
+         <form action="contact"  method="post">
+            {{ form.email }}
             <input type="button" id="Nombuttonemail" value="Entree"><br><br>
+         </form>
         </div>
 
 
         <div class="col-lg-8 col-sm-12">
-          <input id="adresse" placeholder="adresse" size="76"></div>
+          <form action="contact"  method="post">
+              {{ form.addresse }}
+          </form>
         </div>
         
       </div>
@@ -149,11 +157,15 @@
          <div class="col-lg-4 col-sm-12"></div>
 
          <div class="col-lg-4 col-sm-12">
-            <input id="adresse1" placeholder="ville" size="25">
+            <form action="contact"  method="post">
+              {{ form.ville }}
+            </form>
          </div>
 
           <div class="col-lg-4 col-sm-12">
-            <input id="adresse2" placeholder="code Postal" size="25">
+            <form action="contact"  method="post">
+              {{ form.code_postale }}
+            </form>
           </div>
           
         </div>
@@ -183,19 +195,25 @@
       <div class="row">
           
         <div class="col-lg-4 col-sm-12">
-          <input id="sexe" placeholder="sexe">
-          <input type="button" id="Nombuttonsexe" value="Entree"><br><br>
+          <form action="contact"  method="post">
+              {{ form.sexe }}
+              <input type="button" id="Nombuttonsexe" value="Entree"><br><br>
+          </form>
         </div>
 
 
         <div class="col-lg-4 col-sm-12">            
-          <input type="date" id="date" placeholder="date">
-          <input type="button" id="Nombuttondate" value="Entree"><br><br>
+            <form action="contact"  method="post">
+              {{ form.date }}
+              <input type="button" id="Nombuttondate" value="Entree"><br><br>
+            </form>
         </div>
 
         <div class="col-lg-4 col-sm-12">
-          <input type="statut" id="statut" placeholder="statut">
-          <input type="button" id="Nombuttonstatut" value="Entree"><br><br>
+            <form action="contact"  method="post">
+              {{ form.statut }}
+              <input type="button" id="Nombuttonstatut" value="Entree"><br><br>
+            </form>
         </div>
 
         
@@ -248,7 +266,7 @@
         <div class="col-lg-4 ml-auto text-center">
         
           <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-          <img class="phone" id="phone" src="static/img/portfolio/bas/phone.png">
+          <img class="phone" id="phone" src="/static/img/portfolio/bas/phone.png">
           <p>123-456-6789</p>
           
         </div>
@@ -258,7 +276,7 @@
         
           <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
           
-          <img class="mail" id="mail" src="static/img/portfolio/bas/mail.png">
+          <img class="mail" id="mail" src="/static/img/portfolio/bas/mail.png">
           <p>
             <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
           </p>
@@ -295,7 +313,7 @@
 
 
   <!-- Bootstrap core JavaScript -->
-  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src=" /static/vendor/jquery/jquery.min.js"></script>
   <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
@@ -315,10 +333,11 @@
 
 </html>
 
-        
   
-<script type = "text/javascript">
-  alert("coucou")
+  
+  <script type = "text/javascript">
+
+
 
 </script>
 
