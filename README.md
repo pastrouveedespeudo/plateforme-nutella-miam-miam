@@ -41,3 +41,5 @@
 #merde j'ai été accro au jusdo et au code faut que jleve le pied fini ca et prend des vacs en pluss ils disent prenez des vacances 
 
 #nik j'en prend sté trop cool en cas ouais fin y'aun moment ou ouaaa sté horrible flask le truk post bordel tg va te laver et gogogo 
+
+#avant popo
