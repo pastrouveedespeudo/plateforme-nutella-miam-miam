@@ -27,3 +27,17 @@
 #message loggin
 
 #mettre en ligne mais ca chai pas faire
+
+
+
+#-----manage.py------
+
+#manage.py makemigrations [application], on verifie dans migrate, 
+
+#manage.py migrate
+
+#ohhhh je comprend pas, faut faire quoi ? avec les lignes comme dans la console ou y'a un truk a faire "django"
+
+#en plus mtn je bois du jus dorange préssé, ca me met wouaaaaa de l'energie sa race, mais je la depense trop vite
+
+#et mtn j'ai trop froid je deteste ca et une de c flemme
