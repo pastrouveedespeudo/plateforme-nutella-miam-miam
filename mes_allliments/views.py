@@ -8,6 +8,17 @@ from .models import categorie
 
 def mes_aliments(request):
             
+
+            
+    return render(request, 'pages/mes_aliments.html')
+
+def recherche(request):
+    return render(request, 'pages/recherche.html')
+
+
+def openfactfood_database(request):
+
+    
     liste = []
 
     path = "https://fr.openfoodfacts.org/categories"
@@ -25,14 +36,7 @@ def mes_aliments(request):
         objet = categorie(name_categorie = liste[c])
         objet.save()
         c+=3
-            
-    return render(request, 'pages/mes_aliments.html')
-
-def recherche(request):
-    return render(request, 'pages/recherche.html')
-
-
-
+    return render(request, 'pages/openfactfood_database.html')
 
 
 
