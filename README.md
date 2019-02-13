@@ -41,3 +41,5 @@
 #en plus mtn je bois du jus dorange préssé, ca me met wouaaaaa de l'energie sa race, mais je la depense trop vite
 
 #et mtn j'ai trop froid je deteste ca et une de c flemme
+
+#par contre avec 3 jus doranges depuis 2 jours c bagdad dans le bide
