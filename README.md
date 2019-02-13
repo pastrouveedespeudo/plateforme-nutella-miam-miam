@@ -4,6 +4,9 @@
 
 #c'est une mielleur facon que l'autre
 
+#creation de base de donnée externe, donnée externe, api rest base de donnée api rest le tout en anglais en francais
+
+#j'ai tout essayé... et les video qui repetent TOUES la meme chose... les video de 4h ou t'es obligé de mettre en qualité 400...
 
 #tout ranger
 
