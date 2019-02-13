@@ -1,6 +1,9 @@
 # plateforme-nutella-miam-miam
 
-#par contre pour flask la mise en page va falloir tout refaire, laisse tombé la voiture refais tout
+#j'ai envie de chialer CA MARCHE TA RACE bon pas avec la methode du prof mais
+
+#c'est une mielleur facon que l'autre
+
 
 #tout ranger
 
