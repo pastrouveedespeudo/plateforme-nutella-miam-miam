@@ -1,9 +1,8 @@
 # plateforme-nutella-miam-miam
 
+#par contre pour flask la mise en page va falloir tout refaire, laisse tombé la voiture refais tout
 
-#base de donnée
-
-#la remplir
+#tout ranger
 
 #algo chercher
 
