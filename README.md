@@ -8,6 +8,8 @@
 
 #j'ai tout essayé... et les video qui repetent TOUES la meme chose... les video de 4h ou t'es obligé de mettre en qualité 400...
 
+#et que ca m'enleve ou pas du qi, les gars vos putin de documentation base de donnée on y comprend rien putin bande de
+
 #tout ranger
 
 #algo chercher
