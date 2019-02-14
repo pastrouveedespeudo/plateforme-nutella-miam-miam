@@ -1,10 +1,6 @@
 # plateforme-nutella-miam-miam
 
-#ok on a les meilleurs aliments nutrigrade 
-
-#le plus dur ca va d'etre de mettre ca dans la page pcqu'ils demandent un algo ca peut pas etre une simple requete
-
-#ah oui fais un str.find pour par ex muesli === Muesli croustillant sirop d'érable et noix de pecan (ca a l'air grave bon)
+#ah ben si mais de faire la requete oki mais de l'intégrer dans la page ca c dur et de faire TOUTES les mise a jour ca ca va etre dur
 
 
 #tout ranger
