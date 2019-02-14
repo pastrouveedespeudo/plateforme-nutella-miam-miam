@@ -1,6 +1,6 @@
 # plateforme-nutella-miam-miam
 
-#trouvé comment mettre des images dans le cadre, et faut les telecharger ? (urlieve) ou pas ? ou faire un get addresse donnée par l'image?
+#enfete j'ai grave spam sur discord... je sais pas si j'ai le droit de remettre des messages, dans 2/3 jours demande si on a le droit de mettre css avec html ca bug grave avec {static%%}... 
 
 #comprend pk le css est ok sur la page html mais ca aucun chemin marche pour le fichier static css
 
