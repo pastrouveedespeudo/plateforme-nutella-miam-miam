@@ -1,7 +1,8 @@
 # plateforme-nutella-miam-miam
 
-#ah ben si mais de faire la requete oki mais de l'intégrer dans la page ca c dur et de faire TOUTES les mise a jour ca ca va etre dur
+#'intégrer dans la page 
 
+#comprend pk le css est ok sur la page html mais ca aucun chemin marche pour le fichier static css
 
 #tout ranger
 
