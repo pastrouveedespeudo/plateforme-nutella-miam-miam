@@ -114,13 +114,18 @@
                       text-align:center;
                     }
                </style>
-               <div id="im1"><img id="im11"class="fit-picture" src="{{a}}"/></div>
-            
 
-               <div id="nomAliment1">{{aa}}</div>
-               <br>
-               <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
-           
+               
+               <form action="mes_aliments/aliment_det" method="post">
+               
+                   <div id="im1"><a href="aliment_det" id="yo"><img id="im11" name="produit" class="fit-picture" src="{{a}}"/></a></div>
+                   
+                   <div id="nomAliment1">{{aa}}</div>
+                   <div><center><input type="submit" value="voir le produit 1?"</center></div>
+                
+                   <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
+                   
+               </form>
            </div>
 
            
@@ -128,7 +133,7 @@
 
                <div id="rond"></div>
 
-               <div id="im2"><img id="im11"class="fit-picture" src="{{b}}"/></div>
+               <div id="im2"><a href="aliment_det"><img id="im11"class="fit-picture" src="{{b}}"/></a></div>
                
               
                <div id="nomAliment2">{{bb}}</div>
@@ -143,7 +148,7 @@
 
                <div id="rond"></div>
                
-               <div id="im3"><img id="im11"class="fit-picture" src="{{c}}"/></div>
+               <div id="im3"><a href="aliment_det"><img id="im11"class="fit-picture" src="{{c}}"/></a></div>
 
                <div id="nomAliment3">{{cc}}</div>
 
@@ -157,8 +162,8 @@
            <div class="col-sm-12 col-md-4" id="block4">
 
                 <div id="rond"></div>
-
-                <div id="im4"><img id="im11"class="fit-picture" src="{{d}}"/></div>
+                
+                <div id="im4"><a href="aliment_det"><img id="im11"class="fit-picture" src="{{d}}"/></a></div>
 
                 <div id="nomAliment4">{{dd}}</div>
 
@@ -171,7 +176,7 @@
            <div class="col-sm-12 col-md-4" id="block4">
                <div id="rond"> </div>
             
-               <div id="im5"><img id="im11"class="fit-picture" src="{{e}}"/></div>
+               <div id="im5"><a href="aliment_det"><img id="im11"class="fit-picture" src="{{e}}"/></a></div>
 
                <div id="nomAliment5">{{ee}}</div>
 
@@ -184,7 +189,7 @@
 
                <div id="rond"></div>
                
-               <div id="im6"><img id="im11"class="fit-picture" src="{{f}}"/></div>
+               <div id="im6"><a href="aliment_det"><img id="im11"class="fit-picture" src="{{f}}"/></a></div>
 
                <div id="nomAliment6">{{ff}}</div>
 
