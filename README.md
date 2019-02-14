@@ -1,6 +1,6 @@
 # plateforme-nutella-miam-miam
 
-#'intégrer dans la page 
+#trouvé comment mettre des images dans le cadre, et faut les telecharger ? (urlieve) ou pas ? ou faire un get addresse donnée par l'image?
 
 #comprend pk le css est ok sur la page html mais ca aucun chemin marche pour le fichier static css
 
