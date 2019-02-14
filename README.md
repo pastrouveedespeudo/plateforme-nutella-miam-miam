@@ -1,6 +1,11 @@
 # plateforme-nutella-miam-miam
 
-#ce matin y sla pété grave ca l'a calmé toute cet aprem mdr
+#ok on a les meilleurs aliments nutrigrade 
+
+#le plus dur ca va d'etre de mettre ca dans la page pcqu'ils demandent un algo ca peut pas etre une simple requete
+
+#ah oui fais un str.find pour par ex muesli === Muesli croustillant sirop d'érable et noix de pecan (ca a l'air grave bon)
+
 
 #tout ranger
 
