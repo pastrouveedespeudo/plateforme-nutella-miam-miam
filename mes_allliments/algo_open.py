@@ -28,7 +28,7 @@ class openfoodfact:
         c = 0
         for i in indice_cat:
             
-            cursor.execute('''SELECT name_aliment
+            cursor.execute('''SELECT name_aliment, id_categorie_id, nutriscore
             FROM mes_aliments_aliment
             WHERE id_categorie_id = (?)
             ORDER BY nutriscore ASC''', (indice_cat[c],))
