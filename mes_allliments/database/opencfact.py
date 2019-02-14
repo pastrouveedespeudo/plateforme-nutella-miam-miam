@@ -1,36 +1,23 @@
-from django.shortcuts import render
-import requests
-from bs4 import BeautifulSoup
-import sqlite3
+from django.db import models
 
 
-
-
-def openfactfood_database():
+class categorie(models.Model):
+    name_categorie = models.CharField(max_length=60)
     
-    db = sqlite3.connect(r'C:\Users\jeanbaptiste\plateforme_nutella\plateforme_nutella\db.sqlite3')
-    cursor = db.cursor()
-    
-    liste = []
 
-    path = "https://fr.openfoodfacts.org/categories"
-    
-    requete = requests.get(path)
-    page = requete.content
-    soup = BeautifulSoup(page, "html.parser")
 
-    for tag in soup.find_all("td"):
-        liste.append(tag.text)
+class aliment(models.Model):
+    name_aliment = models.CharField(max_length=60)
+    code_product_food = models.CharField(max_length=20)
+    description = models.TextField()
+    nutriscore = models.CharField(max_length=1)
+    image = models.ImageField()
+    name_store = models.CharField(max_length=60)
+    name_brand = models.CharField(max_length=60)
 
-    c = 0
-    for i in range(3):
-        print(liste[c])
-        
-        cursor.execute('''INSERT INTO mes_aliments_categorie(name_categorie) VALUES(?)''', (liste[c],))
-        db.commit()
-        c+=3
+    id_categorie = models.ForeignKey(categorie, on_delete=models.CASCADE)
 
-            
-openfactfood_database()
+
+
 
 
