@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +33,16 @@
 
 <body id="page-top">
 
-
+  <style>
+    header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 56px);
+    background-image: url({{image}});
+    background-position: center center;
+    background-size: cover;
+    }
+  </style>
+  
     <div class="container-fluid" id="Menu-TOP">
         <div class="row" id="row1">
 
@@ -94,7 +99,7 @@
       </div>
     </div>
   </header>
-  <br><br><br><br><br><br><br><br>
+
 
    
     <section class="bg-primary" id="about">
@@ -120,15 +125,15 @@
                      {% csrf_token %}
 
 
-                   <input type="HIDDEN" value={{aaa}} name="produit">
-                   <div id="im1"><input type="image" id="im11" class="fit-picture" src="{{a}}"/></a></div>
+                     <input type="HIDDEN" value={{aaa}} name="produit">
+                     <div id="im1"><input type="image" id="im11" class="fit-picture" src="{{a}}"/></a></div>
                    
-                   <div id="nomAliment1">{{aa}}</div>
+                     <div id="nomAliment1">{{aa}}</div>
 
-                     
-                     
-                     <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
+                    <br>
                   </form>
+                    <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
+                
 
 
 
@@ -243,26 +248,49 @@
 
  </section>
 
-
-    
-  <hr color:black>
-    <div class="container-fluid">
+       <br><br>
       <div class="row">
-        <div class="col-md-6" id="mentions">
-          <a href="#">Mentions légales</a>
+  
+        <div class="col-lg-4 ml-auto text-center">
+      
+          <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
+          <img class="phone" id="phone" src="static/img/portfolio/bas/phone.png">
+          <p>123-456-6789</p>
+          
+        </div>
+
+        
+        <div class="col-lg-4 mr-auto text-center">
+        
+          <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
+          
+          <img class="mail" id="mail" src="static/img/portfolio/bas/mail.png">
+          <p>
+            <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+  <hr color:black>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-bot" id="mainNav">
+  
+    <div class="container">
+
+        <div class="mentions">
+          <a class="compte_top_haut_droit" id="compte_top_haut_droit" href="#">Mentions légales</a>
         </div>
 
           
-        <div class="col-md-6" id="contact">
-          <a href="#">Contact</a>
+        <div class="contact">
+          <a class="aliments_top_haut_droit" id="aliments_top_haut_droit" href="#">Contact</a>
         </div>
 
     
     </div>
-  </div>
-
-
-
+  </nav>
 
 
 
