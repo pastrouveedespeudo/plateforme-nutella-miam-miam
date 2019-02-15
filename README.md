@@ -2,7 +2,8 @@
 
 #jve etre alito... y vont tout me refaire faire jcrois jsp pas
 
-#faire la condition pseudo 
+
+#faire la connection et deconexxion
 
 #tout ranger
 
