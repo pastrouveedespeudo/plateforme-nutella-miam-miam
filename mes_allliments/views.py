@@ -21,6 +21,10 @@ def recherche(request):
 
         recherche = request.POST.get('cool')
         print(recherche)
+
+        image = image_aliment(recherche)
+        
+        print(image,"IMAGEEEEEEEEEEEEEEEEEEEEEEEEE")
         a = better_nutri(recherche)
         #print(a[0][3])
         #print(a)
@@ -47,6 +51,8 @@ def recherche(request):
                        "ddd":str(a[3][4]),
                        "eee":str(a[4][4]),
                        "fff":str(a[5][4]),
+
+                       "image":str(image[0]),
                        })
 
 
