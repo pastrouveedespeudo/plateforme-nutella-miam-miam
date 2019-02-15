@@ -27,7 +27,7 @@ def better_nutri(para):
     c = 0
     for i in indice_cat:
         
-        cursor.execute('''SELECT name_aliment, id_categorie_id, nutriscore, image
+        cursor.execute('''SELECT name_aliment, id_categorie_id, nutriscore, image,id
         FROM mes_aliments_aliment
         WHERE id_categorie_id = (?) and nutriscore != "None"
         ORDER BY nutriscore ASC''', (indice_cat[c],))
