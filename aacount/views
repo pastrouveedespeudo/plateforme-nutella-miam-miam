@@ -4,6 +4,9 @@ from .models import compte
 from django import forms
 from .forms import compte_utilisateur_form
 from django.urls import path
+from .inscription_connection import *
+
+
 
 def mon_compte(request):
     return render(request, 'pages/mon_compte.html')
@@ -11,6 +14,7 @@ def mon_compte(request):
 
 def login(request):
     return render(request, 'pages/login.html')
+
 
 
 def inscription(request):
@@ -37,9 +41,13 @@ def inscription(request):
 
 
         if request.method == "POST":
-            
+
+            email = request.POST.get('email')
+            alita = inscription_email(email)
             form = compte_utilisateur_form(request.POST)
-            if form.is_valid():
+
+            
+            if form.is_valid() and alita == []:
                 
                 nom = request.POST.get('nom')
                 prenom = request.POST.get('prenom')
@@ -67,9 +75,15 @@ def inscription(request):
                                  statut=statut)
                 oobject.save()
 
-                #return to recapitulatif
-                print("tchikitchiki")
-                
+                return render(request, 'pages/inscription.html',locals())
+                #page recap inscription
+
+
+            else:
+                message="addresse mail deja utilisé"
+                return render(request, 'pages/inscription.html', {'message':message}, locals())
+                #ici faire une page de redirection
+            
     return render(request, 'pages/inscription.html',locals())
 
 
