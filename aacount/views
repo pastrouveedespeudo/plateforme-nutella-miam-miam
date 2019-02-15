@@ -13,12 +13,29 @@ def mon_compte(request):
 
 
 def login(request):
+
+    if request.method == "POST":
+
+        nom = request.POST.get('nom')
+        password = request.POST.get('password')
+        
+        identifiant = loggin(nom)
+        if identifiant[0][0] and identifiant[0][1] == nom and password:
+            return render(request, 'home.html')
+       
+
+        else:
+            message = "mot de passe ou identifiant érroné"
+            return render(request, 'pages/login.html', {'message':message})
+        
     return render(request, 'pages/login.html')
 
 
-
 def inscription(request):
+
+    
     form = compte_utilisateur_form(request.POST or None)
+    
     if form.is_valid():
         
         nom = form.cleaned_data['nom']
@@ -35,8 +52,6 @@ def inscription(request):
         date = form.cleaned_data['date']
         statut = form.cleaned_data['statut']
 
-
-        print("coucou")
         envoi = True
 
 
@@ -44,6 +59,7 @@ def inscription(request):
 
             email = request.POST.get('email')
             alita = inscription_email(email)
+     
             form = compte_utilisateur_form(request.POST)
 
             
@@ -59,8 +75,6 @@ def inscription(request):
                 sexe = request.POST.get('sexe')
                 date = request.POST.get('date')
                 statut = request.POST.get('statut')
-                print(nom, prenom, password, email, addresse,
-                    ville, code_postale, sexe, date, statut)
 
         
                 oobject = compte(nom=nom,
@@ -80,9 +94,10 @@ def inscription(request):
 
 
             else:
+
                 message="addresse mail deja utilisé"
-                return render(request, 'pages/inscription.html', {'message':message}, locals())
-                #ici faire une page de redirection
+                return render(request, 'pages/inscription.html', locals(), {'message':message})
+                
             
     return render(request, 'pages/inscription.html',locals())
 
@@ -93,47 +108,7 @@ def inscription(request):
 
 def contact(request):
     
-
-    form = ContactForm(request.POST or None)
-
-    if form.is_valid(): 
-  
-        sujet = form.cleaned_data['sujet']
-        message = form.cleaned_data['message']
-        envoyeur = form.cleaned_data['envoyeur']
-        renvoi = form.cleaned_data['renvoi']
-
-        
-        nom = form.cleaned_data['nom']
-        prenom = form.cleaned_data['prenom']
-        password = form.cleaned_data['password']
-
-        email = form.cleaned_data['email']
-
-        addresse = form.cleaned_data['addresse']
-        ville = form.cleaned_data['ville']
-        code_postale = form.cleaned_data['code_postale']
-
-        sexe = form.cleaned_data['sexe']
-        date = form.cleaned_data['date']
-        statut = form.cleaned_data['statut']
-
-
-
-        envoi = True
-        print(sujet, message, envoyeur, renvoi, nom, prenom, password, email, addresse,
-              ville, code_postale, sexe, date, statut)
-        print(sujet,"bioboi")
-    elif request.method =="POST":
-        print("ok")
-        print(sujet, message, envoyeur, renvoi, nom, prenom, password, email, addresse,
-              ville, code_postale, sexe, date, statut)
-    return render(request, 'pages/contact.html', locals())
-
-
-
-
-
+    pass
 
 
 
