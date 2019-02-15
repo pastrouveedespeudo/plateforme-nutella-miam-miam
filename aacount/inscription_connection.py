@@ -23,7 +23,7 @@ def inscription_email(para):
     return liste
 
 
-def loggin(self):
+def loggin(para):
 
     identifiant = []
 
@@ -42,5 +42,26 @@ def loggin(self):
 
     for i in rows:
         identifiant.append(i)
+
+    print(identifiant,"0000000000084987498749748974998")
+    return identifiant
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
