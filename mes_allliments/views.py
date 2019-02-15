@@ -7,11 +7,14 @@ import sqlite3
 
 def aliment_det(request):
     if request.method == "POST":
-        print("ouiIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
         recherche = request.POST.get('produit')
-        print(recherche)
+
+        detail = detail_aliment(recherche)
         
-    return render(request, 'pages/aliment_det.html')
+    return render(request, 'pages/aliment_det.html',
+                  {'detail':detail})
+
+
 
 def recherche(request):
 
@@ -23,11 +26,11 @@ def recherche(request):
         print(recherche)
 
         image = image_aliment(recherche)
-        
-        print(image,"IMAGEEEEEEEEEEEEEEEEEEEEEEEEE")
+        titre = titre_aliment(recherche)
         a = better_nutri(recherche)
-        #print(a[0][3])
-        #print(a)
+        
+  
+
         
 
         return render(request, 'pages/recherche.html',
@@ -53,6 +56,7 @@ def recherche(request):
                        "fff":str(a[5][4]),
 
                        "image":str(image[0]),
+                       "titre":str(titre[0][0]),
                        })
 
 
