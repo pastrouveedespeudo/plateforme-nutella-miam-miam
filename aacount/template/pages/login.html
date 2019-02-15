@@ -4,6 +4,7 @@
 
 
 
+
 {%load static%}
 
 <!DOCTYPE html>
@@ -83,11 +84,19 @@
     <div class="container">
     
       <div class="row">
-          <form>
-            <input type="text" placeholder="login">
-            <input type="button" value="submit" placeholder="password">
+          <form action="login" method="POST">
+          {% csrf_token %}
+          
+            <input type="text" name="nom" placeholder="login">
 
-
+            {{message}}
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            <input type="text" name="password" placeholder="password">
+            <input type="submit" value="Entrée" >
 
           </form>
         
@@ -187,5 +196,6 @@
 
 </body>
 
-</html>
+</html>
+
         
