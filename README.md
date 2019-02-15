@@ -1,9 +1,9 @@
 # plateforme-nutella-miam-miam
 
-#jve etre alito... y vont tout me refaire faire jcrois jsp pas
 
+#ok alito tout refaire selon la connection et deconexxion
 
-#faire la connection et deconexxion
+#oublie pas ca va pas etre long, tu confondais ta database aliment avec celle des utilisateurs ouf
 
 #tout ranger
 
