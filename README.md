@@ -1,6 +1,8 @@
 # plateforme-nutella-miam-miam
 
-#comprend pk tu met des bonbons et dans la meme catégorie y'a des pattes et des truff....
+#comprend pk tu met des bonbons et dans la meme catégorie y'a des pattes et des truff.... ==> categorie snak donc c pas ta faute ca
+
+#faire la meme chose et la mise en page de l'aliment et faire la base de donnée mes favoris
 
 #enfete j'ai grave spam sur discord... je sais pas si j'ai le droit de remettre des messages, dans 2/3 jours demande si on a le droit de mettre css avec html ca bug grave avec {static%%}... 
 
