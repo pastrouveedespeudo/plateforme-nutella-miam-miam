@@ -7,16 +7,41 @@ def image_aliment(para):
     db = sqlite3.connect(r'C:\Users\jeanbaptiste\plateforme_nutella\plateforme_nutella\db.sqlite3')
     cursor = db.cursor()
 
-    cursor.execute('''SELECT image
+    cursor.execute('''SELECT image, name_aliment
                     FROM mes_aliments_aliment
                     WHERE name_aliment = (?)''', (para,) )
     db.commit()
     
     rows = cursor.fetchall()
+
+
     for i in rows:
-        image.append(i[0])
+        image.append(i)
+        
 
     return image
+
+def titre_aliment(para):
+    
+    titre = []
+    
+    db = sqlite3.connect(r'C:\Users\jeanbaptiste\plateforme_nutella\plateforme_nutella\db.sqlite3')
+    cursor = db.cursor()
+
+    cursor.execute('''SELECT name_aliment
+                    FROM mes_aliments_aliment
+                    WHERE name_aliment = (?)''', (para,) )
+    db.commit()
+    
+    rows = cursor.fetchall()
+
+
+    for i in rows:
+        titre.append(i)
+        
+
+    return titre
+
 
 
 def better_nutri(para):
@@ -32,6 +57,8 @@ def better_nutri(para):
     cursor.execute('''SELECT id_categorie_id
     FROM mes_aliments_aliment
     WHERE name_aliment = (?)''',(para,))
+
+    db.commit()
 
     rows = cursor.fetchall()
     for i in rows:
@@ -64,8 +91,44 @@ def better_nutri(para):
 
 
 
-def detail_aliment():
-    pass
+def detail_aliment(value):
+
+    detail = []
+    
+    db = sqlite3.connect(r'C:\Users\jeanbaptiste\plateforme_nutella\plateforme_nutella\db.sqlite3')
+    cursor = db.cursor()
+
+    cursor.execute('''SELECT *
+                    FROM mes_aliments_aliment
+                    WHERE id = (?)''', (value,) )
+
+
+    db.commit()
+
+    rows = cursor.fetchall()
+    for i in rows:
+        detail.append(i)
+
+
+    return detail
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
