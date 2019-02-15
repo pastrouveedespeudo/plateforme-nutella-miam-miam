@@ -1,6 +1,22 @@
 import sqlite3
 
+def image_aliment(para):
 
+    image = []
+    
+    db = sqlite3.connect(r'C:\Users\jeanbaptiste\plateforme_nutella\plateforme_nutella\db.sqlite3')
+    cursor = db.cursor()
+
+    cursor.execute('''SELECT image
+                    FROM mes_aliments_aliment
+                    WHERE name_aliment = (?)''', (para,) )
+    db.commit()
+    
+    rows = cursor.fetchall()
+    for i in rows:
+        image.append(i[0])
+
+    return image
 
 
 def better_nutri(para):
@@ -48,7 +64,8 @@ def better_nutri(para):
 
 
 
-
+def detail_aliment():
+    pass
 
 
 
