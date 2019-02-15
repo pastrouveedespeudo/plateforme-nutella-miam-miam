@@ -3,7 +3,9 @@
 
 #tout ranger
 
-#condition inscription
+#condition inscription mais enfaite y'a un truk spéciale pour géré les exceptions et aussi pour le truk des aliments
+
+#mais je me sert de la database, je sais pas si j'ai le droit enfete.... sur les video ils font des truk de dingue donc chai pas si c le meilleur truk a faire
 
 #loggin
 
