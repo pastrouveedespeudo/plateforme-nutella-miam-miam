@@ -116,31 +116,44 @@
                </style>
 
                
-               <form action="mes_aliments/aliment_det" method="post">
-               
-                   <div id="im1"><a href="aliment_det" id="yo"><img id="im11" name="produit" class="fit-picture" src="{{a}}"/></a></div>
+                   <form action="aliment_det" method="post">
+                     {% csrf_token %}
+
+
+                   <input type="HIDDEN" value={{aaa}} name="produit">
+                   <div id="im1"><input type="image" id="im11" class="fit-picture" src="{{a}}"/></a></div>
                    
                    <div id="nomAliment1">{{aa}}</div>
-                   <div><center><input type="submit" value="voir le produit 1?"</center></div>
-                
-                   <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
-                   
-               </form>
+
+                     
+                     
+                     <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
+                  </form>
+
+
+
+
+
+
+                  
            </div>
 
            
            <div class="col-sm-12 col-md-4" id="block4">
 
                <div id="rond"></div>
+              <form action="aliment_det" method="post">
+                     {% csrf_token %}
 
-               <div id="im2"><a href="aliment_det"><img id="im11"class="fit-picture" src="{{b}}"/></a></div>
+               <input type="HIDDEN" value={{bbb}} name="produit">
+                <div id="im2"><input type="image" id="im11" value={{aa}} class="fit-picture" src="{{b}}"/></a></div>
                
               
                <div id="nomAliment2">{{bb}}</div>
 
                <br>
                <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
-           
+             </form>
          
            </div>
            
@@ -148,13 +161,18 @@
 
                <div id="rond"></div>
                
-               <div id="im3"><a href="aliment_det"><img id="im11"class="fit-picture" src="{{c}}"/></a></div>
+              <form action="aliment_det" method="post">
+                     {% csrf_token %}
 
-               <div id="nomAliment3">{{cc}}</div>
+               <input type="HIDDEN" value={{ccc}} name="produit">
+                <div id="im3"><input type="image" id="im11" value={{cc}} class="fit-picture" src="{{c}}"/></a></div>
+               
+              
+               <div id="nomAliment2">{{cc}}</div>
 
                <br>
                <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
-
+             </form>
                
            </div>
        
@@ -163,12 +181,18 @@
 
                 <div id="rond"></div>
                 
-                <div id="im4"><a href="aliment_det"><img id="im11"class="fit-picture" src="{{d}}"/></a></div>
+              <form action="aliment_det" method="post">
+                     {% csrf_token %}
 
-                <div id="nomAliment4">{{dd}}</div>
+               <input type="HIDDEN" value={{ddd}} name="produit">
+                <div id="im4"><input type="image" id="im11" value={{dd}} class="fit-picture" src="{{d}}"/></a></div>
+               
+              
+               <div id="nomAliment2">{{dd}}</div>
 
-                <br>
+               <br>
                <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
+             </form>
                 
            </div>
 
@@ -176,12 +200,18 @@
            <div class="col-sm-12 col-md-4" id="block4">
                <div id="rond"> </div>
             
-               <div id="im5"><a href="aliment_det"><img id="im11"class="fit-picture" src="{{e}}"/></a></div>
+              <form action="aliment_det" method="post">
+                     {% csrf_token %}
 
-               <div id="nomAliment5">{{ee}}</div>
+               <input type="HIDDEN" value={{eee}} name="produit">
+                <div id="im5"><input type="image" id="im11" value={{ee}} class="fit-picture" src="{{e}}"/></a></div>
+               
+              
+               <div id="nomAliment2">{{ee}}</div>
 
                <br>
                <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
+             </form>
                
            </div>
            
@@ -189,12 +219,18 @@
 
                <div id="rond"></div>
                
-               <div id="im6"><a href="aliment_det"><img id="im11"class="fit-picture" src="{{f}}"/></a></div>
+              <form action="aliment_det" method="post">
+                     {% csrf_token %}
 
-               <div id="nomAliment6">{{ff}}</div>
+               <input type="HIDDEN" value={{fff}} name="produit">
+                <div id="im6"><input type="image" id="im11" value={{ff}} class="fit-picture" src="{{f}}"/></a></div>
+               
+              
+               <div id="nomAliment2">{{ff}}</div>
 
                <br>
                <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
+             </form>
                
            
          </div>
