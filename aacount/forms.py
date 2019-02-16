@@ -1,11 +1,9 @@
 from django import forms
+from django.forms import ModelForm
+from django.contrib.auth import authenticate, get_user_model
+  
 
-from django.contrib.auth import (
-    authenticate,
-    get_user_model
-    )
-
-user = get_user_model()
+User = get_user_model()
 
 class compte_utilisateur_form(forms.Form):
 
@@ -79,8 +77,8 @@ class userregisterform(forms.ModelForm):
     email2 = forms.EmailField(label="Email adresse")
     password = forms.CharField(widget=forms.PasswordInput)
 
-    class mera:
-        model = user
+    class Meta:
+        model = User
         fields =[
             'username',
             'email',
