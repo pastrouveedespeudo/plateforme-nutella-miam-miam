@@ -1,5 +1,9 @@
 # plateforme-nutella-miam-miam
 
+#jai compris jme demandé pk superman pcque j'ai trouvé préféré batman, c pcque javais hard peur des extraterrestre !!
+
+#et ce batar nous defendais contre eux !
+
 #comprendre et ranger et adapter
 
 
