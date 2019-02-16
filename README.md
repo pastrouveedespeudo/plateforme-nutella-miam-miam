@@ -1,5 +1,6 @@
 # plateforme-nutella-miam-miam
 
+#comprend sur le bout des doigts, jpouvais pas le faire solo ca comment veux tu que je le sorte du chapeau jtai obligé de recopier...
 
 #ok alito tout refaire selon la connection et deconexxion
 
