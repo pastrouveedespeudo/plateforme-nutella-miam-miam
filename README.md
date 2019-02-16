@@ -1,8 +1,7 @@
 # plateforme-nutella-miam-miam
 
-#comprend sur le bout des doigts, jpouvais pas le faire solo ca comment veux tu que je le sorte du chapeau jtai obligé de recopier...
+#comprendre et ranger et adapter
 
-#avec ma base de donnée y'avait aucunes connexion sauf celle de l'admin... pfff
 
 #ok alito tout refaire selon la connection et deconexxion
 
