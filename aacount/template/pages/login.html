@@ -5,6 +5,7 @@
 
 
 
+
 {%load static%}
 
 <!DOCTYPE html>
@@ -86,17 +87,19 @@
       <div class="row">
           <form action="login" method="POST">
           {% csrf_token %}
+          <p>username:   {{form.username}}</p>
+          <br>
+          <br>
+          <p>password:{{form.password}}</p>
+      
           
-            <input type="text" name="nom" placeholder="login">
-
             {{message}}
             <br>
             <br>
             <br>
             <br>
-            
-            <input type="text" name="password" placeholder="password">
-            <input type="submit" value="Entrée" >
+         
+            <input type="submit" value="Valider" >
 
           </form>
         
