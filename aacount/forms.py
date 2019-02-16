@@ -1,42 +1,34 @@
 from django import forms
-from django.forms import ModelForm
-from django.contrib.auth import authenticate, get_user_model
-  
 
-User = get_user_model()
+from django.contrib.auth import (
+    authenticate,
+    get_user_model
+    )
+
+user = get_user_model()
 
 class compte_utilisateur_form(forms.Form):
 
-    nom = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Nom',
-                                                                        'justify':'center'}))
+    nom = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Nom'}))
 
                     
-    prenom = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'prenom',
-                                                                        'justify':'center'}))
+    prenom = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'prenom'}))
     
-    password = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Password',
-                                                                        'justify':'center'}))
+    password = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Password'}))
     
-    email = forms.EmailField(max_length=255,widget=forms.TextInput(attrs={'placeholder': 'Email',
-                                                                        'justify':'center'}))
+    email = forms.EmailField(max_length=255,widget=forms.TextInput(attrs={'placeholder': 'Email'}))
     
-    addresse = forms.CharField(max_length=300,widget=forms.TextInput(attrs={'placeholder': 'Adresse',
-                                                                            'size':'62'}))
+    addresse = forms.CharField(max_length=300,widget=forms.TextInput(attrs={'placeholder': 'Adresse'}))
     
-    ville = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Ville',
-                                                                        'justify':'center'}))
+    ville = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Ville'}))
     
-    code_postale = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Code postal',
-                                                                        'justify':'center'}))
+    code_postale = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Code postal'}))
     
-    sexe = forms.CharField(max_length=8, widget=forms.TextInput(attrs={'placeholder': 'Sexe',
-                                                                        'justify':'center'}))
+    sexe = forms.CharField(max_length=8, widget=forms.TextInput(attrs={'placeholder': 'Sexe'}))
     
-    date = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Date de naissance',
-                                                                        'justify':'center'}))
+    date = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Date de naissance'}))
     
-    statut = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Statut',
-                                                                        'justify':'center'}))
+    statut = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Statut'}))
 
 
 
@@ -44,8 +36,7 @@ class compte_utilisateur_form(forms.Form):
 class userloginform(forms.Form):
     
     username = forms.CharField()
-               
-    prenom = forms.CharField(widget=forms.PasswordInput)
+    password = forms.CharField(widget=forms.PasswordInput)
     
 
     def clean(self, *args, **kwargs):
@@ -77,8 +68,10 @@ class userregisterform(forms.ModelForm):
     email2 = forms.EmailField(label="Email adresse")
     password = forms.CharField(widget=forms.PasswordInput)
 
-    class Meta:
-        model = User
+
+
+    class mera:
+        model = user
         fields =[
             'username',
             'email',
