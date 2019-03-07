@@ -1,31 +1,6 @@
 # plateforme-nutella-miam-miam
 
 
-#tout ranger
+#faire connexion pas connection 
 
-#favoris aliment(recherche sauvegarder)
-
-#--------fais le avant la soutenance pour ty remettre------
-
-#sur l'image en faire un lien vers la description (view dans view et dans algo faudra mettre pluss ddinfo)
-
-#dynamique url
-
-#menu ttes les pages
-
-#interaction pageS
-
-#message inscirption
-
-#message loggin
-
-#mettre en ligne mais ca chai pas faire
-
-
-
-#-----manage.py------
-
-#manage.py makemigrations [application], on verifie dans migrate, 
-
-#manage.py migrate
-
+#finir la nav barre pour toutes les pages,
