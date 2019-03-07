@@ -78,7 +78,8 @@ def recherche(request):
 
 
 
-
+def mes_aliments(request):
+    return render(request, 'pages/mes_aliments.html')
 
 
 
