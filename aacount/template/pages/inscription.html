@@ -1,5 +1,4 @@
-
-
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +27,7 @@
 
   <!-- Custom styles for this template -->
   
-  <link href="/static/css/inscription.css" rel="stylesheet">
+  <link href="/static/css/home.css" rel="stylesheet">
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -49,29 +48,68 @@
 <body id="page-top">
 
 
+ 
+    <style>#inputChercher{
+            text-align:center;
+            margin-top:12px;
+            background: #A9A9A9;
+            border: 1px solid;
+            font-style:italic;
+            }
+            #deco{
+            background-size: cover;
+            margin-left:15px;
+            width: 50x;
+            height: 50px;
+            }
+    </style>
 
 
     <div class="container-fluid" id="Menu-TOP">
         <div class="row" id="row1">
 
            <div class="col-md-7" id="block">
-              <a href='/'><img  id="pur_beurre_logo" src="/static/img/portfolio/menu-haut/pur_beurre.png"></a>
+           
+              <a href='/'>
+                <img  id="pur_beurre_logo" src="{% static 'img/portfolio/menu-haut/pur_beurre.png' %}">
+              </a>
               <a  id="nom">Pur Beurre</a>
+              
            </div>
-
+            
            <div class="col-md-5" id="block2">
                <div id="droiteMenuTop">
-                   <a><input id="inputChercher" type="text" placeholder="Chercher"/></a>
-                   <a href='/mon_compte'><img id="compte" src="/static/img/portfolio/menu-haut/compte.png"></a>
-                   <a href='/mes_aliments'><img id="carotte" src="/static/img/portfolio/menu-haut/carotte.png"></a>
-                   <a href='/login'><img id="login" src="/static/img/portfolio/menu-haut/login.png"></a>
-                   <a href='/inscription'><img id="inscription" src="/static/img/portfolio/menu-haut/inscription2.png"></a>
-                   <a><img id="deco" src="/static/img/portfolio/menu-haut/deco.png"></a>
+               
+                   <a>
+                     <input id="inputChercher" type="text" placeholder="Chercher"/>
+                   </a>
+                   
+                   <a href='/account/mon_compte' OnMouseOver="document.all.texte.innerText='Mon compte !'">
+                     <img id="compte" src="{% static 'img/portfolio/menu-haut/compte.png' %}">
+                   </a>
+
+                   <a href='/mes_aliments/mes_aliments' OnMouseOver="document.all.texte.innerText='Mes Aliments !'">
+                     <img id="carotte" src="{% static 'img/portfolio/menu-haut/carotte.png' %}"
+                   </a>
+                   
+                   <a href='/account/login' OnMouseOver="document.all.texte.innerText='Se connecter !'">
+                     <img id="login" src="{% static 'img/portfolio/menu-haut/login.png' %}">
+                   </a>
+                   
+                   <a href='/account/inscription' OnMouseOver="document.all.texte.innerText='S\'inscrire !'">
+                     <img id="inscription" src="{% static 'img/portfolio/menu-haut/inscription2.png' %}">
+                   </a>
+                   
+                   <a OnMouseOver="document.all.texte.innerText='Se deconnecter !'">
+                     <img id="deco" src="{% static 'img/portfolio/menu-haut/deco.png' %}">
+                   </a>
+                   
+                   <center><p id="texte"><br></p></center>
+
                </div>
            </div>  
         </div>
         </div>
-
 
 
 
@@ -92,23 +130,28 @@
 
         
           <div class="col-lg-4 col-sm-12">
-              {% csrf_token %}
-              {{ form.nom }}
+              <style>#nom{color:black;}</style> 
+              <p id="nom">Ton Nom:</p>
+              <input type="hidden" name="csrfmiddlewaretoken" value="YdQEaM9QQILhfKrMQSMBXy6MNqNQJHmpXTCCcXIRRhSynbl7zVoCxkNdtWjHGSUH">
+              <input type="text" name="nom" placeholder="Nom" maxlength="255" required id="id_nom" style="font-style:italic">
      
           </div>
 
 
-        <div class="col-lg-4 col-sm-12">      
-              {% csrf_token %}
-              {{ form.prenom}}
+        <div class="col-lg-4 col-sm-12">
+              <style>#prenom{color:black;}</style> 
+              <p id="prenom">Ton Prenom:</p>
+              <input type="hidden" name="csrfmiddlewaretoken" value="YdQEaM9QQILhfKrMQSMBXy6MNqNQJHmpXTCCcXIRRhSynbl7zVoCxkNdtWjHGSUH">
+              <input type="text" name="prenom" placeholder="prenom" maxlength="255" required id="id_prenom" style="font-style:italic">
       
         </div>
 
           
           <div class="col-lg-4 col-sm-12">
- 
-              {% csrf_token %}
-              {{ form.password }}
+              <style>#mdp{color:black;}</style> 
+              <p id="mdp">Ton Mot de passe:</p>
+              <input type="hidden" name="csrfmiddlewaretoken" value="YdQEaM9QQILhfKrMQSMBXy6MNqNQJHmpXTCCcXIRRhSynbl7zVoCxkNdtWjHGSUH">
+              <input type="text" name="password" placeholder="Password" maxlength="255" required id="id_password" style="font-style:italic">
   
         </div>    
      </div>
@@ -132,24 +175,26 @@
       <div class="row">
         
         <div class="col-lg-4 col-sm-12">
-   
-            {% csrf_token %}
-            {{ form.email }}
+            <style>#Email{color:black;}</style> 
+            <p id="Email">Ton Email:</p>
+            <input type="hidden" name="csrfmiddlewaretoken" value="YdQEaM9QQILhfKrMQSMBXy6MNqNQJHmpXTCCcXIRRhSynbl7zVoCxkNdtWjHGSUH">
+            <input type="text" name="email" placeholder="Email"  maxlength="255" required id="id_email" style="font-style:italic">
  
         </div>
 
 
         <div class="col-lg-8 col-sm-12">
-
-              {% csrf_token %}
-              {{ form.addresse }}
+              <style>#adresse{color:black;}</style>  
+              <p id="adresse">Ton Adresse:</p>
+              <input type="hidden" name="csrfmiddlewaretoken" value="YdQEaM9QQILhfKrMQSMBXy6MNqNQJHmpXTCCcXIRRhSynbl7zVoCxkNdtWjHGSUH">
+              <input type="text" name="addresse" placeholder="Adresse" size="50" maxlength="400" required id="id_addresse" style="font-style:italic">
   
         </div>
         
       </div>
     </div>
     <br>
-    <center>{{message}}</center>
+    <center></center>
     <br><br><br>
     <div class="container" id="con">
       <div class="row">
@@ -157,16 +202,18 @@
          <div class="col-lg-4 col-sm-12"></div>
 
          <div class="col-lg-4 col-sm-12">
-     
-              {% csrf_token %}
-              {{ form.ville }}
+              <style>#ville{color:black;}</style>
+              <p id="ville">Ta ville:</p>
+              <input type="hidden" name="csrfmiddlewaretoken" value="YdQEaM9QQILhfKrMQSMBXy6MNqNQJHmpXTCCcXIRRhSynbl7zVoCxkNdtWjHGSUH">
+              <input type="text" name="ville" placeholder="Ville" maxlength="255" required id="id_ville" style="font-style:italic">
     
          </div>
 
           <div class="col-lg-4 col-sm-12">
-        
-              {% csrf_token %}
-              {{ form.code_postale }}
+              <style>#code{color:black;}</style>
+              <p id="code">Ton code postal:</p>
+              <input type="hidden" name="csrfmiddlewaretoken" value="YdQEaM9QQILhfKrMQSMBXy6MNqNQJHmpXTCCcXIRRhSynbl7zVoCxkNdtWjHGSUH">
+              <input type="text" name="code_postale" placeholder="Code postal" maxlength="255" required id="id_code_postale" style="font-style:italic">
 
           </div>
           
@@ -197,24 +244,27 @@
       <div class="row">
           
         <div class="col-lg-4 col-sm-12">
-      
-              {% csrf_token %}
-              {{ form.sexe }}
+              <style>#sexe{color:black;}</style>
+              <p id="sexe">Ton sexe:</p>
+              <input type="hidden" name="csrfmiddlewaretoken" value="YdQEaM9QQILhfKrMQSMBXy6MNqNQJHmpXTCCcXIRRhSynbl7zVoCxkNdtWjHGSUH">
+              <input type="text" name="sexe" placeholder="Sexe" maxlength="8" required id="id_sexe" style="font-style:italic">
 
         </div>
 
 
-        <div class="col-lg-4 col-sm-12">            
-       
-              {% csrf_token %}
-              {{ form.date }}
+        <div class="col-lg-4 col-sm-12">
+              <style>#naissance{color:black;}</style>
+              <p id="naissance">Ta date de naissance:</p>
+              <input type="hidden" name="csrfmiddlewaretoken" value="YdQEaM9QQILhfKrMQSMBXy6MNqNQJHmpXTCCcXIRRhSynbl7zVoCxkNdtWjHGSUH">
+              <input type="text" name="date" placeholder="Ex: 2019:01:01" required id="id_date" style="font-style:italic">
 
         </div>
 
         <div class="col-lg-4 col-sm-12">
-      
-              {% csrf_token %}
-              {{ form.statut }}
+              <style>#statut{color:black;}</style>
+              <p id="statut">Ton statut:</p>
+              <input type="hidden" name="csrfmiddlewaretoken" value="YdQEaM9QQILhfKrMQSMBXy6MNqNQJHmpXTCCcXIRRhSynbl7zVoCxkNdtWjHGSUH">
+              <input type="text" name="statut" placeholder="Statut" maxlength="255" required id="id_statut" style="font-style:italic">
      
         </div>
 
@@ -230,8 +280,10 @@
         <div class="col-lg-2 col-sm-12"></div>
 
         <div class="col-lg-8 col-sm-12">
-
-          {% csrf_token %}
+        
+          <style>#Nombuttonvalider{color:black;}</style>
+          
+          <input type="hidden" name="csrfmiddlewaretoken" value="YdQEaM9QQILhfKrMQSMBXy6MNqNQJHmpXTCCcXIRRhSynbl7zVoCxkNdtWjHGSUH">
           <input type="submit" id="Nombuttonvalider" value="Valider formulaire"><br><br>
       
         </div>
