@@ -1,4 +1,5 @@
-{%load static%}
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +37,6 @@
 
     <style>#inputChercher{
             text-align:center;
-            margin-left:-150px;
             margin-top:12px;
             background: #A9A9A9;
             border: 1px solid;
@@ -56,7 +56,7 @@
            <div class="col-md-7" id="block">
            
               <a href='/'>
-                <img  id="pur_beurre_logo" src="{% static 'img/portfolio/menu-haut/pur_beurre.png' %}">
+                <img  id="pur_beurre_logo" src="/static/img/portfolio/menu-haut/pur_beurre.png">
               </a>
               <a  id="nom">Pur Beurre</a>
               
@@ -70,23 +70,23 @@
                    </a>
                    
                    <a href='/account/mon_compte' OnMouseOver="document.all.texte.innerText='Mon compte !'">
-                     <img id="compte" src="{% static 'img/portfolio/menu-haut/compte.png' %}">
+                     <img id="compte" src="/static/img/portfolio/menu-haut/compte.png">
                    </a>
 
                    <a href='/mes_aliments/mes_aliments' OnMouseOver="document.all.texte.innerText='Mes Aliments !'">
-                     <img id="carotte" src="{% static 'img/portfolio/menu-haut/carotte.png' %}"
+                     <img id="carotte" src="/static/img/portfolio/menu-haut/carotte.png"
                    </a>
                    
-                   <a href='account/login' OnMouseOver="document.all.texte.innerText='Se connecter !'">
-                     <img id="login" src="{% static 'img/portfolio/menu-haut/login.png' %}">
+                   <a href='/account/login' OnMouseOver="document.all.texte.innerText='Se connecter !'">
+                     <img id="login" src="/static/img/portfolio/menu-haut/login.png">
                    </a>
                    
                    <a href='account/inscription' OnMouseOver="document.all.texte.innerText='S\'inscrire !'">
-                     <img id="inscription" src="{% static 'img/portfolio/menu-haut/inscription2.png' %}">
+                     <img id="inscription" src="/static/img/portfolio/menu-haut/inscription2.png">
                    </a>
                    
                    <a OnMouseOver="document.all.texte.innerText='Se deconnecter !'">
-                     <img id="deco" src="{% static 'img/portfolio/menu-haut/deco.png' %}">
+                     <img id="deco" src="/static/img/portfolio/menu-haut/deco.png">
                    </a>
                    
                    <center><p id="texte"><br></p></center>
