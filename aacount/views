@@ -21,7 +21,7 @@ def loginn(request):
 
     username = request.POST.get('username', False)
     password = request.POST.get('password', False)
- 
+    print(username, password)
     user = authenticate(username=username, password=password)
     if user is not None:
         login(request, user)
@@ -34,7 +34,8 @@ def loginn(request):
         print("validddddddddddddddddddddddd")
         username = form.cleaned_data.get('username')
         password = form.cleaned_data.get('password')
-        loggin(username, password)
+        print(username, password)
+        return render(request, 'home.html')
     
         
     return render(request, 'pages/login.html')
@@ -82,8 +83,9 @@ def inscription(request):
     
     nom = request.POST.get('nom', False)
     password = request.POST.get('password', False)
+    email = request.POST.get('email', False)
     print(nom, password)
-    user = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
+    user = User.objects.create_user(nom, password, email)
     
     return render(request, 'pages/inscription.html')
 
