@@ -10,25 +10,12 @@ user = get_user_model()
 class compte_utilisateur_form(forms.Form):
 
     nom = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Nom'}))
-
-                    
-    prenom = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'prenom'}))
     
     password = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Password'}))
     
     email = forms.EmailField(max_length=255,widget=forms.TextInput(attrs={'placeholder': 'Email'}))
     
-    addresse = forms.CharField(max_length=300,widget=forms.TextInput(attrs={'placeholder': 'Adresse'}))
-    
-    ville = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Ville'}))
-    
-    code_postale = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Code postal'}))
-    
-    sexe = forms.CharField(max_length=8, widget=forms.TextInput(attrs={'placeholder': 'Sexe'}))
-    
-    date = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Date de naissance'}))
-    
-    statut = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Statut'}))
+
 
 
 
