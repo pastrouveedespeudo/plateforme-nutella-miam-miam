@@ -7,7 +7,7 @@ from django.urls import path
 from .inscription_connection import *
 from django.contrib.auth import authenticate,get_user_model,login,logout
 from django.contrib.auth import login as lo 
-
+from django.contrib.auth.models import User
 
 
 def mon_compte(request):
@@ -19,10 +19,15 @@ def logout(request):
 def loginn(request):
     print("blablabla")
 
-    a = request.POST.get('username')
-    b = request.POST.get('password')
-    print(a)
-    print(b)
+    username = request.POST.get('username', False)
+    password = request.POST.get('password', False)
+ 
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        login(request, user)
+        print("oui")
+        #return HttpResponseRedirect( settings.LOGIN_REDIRECT_URL )
+    
     form = userloginform(request.POST or None)
  
     if form.is_valid():
@@ -74,49 +79,13 @@ def logout(request):
 def inscription(request):
 
     
-    form = compte_utilisateur_form(request.POST or None)
-    print(form)
-    if form.is_valid():
-        print("okiokioki")
-        nom = form.cleaned_data['nom']
-        password = form.cleaned_data['password']
-        email = form.cleaned_data['email']
-
-        print("COUCOUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU")
-        envoi = True
-
-
-        if request.method == "POST":
-            print("ohouiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
-            email = request.POST.get('email')
-            alita = inscription_email(email)
-     
-            form = compte_utilisateur_form(request.POST)
-
-            
-            if form.is_valid() and alita == []:
-                
-                nom = request.POST.get('nom')
-                password = request.POST.get('password')
-                email = request.POST.get('email')
-            
-                oobject = compte(nom=nom,
-                                 
-                                 password=password,
-                                 email=email)
-                oobject.save()
-
-                return render(request, 'home.html',locals())
-                #page recap inscription
-
-
-            else:
-
-                message="addresse mail deja utilisé"
-                return render(request, 'pages/inscription.html', locals(), {'message':message})
-                
-    print("oyééééééééééééé")
-    return render(request, 'pages/inscription.html',locals())
+    
+    nom = request.POST.get('nom', False)
+    password = request.POST.get('password', False)
+    print(nom, password)
+    user = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
+    
+    return render(request, 'pages/inscription.html')
 
 
 
