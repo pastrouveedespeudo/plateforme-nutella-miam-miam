@@ -17,30 +17,22 @@ def logout(request):
     pass
 
 def loginn(request):
+    print("blablabla")
 
-    next = request.GET.get('next')
+    a = request.POST.get('username')
+    b = request.POST.get('password')
+    print(a)
+    print(b)
     form = userloginform(request.POST or None)
-    
+ 
     if form.is_valid():
-        
+        print("validddddddddddddddddddddddd")
         username = form.cleaned_data.get('username')
         password = form.cleaned_data.get('password')
-        user = authenticate(username=username, password=password)
-
-        lo(request, user)
-        
-        if next:
-            return redirect(next)
-        return redirect("/")
-
-    
-    context = {
-        'form':form,
-
-        }
+        loggin(username, password)
     
         
-    return render(request, 'pages/login.html', context)
+    return render(request, 'pages/login.html')
 
 
 
@@ -52,14 +44,14 @@ def register(request):
     form = userregisterform(request.POST or None)
     
     if form.is_valid():
-
+        print("ouiiiiiiiiiii")
         user = form.save(commit=False)
         password = form.cleaned_data.get('password')
         user.set_password(password)
         user.save()
         new_user = authenticate(username=user.username, password=password)
         lo(request, new_user)
-        
+        print("OKI DOCKIIIIIIIIIIIIIIIIIIIIIIIII")
         if next:
             return redirect(next)
         return redirect("/")
@@ -83,28 +75,19 @@ def inscription(request):
 
     
     form = compte_utilisateur_form(request.POST or None)
-    
+    print(form)
     if form.is_valid():
-        
+        print("okiokioki")
         nom = form.cleaned_data['nom']
-        prenom = form.cleaned_data['prenom']
         password = form.cleaned_data['password']
-
         email = form.cleaned_data['email']
 
-        addresse = form.cleaned_data['addresse']
-        ville = form.cleaned_data['ville']
-        code_postale = form.cleaned_data['code_postale']
-
-        sexe = form.cleaned_data['sexe']
-        date = form.cleaned_data['date']
-        statut = form.cleaned_data['statut']
-
+        print("COUCOUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU")
         envoi = True
 
 
         if request.method == "POST":
-
+            print("ohouiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
             email = request.POST.get('email')
             alita = inscription_email(email)
      
@@ -114,30 +97,16 @@ def inscription(request):
             if form.is_valid() and alita == []:
                 
                 nom = request.POST.get('nom')
-                prenom = request.POST.get('prenom')
                 password = request.POST.get('password')
                 email = request.POST.get('email')
-                addresse = request.POST.get('addresse')
-                ville = request.POST.get('ville')
-                code_postale = request.POST.get('code_postale')
-                sexe = request.POST.get('sexe')
-                date = request.POST.get('date')
-                statut = request.POST.get('statut')
-
-        
+            
                 oobject = compte(nom=nom,
-                                 prenom=prenom,
+                                 
                                  password=password,
-                                 email=email,
-                                 addresse=addresse,
-                                 ville=ville,
-                                 code_postale=code_postale,
-                                 sexe=sexe,
-                                 date=date,
-                                 statut=statut)
+                                 email=email)
                 oobject.save()
 
-                return render(request, 'pages/inscription.html',locals())
+                return render(request, 'home.html',locals())
                 #page recap inscription
 
 
@@ -146,7 +115,7 @@ def inscription(request):
                 message="addresse mail deja utilisé"
                 return render(request, 'pages/inscription.html', locals(), {'message':message})
                 
-            
+    print("oyééééééééééééé")
     return render(request, 'pages/inscription.html',locals())
 
 
