@@ -1,7 +1,8 @@
 # plateforme-nutella-miam-miam
 
 
-#bon y'a un autre truk facile ouf ptetre chui entrain de faire nawak la chui serein mais demain...
+#{{if user}} ca marche que dal
 
+#deconxion ca marche que dal
 
-#faudra au lieu de ton chemin le chemin de heroku et ca.... sqlite *
+#mais la connexion marche j'ai pas tout compris 
