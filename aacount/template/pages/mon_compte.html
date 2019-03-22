@@ -85,9 +85,9 @@
                      <img id="inscription" src="/static/img/portfolio/menu-haut/inscription2.png">
                    </a>
                    
-                   <a OnMouseOver="document.all.texte.innerText='Se deconnecter !'">
-                     <img id="deco" src="/static/img/portfolio/menu-haut/deco.png">
-                   </a>
+                     <a href='/account/login' OnMouseOver="document.all.texte.innerText='Se deconnecter !'">
+                       <img id="deco" src="/static/img/portfolio/menu-haut/deco.png">
+                     </a>
                    
                    <center><p id="texte"><br></p></center>
 
@@ -96,7 +96,7 @@
         </div>
         </div>
 
-
+{% if user.is_authenticated %} Connexion reussi :{{user.username}} {% else %}{%endif%}
   <header class="masthead text-center d-flex">
     <div class="container my-auto">
       <div class="row">
@@ -111,13 +111,13 @@
         
         <div class="col-lg-8 mx-auto">
           <div class="text-faded mb-5">
-              <h2 id="texteMilieu">{{username}}</h2>
+              {% if user.is_authenticated %}<h2 id="texteMilieu">coucou{{username}}</h2>{%endif%}
+              
           </div>
         </div>
       </div>
     </div>
   </header>
-
 
 
 
