@@ -93,8 +93,6 @@ def inscription(request):
     print(nom, password)
     if nom and password and email:
         user = User.objects.create_user(nom, password, email)
-        user.is_staff = True
-        user.is_superuser = True
         user.set_password(str(password))
         user.save()
     return render(request, 'pages/inscription.html', {'nom':nom, 'pass':password})
