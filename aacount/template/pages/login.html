@@ -64,7 +64,7 @@
               <a  id="nom">Pur Beurre</a>
               
            </div>
-            
+   
            <div class="col-md-5" id="block2">
                <div id="droiteMenuTop">
                
@@ -89,9 +89,11 @@
                      <img id="inscription" src="/static/img/portfolio/menu-haut/inscription2.png">
                    </a>
                    
-                   <a OnMouseOver="document.all.texte.innerText='Se deconnecter !'">
-                     <img id="deco" src="/static/img/portfolio/menu-haut/deco.png">
-                   </a>
+                   
+                     <a href='/account/login' OnMouseOver="document.all.texte.innerText='Se deconnecter !'">
+                       <img id="deco" src="/static/img/portfolio/menu-haut/deco.png">
+                     </a>
+                   
                    
                    <center><p id="texte"><br></p></center>
 
@@ -99,7 +101,6 @@
            </div>  
         </div>
         </div>
-
 
 
   <style>
@@ -122,10 +123,12 @@
   </header>
 
 
-
+{% if user.is_authenticated %} Connexion reussi :{{user.username}} {% else %}{%endif%}
 
 {% csrf_token %}
   <section class="bg-primary" id="about">
+
+
 {% csrf_token %}
     <div class="container">
      {% csrf_token %}
