@@ -21,13 +21,20 @@ def loginn(request):
 
     username = request.POST.get('username', False)
     password = request.POST.get('password', False)
-    print(username, password)
+    print(username)
+    print(password)
+
+
     user = authenticate(username=username, password=password)
+    print(user,"userrtrrrrrrrrrrr")
+    return render(request, 'pages/login.html')
+        
     if user is not None:
         login(request, user)
         print("oui")
         #return HttpResponseRedirect( settings.LOGIN_REDIRECT_URL )
-    
+    else:
+        print("noneeee")
     form = userloginform(request.POST or None)
  
     if form.is_valid():
@@ -35,7 +42,8 @@ def loginn(request):
         username = form.cleaned_data.get('username')
         password = form.cleaned_data.get('password')
         print(username, password)
-        return render(request, 'home.html')
+        return render(request, 'pages/mon_compte.html', {'username':username})
+        #return render(request, 'home.html')
     
         
     return render(request, 'pages/login.html')
@@ -79,15 +87,17 @@ def logout(request):
 
 def inscription(request):
 
-    
-    
     nom = request.POST.get('nom', False)
     password = request.POST.get('password', False)
     email = request.POST.get('email', False)
     print(nom, password)
-    user = User.objects.create_user(nom, password, email)
-    
-    return render(request, 'pages/inscription.html')
+    if nom and password and email:
+        user = User.objects.create_user(nom, password, email)
+        user.is_staff = True
+        user.is_superuser = True
+        user.set_password(str(password))
+        user.save()
+    return render(request, 'pages/inscription.html', {'nom':nom, 'pass':password})
 
 
 
