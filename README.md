@@ -1,7 +1,7 @@
 # plateforme-nutella-miam-miam
 
 
-#{{if user}} ca marche que dal --> {% if user.username.is_authenticated %} retiens stémotion a chaque fois que tu chercheras retiens lémotion jai tout essayer du coup logout ca marche chrois
+#{{if user}} ca marche que dal --> {% if user.username.is_authenticated %} un bonbon oublié dans un coin< une legendaire< ca 
 
 #deconxion ca marche que dal
 
