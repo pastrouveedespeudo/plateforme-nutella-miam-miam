@@ -8,43 +8,45 @@ from .inscription_connection import *
 from django.contrib.auth import authenticate,get_user_model,login,logout
 from django.contrib.auth import login as lo 
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import logout                                                                  
+from django.shortcuts import render                                                                     
+from django.urls import reverse
 
 
+@login_required
 def mon_compte(request):
+
     return render(request, 'pages/mon_compte.html')
 
+@login_required
 def logout(request):
-    pass
+    logout(request)                                                                                     
+    return redirect(reverse(connexion))
+
 
 def loginn(request):
     print("blablabla")
+    try:
+        print(username)
+    except:
+        pass
+    error = False
 
-    username = request.POST.get('username', False)
-    password = request.POST.get('password', False)
-    print(username)
-    print(password)
-
-
-    user = authenticate(username=username, password=password)
-    print(user,"userrtrrrrrrrrrrr")
-    return render(request, 'pages/login.html')
-        
-    if user is not None:
-        login(request, user)
-        print("oui")
-        #return HttpResponseRedirect( settings.LOGIN_REDIRECT_URL )
+    if request.method == "POST":
+        print("ouiiiiiiiiiiiii")
+        form = userloginform(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data["username"]  # Nous récupérons le nom d'utilisateur
+            password = form.cleaned_data["password"]  # … et le mot de passe
+            user = authenticate(username=username, password=password)  #Nous vérifions si les données sont correctes
+            if user:  # Si l'objet renvoyé n'est pas None
+                login(request, user)  # nous connectons l'utilisateur
+            else: #sinon une erreur sera affichée
+                error = True
     else:
-        print("noneeee")
-    form = userloginform(request.POST or None)
- 
-    if form.is_valid():
-        print("validddddddddddddddddddddddd")
-        username = form.cleaned_data.get('username')
-        password = form.cleaned_data.get('password')
-        print(username, password)
-        return render(request, 'pages/mon_compte.html', {'username':username})
-        #return render(request, 'home.html')
-    
+        form = userloginform()
         
     return render(request, 'pages/login.html')
 
