@@ -8,7 +8,7 @@ from accounts.views import essais1
 from accounts.views import essais
 from accounts.views import register_view
 from accounts.views import logout_view
-
+from accounts.views import mon_compte
 
 
 urlpatterns = [
@@ -21,5 +21,6 @@ urlpatterns = [
     path('accounts/essais1/', essais1),
     path('accounts/register_view/', register_view),    
     path('accounts/logout_view/', logout_view),
+    path('accounts/mon_compte/', mon_compte),
 
 ]
