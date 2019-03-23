@@ -84,20 +84,21 @@
                  <img id="login" src="{% static 'img/portfolio/menu-haut/login.png' %}">
                </a>
 
-               <a href='/mes_aliments/mes_aliments' OnMouseOver="document.all.texte.innerText='Mes Aliments !'">
+               <a href='/mes_aliments/mes_aliments' OnMouseOver="document.all.texte.innerText='Aide !'">
                  <img id="carotte" src="{% static 'img/portfolio/menu-haut/carotte.png' %}"
                </a>
                
                <a href='/accounts/inscription' OnMouseOver="document.all.texte.innerText='S\'inscrire !'">
                  <img id="inscription" src="{% static 'img/portfolio/menu-haut/inscription2.png' %}">
                </a>
+               
                {% endif %}
 
                
                {% if user.is_authenticated %}
 
                <a href='#' OnMouseOver="document.all.texte.innerText='Aide !'">
-                 <img id="carotte" src="{% static 'img/portfolio/menu-haut/yo.png' %}"
+                 <img id="login" src="{% static 'img/portfolio/menu-haut/login.png' %}"
                </a>
                
                <a href='/accounts/logout_view' OnMouseOver="document.all.texte.innerText='Se deconnecter !'">
