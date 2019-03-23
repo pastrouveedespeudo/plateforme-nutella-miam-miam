@@ -10,6 +10,8 @@ from accounts.views import register_view
 from accounts.views import logout_view
 from accounts.views import mon_compte
 
+from mes_aliments.views import mes_aliments
+from mes_aliments.views import recherche
 
 urlpatterns = [
     
@@ -23,4 +25,7 @@ urlpatterns = [
     path('accounts/logout_view/', logout_view),
     path('accounts/mon_compte/', mon_compte),
 
+    path('mes_aliments/mes_aliments/', mes_aliments),
+    path('mes_aliments/recherche/', recherche),
 ]
+
