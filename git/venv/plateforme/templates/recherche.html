@@ -1,0 +1,278 @@
+{% include "navbarre.html" %}
+
+
+{% block content %}
+{% endblock %}
+  
+  <style>
+  .titreUn{
+    color: rgba(51, 51, 0);
+    background-color: rgba(255, 153, 102);
+    margin-top:200px;
+  }
+
+
+
+  #nomAliment1,
+  #nomAliment2,
+  #nomAliment3,
+  #nomAliment4,
+  #nomAliment5,
+  #nomAliment6{
+    text-align:center;
+  }  
+
+
+
+  
+  </style>
+
+  <header class="masthead text-center d-flex">
+    <div class="container my-auto">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="titreUn">
+            <strong>Nom aliment</strong>
+          </h1>
+          <hr>
+        </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+   
+    <section class="bg-primary" id="about">
+    <div class="container-fluid" id="conteneurCarre">
+       <div class="row" id="row3">
+    
+           <div class="col-sm-12 col-md-4" id="block4">
+               <div id="rond"></div>
+               <style>
+                    #im11{
+                      padding:10px;
+                      width: 240px;
+                      height: 250px;
+                    }
+
+                    #save{
+                      text-align:center;
+                    }
+               </style>
+
+               
+                   <form action="aliment_det" method="post">
+                     {% csrf_token %}
+
+
+                     <input type="HIDDEN" value={{aaa}} name="produit">
+                     <div id="im1"><input type="image" id="im11" class="fit-picture" src="{{a}}"/></a></div>
+                   
+                     <div id="nomAliment1">{{aa}}</div>
+
+                    <br>
+                  </form>
+                    <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
+                
+
+
+
+
+
+
+                  
+           </div>
+
+           
+           <div class="col-sm-12 col-md-4" id="block4">
+
+               <div id="rond"></div>
+              <form action="aliment_det" method="post">
+                     {% csrf_token %}
+
+               <input type="HIDDEN" value={{bbb}} name="produit">
+                <div id="im2"><input type="image" id="im11" value={{aa}} class="fit-picture" src="{{b}}"/></a></div>
+               
+              
+               <div id="nomAliment2">{{bb}}</div>
+
+               <br>
+               <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
+             </form>
+         
+           </div>
+           
+           <div class="col-sm-12 col-md-4" id="block4">
+
+               <div id="rond"></div>
+               
+              <form action="aliment_det" method="post">
+                     {% csrf_token %}
+
+               <input type="HIDDEN" value={{ccc}} name="produit">
+                <div id="im3"><input type="image" id="im11" value={{cc}} class="fit-picture" src="{{c}}"/></a></div>
+               
+              
+               <div id="nomAliment2">{{cc}}</div>
+
+               <br>
+               <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
+             </form>
+               
+           </div>
+       
+
+           <div class="col-sm-12 col-md-4" id="block4">
+
+                <div id="rond"></div>
+                
+              <form action="aliment_det" method="post">
+                     {% csrf_token %}
+
+               <input type="HIDDEN" value={{ddd}} name="produit">
+                <div id="im4"><input type="image" id="im11" value={{dd}} class="fit-picture" src="{{d}}"/></a></div>
+               
+              
+               <div id="nomAliment2">{{dd}}</div>
+
+               <br>
+               <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
+             </form>
+                
+           </div>
+
+           
+           <div class="col-sm-12 col-md-4" id="block4">
+               <div id="rond"> </div>
+            
+              <form action="aliment_det" method="post">
+                     {% csrf_token %}
+
+               <input type="HIDDEN" value={{eee}} name="produit">
+                <div id="im5"><input type="image" id="im11" value={{ee}} class="fit-picture" src="{{e}}"/></a></div>
+               
+              
+               <div id="nomAliment2">{{ee}}</div>
+
+               <br>
+               <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
+             </form>
+               
+           </div>
+           
+           <div class="col-sm-12 col-md-4" id="block4">
+
+               <div id="rond"></div>
+               
+              <form action="aliment_det" method="post">
+                     {% csrf_token %}
+
+               <input type="HIDDEN" value={{fff}} name="produit">
+                <div id="im6"><input type="image" id="im11" value={{ff}} class="fit-picture" src="{{f}}"/></a></div>
+               
+              
+               <div id="nomAliment2">{{ff}}</div>
+
+               <br>
+               <INPUT id="save" type="checkbox" name="nom"> Sauvegarder
+             </form>
+               
+           
+         </div>
+
+            
+       </div>
+    </div>
+
+
+
+ </section>
+
+       <br><br>
+      <div class="row">
+  
+        <div class="col-lg-4 ml-auto text-center">
+      
+          <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
+          <img class="phone" id="phone" src="static/img/portfolio/bas/phone.png">
+          <p>123-456-6789</p>
+          
+        </div>
+
+        
+        <div class="col-lg-4 mr-auto text-center">
+        
+          <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
+          
+          <img class="mail" id="mail" src="static/img/portfolio/bas/mail.png">
+          <p>
+            <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+  <hr color:black>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-bot" id="mainNav">
+  
+    <div class="container">
+
+        <div class="mentions">
+          <a class="compte_top_haut_droit" id="compte_top_haut_droit" href="#">Mentions légales</a>
+        </div>
+
+          
+        <div class="contact">
+          <a class="aliments_top_haut_droit" id="aliments_top_haut_droit" href="#">Contact</a>
+        </div>
+
+    
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/static/vendor/scrollreveal/scrollreveal.min.js"></script>
+  <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/static/js/creative.min.js"></script>
+
+</body>
+
+</html>
