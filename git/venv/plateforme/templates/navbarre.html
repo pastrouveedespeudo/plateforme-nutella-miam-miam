@@ -70,25 +70,36 @@
                </a>
                
                {% if user.is_authenticated %}
-               <a href='/account/mon_compte' OnMouseOver="document.all.texte.innerText='Mon compte !'">
+               <a href='/accounts/mon_compte' OnMouseOver="document.all.texte.innerText='Mon compte !'">
                  <img id="compte" src="{% static 'img/portfolio/menu-haut/compte.png' %}">
                </a>
 
                <a href='/mes_aliments/mes_aliments' OnMouseOver="document.all.texte.innerText='Mes Aliments !'">
                  <img id="carotte" src="{% static 'img/portfolio/menu-haut/carotte.png' %}"
                </a>
-               {% endif %}
+               {% else %}
                
                
-               <a href='/account/login' OnMouseOver="document.all.texte.innerText='Se connecter !'">
+               <a href='/accounts/login' OnMouseOver="document.all.texte.innerText='Se connecter !'">
                  <img id="login" src="{% static 'img/portfolio/menu-haut/login.png' %}">
                </a>
-               
-               <a href='/account/inscription' OnMouseOver="document.all.texte.innerText='S\'inscrire !'">
-                 <img id="inscription" src="{% static 'img/portfolio/menu-haut/inscription2.png' %}">
+
+               <a href='/mes_aliments/mes_aliments' OnMouseOver="document.all.texte.innerText='Mes Aliments !'">
+                 <img id="carotte" src="{% static 'img/portfolio/menu-haut/carotte.png' %}"
                </a>
                
+               <a href='/accounts/inscription' OnMouseOver="document.all.texte.innerText='S\'inscrire !'">
+                 <img id="inscription" src="{% static 'img/portfolio/menu-haut/inscription2.png' %}">
+               </a>
+               {% endif %}
+
+               
                {% if user.is_authenticated %}
+
+               <a href='#' OnMouseOver="document.all.texte.innerText='Aide !'">
+                 <img id="carotte" src="{% static 'img/portfolio/menu-haut/yo.png' %}"
+               </a>
+               
                <a href='/accounts/logout_view' OnMouseOver="document.all.texte.innerText='Se deconnecter !'">
                  <img id="deco" src="{% static 'img/portfolio/menu-haut/deco.png' %}">
                </a>
