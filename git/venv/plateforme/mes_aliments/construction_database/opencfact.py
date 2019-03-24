@@ -94,22 +94,22 @@ class data:
                 try:
                     self.number_product = data["products"][0]['code']
                 except:
-                    self.number_product = "None"
+                    self.number_product = "No_found"
                 try:
                     self.description_product = data["products"][0]["ingredients_text_fr"]
                 except:
-                    self.description_product = "None"
+                    self.description_product = "No_found"
                
                 try:
                     self.nutriscore = data["products"][0]["nutrition_grades"]
                     print("nutriscore=",self.nutriscore)
                 except:
-                    self.nutriscore = "None"
+                    self.nutriscore = "No_found"
 
                 try:
                     self.image = data["products"][0]["image_front_url"]
                 except:
-                    self.image = "None"
+                    self.image = "No_found"
 
 
                 try:
@@ -119,71 +119,56 @@ class data:
                     else:
                         self.liste_brands.append(self.brandss)
                 except:
-                    self.brandss = "None"
-                    self.liste_brands.append("None")
+                    self.brandss = "No_found"
+                    self.liste_brands.append("No_found")
 
 
 
                 try:
                     self.store_product = data["products"][0]["stores"]
                     if self.store_product == '':
-                        self.liste_store.append("None")
+                        self.liste_store.append("No_found")
                     else:
                         self.liste_store.append(self.store_product)
                 except:
-                    self.store_product = "None"
-                    self.liste_store.append("None")
+                    self.store_product = "No_found"
+                    self.liste_store.append("No_found")
 
-
+                i = i.replace("'", "")
                 print(i)
-                print("\n")
+                self.image = self.image.replace("'", "")
                 print(self.number_product)
-                print("\n")
-                print(self.description_product)
-                print("\n")
-                print(self.nutriscore)
-                print("\n")
-                print(self.image)
-                print("\n")
-                print(d)
-                print("\n")
-                print(self.store_product)
-                print("\n")
-                print(self.brandss)
-
                 
-                self.liste[c]= self.liste[c].replace("'", " ")
-                
-                cursor.execute("INSERT INTO mes_aliments_aliment (name_aliment)\
-                                VALUES('{0}');".format(i))
-
-                cursor.execute("INSERT INTO mes_aliments_aliment (image)\
-                                VALUES('{0}');".format(self.image))
-
+                self.description_product = self.description_product.replace("'", "")
             
-                cursor.execute("INSERT INTO mes_aliments_aliment (code_product_food)\
-                                VALUES('{0}');".format(self.number_product))
+                print(self.description_product)
+                self.nutriscore = self.nutriscore.replace("'", "")
+            
+                print(self.nutriscore)
+                self.nutriscore = self.nutriscore.replace("'", "")
+           
+                print(self.image)
+                self.image = self.image.replace("'", "")
+            
+                print(d)
+               
+                print(self.store_product)
+                self.store_product = self.store_product.replace("'", "")
+            
+                print(self.brandss)
+                self.brandss = self.brandss.replace("'", "")
 
+                
+                
+                
+                cursor.execute("INSERT INTO mes_aliments_aliment (name_aliment,\
+                                image, code_product_food, description, nutriscore,\
+                                id_categorie_id, name_store, name_brand)\
+                                VALUES('{0}','{1}','{2}','{3}','{4}',{5},'{6}','{7}')"\
+                               .format(i, self.image, self.number_product, self.description_product,
+                                       self.nutriscore,
+                                       d, self.store_product,self.brandss ))
 
-                cursor.execute("INSERT INTO mes_aliments_aliment (description)\
-                                VALUES('{0}');".format(self.description_product))
-
-                cursor.execute("INSERT INTO mes_aliments_aliment (nutriscore)\
-                                VALUES('{0}');".format(self.nutriscore))
-
-
-
-
-
-                cursor.execute("INSERT INTO mes_aliments_aliment (id_categorie_id)\
-                                VALUES('{0}');".format(d))
-
-                cursor.execute("INSERT INTO mes_aliments_aliment (name_store)\
-                                VALUES('{0}')".format(self.store_product))
-
-
-                cursor.execute("INSERT INTO mes_aliments_aliment (name_brand)\
-                                VALUES('{0}');".format(self.brandss))
 
        
                 conn.commit()
