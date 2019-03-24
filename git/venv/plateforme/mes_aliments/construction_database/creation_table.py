@@ -22,8 +22,8 @@ class create_tables:
                     description TEXT not null,\
                     nutriscore VARCHAR(1) not null,\
                     image VARCHAR(100) not null,\
-                    name_store VARCHAR(60) not null,\
-                    name_brand VARCHAR(60) not null,\
+                    name_store VARCHAR(100) not null,\
+                    name_brand VARCHAR(100) not null,\
                     id_categorie_id INT not null);")
 
 
@@ -46,10 +46,10 @@ class create_tables:
                     name_aliment VARCHAR(60) not null,\
                     code_product_food VARCHAR(40) not null,\
                     description TEXT not null,\
-                    nutriscore VARCHAR(1) not null,\
+                    nutriscore VARCHAR(50) not null,\
                     image VARCHAR(100) not null,\
-                    name_store VARCHAR(60) not null,\
-                    name_brand VARCHAR(60) not null,\
+                    name_store VARCHAR(100) not null,\
+                    name_brand VARCHAR(100) not null,\
                     id_categorie_id INT not null);")
 
 
