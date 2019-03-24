@@ -2,7 +2,7 @@
 
 
 #c encore plus dur ca mouvre une page internet rooooooo et ca veut pas se connecter jy comprend rien c chiant
-
+mysql c mieux
 
 
 
