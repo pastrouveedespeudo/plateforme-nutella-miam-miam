@@ -1,8 +1,7 @@
 # plateforme-nutella-miam-miam
 
 
-#c encore plus dur ca mouvre une page internet rooooooo et ca veut pas se connecter jy comprend rien c chiant
-mysql c mieux
+#ca rend dinguo chui bloqué a cause d'une database serieux et et ca demande que voulez vous installer mec j'en sais rien xle,@498 ptetre que c important ptetre pas dans la video ils mettent 2 sec a telecharger le  truk serieux
 
 
 
