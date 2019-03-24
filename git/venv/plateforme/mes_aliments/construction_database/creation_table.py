@@ -15,16 +15,16 @@ class create_tables:
         cur = conn.cursor()
 
 
-        cur.execute("CREATE TABLE mes_aliments_aliment\
-                    (id serial PRIMARY KEY,\
-                    name_aliment VARCHAR(60) not null,\
-                    code_product_food VARCHAR(40) not null,\
-                    description TEXT not null,\
-                    nutriscore VARCHAR(1) not null,\
-                    image VARCHAR(100) not null,\
-                    name_store VARCHAR(100) not null,\
-                    name_brand VARCHAR(100) not null,\
-                    id_categorie_id INT not null);")
+        cur.execute("""CREATE TABLE mes_aliments_aliment
+                    (id serial PRIMARY KEY,
+                    name_aliment TEXT not null,
+                    code_product_food VARCHAR(40) not null,
+                    description TEXT not null,
+                    nutriscore VARCHAR(10) not null,
+                    image TEXT not null,
+                    name_store TEXT not null,
+                    name_brand TEXT not null,
+                    id_categorie_id INT not null);""")
 
 
 
@@ -41,16 +41,16 @@ class create_tables:
         cur = conn.cursor()
 
 
-        cur.execute("CREATE TABLE mes_aliments_substitut\
-                    (id serial PRIMARY KEY,\
-                    name_aliment VARCHAR(60) not null,\
-                    code_product_food VARCHAR(40) not null,\
-                    description TEXT not null,\
-                    nutriscore VARCHAR(50) not null,\
-                    image VARCHAR(100) not null,\
-                    name_store VARCHAR(100) not null,\
-                    name_brand VARCHAR(100) not null,\
-                    id_categorie_id INT not null);")
+        cur.execute("""CREATE TABLE mes_aliments_substitut
+                    (id serial PRIMARY KEY,
+                    name_aliment TEXT not null,
+                    code_product_food VARCHAR(40) not null,
+                    description TEXT not null,
+                    nutriscore VARCHAR(50) not null,
+                    image TEXT not null,
+                    name_store TEXT not null,
+                    name_brand TEXT not null,
+                    id_categorie_id INT not null);""")
 
 
 
