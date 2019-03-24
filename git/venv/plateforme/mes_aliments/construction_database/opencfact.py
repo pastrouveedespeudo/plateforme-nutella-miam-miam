@@ -1,3 +1,5 @@
+"""Here we insert data into our database from api openfactfood"""
+
 from django.shortcuts import render
 import requests
 from bs4 import BeautifulSoup
@@ -10,7 +12,7 @@ class data:
     
     def categorie(self):
 
-        conn = psycopg2.connect(database="yo",
+        conn = psycopg2.connect(database="plateforme",
                                 user="postgres",
                                 host="127.0.0.1",
                                 password="tiotio")
@@ -32,7 +34,10 @@ class data:
         for i in range(3):
             print(self.liste[c])
             
-            cursor.execute("INSERT INTO mes_aliments_categorie(name_categorie) VALUES(?)", (self.liste[c],))
+            self.liste[c] = self.liste[c].replace(" ", "_")
+            self.liste[c]= self.liste[c].replace("'", "")
+            
+            cursor.execute("INSERT INTO mes_aliments_categorie(name_categorie) VALUES ('{0}')".format(str(self.liste[c])))
             conn.commit()
             c+=3
 
@@ -40,7 +45,7 @@ class data:
     def insert_food(self):
         """Here we run api and we take informations necessary for tables insertion"""
 
-        conn = psycopg2.connect(database="yo",
+        conn = psycopg2.connect(database="plateforme",
                                 user="postgres",
                                 host="127.0.0.1",
                                 password="tiotio")
@@ -97,6 +102,7 @@ class data:
                
                 try:
                     self.nutriscore = data["products"][0]["nutrition_grades"]
+                    print("nutriscore=",self.nutriscore)
                 except:
                     self.nutriscore = "None"
 
@@ -129,12 +135,56 @@ class data:
                     self.liste_store.append("None")
 
 
+                print(i)
+                print("\n")
+                print(self.number_product)
+                print("\n")
+                print(self.description_product)
+                print("\n")
+                print(self.nutriscore)
+                print("\n")
+                print(self.image)
+                print("\n")
+                print(d)
+                print("\n")
+                print(self.store_product)
+                print("\n")
+                print(self.brandss)
+
+                
+                self.liste[c]= self.liste[c].replace("'", " ")
+                
+                cursor.execute("INSERT INTO mes_aliments_aliment (name_aliment)\
+                                VALUES('{0}');".format(i))
+
+                cursor.execute("INSERT INTO mes_aliments_aliment (image)\
+                                VALUES('{0}');".format(self.image))
+
+            
+                cursor.execute("INSERT INTO mes_aliments_aliment (code_product_food)\
+                                VALUES('{0}');".format(self.number_product))
 
 
-                cursor.execute("INSERT INTO mes_aliments_aliment (name_aliment, code_product_food,\
-                description, nutriscore, image, id_categorie_id, name_store, name_brand)\
-                VALUES(?,?,?,?,?,?,?,?)", (i, self.number_product, self.description_product, self.nutriscore, self.image, d,self.store_product,
-                                         self.brandss) )
+                cursor.execute("INSERT INTO mes_aliments_aliment (description)\
+                                VALUES('{0}');".format(self.description_product))
+
+                cursor.execute("INSERT INTO mes_aliments_aliment (nutriscore)\
+                                VALUES('{0}');".format(self.nutriscore))
+
+
+
+
+
+                cursor.execute("INSERT INTO mes_aliments_aliment (id_categorie_id)\
+                                VALUES('{0}');".format(d))
+
+                cursor.execute("INSERT INTO mes_aliments_aliment (name_store)\
+                                VALUES('{0}')".format(self.store_product))
+
+
+                cursor.execute("INSERT INTO mes_aliments_aliment (name_brand)\
+                                VALUES('{0}');".format(self.brandss))
+
        
                 conn.commit()
 
