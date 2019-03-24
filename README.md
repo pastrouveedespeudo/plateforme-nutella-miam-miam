@@ -1,10 +1,7 @@
 # plateforme-nutella-miam-miam
 
 
-#refaire la database avec postgre... merde et jvais faire comment pour mettre les aliments dans la database et tout ca ?? 
-
-#ooooooh purée ca va etre trop chaud ben moi jprefre mysql
-#mais ca ca va etre l'horreur
+#c encore plus dur ca mouvre une page internet rooooooo et ca veut pas se connecter jy comprend rien c chiant
 
 
 
