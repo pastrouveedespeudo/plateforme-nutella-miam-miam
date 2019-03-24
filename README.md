@@ -1,7 +1,13 @@
 # plateforme-nutella-miam-miam
 
 
-#ca rend dinguo chui bloqué a cause d'une database serieux et et ca demande que voulez vous installer mec j'en sais rien xle,@498 ptetre que c important ptetre pas dans la video ils mettent 2 sec a telecharger le  truk serieux
+#apres j'ai rien compris pour heroku
+
+#pcque ma database est sur internet.... et le gars de la video ben j'ai pas tout matté mais il remplit lui 
+
+#memesa database jsp on peut les lier chai pas au pire fini le projet et regarde ca a la fin, ils ont pensé a tout si dans le cours ca dit
+
+#push sur heroku a la fin ben voila c que les gars dehoriku ont pensé a tout stp dites moi qu'ils ont pensé a tout pcque 
 
 
 
