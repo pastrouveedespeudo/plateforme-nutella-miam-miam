@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.db import models
 from .algo_open import *
+from .put_nutriscore import *
 import sqlite3
 
 
@@ -48,10 +49,6 @@ def recherche(request):
         
         titre = titre_aliment(recherche)
         a = better_nutri(recherche)
-        
-  
-
-        
 
         return render(request, 'recherche.html',
                       {"a":str(a[0][3]),
@@ -75,14 +72,42 @@ def recherche(request):
                        "eee":str(a[4][4]),
                        "fff":str(a[5][4]),
 
+                       "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][2]) + ".jpg >",
+                       "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][2]) + ".jpg >",
+                       "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][2]) + ".jpg >",
+                       "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][2]) + ".jpg >",
+                       "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][2]) + ".jpg >",
+                       "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][2]) + ".jpg >",
+
                        "image":str(image[0][0]),
                        "titre":str(titre[0][0]),
                        })
-
+    return render(request, 'recherche.html')
 
 
 def mes_aliments(request):
     return render(request, 'pages/mes_aliments.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
