@@ -79,7 +79,7 @@ def better_nutri(para):
         
         cur.execute("""SELECT name_aliment, id_categorie_id, nutriscore, image,id
         FROM public.mes_aliments_aliment
-        WHERE id_categorie_id = {} and nutriscore != 'No_found'
+        WHERE id_categorie_id = {} and nutriscore != 'No_found' and image != 'No_found'
         ORDER BY nutriscore ASC""".format(indice_cat[c]))
 
         conn.commit()
@@ -122,3 +122,24 @@ def detail_aliment(value):
 
     return detail
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
