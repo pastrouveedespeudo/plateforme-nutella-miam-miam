@@ -1,11 +1,7 @@
-import sqlite3
 import psycopg2
-
 
 def image_aliment(para):
 
-    image = []
-    
     conn = psycopg2.connect(database="plateforme",
                             user="postgres",
                             host="127.0.0.1",
@@ -15,23 +11,18 @@ def image_aliment(para):
     cur = conn.cursor()
     
     cur.execute('''SELECT image, name_aliment
-                    FROM mes_aliments_aliment
-                    WHERE name_aliment = {}'''.format(para) )
+                    FROM public.mes_aliments_aliment
+                    WHERE name_aliment = "{0}"'''.format(para) )
     conn.commit()
     
     rows = cur.fetchall()
 
-
-    for i in rows:
-        image.append(i)
-        
+    image = [i for i in rows]
 
     return image
 
 def titre_aliment(para):
-    
-    titre = []
-    
+
     conn = psycopg2.connect(database="plateforme",
                             user="postgres",
                             host="127.0.0.1",
@@ -41,24 +32,20 @@ def titre_aliment(para):
     cur = conn.cursor()
 
     cur.execute('''SELECT name_aliment
-                    FROM mes_aliments_aliment
-                    WHERE name_aliment = (?)''', (para,) )
+                    FROM public.mes_aliments_aliment
+                    WHERE name_aliment = "{}"'''.format(para))
     conn.commit()
     
     rows = cur.fetchall()
 
 
-    for i in rows:
-        titre.append(i)
+    titre = [i for i in rows]
         
 
     return titre
 
 
-
 def better_nutri(para):
-
-    liste = []
 
     conn = psycopg2.connect(database="plateforme",
                             user="postgres",
@@ -68,18 +55,17 @@ def better_nutri(para):
                 
     cur = conn.cursor()
 
-    indice_cat = []
-    
 
     cur.execute('''SELECT id_categorie_id
-    FROM mes_aliments_aliment
-    WHERE name_aliment = (?)''',(para,))
+    FROM public.mes_aliments_aliment
+    WHERE name_aliment = "{}"'''.format(para))
 
     conn.commit()
 
     rows = cur.fetchall()
-    for i in rows:
-        indice_cat.append(i[0])
+
+    indice_cat = [i[0] for i in rows]
+
 
     #print(indice_cat)
 
@@ -88,16 +74,15 @@ def better_nutri(para):
     for i in indice_cat:
         
         cursor.execute('''SELECT name_aliment, id_categorie_id, nutriscore, image,id
-        FROM mes_aliments_aliment
-        WHERE id_categorie_id = (?) and nutriscore != "None"
-        ORDER BY nutriscore ASC''', (indice_cat[c],))
+        FROM public.mes_aliments_aliment
+        WHERE id_categorie_id = {} and nutriscore != "None"
+        ORDER BY nutriscore ASC'''.format(indice_cat[c]))
 
         db.commit()
         
         rows = cursor.fetchall()
-        for i in rows:
-            #print(i)
-            liste.append(i)
+
+        liste = [i for i in rows]
 
             
         c+=1
@@ -121,16 +106,15 @@ def detail_aliment(value):
     cur = conn.cursor()
 
     cur.execute('''SELECT *
-                    FROM mes_aliments_aliment
+                    FROM public.mes_aliments_aliment
                     WHERE id = (?)''', (value,) )
 
 
     conn.commit()
 
     rows = cur.fetchall()
-    for i in rows:
-        detail.append(i)
 
+    detail = [i for i in rows]
 
     return detail
 
