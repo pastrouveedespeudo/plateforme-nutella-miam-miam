@@ -5,6 +5,7 @@ import sqlite3
 
 
 
+
 def aliment_det(request):
     
     if request.method == "POST":
@@ -43,6 +44,8 @@ def recherche(request):
         print(recherche)
 
         image = image_aliment(recherche)
+
+        
         titre = titre_aliment(recherche)
         a = better_nutri(recherche)
         
@@ -50,7 +53,7 @@ def recherche(request):
 
         
 
-        return render(request, 'pages/recherche.html',
+        return render(request, 'recherche.html',
                       {"a":str(a[0][3]),
                        "b":str(a[1][3]),
                        "c":str(a[2][3]),
@@ -80,27 +83,6 @@ def recherche(request):
 
 def mes_aliments(request):
     return render(request, 'pages/mes_aliments.html')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
