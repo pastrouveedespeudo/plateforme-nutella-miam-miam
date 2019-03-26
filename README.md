@@ -2,6 +2,12 @@
 
 #finir la sauvegarde et le truk mes aliments mais jai pas compris ca jcrois
 
+#pour pas telecharger pour la eniéme fois, on clique sur l'image et on a tous les detailes
+
+#dans mon compte on enregistre les aliments
+
+#finis ca et commence a faire le jeu et tout PAR contre faut pas le montrer a la soutenance
+
 #-----avance sur rajouter des fonctionnalités
 
 #--------juste ca promis-------#
