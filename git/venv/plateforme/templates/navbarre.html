@@ -59,6 +59,13 @@
             <img  id="pur_beurre_logo" src="{% static 'img/portfolio/menu-haut/pur_beurre.png' %}">
           </a>
           <a  id="nom">Pur Beurre</a>
+
+          {% if user.is_authenticated %}
+          <div style="font-size:1.75vw;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Welcome back <strong>{{user.username}} !</strong>
+        </div>
+        {% endif %}
+
           
        </div>
         
