@@ -1,6 +1,6 @@
 # plateforme-nutella-miam-miam
 
-
+#pendant plus d'un mois ils nou bassinée avec des perso a la con pfff
 
 #-----avance sur rajouter des fonctionnalités
 
