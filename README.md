@@ -1,17 +1,6 @@
 # plateforme-nutella-miam-miam
 
 
-#apres j'ai rien compris pour heroku
-
-#pcque ma database est sur internet.... et le gars de la video ben j'ai pas tout matté mais il remplit lui 
-
-#memesa database jsp on peut les lier chai pas au pire fini le projet et regarde ca a la fin, ils ont pensé a tout si dans le cours ca dit
-
-#push sur heroku a la fin ben voila c que les gars dehoriku ont pensé a tout stp dites moi qu'ils ont pensé a tout pcque 
-
-
-
-
 
 #-----avance sur rajouter des fonctionnalités
 
