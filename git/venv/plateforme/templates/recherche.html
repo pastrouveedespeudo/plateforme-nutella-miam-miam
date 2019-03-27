@@ -2,7 +2,7 @@
 
 {% block content %}
 {% endblock %}
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <link href="/static/css/recherche.css" rel="stylesheet">
 <body id="page-top">
 
@@ -10,7 +10,7 @@
     header.masthead {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 56px);
-    background-image: url("/static/img/header1.jpg");
+    background-image: url({{image}});
     background-position: center center;
     background-size: cover;
     }
@@ -46,7 +46,7 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h1 class="titreUn">
-            <strong>Mes aliments</strong>
+            <strong>{{titre}}</strong>
           </h1>
           <hr>
         </div>
@@ -66,13 +66,18 @@
         et visualise les depuis <strong>"Mon compte"</strong>
      </div>
     {% endif %}
+
+
+
+
+
      
      
     <div class="container-fluid" id="conteneurCarre">
        <div class="row" id="row3">
     
            <div class="col-sm-12 col-md-4" id="block4">
-               <div id="rond"><img src={{aaaa}}></div>
+               <div id="rond"><img src={{aaaa}} ></div>
  
                <style>
                     #im11{
@@ -87,25 +92,55 @@
                </style>
 
                
-                   <form action="/mes_aliments/recherche" method="POST">
+                   <form action="aliment_det" method="post">
                      {% csrf_token %}
 
-                     <input type="HIDDEN" value={{aaa}} name="produit">
+
+                     <input type="HIDDEN" value={{aaa}} id="produit" name="produit">
                      <div id="im1"><input type="image" id="im11" class="fit-picture" src="{{a}}"/></a></div>
                    
                      <div id="nomAliment1">{{aa}}</div>
 
                     <br>
                   </form>
-             
+
+
+                  
+                <form action="/mes_aliments/recherche/" method="POST">
+                <div>
+                <input type="checkbox" name="saving" id="saving" value="111" />
+                
+                  
+                
+                <div id="is_save"></div>
+                  
+                
+                </form>
+                                
+                </div>
                   
            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
            
            <div class="col-sm-12 col-md-4" id="block4">
 
                <div id="rond"><img src={{bbbb}}></div>
-                <form action="/mes_aliments/recherche" method="POST">
+              <form action="aliment_det" method="post">
                      {% csrf_token %}
 
                <input type="HIDDEN" value={{bbb}} name="produit">
@@ -114,8 +149,8 @@
               
                <div id="nomAliment2">{{bb}}</div>
 
-              
-             
+               <br>
+               <input id="save" type="checkbox" name="saving" value="{{bb}}" /> Sauvegarder
              </form>
          
            </div>
@@ -124,7 +159,7 @@
 
                <div id="rond"><img src={{cccc}}></div>
                
-             <form action="/mes_aliments/recherche" method="POST">
+              <form action="aliment_det" method="post">
                      {% csrf_token %}
 
                <input type="HIDDEN" value={{ccc}} name="produit">
@@ -133,6 +168,8 @@
               
                <div id="nomAliment2">{{cc}}</div>
 
+               <br>
+               <input id="save" type="checkbox" name="saving"> Sauvegarder
              </form>
                
            </div>
@@ -142,7 +179,7 @@
 
                 <div id="rond"><img src={{dddd}}></div>
                 
-              <form action="/mes_aliments/recherche" method="POST">
+              <form action="aliment_det" method="post">
                      {% csrf_token %}
 
                <input type="HIDDEN" value={{ddd}} name="produit">
@@ -151,7 +188,8 @@
               
                <div id="nomAliment2">{{dd}}</div>
 
-    
+               <br>
+               <input id="save" type="checkbox" name="saving"> Sauvegarder
              </form>
                 
            </div>
@@ -160,7 +198,7 @@
            <div class="col-sm-12 col-md-4" id="block4">
                <div id="rond"><img src={{eeee}}></div>
             
-                <form action="/mes_aliments/recherche" method="POST">
+              <form action="aliment_det" method="post">
                      {% csrf_token %}
 
                <input type="HIDDEN" value={{eee}} name="produit">
@@ -169,7 +207,8 @@
               
                <div id="nomAliment2">{{ee}}</div>
 
-
+               <br>
+               <input type="checkbox" name="saving"> Sauvegarder
              </form>
                
            </div>
@@ -178,7 +217,7 @@
 
                <div id="rond"><img src={{ffff}}></div>
                
-              <form action="/mes_aliments/recherche" method="POST">
+              <form action="aliment_det" method="post">
                      {% csrf_token %}
 
                <input type="HIDDEN" value={{fff}} name="produit">
@@ -187,23 +226,114 @@
               
                <div id="nomAliment2">{{ff}}</div>
 
- 
+               <br>
+               <input type="checkbox" id="6" onclick="pushlist()" name="saving" value="jb"> Sauvegarder
              </form>
                
            
          </div>
 
-            
+           <div style="text-align:center;">
+           
+           </div>
        </div>
     </div>
+
+    <br><br><br>
+    
+        <form action="/mes_aliments/recherche/" method="POST">
+        <div id="enregistrer" style="text-align:center;">
+        {% csrf_token %}
+            <input type="submit" value="Enregistrer les aliments">
+        </div>
+       </form>
+ </section>
+
+
+
+<br><br>
 
 {% include "bottom_page.html" %}
 
 {% block content2 %}
-{% endblock content2%}
-
-
-
-</body>
+{% endblock content2%}</body>
 
 </html>
+
+
+
+
+
+
+                <script>
+
+                var LISTE = []
+                function pushlist(){
+                    LISTE.push(6)
+      
+                    }
+
+  
+                $(document).ready(function(){
+                  $("form").on("submit", function(e){
+              
+                      e.preventDefault();
+                      $.ajax({
+                          data:{
+                              'data[]':LISTE,
+                       
+                          },
+                          type:"POST",
+                          url:"/mes_aliments/recherche/"
+                      })
+                      .done(function(data){
+                          if (data.error){
+                              $("#monCadreAlert").text(data.error);
+                              $("#is_save");
+                          }
+                          else{
+                              $("#is_save").html(data.data);
+                              $("#monCadreAlert");
+                              
+                          };
+                          
+                      });
+                    Save();
+                    e.preventDefault();
+                  });
+                });
+                    
+                function Save(){
+
+                    document.getElementById("is_save").innerHTML = "";
+                    document.getElementById("is_save").innerHTML = '<img src="/static/img/portfolio/recherche/valider.jpg" />';
+                    var a =document.getElementById("is_save");
+                    
+                 
+                    
+                    };
+
+                </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
