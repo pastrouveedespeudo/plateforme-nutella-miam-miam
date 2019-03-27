@@ -1,4 +1,9 @@
-#msg de validation, 
+#mis des truk dans la base de l'autre
+
+#va falloir mettre des images par defaut j'espere on a le droit dutiliser js
+
+#j'ai envie de faire le truk des animo mais j'ai aussi envie de faire le jeu... 
+
 
 #faire la sauvegarde
 
