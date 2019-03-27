@@ -3,7 +3,7 @@ from django.db import models
 from .algo_open import *
 from .put_nutriscore import *
 import sqlite3
-
+from django.http import HttpResponseRedirect
 
 
 
@@ -15,7 +15,7 @@ def aliment_det(request):
         detail = detail_aliment(recherche)
         
         url_nutri = detail[0][4]
-
+        aliment = detail[0][1]
         
         print(url_nutri,"YOOOOOOOOOOOOOOOOOOOOOOOOOOO")
 
@@ -23,16 +23,18 @@ def aliment_det(request):
 
         code = detail[0][2]
         image = detail[0][5]
+        url_nutri = "/static/img/portfolio/nutriscore/" + str(detail[0][4]) + ".jpg >"
         
-        return render(request, 'pages/aliment_det.html',
+        return render(request, 'aliment_det.html',
                       {'detail':detail,
                        'url_nutri':url_nutri,
                        'code':code,
                        'image':image,
+                       'aliment': aliment
                        })
 
     else:
-        return render(request, 'pages/aliment_det.html')
+        return render(request, 'aliment_det.html')
 
 
 def recherche(request):
@@ -42,7 +44,7 @@ def recherche(request):
     if request.method == "POST":
 
         recherche = request.POST.get('cool')
-        print(recherche)
+
 
         image = image_aliment(recherche)
 
@@ -86,7 +88,7 @@ def recherche(request):
 
 
 def mes_aliments(request):
-    return render(request, 'pages/mes_aliments.html')
+    return render(request, 'mes_aliments.html')
 
 
 
