@@ -58,6 +58,16 @@
 
    
     <section class="bg-primary" id="about">
+
+    {% if user.is_authenticated %}
+    {% else %}
+     <div style="text-align:center;">
+        Connecte-toi afin de pouvoir les <strong>enregistrer</strong>
+        et visualise les depuis <strong>"Mon compte"</strong>
+     </div>
+    {% endif %}
+     
+     
     <div class="container-fluid" id="conteneurCarre">
        <div class="row" id="row3">
     
@@ -210,7 +220,7 @@
         <div class="col-lg-4 ml-auto text-center">
       
           <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-          <img class="phone" id="phone" src="static/img/portfolio/bas/phone.png">
+          <img class="phone" id="phone" src="/static/img/portfolio/bas/phone.png">
           <p>123-456-6789</p>
           
         </div>
@@ -220,7 +230,7 @@
         
           <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
           
-          <img class="mail" id="mail" src="static/img/portfolio/bas/mail.png">
+          <img class="mail" id="mail" src="/static/img/portfolio/bas/mail.png">
           <p>
             <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
           </p>
