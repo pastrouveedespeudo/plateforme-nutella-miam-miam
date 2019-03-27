@@ -1,11 +1,6 @@
 #msg de validation, 
 
-#faire une database par compte... en gros quand le mec sinscrit jcrois qu'il faut faire sa database...
-
-#chai paaaaaas ca a l'air dur ca
-
-
-#okkkk faire les substitution mtn
+#faire la sauvegarde
 
 
 
