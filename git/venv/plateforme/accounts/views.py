@@ -8,7 +8,18 @@ from django.contrib.auth import (
     logout
     )
 
+from .database_utilisateur import *
+
+
 from .forms import UserLoginForm, UserRegisterForm
+
+
+
+@login_required
+def mon_compte(request):
+    return render(request, "mon_compte.html", {}) 
+
+
 
 def essais(request):
     return render(request, "essais.html", {})
@@ -16,8 +27,6 @@ def essais(request):
 @login_required
 def essais1(request):
     return render(request, "essais1.html", {})
-
-
 
 
 
@@ -54,9 +63,11 @@ def register_view(request):
         password = form.cleaned_data.get('password')
         user.set_password(password)
         user.save()
+
+        create_database_user(user.username)
+        insert_database_user(user.username)
         new_user = authenticate(username=user.username, password=password)
 
-        
         login(request, new_user)
         
         if next:
@@ -70,8 +81,10 @@ def register_view(request):
     return render(request, 'signup.html', context)
 
 
+login_required
 def logout_view(request):
     logout(request)
+    print("déconnexion")
     return redirect('/')
 
 
