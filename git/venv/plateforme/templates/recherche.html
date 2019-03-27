@@ -110,7 +110,7 @@
                 <form action="/mes_aliments/recherche/" method="POST">
                 <div>
                 <input type="checkbox" style="width: 20px; height: 20px;"
-                "name="is_save1" id="product1" onclick="pushlist1(event)" value="{{aa}}" /> Sauvegarder
+                "name="is_save1" id="product1" onclick="pushlist1()" value="{{aa}}" /> Sauvegarder
                 
                   
                 
@@ -268,20 +268,16 @@
 
 <script>
 
-    var LISTE = []
-    var LISTE_NAME = []
-
-
-
-
+    var LISTE = ["a"];
+    var LISTE_NAME = [];
 
 
     $("#product1,#product2,#product3,#product4,#product5,#product6").on("click", function(e){
          e.preventDefault();
-         
+      
           $.ajax({
               data:{
-                  'data[]':LISTE,
+                  'data[]':LISTE[LISTE.length - 1],
            
               },
               type:"POST",
@@ -291,17 +287,20 @@
               if (data.error){
                   $("#monCadreAlert").text(data.error);
                   $("#is_save");
+                  
+                  
               }
               else{
                   $("#is_save").html(data.data);
                   $("#monCadreAlert");
                   
+                  
               };
               
           });
-    
-    });
 
+    });
+  
 
 
     
@@ -382,35 +381,7 @@
         }
 
     
-    $(document).ready(function(){
-      $("form").on("submit", function(e){
-  
-      
-          $.ajax({
-              data:{
-                  'data[]':LISTE,
-           
-              },
-              type:"POST",
-              url:"/mes_aliments/recherche/"
-          })
-          .done(function(data){
-              if (data.error){
-                  $("#monCadreAlert").text(data.error);
-                  $("#is_save");
-              }
-              else{
-                  $("#is_save").html(data.data);
-                  $("#monCadreAlert");
-                  
-              };
-              
-          });
-    
-        e.preventDefault();
-      });
-    });
-        
+
 
 
 
