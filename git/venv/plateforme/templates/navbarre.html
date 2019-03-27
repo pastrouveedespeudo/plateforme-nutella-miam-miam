@@ -50,6 +50,7 @@
             }
     </style>
     
+<form action="mes_aliments/recherche/" method="POST">
 <div class="container-fluid" id="Menu-TOP">
     <div class="row" id="row1">
 
@@ -68,12 +69,16 @@
 
           
        </div>
-        
+      
        <div class="col-md-5" id="block2">
+
            <div id="droiteMenuTop">
            
                <a>
-                 <input id="inputChercher" type="text" placeholder="Chercher"/>
+                 <input id="inputChercher" name="cool" type="text" placeholder="Chercher"/>
+                 {% csrf_token %}
+                 <input type="submit" style="background:#a6a6a6;">
+                 {% csrf_token %}
                </a>
                
                {% if user.is_authenticated %}
@@ -116,6 +121,8 @@
                <center><p id="texte"><br></p></center>
 
            </div>
-       </div>  
+       </div>
+       
     </div>
     </div>
+  </form>
