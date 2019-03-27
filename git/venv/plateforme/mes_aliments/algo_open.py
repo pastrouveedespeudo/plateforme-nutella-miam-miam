@@ -3,8 +3,7 @@ import psycopg2
 
 
 def image_aliment(para):
-    print(para,"00000000000000000000000000000000")
-    print(type(para))
+
     conn = psycopg2.connect(database="plateforme",
                             user="postgres",
                             host="127.0.0.1",
@@ -22,7 +21,7 @@ def image_aliment(para):
     rows = cur.fetchall()
 
     image = [i for i in rows]
-    print(image,"000000000000000000000000000000000123123")
+
     return image
 
 def titre_aliment(para):
@@ -45,7 +44,7 @@ def titre_aliment(para):
 
     titre = [i for i in rows]
         
-    print(titre,"123155555555555555555555555555555555555555")
+
     return titre
 
 
@@ -71,7 +70,7 @@ def better_nutri(para):
     indice_cat = [i[0] for i in rows]
 
 
-    print(indice_cat,"44444444444444444444444444444444444444444444")
+
 
 
     c = 0
@@ -91,7 +90,7 @@ def better_nutri(para):
             
         c+=1
 
-    print(liste,"74894984498498498")
+
     liste = liste[:6]
     return liste
 
@@ -109,9 +108,9 @@ def detail_aliment(value):
                 
     cur = conn.cursor()
 
-    cur.execute('''SELECT *
+    cur.execute("""SELECT *
                     FROM public.mes_aliments_aliment
-                    WHERE id = (?)''', (value,) )
+                    WHERE id = {}""".format(value))
 
 
     conn.commit()
@@ -119,7 +118,7 @@ def detail_aliment(value):
     rows = cur.fetchall()
 
     detail = [i for i in rows]
-
+    print(detail)
     return detail
 
 
