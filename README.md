@@ -1,11 +1,4 @@
-#mis des truk dans la base de l'autre
-
-#va falloir mettre des images par defaut j'espere on a le droit dutiliser js
-
-#j'ai envie de faire le truk des animo mais j'ai aussi envie de faire le jeu... 
-
-
-#faire la sauvegarde
+#c bon mais on peut pas avertir le mec quil a son quota depassé et perso ca me fait un peu iench de mettre 10 000 carrés dans mes_aliments.... mais jcrois faut en mettre que 6 alors ca va mais jpe pas lui dire
 
 
 
