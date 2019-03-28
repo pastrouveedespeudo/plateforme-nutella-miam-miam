@@ -6,6 +6,10 @@ from django.http import HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from .mes_aliments_user import *
+from django.http import HttpResponse
+from django.http import JsonResponse
+
+
 
 def aliment_det(request):
     
@@ -38,11 +42,11 @@ def aliment_det(request):
 
 @csrf_exempt
 def recherche(request):
-
+                  
     liste_recherche = []
     stock_depassé = ""
     if request.method == "POST":
-        print("ouiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
+
         recherche = request.POST.get('cool')
         username = request.POST.get('username')
         valider = request.POST.getlist('data[]')
@@ -53,18 +57,27 @@ def recherche(request):
             print("username : ",username,"recherche : ", valider)
             stock = controle_data_aliment(username)
             print(stock[1],"ajouter un produit")
-            if stock[1] == True:
-                insert_food(username, recherche)
-                
-            elif stock[1] == False:
-                
-                stock_depassé = "oups vous avez trop d'aliment en stock \
-                                supprime en ! ou remplace le !"
-                print(stock_depassé)
-            
+
+
             
         if recherche:
+            current_user = request.user
+            if current_user.is_authenticated:
+                print(request.user.username)
+                stock = controle_data_aliment(str(request.user.username))
+                print(stock[1],"ajouter un produit")
+                                
+                if stock[1] == True:
+                    insert_food(username, recherche)
+                    
+                elif stock[1] == False:
+                    
+                    stock_depassé = "oups vous avez trop d'aliment en stock \
+                                    supprime en ! ou remplace le !"
+                    
+                    print(stock_depassé)
 
+                    
             print("etape recherche")
             image = image_aliment(recherche)
             titre = titre_aliment(recherche)
@@ -101,19 +114,13 @@ def recherche(request):
 
                            "image":str(image[0][0]),
                            "titre":str(titre[0][0]),
-                           
+                           "stock_depassé":stock_depassé,
                     
                            })
 
         
     image = '/static/img/header1.jpg'
     return render(request, 'recherche.html', {'image':image})
-
-
-
-
-
-
 
 
 def mes_aliments(request):
