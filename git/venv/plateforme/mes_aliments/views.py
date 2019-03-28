@@ -8,7 +8,7 @@ from django.http import JsonResponse
 from .mes_aliments_user import *
 from django.http import HttpResponse
 from django.http import JsonResponse
-
+from .mes_aliments_preferer_user import *
 
 
 def aliment_det(request):
@@ -58,26 +58,23 @@ def recherche(request):
             stock = controle_data_aliment(username)
             print(stock[1],"ajouter un produit")
 
-
-            
+            if stock[1] == True:
+                insert_food(username, valider[0])
+                
+            elif stock[1] == False:
+                
+                stock_depassé = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
+                
+                print(stock_depassé)
+        
         if recherche:
             current_user = request.user
             if current_user.is_authenticated:
                 print(request.user.username)
                 stock = controle_data_aliment(str(request.user.username))
                 print(stock[1],"ajouter un produit")
-                                
-                if stock[1] == True:
-                    insert_food(username, recherche)
-                    
-                elif stock[1] == False:
-                    
-                    stock_depassé = "oups vous avez trop d'aliment en stock \
-                                    supprime en ! ou remplace le !"
-                    
-                    print(stock_depassé)
-
-                    
+                         
+    
             print("etape recherche")
             image = image_aliment(recherche)
             titre = titre_aliment(recherche)
@@ -123,7 +120,17 @@ def recherche(request):
     return render(request, 'recherche.html', {'image':image})
 
 
+
+
 def mes_aliments(request):
+    current_user = request.user
+
+    
+    if current_user.is_authenticated:
+        print(request.user.username)
+    food = mes_aliment_user(request.user.username)
+    display_food(food)
+    
     return render(request, 'mes_aliments.html')
 
 
