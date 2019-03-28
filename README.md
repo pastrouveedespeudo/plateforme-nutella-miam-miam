@@ -2,7 +2,7 @@
  
 #en gros c le meme truk que recherche sauf que la tu remplaces avec un update et c oki !! par conte les input ca rend moche...
 
-
+#verifie que t'as tout bien enregistrer je refais pas tout demain serieux la navbarre c horrible chaque matin 
 
 
 
