@@ -14,14 +14,16 @@ from .mes_aliments_preferer_user import *
 def aliment_det(request):
     
     if request.method == "POST":
+        print("ouiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
         recherche = request.POST.get('produit')
-
-        detail = detail_aliment(recherche)
-        
+        print(recherche,"123132132132123132132")
+     
+        detail = detail_aliment(recherche) 
         url_nutri = detail[0][4]
         aliment = detail[0][1]
         
-        print(url_nutri,"YOOOOOOOOOOOOOOOOOOOOOOOOOOO")
+        #on recherche selon l'aliment et on redef l'url nutri et aliment
+        print(aliment,"YOOOOOOOOOOOOOOOOOOOOOOOOOOO")
 
         
 
@@ -37,8 +39,33 @@ def aliment_det(request):
                        'aliment': aliment
                        })
 
-    else:
-        return render(request, 'aliment_det.html')
+
+
+
+
+    if request.POST:
+        print("ouiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
+
+    
+    return render(request, 'aliment_det.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @csrf_exempt
 def recherche(request):
@@ -127,10 +154,9 @@ def mes_aliments(request):
 
     food = mes_aliment_user(request.user.username)
     a = display_food(food)
+    print(a)
 
-    print(a[0][1],"122222222222222222222222222222222222222222222222221")
-
-
+    
     return render(request, 'mes_aliments.html',
                   {"a":str(a[0][5]),
                    "b":str(a[1][5]),
@@ -159,6 +185,13 @@ def mes_aliments(request):
                    "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][4]) + ".jpg >",
                    "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][4]) + ".jpg >",
                    "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][4]) + ".jpg >",
+
+                   "aaaaa":str(a[0][0]),
+                   "bbbbb":str(a[1][0]),
+                   "ccccc":str(a[2][0]),
+                   "ddddd":str(a[3][0]),
+                   "eeeee":str(a[4][0]),
+                   "fffff":str(a[5][0]),
 
           
             
