@@ -91,7 +91,7 @@
                      {% csrf_token %}
 
                      <input type="HIDDEN" value={{aaa}} name="produit">
-                     <div id="im1"><input type="image" id="im11" class="fit-picture" src="{{a}}"/></a></div>
+                     <div id="im1"><input type="image" onclick="choice1()" id="im1" class="fit-picture" src="{{a}}"/></a></div>
                    
                      <div id="nomAliment1">{{aa}}</div>
 
@@ -110,7 +110,7 @@
                      {% csrf_token %}
 
                <input type="HIDDEN" value={{bbb}} name="produit">
-                <div id="im2"><input type="image" id="im11" value={{aa}} class="fit-picture" src="{{b}}"/></a></div>
+                <div id="im2"><input type="image" onclick="choice2()" id="im2" value={{aa}} class="fit-picture" src="{{b}}"/></a></div>
                
               
                <div id="nomAliment2">{{bb}}</div>
@@ -129,7 +129,7 @@
                      {% csrf_token %}
 
                <input type="HIDDEN" value={{ccc}} name="produit">
-                <div id="im3"><input type="image" id="im11" value={{cc}} class="fit-picture" src="{{c}}"/></a></div>
+                <div id="im3"><input type="image" onclick="choice3()" id="im3" value={{cc}} class="fit-picture" src="{{c}}"/></a></div>
                
               
                <div id="nomAliment2">{{cc}}</div>
@@ -149,7 +149,7 @@
                      {% csrf_token %}
 
                <input type="HIDDEN" value={{ddd}} name="produit">
-                <div id="im4"><input type="image" id="im11" value={{dd}} class="fit-picture" src="{{d}}"/></a></div>
+                <div id="im4"><input type="image" onclick="choice4()" id="im4" value={{dd}} class="fit-picture" src="{{d}}"/></a></div>
                
               
                <div id="nomAliment2">{{dd}}</div>
@@ -168,7 +168,7 @@
                      {% csrf_token %}
 
                <input type="HIDDEN" value={{eee}} name="produit">
-                <div id="im5"><input type="image" id="im11" value={{ee}} class="fit-picture" src="{{e}}"/></a></div>
+                <div id="im5"><input type="image" onclick="choice5()" id="im5" value={{ee}} class="fit-picture" src="{{e}}"/></a></div>
                
               
                <div id="nomAliment2">{{ee}}</div>
@@ -183,18 +183,23 @@
 
                <div id="rond"><img src={{ffff}}></div>
                
-              <form action="aliment_det" method="post">
-                     {% csrf_token %}
+              
 
                <input type="HIDDEN" value={{fff}} name="produit">
-                <div id="im6"><input type="image" id="im11" value={{ff}} class="fit-picture" src="{{f}}"/></a></div>
+                <div id="im6"><input type="image" onclick="choice6()" id="im6" value={{ff}} class="fit-picture" src="{{f}}"/>
+
+                <div id="yo">
+                </div>
+
+
+                </div>
                
               
                <div id="nomAliment2">{{ff}}</div>
 
                <br>
           
-             </form>
+      
                
            
          </div>
@@ -213,3 +218,154 @@
 </body>
 
 </html>
+
+
+<script>
+
+    function choice1(){
+
+        document.getElementById("im1").innerHTML = "<br><br>\
+                                                    <img src={{a}} style='width:30%; height:30%;'>\
+                                                    <br><br>\
+                                                    <a href='' style='color:black;'>Détails de l\aliment</a>\
+                                                    <br>\
+                                                    <a href='' style='color:black;'>Remplacer cette aliment</a><br>\
+                                                    <a href='' style='color:black;'>Enfete non rien</a>"
+
+
+
+        }
+    function choice2(){
+
+        document.getElementById("im2").innerHTML = "<br><br>\
+                                                    <img src={{b}} style='width:30%; height:30%;'>\
+                                                    <br><br>\
+                                                    <a href='' style='color:black;'>Détails de l\aliment</a>\
+                                                    <br>\
+                                                    <a href='' style='color:black;'>Remplacer cette aliment</a><br>\
+                                                    <a href='' style='color:black;'>Enfete non rien</a>"
+
+
+
+        }
+
+    function choice3(){
+
+        document.getElementById("im3").innerHTML = "<br><br>\
+                                                    <img src={{c}} style='width:30%; height:30%;'>\
+                                                    <br><br>\
+                                                    <a href='' style='color:black;'>Détails de l\aliment</a>\
+                                                    <br>\
+                                                    <a href='' style='color:black;'>Remplacer cette aliment</a><br>\
+                                                    <a href='' style='color:black;'>Enfete non rien</a>"
+
+
+
+        }
+
+    function choice4(){
+
+        document.getElementById("im4").innerHTML = "<br><br>\
+                                                    <img src={{d}} style='width:30%; height:30%;'>\
+                                                    <br><br>\
+                                                    <a href='' style='color:black;'>Détails de l\aliment</a>\
+                                                    <br>\
+                                                    <a href='' style='color:black;'>Remplacer cette aliment</a><br>\
+                                                    <a href='' style='color:black;'>Enfete non rien</a>"
+
+
+
+        }
+
+    function choice5(){
+
+        document.getElementById("im5").innerHTML = "<br><br>\
+                                                    <img src={{e}} style='width:30%; height:30%;'>\
+                                                    <br><br>\
+                                                    <a href='' style='color:black;'>Détails de l\aliment</a>\
+                                                    <br>\
+                                                    <a href='' style='color:black;'>Remplacer cette aliment</a><br>\
+                                                    <a href='' style='color:black;'>Enfete non rien</a>"
+
+
+
+        }
+
+
+    function choice6(){
+
+        document.getElementById("im6").innerHTML = "<br><br>\
+                                                    <img src={{f}} style='width:30%; height:30%;'>\
+                                                    <br><br>\
+                                                    <a href='' style='color:black;'>Détails de l\aliment</a>\
+                                                    <br>\
+                                                    <a href='' style='color:black;'>Remplacer cette aliment</a><br>\
+                                                    <a href='' style='color:black;'>Enfete non rien</a>"
+
+
+
+        }
+    
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
