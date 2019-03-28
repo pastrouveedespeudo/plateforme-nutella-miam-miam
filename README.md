@@ -1,6 +1,10 @@
-#chui pas sur mais jcrois chui entrain de me gourer je creer une database de mec dans ma database
+#quand le mec appuie sur son aliment préféré il a le choix entre:
+ 
+#les detailes
 
-#pas grave au pire jferai une alternative... puis ca marche
+#ou le remplacer
+
+
 
 
 
