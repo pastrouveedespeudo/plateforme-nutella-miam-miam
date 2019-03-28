@@ -38,23 +38,31 @@ def insert_food(username, food_name):
                 
     cur = conn.cursor()
 
-    cur.execute("""select from public.mes_aliments_aliment.id
-                where name_aliment = '{}' """.format(food_name)
-                    
-
-    conn.commit()
-
-
-    rows = cur.fetchall()
-    id_aliment = [i for i in rows]
-
 
 
     cur.execute("""INSERT INTO aliment_de_{}
-                    (name_aliment, username, id_aliment)
-                    VALUES ('{}', '{}', {});""".format(username, food_name, username, id_aliment[0]))
+                    (name_aliment, username)
+                    VALUES ('{}', '{}');""".format(username, food_name, username))
 
 
 
     conn.commit()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
