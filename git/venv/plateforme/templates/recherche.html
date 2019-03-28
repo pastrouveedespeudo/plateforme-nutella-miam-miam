@@ -2,6 +2,7 @@
 
 {% block content %}
 {% endblock %}
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <link href="/static/css/recherche.css" rel="stylesheet">
 <body id="page-top">
@@ -60,15 +61,18 @@
     <section class="bg-primary" id="about">
 
     {% if user.is_authenticated %}
-    <div id="user" value={{user.username}}>{{user.username}}
-    </div>
-    <div>{{stock_depassé}}
-    </div>
+    
+        <div id="user" value={{user.username}}>{{user.username}}</div>
+        
+        <div id="stock">{{stock_depassé}}</div>
+        
     {% else %}
-     <div style="text-align:center;">
-        Connecte-toi afin de pouvoir les <strong>enregistrer</strong>
-        et visualise les depuis <strong>"Mon compte"</strong>
-     </div>
+    
+         <div style="text-align:center;">
+            Connecte-toi afin de pouvoir les <strong>enregistrer</strong>
+            et visualise les depuis <strong>"Mon compte"</strong>
+         </div>
+     
     {% endif %}
 
 
@@ -325,11 +329,26 @@
         USER.push(c)
         LISTE.push(a)
         LISTE_NAME.push(b)
-        document.getElementById("is_save1").innerHTML = "";
-        document.getElementById("is_save1").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
-        +'  <i>Enregistrement effectué</i>';
+        
+        d = document.getElementById("stock").innerHTML;
+        console.log(d)
 
+        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
+            console.log("trop d\'aliment pour ce compte")
+            document.getElementById("is_save1").innerHTML = "";
+            document.getElementById("is_save1").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
+        +'  <i>Vous avez trop d\'alement</i>';
         }
+        else{
+            document.getElementById("is_save1").innerHTML = "";
+            document.getElementById("is_save1").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
+        +'  <i>Enregistrement effectué</i>';
+        };
+        };
+        
+
+
+        
 
     
     function pushlist2(){
@@ -340,11 +359,22 @@
         USER.push(c)
         LISTE.push(a)
         LISTE_NAME.push(b)
-        document.getElementById("is_save2").innerHTML = "";
-        document.getElementById("is_save2").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
-        +'  <i>Enregistrement effectué</i>';
+        
+        d = document.getElementById("stock").innerHTML;
+        console.log(d)
 
+        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
+            console.log("trop d\'aliment pour ce compte")
+            document.getElementById("is_save2").innerHTML = "";
+            document.getElementById("is_save2").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
+        +'  <i>Vous avez trop d\'alement</i>';
         }
+        else{
+            document.getElementById("is_save2").innerHTML = "";
+            document.getElementById("is_save2").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
+        +'  <i>Enregistrement effectué</i>';
+        };
+        };
 
     function pushlist3(){
         
@@ -354,11 +384,22 @@
         USER.push(c)
         LISTE.push(a)
         LISTE_NAME.push(b)
-        document.getElementById("is_save3").innerHTML = "";
-        document.getElementById("is_save3").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
-        +'  <i>Enregistrement effectué</i>';
+        
+        d = document.getElementById("stock").innerHTML;
+        console.log(d)
 
+        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
+            console.log("trop d\'aliment pour ce compte")
+            document.getElementById("is_save3").innerHTML = "";
+            document.getElementById("is_save3").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
+        +'  <i>Vous avez trop d\'alement</i>';
         }
+        else{
+            document.getElementById("is_save3").innerHTML = "";
+            document.getElementById("is_save3").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
+        +'  <i>Enregistrement effectué</i>';
+        };
+        };
 
 
     function pushlist4(){
@@ -369,12 +410,22 @@
         USER.push(c)
         LISTE.push(a)
         LISTE_NAME.push(b)
-        document.getElementById("is_save4").innerHTML = "";
-        document.getElementById("is_save4").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
-        +'  <i>Enregistrement effectué</i>';
+        
+        d = document.getElementById("stock").innerHTML;
+        console.log(d)
 
+        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
+            console.log("trop d\'aliment pour ce compte")
+            document.getElementById("is_save4").innerHTML = "";
+            document.getElementById("is_save4").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
+        +'  <i>Vous avez trop d\'alement</i>';
         }
-    
+        else{
+            document.getElementById("is_save4").innerHTML = "";
+            document.getElementById("is_save4").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
+        +'  <i>Enregistrement effectué</i>';
+        };
+        };
     function pushlist5(){
         
         var a = document.getElementById("product5").value;
@@ -383,11 +434,22 @@
         USER.push(c)
         LISTE.push(a)
         LISTE_NAME.push(b)
-        document.getElementById("is_save5").innerHTML = "";
-        document.getElementById("is_save5").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
-        +'  <i>Enregistrement effectué</i>';
+        
+        d = document.getElementById("stock").innerHTML;
+        console.log(d)
 
+        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
+            console.log("trop d\'aliment pour ce compte")
+            document.getElementById("is_save5").innerHTML = "";
+            document.getElementById("is_save5").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
+        +'  <i>Vous avez trop d\'alement</i>';
         }
+        else{
+            document.getElementById("is_save5").innerHTML = "";
+            document.getElementById("is_save5").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
+        +'  <i>Enregistrement effectué</i>';
+        };
+        };
 
     function pushlist6(){
         
@@ -398,15 +460,51 @@
         LISTE.push(a)
         LISTE_NAME.push(b)
   
-        
-        document.getElementById("is_save6").innerHTML = "";
-        document.getElementById("is_save6").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
-        +'  <i>Enregistrement effectué</i>';
+        d = document.getElementById("stock").innerHTML;
+        console.log(d)
 
+        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
+            console.log("trop d\'aliment pour ce compte")
+            document.getElementById("is_save6").innerHTML = "";
+            document.getElementById("is_save6").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
+        +'  <i>Vous avez trop d\'alement</i>';
         }
+        else{
+            document.getElementById("is_save6").innerHTML = "";
+            document.getElementById("is_save6").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
+        +'  <i>Enregistrement effectué</i>';
+        };
+        };
 
     
-
+    var c = document.getElementById("user").innerHTML;
+    USER.push(c)
+    console.log(USER)
+ 
+      
+      $.ajax({
+          data:{
+              'username':USER[USER.length - 1],
+       
+          },
+          type:"POST",
+          url:"/mes_aliments/recherche/"
+      })
+      .done(function(data){
+          if (data.error){
+              $("#monCadreAlert").text(data.error);
+              $("#stock");
+              
+              
+          }
+          else{
+              $("#stock").html(data.data);
+              $("#monCadreAlert");
+              
+              
+          };
+          
+      });
 
 
 
