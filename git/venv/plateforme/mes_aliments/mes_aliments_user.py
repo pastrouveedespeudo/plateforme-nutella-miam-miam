@@ -20,7 +20,7 @@ def controle_data_aliment(username):
     rows = cur.fetchall()
 
     count_food = [i for i in rows]
-    print(count_food[0][0],"fooooooooooooooooooooooooooooooooooooooood")
+
     if count_food[0][0] >= 6:
         return "nombre de produit suppérieur a 6", False
     
@@ -28,8 +28,8 @@ def controle_data_aliment(username):
         return "stockage du produit possible", True
 
 
-def insert_food(username, food_name):
-    
+def insert_food(username, food_name, id_aliment):
+
     conn = psycopg2.connect(database="plateforme",
                             user="postgres",
                             host="127.0.0.1",
@@ -40,11 +40,29 @@ def insert_food(username, food_name):
 
 
 
-    cur.execute("""INSERT INTO aliment_de_{0}
-                    (name_aliment)
-                    VALUES ('{1}');
-                );""".format(username, food_name))
+    cur.execute("""INSERT INTO aliment_de_{}
+                    (name_aliment, username, id_aliment)
+                    VALUES ('{}', '{}', {});""".format(username, food_name, username, id_aliment))
 
 
 
     conn.commit()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
