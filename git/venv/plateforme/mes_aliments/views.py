@@ -1,12 +1,11 @@
 from django.shortcuts import render
 from django.db import models
 from .algo_open import *
-from .put_nutriscore import *
 import sqlite3
 from django.http import HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
-
+from .mes_aliments_user import *
 
 def aliment_det(request):
     
@@ -41,19 +40,36 @@ def aliment_det(request):
 def recherche(request):
 
     liste_recherche = []
-    
+    stock_depassé = ""
     if request.method == "POST":
         print("ouiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
         recherche = request.POST.get('cool')
+        username = request.POST.get('username')
         valider = request.POST.getlist('data[]')
-        print(valider,"00000000000000000000000000000000000000")
-        if recherche:
-            image = image_aliment(recherche)
 
+
+        if valider and username:
             
+            print("username : ",username,"recherche : ", valider)
+            stock = controle_data_aliment(username)
+            print(stock[1],"ajouter un produit")
+            if stock[1] == True:
+                insert_food(username, recherche)
+                
+            elif stock[1] == False:
+                
+                stock_depassé = "oups vous avez trop d'aliment en stock \
+                                supprime en ! ou remplace le !"
+                print(stock_depassé)
+            
+            
+        if recherche:
+
+            print("etape recherche")
+            image = image_aliment(recherche)
             titre = titre_aliment(recherche)
             a = better_nutri(recherche)
-            cc ="cccc"
+            
             return render(request, 'recherche.html',
                           {"a":str(a[0][3]),
                            "b":str(a[1][3]),
@@ -85,23 +101,19 @@ def recherche(request):
 
                            "image":str(image[0][0]),
                            "titre":str(titre[0][0]),
-                           'c':cc
+                           
+                    
                            })
-##        else:
-##            print("ouiiiiiiiiiiiiii798789978")
-##            valider = request.POST.getlist('saving')
-##            print(valider,"000000000000000000000000000000000000000084")
-##            if valider:
-##                print("ouiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii", valider)
-##                enregistrer = '<img src="/static/img/portfolio/recherche/valider.jpg"\
-##                        style ="width=10%;" >\
-##                        A été enregistré'
-##
-##                return render(request, 'recherche.html',{'enregistrer':enregistrer})
 
-                        
+        
     image = '/static/img/header1.jpg'
     return render(request, 'recherche.html', {'image':image})
+
+
+
+
+
+
 
 
 def mes_aliments(request):
