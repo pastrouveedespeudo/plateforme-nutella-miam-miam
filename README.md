@@ -1,6 +1,6 @@
 #c bon mais on peut pas avertir le mec quil a son quota depassé et perso ca me fait un peu iench de mettre 10 000 carrés dans mes_aliments.... mais jcrois faut en mettre que 6 alors ca va mais jpe pas lui dire
 
-
+#sinon le faire en js connection database et tout... mais ca chai pas faire
 
 
 
