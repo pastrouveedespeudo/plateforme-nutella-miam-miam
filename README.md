@@ -1,7 +1,6 @@
-#si le mec a + de 6 truk et qui click sur save on met une croix rouge
+#en gros le mec sur ces aliments il click sur un et ca remet la recherche merde j'ai rien compris jcrois
 
-#mettre les aliments du mec dans ces aliments
-
+#ok le mec et sur ces aliments il clique sur un et on lui reaffiche les truks comme le truk et il choisit c kiffant ca mere ce truk
 
 
 #-----avance sur rajouter des fonctionnalités
