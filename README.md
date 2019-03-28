@@ -1,8 +1,6 @@
-#quand le mec appuie sur son aliment préféré il a le choix entre:
+#faire aliment remplacer et faire le jeu + les 2 autres truks!
  
-#les detailes
-
-#ou le remplacer
+#en gros c le meme truk que recherche sauf que la tu remplaces avec un update et c oki !! par conte les input ca rend moche...
 
 
 
