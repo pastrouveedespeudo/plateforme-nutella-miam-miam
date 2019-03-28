@@ -1,5 +1,8 @@
 #chui pas sur mais jcrois chui entrain de me gourer je creer une database de mec dans ma database
 
+#pas grave au pire jferai une alternative... puis ca marche
+
+
 
 #-----avance sur rajouter des fonctionnalités
 
