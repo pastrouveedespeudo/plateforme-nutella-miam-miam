@@ -60,7 +60,10 @@
     <section class="bg-primary" id="about">
 
     {% if user.is_authenticated %}
-    <div id="user" value={{user.username}}>{{user.username}}</div>
+    <div id="user" value={{user.username}}>{{user.username}}
+    </div>
+    <div>{{stock_depassé}}
+    </div>
     {% else %}
      <div style="text-align:center;">
         Connecte-toi afin de pouvoir les <strong>enregistrer</strong>
@@ -288,6 +291,7 @@
           $.ajax({
               data:{
                   'data[]':LISTE[LISTE.length - 1],
+                  'username':USER[USER.length - 1],
            
               },
               type:"POST",
@@ -312,38 +316,7 @@
     });
   
 
-    $("#product1,#product2,#product3,#product4,#product5,#product6").on("click", function(e){
-         e.preventDefault();
-         console.log(USER);
-         console.log(USER[USER.length - 1])
-         
-      
-          $.ajax({
-              data:{
-                  'username':USER[USER.length - 1],
-           
-              },
-              type:"POST",
-              url:"/mes_aliments/recherche/"
-          })
-          .done(function(data){
-              if (data.error){
-                  $("#monCadreAlert").text(data.error);
-                  $("#a");
-                  
-                  
-              }
-              else{
-                  $("#a").html(data.data);
-                  $("#monCadreAlert");
-                  
-                  
-              };
-              
-          });
 
-    });
-    
     function pushlist1(){
         
         var a = document.getElementById("product1").value;
@@ -433,6 +406,7 @@
         }
 
     
+
 
 
 
