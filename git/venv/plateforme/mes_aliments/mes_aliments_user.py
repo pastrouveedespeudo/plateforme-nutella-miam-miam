@@ -28,7 +28,7 @@ def controle_data_aliment(username):
         return "stockage du produit possible", True
 
 
-def insert_food(username, food_name, id_aliment):
+def insert_food(username, food_name):
 
     conn = psycopg2.connect(database="plateforme",
                             user="postgres",
@@ -38,31 +38,23 @@ def insert_food(username, food_name, id_aliment):
                 
     cur = conn.cursor()
 
-
-
-    cur.execute("""INSERT INTO aliment_de_{}
-                    (name_aliment, username, id_aliment)
-                    VALUES ('{}', '{}', {});""".format(username, food_name, username, id_aliment))
-
-
+    cur.execute("""select from public.mes_aliments_aliment.id
+                where name_aliment = '{}' """.format(food_name)
+                    
 
     conn.commit()
 
 
+    rows = cur.fetchall()
+    id_aliment = [i for i in rows]
 
 
 
+    cur.execute("""INSERT INTO aliment_de_{}
+                    (name_aliment, username, id_aliment)
+                    VALUES ('{}', '{}', {});""".format(username, food_name, username, id_aliment[0]))
 
 
 
-
-
-
-
-
-
-
-
-
-
+    conn.commit()
 
