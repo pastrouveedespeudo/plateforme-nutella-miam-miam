@@ -106,20 +106,23 @@
                   </form>
 
 
-                  
+                {% if user.is_authenticated %}
                 <form action="/mes_aliments/recherche/" method="POST">
-                <div>
-                <input type="checkbox" style="width: 20px; height: 20px;"
-                "name="is_save1" id="product1" onclick="pushlist1()" value="{{aa}}" /> Sauvegarder
-                
-                  
-                
-                <div id="is_save1"></div>
-                  
-                
+                    
+                    <div>
+                        <input type="checkbox" style="width: 20px; height: 20px;"
+                            "name="is_save1" id="product1" onclick="pushlist1()" value="{{aa}}"
+                        /> Sauvegarder
+                    
+                        <div id="is_save1"></div>
+
+                    
+                      
+                    </div>
                 </form>
+                {% endif %}
                                 
-                </div>
+                
                   
            </div>
 
@@ -142,9 +145,11 @@
                <div id="nomAliment2">{{bb}}</div>
 
                <br>
+               {% if user.is_authenticated %}
                 <input type="checkbox" style="width: 20px; height: 20px;"
                id="product2" onclick="pushlist2()" name="is_save2" value="{{bb}}" /> Sauvegarder
                <div id="is_save2"></div>
+               {% endif %}
              </form>
          
            </div>
@@ -152,7 +157,8 @@
            <div class="col-sm-12 col-md-4" id="block4">
 
                <div id="rond"><img src={{cccc}}></div>
-               
+
+            
               <form action="aliment_det" method="post">
                      {% csrf_token %}
 
@@ -161,11 +167,13 @@
                
               
                <div id="nomAliment2">{{cc}}</div>
-
+            
                <br>
+               {% if user.is_authenticated %}
                 <input type="checkbox" style="width: 20px; height: 20px;"
                id="product3" onclick="pushlist3()" value="{{cc}}" name="is_save3"> Sauvegarder
                <div id="is_save3"></div>
+               {% endif %}
              </form>
                
            </div>
@@ -185,9 +193,11 @@
                <div id="nomAliment2">{{dd}}</div>
 
                <br>
+               {% if user.is_authenticated %}
               <input type="checkbox" style="width: 20px; height: 20px;"
                id="product4" onclick="pushlist4()" value="{{dd}}" name="is_save4"> Sauvegarder
                <div id="is_save4"></div>
+               {% endif %}
              </form>
                 
            </div>
@@ -206,9 +216,11 @@
                <div id="nomAliment2">{{ee}}</div>
 
                <br>
+               {% if user.is_authenticated %}
                 <input type="checkbox" style="width: 20px; height: 20px;"
                id="product5" onclick="pushlist5()" value="{{ee}}"name="is_save5"> Sauvegarder
                <div id="is_save5"></div>
+               {% endif %}
              </form>
                
            </div>
@@ -226,9 +238,11 @@
                <div id="nomAliment2">{{ff}}</div>
 
                <br>
+               {% if user.is_authenticated %}
                 <input type="checkbox" style="width: 20px; height: 20px;"
                id="product6" onclick="pushlist6()" name="is_save6" value='{{ff}}'/> Sauvegarder
                <div id="is_save6"></div>
+               {% endif %}
              </form>
                
            
@@ -242,12 +256,7 @@
 
     <br><br><br>
     
-        <form action="/mes_aliments/recherche/" method="POST">
-        <div id="enregistrer" style="text-align:center;">
-        {% csrf_token %}
-            <input type="submit" value="Enregistrer les aliments">
-        </div>
-       </form>
+
  </section>
 
 
