@@ -60,7 +60,7 @@
     <section class="bg-primary" id="about">
 
     {% if user.is_authenticated %}
-    {{user.email}}
+    <div id="user" value={{user.username}}>{{user.username}}</div>
     {% else %}
      <div style="text-align:center;">
         Connecte-toi afin de pouvoir les <strong>enregistrer</strong>
@@ -253,7 +253,7 @@
            </div>
        </div>
     </div>
-
+    <div id="a"></div>
     <br><br><br>
     
 
@@ -279,6 +279,7 @@
 
     var LISTE = ["a"];
     var LISTE_NAME = [];
+    var USER = ["b"];
 
 
     $("#product1,#product2,#product3,#product4,#product5,#product6").on("click", function(e){
@@ -311,12 +312,44 @@
     });
   
 
+    $("#product1,#product2,#product3,#product4,#product5,#product6").on("click", function(e){
+         e.preventDefault();
+         console.log(USER);
+         console.log(USER[USER.length - 1])
+         
+      
+          $.ajax({
+              data:{
+                  'username':USER[USER.length - 1],
+           
+              },
+              type:"POST",
+              url:"/mes_aliments/recherche/"
+          })
+          .done(function(data){
+              if (data.error){
+                  $("#monCadreAlert").text(data.error);
+                  $("#a");
+                  
+                  
+              }
+              else{
+                  $("#a").html(data.data);
+                  $("#monCadreAlert");
+                  
+                  
+              };
+              
+          });
 
+    });
     
     function pushlist1(){
         
         var a = document.getElementById("product1").value;
         var b = document.getElementById("product1").name;
+        var c = document.getElementById("user").innerHTML;
+        USER.push(c)
         LISTE.push(a)
         LISTE_NAME.push(b)
         document.getElementById("is_save1").innerHTML = "";
@@ -330,6 +363,8 @@
         
         var a = document.getElementById("product2").value;
         var b = document.getElementById("product2").name;
+        var c = document.getElementById("user").innerHTML;
+        USER.push(c)
         LISTE.push(a)
         LISTE_NAME.push(b)
         document.getElementById("is_save2").innerHTML = "";
@@ -342,6 +377,8 @@
         
         var a = document.getElementById("product3").value;
         var b = document.getElementById("product3").name;
+        var c = document.getElementById("user").innerHTML;
+        USER.push(c)
         LISTE.push(a)
         LISTE_NAME.push(b)
         document.getElementById("is_save3").innerHTML = "";
@@ -355,6 +392,8 @@
         
         var a = document.getElementById("product4").value;
         var b = document.getElementById("product4").name;
+        var c = document.getElementById("user").innerHTML;
+        USER.push(c)
         LISTE.push(a)
         LISTE_NAME.push(b)
         document.getElementById("is_save4").innerHTML = "";
@@ -367,6 +406,8 @@
         
         var a = document.getElementById("product5").value;
         var b = document.getElementById("product5").name;
+        var c = document.getElementById("user").innerHTML;
+        USER.push(c)
         LISTE.push(a)
         LISTE_NAME.push(b)
         document.getElementById("is_save5").innerHTML = "";
@@ -379,6 +420,8 @@
         
         var a = document.getElementById("product6").value;
         var b = document.getElementById("product6").name;
+        var c = document.getElementById("user").innerHTML;
+        USER.push(c)
         LISTE.push(a)
         LISTE_NAME.push(b)
   
