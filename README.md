@@ -1,6 +1,4 @@
-#en gros le mec sur ces aliments il click sur un et ca remet la recherche merde j'ai rien compris jcrois
-
-#ok le mec et sur ces aliments il clique sur un et on lui reaffiche les truks comme le truk et il choisit c kiffant ca mere ce truk
+#chui pas sur mais jcrois chui entrain de me gourer je creer une database de mec dans ma database
 
 
 #-----avance sur rajouter des fonctionnalités
