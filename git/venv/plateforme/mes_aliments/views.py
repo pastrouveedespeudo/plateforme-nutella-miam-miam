@@ -125,13 +125,44 @@ def recherche(request):
 def mes_aliments(request):
     current_user = request.user
 
-    
-    if current_user.is_authenticated:
-        print(request.user.username)
     food = mes_aliment_user(request.user.username)
-    display_food(food)
-    
-    return render(request, 'mes_aliments.html')
+    a = display_food(food)
+
+    print(a[0][1],"122222222222222222222222222222222222222222222222221")
+
+
+    return render(request, 'mes_aliments.html',
+                  {"a":str(a[0][5]),
+                   "b":str(a[1][5]),
+                   "c":str(a[2][5]),
+                   "d":str(a[3][5]),
+                   "e":str(a[4][5]),
+                   "f":str(a[5][5]),
+                   
+                   "aa":str(a[0][1]),
+                   "bb":str(a[1][1]),
+                   "cc":str(a[2][1]),
+                   "dd":str(a[3][1]),
+                   "ee":str(a[4][1]),
+                   "ff":str(a[5][1]),
+                   
+                   "aaa":str(a[0][4]),
+                   "bbb":str(a[1][4]),
+                   "ccc":str(a[2][4]),
+                   "ddd":str(a[3][4]),
+                   "eee":str(a[4][4]),
+                   "fff":str(a[5][4]),
+
+                   "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][4]) + ".jpg >",
+                   "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][4]) + ".jpg >",
+                   "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][4]) + ".jpg >",
+                   "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][4]) + ".jpg >",
+                   "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][4]) + ".jpg >",
+                   "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][4]) + ".jpg >",
+
+          
+            
+                   })
 
 
 
