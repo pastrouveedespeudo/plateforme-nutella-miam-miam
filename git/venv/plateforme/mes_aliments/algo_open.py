@@ -101,7 +101,7 @@ def better_nutri(para):
 
     liste = liste[:6]
     liste[0] = aliment_recherché[0]
-    print(liste)
+   
     return liste
 
 
@@ -128,11 +128,56 @@ def detail_aliment(value):
     rows = cur.fetchall()
 
     detail = [i for i in rows]
-    print(detail)
+  
     return detail
 
 
 
+def replace(para):
+
+    conn = psycopg2.connect(database="plateforme",
+                            user="postgres",
+                            host="127.0.0.1",
+                            password="tiotio")
+
+                
+    cur = conn.cursor()
+
+
+    cur.execute("""SELECT id_categorie_id
+    FROM public.mes_aliments_aliment
+    WHERE name_aliment = '{}'""".format(para))
+
+    conn.commit()
+
+    rows = cur.fetchall()
+    
+    indice_cat = [i[0] for i in rows]
+
+
+    c = 0
+    for i in indice_cat:
+        
+        cur.execute("""SELECT name_aliment, id_categorie_id, nutriscore, image,id
+        FROM public.mes_aliments_aliment
+        WHERE id_categorie_id = {} and nutriscore != 'No_found' and image != 'No_found'
+        and name_aliment != '{}'
+        ORDER BY nutriscore ASC""".format(indice_cat[c], para))
+
+        conn.commit()
+        
+        rows = cur.fetchall()
+
+        liste = [i for i in rows]
+
+            
+        c+=1
+
+
+    liste = liste[:6]
+ 
+   
+    return liste
 
 
 
