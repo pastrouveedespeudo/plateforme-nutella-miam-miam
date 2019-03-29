@@ -9,7 +9,7 @@ from .mes_aliments_user import *
 from django.http import HttpResponse
 from django.http import JsonResponse
 from .mes_aliments_preferer_user import *
-
+from django.shortcuts import redirect
 
 def aliment_det(request):
     
@@ -39,30 +39,11 @@ def aliment_det(request):
                        'aliment': aliment
                        })
 
-
-
-
-
     if request.POST:
         print("ouiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
 
     
     return render(request, 'aliment_det.html')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -157,52 +138,47 @@ def recherche(request):
 def mes_aliments(request):
     current_user = request.user
 
+    
     food = mes_aliment_user(request.user.username)
     a = display_food(food)
-  
-
-    
-    return render(request, 'mes_aliments.html',
-                  {"a":str(a[0][5]),
-                   "b":str(a[1][5]),
-                   "c":str(a[2][5]),
-                   "d":str(a[3][5]),
-                   "e":str(a[4][5]),
-                   "f":str(a[5][5]),
-                   
-                   "aa":str(a[0][1]),
-                   "bb":str(a[1][1]),
-                   "cc":str(a[2][1]),
-                   "dd":str(a[3][1]),
-                   "ee":str(a[4][1]),
-                   "ff":str(a[5][1]),
-                   
-                   "aaa":str(a[0][4]),
-                   "bbb":str(a[1][4]),
-                   "ccc":str(a[2][4]),
-                   "ddd":str(a[3][4]),
-                   "eee":str(a[4][4]),
-                   "fff":str(a[5][4]),
-
-                   "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][4]) + ".jpg >",
-                   "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][4]) + ".jpg >",
-                   "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][4]) + ".jpg >",
-                   "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][4]) + ".jpg >",
-                   "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][4]) + ".jpg >",
-                   "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][4]) + ".jpg >",
-
-                   "aaaaa":str(a[0][0]),
-                   "bbbbb":str(a[1][0]),
-                   "ccccc":str(a[2][0]),
-                   "ddddd":str(a[3][0]),
-                   "eeeee":str(a[4][0]),
-                   "fffff":str(a[5][0]),
-
-          
-            
-                   })
+    print(a)
+    try:
+        return render(request, 'mes_aliments.html',
+                      {"a":str(a[0][5]),
+                       "b":str(a[1][5]),
+                       "c":str(a[2][5]),
+                       "d":str(a[3][5]),
+                       "e":str(a[4][5]),
+                       "f":str(a[5][5]),
+                       
+                       "aa":str(a[0][1]),
+                       "bb":str(a[1][1]),
+                       "cc":str(a[2][1]),
+                       "dd":str(a[3][1]),
+                       "ee":str(a[4][1]),
+                       "ff":str(a[5][1]),
 
 
+                       "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][4]) + ".jpg >",
+                       "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][4]) + ".jpg >",
+                       "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][4]) + ".jpg >",
+                       "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][4]) + ".jpg >",
+                       "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][4]) + ".jpg >",
+                       "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][4]) + ".jpg >",
+
+                       "aaaaa":str(a[0][0]),
+                       "bbbbb":str(a[1][0]),
+                       "ccccc":str(a[2][0]),
+                       "ddddd":str(a[3][0]),
+                       "eeeee":str(a[4][0]),
+                       "fffff":str(a[5][0]),
+
+              
+                
+                       })
+    except:
+        message = "Veuillez remplir votre selection d'aliment de 6 produit svp =) "
+        return render(request, 'error.html', {"message":message})
 
 def remplacement(request):
 
@@ -236,12 +212,6 @@ def remplacement(request):
                          element[0], element[1]
                          )
 
-
-
-
-
-
-            
         else:
 
             print("ouiiiiiiiiiiiiiiiiiiiiiiiiouais")
@@ -338,7 +308,8 @@ def remplacement(request):
                    })
 
 
-
+def error(request):
+    return render(request, "error.html")
 
 
 
