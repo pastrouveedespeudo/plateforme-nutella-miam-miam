@@ -18,8 +18,7 @@ def create_database_user(username):
     cur.execute("""CREATE TABLE aliment_de_{}
                 (id serial PRIMARY KEY,
                 name_aliment TEXT,
-                username VARCHAR(20) not null,
-                id_aliment int not null
+                username VARCHAR(20) not null
                 );""".format(username))
 
 
