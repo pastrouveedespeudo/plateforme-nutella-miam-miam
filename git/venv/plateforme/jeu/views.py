@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from .jeux import *
 import random
-
+from django.template.loader import render_to_string
+from django.http import HttpResponse
+import json as simplejson
+from django.http import JsonResponse
 
 def jeux(request):
     if request.method == "POST":
@@ -42,13 +45,8 @@ def jeux(request):
             print(l)
             print("\n")
 
-            return render(request, 'jeux.html', {"image1":i,
-                                                "image2":j,
-                                                "image3":k,
-                                                "image4":l,
-                                                 'yo':'coucouuu
-                                                })
-
+            data = {"image1":i, "image2":j,"image3":k,"image4":l,"yo":"coucou"}
+            return JsonResponse(data)
 
 
 
