@@ -34,9 +34,9 @@
 
             <form action="" method="POST">
             {% csrf_token %}
-                <input type="submit" value="Niveau 1" name="niveau1" id="niveau1">
-                <input type="submit" value="Niveau 2" name="niveau2" id="niveau2">
-                <input type="submit" value="Niveau 3" name="niveau3" id="niveau3">
+                <input type="button" onclick="lvl1()" value="Niveau 1" id="niveau1">
+                <input type="button" onclick="lvl2()" value="Niveau 2" id="niveau2">
+                <input type="button" onclick="lvl3()" value="Niveau 3" id="niveau3">
             </form>
             
         </div>
@@ -49,20 +49,20 @@
 
 
   <section class="bg-primary" id="about">
-  
-    <div class="container">
-    
-      <div class="row">
-      
-        <div class="col-lg-8 mx-auto text-center">
-        
-          <h2 class="section-heading text-white">Jeux</h2>
-          <hr class="light my-4">
-          
-         
+
+    <div id="jeux">
+
+                                                     
 
 
-          
+    </div>
+
+
+
+
+
+
+
         </div>
       </div>
     </div>
@@ -72,88 +72,10 @@
 
 
 
+{% include "bottom_page.html" %}
 
-  <section id="contact">
-  
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-        
-          <h2 class="section-heading">Contactez - nous !</h2>
-          
-          <hr class="my-4">
-          
-          <p class="mb-5" id="contactP">Un produit sain c'est bien ! Un produit merveilleux c'est encore MIEUX !</p>
-          
-        </div>
-        
-      </div>
-
-
-      
-      <div class="row">
-      
-        <div class="col-lg-4 ml-auto text-center">
-        
-          <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-          <img class="phone" id="phone" src="static/img/portfolio/bas/phone.png">
-          <p>123-456-6789</p>
-          
-        </div>
-
-        
-        <div class="col-lg-4 mr-auto text-center">
-        
-          <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
-          
-          <img class="mail" id="mail" src="static/img/portfolio/bas/mail.png">
-          <p>
-            <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
-          </p>
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
-
-    
-  <hr color:black>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-bot" id="mainNav">
-  
-    <div class="container">
-
-        <div class="mentions">
-          <a class="compte_top_haut_droit" id="compte_top_haut_droit" href="#">Mentions légales</a>
-        </div>
-
-          
-        <div class="contact">
-          <a class="aliments_top_haut_droit" id="aliments_top_haut_droit" href="#">Contact</a>
-        </div>
-
-    
-    </div>
-  </nav>
-
-
-
-
-
-
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="/static/vendor/jquery/jquery.min.js"></script>
-  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="/static/vendor/scrollreveal/scrollreveal.min.js"></script>
-  <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="/static/js/creative.min.js"></script>
+{% block content2 %}
+{% endblock content2%}
 
 </body>
 
@@ -161,5 +83,163 @@
 
 
 
-l
+
+
+<script>
+    function lvl1(){
+
+        document.getElementById("jeux").innerHTML = "<div class='col-xs-12-mx-auto text-center'>" +
+                                                        "<div class='row' id='row3'>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px; margin-left:auto;'>" +
+                                                                "<img src='{{image1}}'>" +
+                                                            "</div>" +
+                                                            "<div style='width:20px;'></div>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px;'>" +
+                                                                "<img src='{{image2}}'>" +
+                                                            "</div>" +
+                                                            "<div style='width:20px;'></div>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px;'>" +
+                                                                "<img src='{{image3}}'>" +
+                                                            "</div>" +
+                                                            "<div style='width:20px;'></div>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px;margin-right:auto;'>" +
+                                                                "<img src='{{image4}}'>" +
+                                                            "</div>" +
+                                                        "</div>" +
+                                                     "</div>"
+
+
+
+        };
+
+    function lvl2(){
+
+        
+     document.getElementById("jeux").innerHTML =  "<div class='col-xs-12-mx-auto text-center'>" +
+                                                        "<div class='row' id='row3'>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px; margin-left:auto;'>" +
+                                                                "<img src='{{image1}}'>" +
+                                                            "</div>" +
+                                                            "<div style='width:20px;'></div>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px;'>" +
+                                                                "<img src='{{image2}}'>" +
+                                                            "</div>" +
+                                                            "<div style='width:20px;'></div>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px;'>" +
+                                                                "<img src='{{image3}}'>" +
+                                                            "</div>" +
+                                                            "<div style='width:20px;'></div>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px;margin-right:auto;'>" +
+                                                                "<img src='{{image4}}'>" +
+                                                            "</div>" +
+                                                        "</div>" +
+                                                     "</div>" +
+                                                    "<br>" +
+                                                    "<div class='col-xs-12-mx-auto text-center'>" +
+                                                        "<div class='row' id='row3'>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px; margin-left:auto;'>" +
+                                                                "<img src='{{image1}}'>" +
+                                                            "</div>" +
+                                                            "<div style='width:20px;'></div>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px;'>" +
+                                                                "<img src='{{image2}}'>" +
+                                                            "</div>" +
+                                                            "<div style='width:20px;'></div>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px;'>" +
+                                                                "<img src='{{image3}}'>" +
+                                                            "</div>" +
+                                                            "<div style='width:20px;'></div>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px;margin-right:auto;'>" +
+                                                                "<img src='{{image4}}'>" +
+                                                            "</div>" +
+                                                        "</div>" +
+                                                     "</div>"
+
+        };
+
+
+    function lvl3(){
+     document.getElementById("jeux").innerHTML =  "<div class='col-xs-12-mx-auto text-center'>" +
+                                                        "<div class='row' id='row3'>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px; margin-left:auto;'>" +
+                                                                "<img src='{{image1}}'>" +
+                                                            "</div>" +
+                                                            "<div style='width:20px;'></div>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px;'>" +
+                                                                "<img src='{{image2}}'>" +
+                                                            "</div>" +
+                                                            "<div style='width:20px;'></div>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px;'>" +
+                                                                "<img src='{{image3}}'>" +
+                                                            "</div>" +
+                                                            "<div style='width:20px;'></div>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px;margin-right:auto;'>" +
+                                                                "<img src='{{image4}}'>" +
+                                                            "</div>" +
+                                                        "</div>" +
+                                                     "</div>" +
+                                                    "<br>" +
+                                                    "<div class='col-xs-12-mx-auto text-center'>" +
+                                                        "<div class='row' id='row3'>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px; margin-left:auto;'>" +
+                                                                "<img src='{{image1}}'>" +
+                                                            "</div>" +
+                                                            "<div style='width:20px;'></div>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px;'>" +
+                                                                "<img src='{{image2}}'>" +
+                                                            "</div>" +
+                                                            "<div style='width:20px;'></div>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px;'>" +
+                                                                "<img src='{{image3}}'>" +
+                                                            "</div>" +
+                                                            "<div style='width:20px;'></div>" +
+                                                            "<div style='border:1px solid blue;width:250px; height:300px;margin-right:auto;'>" +
+                                                                "<img src='{{image4}}'>" +
+                                                            "</div>" +
+                                                        "</div>" +
+                                                     "</div>"
+
+        };
+
+
+    
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
