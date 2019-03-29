@@ -1,4 +1,27 @@
-#au pire tout faire dans le meme dossier et aux mecs on met que les fichier sans les ajouts pcque ca marche pas  
+#ok en gros, les button permettent de choisir le niveau
+
+#avec js on affiche les cadres donc le niveau
+
+#avec ajax on envoie des requetes
+
+
+#avec python on recupere les info de lailiment et on renvoie a ajx
+
+#si le mec a bon on lui ajoute des pts
+
+#si le mec a bon, on met un logo vert sinon une croix
+
+#a la fin on ajoute le score a sa database on modifie son score
+
+#donc au debut faut ajouter  + son score a la database
+
+#selon le niveau et selon la connexion on affiche une medaille selon le niveau
+
+
+
+
+
+
 
 
 #-----avance sur rajouter des fonctionnalités
