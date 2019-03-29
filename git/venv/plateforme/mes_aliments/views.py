@@ -100,8 +100,10 @@ def recherche(request):
                 print(request.user.username)
                 stock = controle_data_aliment(str(request.user.username))
                 print(stock[1],"ajouter un produit")
-                         
-    
+                 
+                if stock[1] == False:
+                    stock_depassé = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
+                
             print("etape recherche")
             image = image_aliment(recherche)
             titre = titre_aliment(recherche)
