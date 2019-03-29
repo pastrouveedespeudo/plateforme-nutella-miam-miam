@@ -1,0 +1,515 @@
+{% include "navbarre.html" %}
+
+{% block content %}
+{% endblock %}
+
+<link href="/static/css/recherche.css" rel="stylesheet">
+<body id="page-top">
+
+  <style>
+    header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 56px);
+    background-image: url("/static/img/header1.jpg");
+    background-position: center center;
+    background-size: cover;
+    }
+  </style>
+  
+
+  
+  <style>
+  .titreUn{
+    color: rgba(51, 51, 0);
+    background-color: rgba(255, 153, 102);
+    margin-top:200px;
+  }
+
+
+
+  #nomAliment1,
+  #nomAliment2,
+  #nomAliment3,
+  #nomAliment4,
+  #nomAliment5,
+  #nomAliment6{
+    text-align:center;
+  }  
+
+
+
+  
+  </style>
+
+  <header class="masthead text-center d-flex">
+    <div class="container my-auto">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="titreUn">
+            <strong>Mes aliments</strong>
+          </h1>
+          <hr>
+        </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+   
+    <section class="bg-primary" id="about">
+
+    {% if user.is_authenticated %}
+    {% else %}
+     <div style="text-align:center;">
+        Connecte-toi afin de pouvoir les <strong>enregistrer</strong>
+        et visualise les depuis <strong>"Mon compte"</strong>
+     </div>
+    {% endif %}
+     
+     
+    <div class="container-fluid" id="conteneurCarre">
+       <div class="row" id="row3">
+    
+           <div class="col-sm-12 col-md-4" id="block4">
+               <div id="rond"><img src={{aaaa}}></div>
+ 
+               <style>
+                    #im11{
+                      padding:10px;
+                      width: 240px;
+                      height: 250px;
+                    }
+
+                    #save{
+                      text-align:center;
+                    }
+                    #im1,
+                    #im2,
+                    #im3,
+                    #im4,
+                    #im5,
+                    #im6{
+                      width:250px;
+                      height:300px;
+
+                    }
+               </style>
+
+
+
+                 
+                     <div id="imm1" style="background-color:green; width:250px; height:300px;">
+
+                        <div id="image1"></div>
+
+
+                        <form id="myform1" action="/mes_aliments/recherche/aliment_det" method="POST">
+                             {% csrf_token %}
+                         
+                             <input type="hidden" name="produit" value="{{aaaaa}}" />
+                         
+                             <div id="detail1"></div>
+
+                         
+                         </form>
+
+
+
+                        
+                        <form action="/mes_aliments/remplacement" method="POST">
+                         {% csrf_token %}
+                        <input type="hidden" name="rem" value="{{aa}}" />
+                        <div id="remplacement1"></div>
+
+                        </form>
+
+                        <div id="nan1"></div>
+
+                      
+                     <input type="image" onclick="choice1()" id="im1" class="fit-picture" src="{{a}}"/>
+                    
+                     </div>
+                   <div id="nomAliment1">{{aa}}</div>
+                     
+
+                    <br>
+
+            
+                  
+           </div>
+
+           
+           <div class="col-sm-12 col-md-4" id="block4">
+
+               <div id="rond"><img src={{bbbb}}></div>
+
+
+
+
+                 
+                     <div id="imm1" style="background-color:green; width:250px; height:300px;">
+                        <div id="image2"></div>
+
+
+                        <form id="myform2" action="/mes_aliments/recherche/aliment_det" method="POST">
+                             {% csrf_token %}
+                         
+                             <input type="hidden" name="produit" value="{{bbbbb}}" />
+                         
+                             <div id="detail2"></div>
+
+                         
+                         </form>
+
+
+
+                        
+                        <form action="/mes_aliments/remplacement" method="POST">
+                         {% csrf_token %}
+                         <input type="hidden" name="rem" value="{{bb}}" />
+                        <div id="remplacement2"></div>
+
+                        </form>
+
+                        <div id="nan2"></div>
+                <input type="image" onclick="choice2()" id="im2" value={{aa}} class="fit-picture" src="{{b}}"/>
+                 
+               </div>
+               <div id="nomAliment2">{{bb}}</div>
+              
+              
+
+               <br>
+          
+             </form>
+         </div>
+ 
+           
+           <div class="col-sm-12 col-md-4" id="block4">
+
+               <div id="rond"><img src={{cccc}}></div>
+
+
+                 
+                     <div id="imm1" style="background-color:green; width:250px; height:300px;">               
+                        <div id="image3"></div>
+
+
+                        <form id="myform3" action="/mes_aliments/recherche/aliment_det" method="POST">
+                             {% csrf_token %}
+                         
+                             <input type="hidden" name="produit" value="{{ccccc}}" />
+                         
+                             <div id="detail3"></div>
+
+                         
+                         </form>
+
+
+
+                        
+                        <form action="/mes_aliments/remplacement" method="POST">
+                         {% csrf_token %}
+                         <input type="hidden" name="rem" value="{{cc}}" />
+                        <div id="remplacement3"></div>
+
+                        </form>
+
+                        <div id="nan3"></div>
+                <div id="imm3"><input type="image" onclick="choice3()" id="im3" value={{cc}} class="fit-picture" src="{{c}}"/></a></div>
+                
+                </div>
+                <div id="nomAliment2">{{cc}}</div>
+              
+               
+
+               <br>
+  
+              </form>
+               
+           </div>
+           
+       
+
+           <div class="col-sm-12 col-md-4" id="block4">
+
+                <div id="rond"><img src={{dddd}}></div>
+                <div id="imm1" style="background-color:green; width:250px; height:300px;">  
+                        <div id="image4"></div>
+
+
+                        <form id="myform4" action="/mes_aliments/recherche/aliment_det" method="POST">
+                             {% csrf_token %}
+                         
+                             <input type="hidden" name="produit" value="{{ddddd}}" />
+                         
+                             <div id="detail4"></div>
+
+                         
+                         </form>
+
+
+
+                        
+                        <form action="/mes_aliments/remplacement" method="POST">
+                         {% csrf_token %}
+                         <input type="hidden" name="rem" value="{{dd}}" />
+                        <div id="remplacement4"></div>
+
+                        </form>
+
+                        <div id="nan4"></div>
+                <div id="imm4"><input type="image" onclick="choice4()" id="im4" value={{dd}} class="fit-picture" src="{{d}}"/></a></div>
+                
+                </div>
+                <div id="nomAliment2">{{dd}}</div>
+              
+               
+
+               <br>
+         
+              </form>
+                
+           </div>
+      
+           
+           <div class="col-sm-12 col-md-4" id="block4">
+               <div id="rond"><img src={{eeee}}></div>
+                    <div id="imm1" style="background-color:green; width:250px; height:300px;"> 
+                         <div id="image5"></div>
+
+
+                        <form id="myform1" action="/mes_aliments/recherche/aliment_det" method="POST">
+                             {% csrf_token %}
+                         
+                             <input type="hidden" name="produit" value="{{eeeee}}" />
+                         
+                             <div id="detail5"></div>
+
+                         
+                         </form>
+
+
+
+                        
+                        <form action="/mes_aliments/remplacement" method="POST">
+                         {% csrf_token %}
+                         <input type="hidden" name="rem" value="{{ee}}" />
+                        <div id="remplacement5"></div>
+
+                        </form>
+
+                        <div id="nan5"></div>
+                <div id="imm5"><input type="image" onclick="choice5()" id="im5" value={{ee}} class="fit-picture" src="{{e}}"/></a></div>
+                 
+                </div>
+                <div id="nomAliment2">{{ee}}</div>
+              
+              
+
+               <br>
+         
+            </form>
+               
+           </div>
+     
+           <div class="col-sm-12 col-md-4" id="block4">
+
+               <div id="rond"><img src={{ffff}}></div>
+
+               <div id="imm1" style="background-color:green; width:250px; height:300px;"> 
+                        <div id="image6"></div>
+
+
+                        <form id="myform6" action="/mes_aliments/recherche/aliment_det" method="POST">
+                             {% csrf_token %}
+                         
+                             <input type="hidden" name="produit" value="{{fffff}}" />
+                         
+                             <div id="detail6"></div>
+
+                         
+                         </form>
+
+
+
+                        
+                        <form action="/mes_aliments/remplacement" method="POST">
+                         {% csrf_token %}
+                         <input type="hidden" name="rem" value="{{ff}}" />
+                        <div id="remplacement6"></div>
+
+                        </form>
+
+                        <div id="nan6"></div>
+                <input type="image" onclick="choice6()" id="im6" value={{ff}} class="fit-picture" src="{{f}}"/>
+                
+                 </div>
+                 <div id="nomAliment2">{{ff}}</div>
+
+                
+                </div>
+               
+              
+               
+               <br>
+          
+              </form>
+              </form>
+               
+           
+         </div>
+
+            
+       </div>
+    </div>
+    </section>
+{% include "bottom_page.html" %}
+
+{% block content2 %}
+{% endblock content2%}
+
+
+
+</body>
+
+</html>
+
+
+<script>
+
+    function choice1(){
+        document.getElementById("im1").style.display = "none";
+        document.getElementById("image1").innerHTML = "<center><img src={{a}} style='padding:10px;width:60%;height:90px;'></center>"
+        document.getElementById("detail1").innerHTML = "<center><input type='submit'" +
+                                                        "style='color:black;' value='Détails aliment' />" +
+                                                        "</center><br>";
+        document.getElementById("remplacement1").innerHTML = "<center><input type='submit' style='color:black;" + 
+                                                            "'value='Remplacer cette aliment' /></center><br>";
+        document.getElementById("nan1").innerHTML = "<center><input type='button' onclick='nanrien1()'" +
+                                                    "style='color:black;' value='Enfete non rien'/></center>";
+                      
+    };                                        
+
+ 
+    function choice2(){
+        document.getElementById("im2").style.display = "none";
+        document.getElementById("image2").innerHTML = "<center><img src={{b}} style='padding:10px;width:60%;height:90px;'></center>"
+        document.getElementById("detail2").innerHTML = "<center><input type='submit'" +
+                                                        "style='color:black;' value='Détails aliment' />" +
+                                                        "</center><br>";
+        document.getElementById("remplacement2").innerHTML = "<center><input type='submit' style='color:black;'"+
+                                                            "value='Remplacer cette aliment' /></center><br>";
+        document.getElementById("nan2").innerHTML = "<center><input type='button' onclick='nanrien2()'" +
+                                                    "style='color:black;' value='Enfete non rien'/></center>";               
+    };                                        
+
+
+    function choice3(){
+        document.getElementById("im3").style.display = "none";
+        document.getElementById("image3").innerHTML = "<center><img src={{c}} style='padding:10px;width:60%;height:90px;'></center>"
+        document.getElementById("detail3").innerHTML = "<center><input type='submit'" +
+                                                        "style='color:black;' value='Détails aliment' />" +
+                                                        "</center><br>";
+        document.getElementById("remplacement3").innerHTML = "<center><input type='submit' style='color:black;" +
+                                                            "'value='Remplacer cette aliment' /></center><br>";
+        document.getElementById("nan3").innerHTML = "<center><input type='button' onclick='nanrien3()'" +
+                                                    "style='color:black;' value='Enfete non rien'/></center>";
+        }
+
+    function choice4(){
+        document.getElementById("im4").style.display = "none";
+        document.getElementById("image4").innerHTML = "<center><img src={{d}} style='padding:10px;width:60%;height:90px;'></center>"
+        document.getElementById("detail4").innerHTML = "<center><input type='submit'" +
+                                                        "style='color:black;' value='Détails aliment' />" +
+                                                        "</center><br>";
+        document.getElementById("remplacement4").innerHTML = "<center><input type='submit' style='color:black;" +
+                                                            "'value='Remplacer cette aliment' /></center><br>";
+        document.getElementById("nan4").innerHTML = "<center><input type='button' onclick='nanrien4()' style='color:black;'" +
+                                                    "value='Enfete non rien'/></center>";
+        }
+
+    function choice5(){
+        document.getElementById("im5").style.display = "none";
+        document.getElementById("image5").innerHTML = "<center><img src={{e}} style='padding:10px;width:60%;height:90px;'></center>"
+        document.getElementById("detail5").innerHTML = "<center><input type='submit'" +
+                                                        "style='color:black;' value='Détails aliment' />" +
+                                                        "</center><br>";
+        document.getElementById("remplacement5").innerHTML = "<center><input type='submit' style='color:black;'" +
+                                                                "value='Remplacer cette aliment' /></center><br>";
+        document.getElementById("nan5").innerHTML = "<center><input type='button' onclick='nanrien5()'" +
+                                                    "style='color:black;' value='Enfete non rien'/></center>";
+        }
+
+
+    function choice6(){
+        document.getElementById("im6").style.display = "none";
+        document.getElementById("image6").innerHTML = "<center><img src={{f}} style='padding:10px;"+
+                                                        "width:60%;height:90px;'></center>"
+        document.getElementById("detail6").innerHTML = "<center><input type='submit'" +
+                                                        "style='color:black;' value='Détails aliment' />" +
+                                                        "</center><br>";
+        document.getElementById("remplacement6").innerHTML = "<center><input type='submit' style='color:black;" + 
+                                                            "'value='Remplacer cette aliment' /></center><br>";
+        document.getElementById("nan6").innerHTML = "<center><input type='button' onclick='nanrien6()' style='color:black;'" +
+                                                    "value='Enfete non rien'/></center>";
+        }
+
+    
+    function nanrien1(){
+        document.getElementById("im1").style.display = "block";
+        document.getElementById("image1").innerHTML = "";
+        document.getElementById("detail1").innerHTML = "";    
+        document.getElementById("remplacement1").innerHTML = "";
+        document.getElementById("nan1").innerHTML = "";
+
+        };
+    function nanrien2(){
+        document.getElementById("im2").style.display = "block";
+        document.getElementById("image2").innerHTML = "";
+        document.getElementById("detail2").innerHTML = "";    
+        document.getElementById("remplacement2").innerHTML = "";
+        document.getElementById("nan2").innerHTML = "";
+
+        };
+    function nanrien3(){
+        document.getElementById("im3").style.display = "block";
+        document.getElementById("image3").innerHTML = "";
+        document.getElementById("detail3").innerHTML = "";    
+        document.getElementById("remplacement3").innerHTML = "";
+        document.getElementById("nan3").innerHTML = "";
+
+        };
+
+    function nanrien4(){
+        document.getElementById("im4").style.display = "block";
+        document.getElementById("image4").innerHTML = "";
+        document.getElementById("detail4").innerHTML = "";    
+        document.getElementById("remplacement4").innerHTML = "";
+        document.getElementById("nan4").innerHTML = "";
+
+        };
+
+    function nanrien5(){
+        document.getElementById("im5").style.display = "block";
+        document.getElementById("image5").innerHTML = "";
+        document.getElementById("detail5").innerHTML = "";    
+        document.getElementById("remplacement5").innerHTML = "";
+        document.getElementById("nan5").innerHTML = "";
+
+        };
+
+    function nanrien6(){
+        document.getElementById("im6").style.display = "block";
+        document.getElementById("image6").innerHTML = "";
+        document.getElementById("detail6").innerHTML = "";    
+        document.getElementById("remplacement6").innerHTML = "";
+        document.getElementById("nan6").innerHTML = "";
+
+        };
+
+</script>
+
+
+

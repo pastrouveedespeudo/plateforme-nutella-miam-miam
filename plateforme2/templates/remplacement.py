@@ -1,0 +1,539 @@
+{% include "navbarre.html" %}
+
+{% block content %}
+{% endblock %}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link href="/static/css/recherche.css" rel="stylesheet">
+<body id="page-top">
+
+  <style>
+    header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 56px);
+    background-image: url({{image}});
+    background-position: center center;
+    background-size: cover;
+    }
+  </style>
+  
+
+  
+  <style>
+  .titreUn{
+    color: rgba(51, 51, 0);
+    background-color: rgba(255, 153, 102);
+    margin-top:200px;
+  }
+
+
+
+  #nomAliment1,
+  #nomAliment2,
+  #nomAliment3,
+  #nomAliment4,
+  #nomAliment5,
+  #nomAliment6{
+    text-align:center;
+  }  
+
+
+
+  
+  </style>
+
+  <header class="masthead text-center d-flex">
+    <div class="container my-auto">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="titreUn">
+            <strong>{{titre}}</strong>
+          </h1>
+          <hr>
+        </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+   
+    <section class="bg-primary" id="about">
+
+    {% if user.is_authenticated %}
+    
+        <div id="user" value={{user.username}}>{{user.username}}</div>
+        
+        <div id="stock">{{stock_depassé}}</div>
+        
+    {% else %}
+    
+         <div style="text-align:center;">
+            Connecte-toi afin de pouvoir les <strong>enregistrer</strong>
+            et visualise les depuis <strong>"Mon compte"</strong>
+         </div>
+     
+    {% endif %}
+
+
+
+
+
+     
+     
+    <div class="container-fluid" id="conteneurCarre">
+       <div class="row" id="row3">
+    
+           <div class="col-sm-12 col-md-4" id="block4">
+               <div id="rond"><img src={{aaaa}} ></div>
+ 
+               <style>
+                    #im11{
+                      padding:10px;
+                      width: 240px;
+                      height: 250px;
+                    }
+
+                    #save{
+                      text-align:center;
+                    }
+               </style>
+
+               
+                   <form action="aliment_det" method="post">
+                     {% csrf_token %}
+
+
+                     <input type="HIDDEN" value={{aaa}} id="produit" name="produit">
+                     <div id="im1"><input type="image" id="im11" class="fit-picture" src="{{a}}"/></a></div>
+                   
+                     <div id="nomAliment1">{{aa}}</div>
+
+                    <br>
+                  </form>
+
+
+                {% if user.is_authenticated %}
+                <form action="/mes_aliments/recherche/" method="POST">
+                    
+                    <div>
+                        <input type="checkbox" style="width: 20px; height: 20px;"
+                            "name="is_save1" id="product1" onclick="pushlist1()" value="{{aa}}"
+                        /> Sauvegarder
+                    
+                        <div id="is_save1"></div>
+
+                    
+                      
+                    </div>
+                </form>
+                {% endif %}
+                                
+                
+                  
+           </div>
+
+
+
+
+
+
+           
+           <div class="col-sm-12 col-md-4" id="block4">
+
+               <div id="rond"><img src={{bbbb}}></div>
+              <form action="aliment_det" method="post">
+                     {% csrf_token %}
+
+               <input type="HIDDEN" value={{bbb}} name="produit">
+                <div id="im2"><input type="image" id="im11" value={{aa}} class="fit-picture" src="{{b}}"/></a></div>
+               
+              
+               <div id="nomAliment2">{{bb}}</div>
+
+               <br>
+               {% if user.is_authenticated %}
+                <input type="checkbox" style="width: 20px; height: 20px;"
+               id="product2" onclick="pushlist2()" name="is_save2" value="{{bb}}" /> Sauvegarder
+               <div id="is_save2"></div>
+               {% endif %}
+             </form>
+         
+           </div>
+           
+           <div class="col-sm-12 col-md-4" id="block4">
+
+               <div id="rond"><img src={{cccc}}></div>
+
+            
+              <form action="aliment_det" method="post">
+                     {% csrf_token %}
+
+               <input type="HIDDEN" value={{ccc}} name="produit">
+                <div id="im3"><input type="image" id="im11" value={{cc}} class="fit-picture" src="{{c}}"/></a></div>
+               
+              
+               <div id="nomAliment2">{{cc}}</div>
+            
+               <br>
+               {% if user.is_authenticated %}
+                <input type="checkbox" style="width: 20px; height: 20px;"
+               id="product3" onclick="pushlist3()" value="{{cc}}" name="is_save3"> Sauvegarder
+               <div id="is_save3"></div>
+               {% endif %}
+             </form>
+               
+           </div>
+       
+
+           <div class="col-sm-12 col-md-4" id="block4">
+
+                <div id="rond"><img src={{dddd}}></div>
+                
+              <form action="aliment_det" method="post">
+                     {% csrf_token %}
+
+               <input type="HIDDEN" value={{ddd}} name="produit">
+                <div id="im4"><input type="image" id="im11" value={{dd}} class="fit-picture" src="{{d}}"/></a></div>
+               
+              
+               <div id="nomAliment2">{{dd}}</div>
+
+               <br>
+               {% if user.is_authenticated %}
+              <input type="checkbox" style="width: 20px; height: 20px;"
+               id="product4" onclick="pushlist4()" value="{{dd}}" name="is_save4"> Sauvegarder
+               <div id="is_save4"></div>
+               {% endif %}
+             </form>
+                
+           </div>
+
+           
+           <div class="col-sm-12 col-md-4" id="block4">
+               <div id="rond"><img src={{eeee}}></div>
+            
+              <form action="aliment_det" method="post">
+                     {% csrf_token %}
+
+               <input type="HIDDEN" value={{eee}} name="produit">
+                <div id="im5"><input type="image" id="im11" value={{ee}} class="fit-picture" src="{{e}}"/></a></div>
+               
+              
+               <div id="nomAliment2">{{ee}}</div>
+
+               <br>
+               {% if user.is_authenticated %}
+                <input type="checkbox" style="width: 20px; height: 20px;"
+               id="product5" onclick="pushlist5()" value="{{ee}}"name="is_save5"> Sauvegarder
+               <div id="is_save5"></div>
+               {% endif %}
+             </form>
+               
+           </div>
+           
+           <div class="col-sm-12 col-md-4" id="block4">
+
+               <div id="rond"><img src={{ffff}}></div>
+               
+              <form action="aliment_det" method="post">
+                     {% csrf_token %}
+
+               <input type="HIDDEN" value={{fff}} name="produit">
+                <div id="im6"><input type="image" id="im11" value={{ff}} class="fit-picture" src="{{f}}"/></a></div>
+      
+               <div id="nomAliment2">{{ff}}</div>
+
+               <br>
+               {% if user.is_authenticated %}
+                <input type="checkbox" style="width: 20px; height: 20px;"
+               id="product6" onclick="pushlist6()" name="is_save6" value='{{ff}}'/> Sauvegarder
+               <div id="is_save6"></div>
+               {% endif %}
+             </form>
+               
+           
+         </div>
+
+           <div style="text-align:center;">
+           
+           </div>
+       </div>
+    </div>
+    <div id="a"></div>
+    <br><br><br>
+    
+
+ </section>
+
+
+
+<br><br>
+
+{% include "bottom_page.html" %}
+
+{% block content2 %}
+{% endblock content2%}</body>
+
+</html>
+
+
+
+
+
+
+<script>
+
+    var LISTE = ["a"];
+    var LISTE_NAME = [];
+    var USER = ["b"];
+
+
+    $("#product1,#product2,#product3,#product4,#product5,#product6").on("click", function(e){
+         e.preventDefault();
+      
+          $.ajax({
+              data:{
+                  'data[]':LISTE[LISTE.length - 1],
+                  'username':USER[USER.length - 1],
+           
+              },
+              type:"POST",
+              url:"/mes_aliments/recherche/"
+          })
+          .done(function(data){
+              if (data.error){
+                  $("#monCadreAlert").text(data.error);
+                  $("#is_save");
+                  
+                  
+              }
+              else{
+                  $("#is_save").html(data.data);
+                  $("#monCadreAlert");
+                  
+                  
+              };
+              
+          });
+
+    });
+  
+
+
+    function pushlist1(){
+        
+        var a = document.getElementById("product1").value;
+        var b = document.getElementById("product1").name;
+        var c = document.getElementById("user").innerHTML;
+        USER.push(c)
+        LISTE.push(a)
+        LISTE_NAME.push(b)
+        
+        d = document.getElementById("stock").innerHTML;
+        console.log(d)
+
+        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
+            console.log("trop d\'aliment pour ce compte")
+            document.getElementById("is_save1").innerHTML = "";
+            document.getElementById("is_save1").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
+        +'  <i>Vous avez trop d\'alement</i>';
+        }
+        else{
+            document.getElementById("is_save1").innerHTML = "";
+            document.getElementById("is_save1").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
+        +'  <i>Enregistrement effectué</i>';
+        };
+        };
+        
+
+
+        
+
+    
+    function pushlist2(){
+        
+        var a = document.getElementById("product2").value;
+        var b = document.getElementById("product2").name;
+        var c = document.getElementById("user").innerHTML;
+        USER.push(c)
+        LISTE.push(a)
+        LISTE_NAME.push(b)
+        
+        d = document.getElementById("stock").innerHTML;
+        console.log(d)
+
+        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
+            console.log("trop d\'aliment pour ce compte")
+            document.getElementById("is_save2").innerHTML = "";
+            document.getElementById("is_save2").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
+        +'  <i>Vous avez trop d\'alement</i>';
+        }
+        else{
+            document.getElementById("is_save2").innerHTML = "";
+            document.getElementById("is_save2").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
+        +'  <i>Enregistrement effectué</i>';
+        };
+        };
+
+    function pushlist3(){
+        
+        var a = document.getElementById("product3").value;
+        var b = document.getElementById("product3").name;
+        var c = document.getElementById("user").innerHTML;
+        USER.push(c)
+        LISTE.push(a)
+        LISTE_NAME.push(b)
+        
+        d = document.getElementById("stock").innerHTML;
+        console.log(d)
+
+        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
+            console.log("trop d\'aliment pour ce compte")
+            document.getElementById("is_save3").innerHTML = "";
+            document.getElementById("is_save3").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
+        +'  <i>Vous avez trop d\'alement</i>';
+        }
+        else{
+            document.getElementById("is_save3").innerHTML = "";
+            document.getElementById("is_save3").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
+        +'  <i>Enregistrement effectué</i>';
+        };
+        };
+
+
+    function pushlist4(){
+        
+        var a = document.getElementById("product4").value;
+        var b = document.getElementById("product4").name;
+        var c = document.getElementById("user").innerHTML;
+        USER.push(c)
+        LISTE.push(a)
+        LISTE_NAME.push(b)
+        
+        d = document.getElementById("stock").innerHTML;
+        console.log(d)
+
+        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
+            console.log("trop d\'aliment pour ce compte")
+            document.getElementById("is_save4").innerHTML = "";
+            document.getElementById("is_save4").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
+        +'  <i>Vous avez trop d\'alement</i>';
+        }
+        else{
+            document.getElementById("is_save4").innerHTML = "";
+            document.getElementById("is_save4").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
+        +'  <i>Enregistrement effectué</i>';
+        };
+        };
+    function pushlist5(){
+        
+        var a = document.getElementById("product5").value;
+        var b = document.getElementById("product5").name;
+        var c = document.getElementById("user").innerHTML;
+        USER.push(c)
+        LISTE.push(a)
+        LISTE_NAME.push(b)
+        
+        d = document.getElementById("stock").innerHTML;
+        console.log(d)
+
+        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
+            console.log("trop d\'aliment pour ce compte")
+            document.getElementById("is_save5").innerHTML = "";
+            document.getElementById("is_save5").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
+        +'  <i>Vous avez trop d\'alement</i>';
+        }
+        else{
+            document.getElementById("is_save5").innerHTML = "";
+            document.getElementById("is_save5").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
+        +'  <i>Enregistrement effectué</i>';
+        };
+        };
+
+    function pushlist6(){
+        
+        var a = document.getElementById("product6").value;
+        var b = document.getElementById("product6").name;
+        var c = document.getElementById("user").innerHTML;
+        USER.push(c)
+        LISTE.push(a)
+        LISTE_NAME.push(b)
+  
+        d = document.getElementById("stock").innerHTML;
+        console.log(d)
+
+        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
+            console.log("trop d\'aliment pour ce compte")
+            document.getElementById("is_save6").innerHTML = "";
+            document.getElementById("is_save6").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
+        +'  <i>Vous avez trop d\'alement</i>';
+        }
+        else{
+            document.getElementById("is_save6").innerHTML = "";
+            document.getElementById("is_save6").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
+        +'  <i>Enregistrement effectué</i>';
+        };
+        };
+
+    
+    var c = document.getElementById("user").innerHTML;
+    USER.push(c)
+    console.log(USER)
+ 
+      
+      $.ajax({
+          data:{
+              'username':USER[USER.length - 1],
+       
+          },
+          type:"POST",
+          url:"/mes_aliments/recherche/"
+      })
+      .done(function(data){
+          if (data.error){
+              $("#monCadreAlert").text(data.error);
+              $("#stock");
+              
+              
+          }
+          else{
+              $("#stock").html(data.data);
+              $("#monCadreAlert");
+              
+              
+          };
+          
+      });
+
+
+
+
+      
+        
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
