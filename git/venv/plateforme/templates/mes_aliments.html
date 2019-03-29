@@ -84,12 +84,22 @@
                     #save{
                       text-align:center;
                     }
+                    #im1,
+                    #im2,
+                    #im3,
+                    #im4,
+                    #im5,
+                    #im6{
+                      width:250px;
+                      height:300px;
+
+                    }
                </style>
 
 
 
                  
-                     <div id="imm1" style="background-color:green; width:250px; height:250px;">
+                     <div id="imm1" style="background-color:green; width:250px; height:300px;">
 
                         <div id="image1"></div>
 
@@ -107,8 +117,9 @@
 
 
                         
-                        <form action="aliment_det" method="POST">
+                        <form action="/mes_aliments/remplacement" method="POST">
                          {% csrf_token %}
+                        <input type="hidden" name="rem" value="{{aa}}" />
                         <div id="remplacement1"></div>
 
                         </form>
@@ -117,9 +128,9 @@
 
 
                      <input type="image" onclick="choice1()" id="im1" class="fit-picture" src="{{a}}"/>
-                    <div id="nomAliment1">{{aa}}</div>
+                    
                      </div>
-                   
+                   <div id="nomAliment1">{{aa}}</div>
                      
 
                     <br>
@@ -137,7 +148,7 @@
 
 
                  
-                     <div id="imm1" style="background-color:green; width:250px; height:250px;">
+                     <div id="imm1" style="background-color:green; width:250px; height:300px;">
                         <div id="image2"></div>
 
 
@@ -154,16 +165,18 @@
 
 
                         
-                        <form action="aliment_det" method="POST">
+                        <form action="/mes_aliments/remplacement" method="POST">
                          {% csrf_token %}
+                         <input type="hidden" name="rem" value="{{bb}}" />
                         <div id="remplacement2"></div>
 
                         </form>
 
                         <div id="nan2"></div>
                 <input type="image" onclick="choice2()" id="im2" value={{aa}} class="fit-picture" src="{{b}}"/>
-                 <div id="nomAliment2">{{bb}}</div>
+                 
                </div>
+               <div id="nomAliment2">{{bb}}</div>
               
               
 
@@ -179,7 +192,7 @@
 
 
                  
-                     <div id="imm1" style="background-color:green; width:250px; height:250px;">               
+                     <div id="imm1" style="background-color:green; width:250px; height:300px;">               
                         <div id="image3"></div>
 
 
@@ -196,16 +209,18 @@
 
 
                         
-                        <form action="aliment_det" method="POST">
+                        <form action="/mes_aliments/remplacement" method="POST">
                          {% csrf_token %}
+                         <input type="hidden" name="rem" value="{{cc}}" />
                         <div id="remplacement3"></div>
 
                         </form>
 
                         <div id="nan3"></div>
                 <div id="imm3"><input type="image" onclick="choice3()" id="im3" value={{cc}} class="fit-picture" src="{{c}}"/></a></div>
-                <div id="nomAliment2">{{cc}}</div>
+                
                 </div>
+                <div id="nomAliment2">{{cc}}</div>
               
                
 
@@ -220,7 +235,7 @@
            <div class="col-sm-12 col-md-4" id="block4">
 
                 <div id="rond"><img src={{dddd}}></div>
-                <div id="imm1" style="background-color:green; width:250px; height:250px;">  
+                <div id="imm1" style="background-color:green; width:250px; height:300px;">  
                         <div id="image4"></div>
 
 
@@ -237,16 +252,18 @@
 
 
                         
-                        <form action="aliment_det" method="POST">
+                        <form action="/mes_aliments/remplacement" method="POST">
                          {% csrf_token %}
+                         <input type="hidden" name="rem" value="{{dd}}" />
                         <div id="remplacement4"></div>
 
                         </form>
 
                         <div id="nan4"></div>
                 <div id="imm4"><input type="image" onclick="choice4()" id="im4" value={{dd}} class="fit-picture" src="{{d}}"/></a></div>
-                <div id="nomAliment2">{{dd}}</div>
+                
                 </div>
+                <div id="nomAliment2">{{dd}}</div>
               
                
 
@@ -259,7 +276,7 @@
            
            <div class="col-sm-12 col-md-4" id="block4">
                <div id="rond"><img src={{eeee}}></div>
-                    <div id="imm1" style="background-color:green; width:250px; height:250px;"> 
+                    <div id="imm1" style="background-color:green; width:250px; height:300px;"> 
                          <div id="image5"></div>
 
 
@@ -276,16 +293,18 @@
 
 
                         
-                        <form action="aliment_det" method="POST">
+                        <form action="/mes_aliments/remplacement" method="POST">
                          {% csrf_token %}
+                         <input type="hidden" name="rem" value="{{ee}}" />
                         <div id="remplacement5"></div>
 
                         </form>
 
                         <div id="nan5"></div>
                 <div id="imm5"><input type="image" onclick="choice5()" id="im5" value={{ee}} class="fit-picture" src="{{e}}"/></a></div>
-                 <div id="nomAliment2">{{ee}}</div>
+                 
                 </div>
+                <div id="nomAliment2">{{ee}}</div>
               
               
 
@@ -299,7 +318,7 @@
 
                <div id="rond"><img src={{ffff}}></div>
 
-               <div id="imm1" style="background-color:green; width:250px; height:250px;"> 
+               <div id="imm1" style="background-color:green; width:250px; height:300px;"> 
                         <div id="image6"></div>
 
 
@@ -316,16 +335,18 @@
 
 
                         
-                        <form action="aliment_det" method="POST">
+                        <form action="/mes_aliments/remplacement" method="POST">
                          {% csrf_token %}
+                         <input type="hidden" name="rem" value="{{ff}}" />
                         <div id="remplacement6"></div>
 
                         </form>
 
                         <div id="nan6"></div>
                 <input type="image" onclick="choice6()" id="im6" value={{ff}} class="fit-picture" src="{{f}}"/>
-                <div id="nomAliment2">{{ff}}</div>
+                
                  </div>
+                 <div id="nomAliment2">{{ff}}</div>
 
                 
                 </div>
