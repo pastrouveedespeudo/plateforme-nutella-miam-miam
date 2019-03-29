@@ -12,6 +12,11 @@ from accounts.views import mon_compte
 
 from mes_aliments.views import mes_aliments
 from mes_aliments.views import recherche
+from mes_aliments.views import aliment_det
+from mes_aliments.views import remplacement
+
+
+from jeux.views import jeux
 
 urlpatterns = [
     
@@ -27,5 +32,13 @@ urlpatterns = [
 
     path('mes_aliments/mes_aliments/', mes_aliments),
     path('mes_aliments/recherche/', recherche),
-]
+    path('mes_aliments/recherche/aliment_det', aliment_det),
+    path('mes_aliments/remplacement', remplacement),
 
+
+
+    path('jeux/jeux/', jeux),
+
+
+    
+]
