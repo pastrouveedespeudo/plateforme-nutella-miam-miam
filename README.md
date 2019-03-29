@@ -1,8 +1,6 @@
-#factoriser mes_aliments fini ca ! et faire le jeu ! et rajouter l'heure avec une horloge
+#1h a changer les aliment et a me demander pk ca change tous les aliments ta race hihihi pcque javais 6 aliments les meme dans mon panier
 
-#putin de merde jcrois j'ai deux pages en trop... nik je re commencerai au pire pcque le mec il veut son site pas en moins pas en trop ni plus ni moins* pas grave
 
-#mais comment i lchoisit c aliments ?  la c pas dit ! donc faut bien qu'il en choississe nan ? et qu'on est 3 fois la meme page au final c pas grave ! jsp 
 
 #-----avance sur rajouter des fonctionnalités
 
