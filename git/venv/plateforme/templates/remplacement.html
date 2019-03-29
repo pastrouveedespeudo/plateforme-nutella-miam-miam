@@ -115,7 +115,7 @@
 
                 <form action="/mes_aliments/remplacement" method="post" >
                   {% csrf_token %}
-                <input type="hidden" name="remplace_food" value='{{aa}}' >
+                <input type="hidden" name="remplace_food" value="{{titre}},{{aa}}" >
                 <input type="submit" value="Remplacer">
                <div id="is_save1"></div>
               </form>
@@ -144,7 +144,7 @@
                <br>
                 <form action="/mes_aliments/remplacement" method="post" >
                   {% csrf_token %}
-                <input type="hidden" name="remplace_food" value='{{bb}}' >
+                <input type="hidden" name="remplace_food" value="{{titre}},{{bb}}" >
                 <input type="submit" value="Remplacer">
                <div id="is_save2"></div>
               </form>
@@ -168,7 +168,7 @@
                <br>
                 <form action="/mes_aliments/remplacement" method="post" >
                   {% csrf_token %}
-                <input type="hidden" name="remplace_food" value='{{cc}}' >
+                <input type="hidden" name="remplace_food" value="{{titre}},{{cc}}" >
                 <input type="submit" value="Remplacer">
                <div id="is_save3"></div>
               </form>
@@ -193,7 +193,7 @@
                <br>
                 <form action="/mes_aliments/remplacement" method="post" >
                   {% csrf_token %}
-                <input type="hidden" name="remplace_food" value='{{dd}}' >
+                <input type="hidden" name="remplace_food" value="{{titre}},{{dd}}" >
                 <input type="submit" value="Remplacer">
                <div id="is_save4"></div>
               </form>
@@ -218,7 +218,7 @@
 
                 <form action="/mes_aliments/remplacement" method="post" >
                   {% csrf_token %}
-                <input type="hidden" name="remplace_food" value='{{ee}}' >
+                <input type="hidden" name="remplace_food" value="{{titre}},{{ee}}" >
                 <input type="submit" value="Remplacer">
                <div id="is_save5"></div>
               </form>
@@ -254,7 +254,7 @@
                   <form action="/mes_aliments/remplacement" method="post" >
                   {% csrf_token %}
 
-                  <input type="hidden" name="remplace_food" value='{{ff}}' >
+                  <input type="hidden" name="remplace_food" value="{{titre}},{{ff}}" >
                     <input type="submit" value="Remplacer" />{% csrf_token %}
                   </form>
                     <div id="is_save6">
@@ -289,5 +289,29 @@
 {% endblock content2%}</body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
