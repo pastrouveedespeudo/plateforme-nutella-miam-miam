@@ -1,3 +1,5 @@
+#ca marche pas on peut pas envoyer les info depuis views grace a ajax ? merde ji comprend rien
+
 #ok en gros, les button permettent de choisir le niveau
 
 #avec js on affiche les cadres donc le niveau
