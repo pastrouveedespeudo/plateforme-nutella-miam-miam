@@ -5,7 +5,7 @@ from .views import recherche
 from .views import aliment_det
 from .views import recherche2
 from .views import remplacement
-
+from .views import error
 
 urlpatterns = [
     path('/mes_aliments', mes_aliments),
@@ -13,5 +13,6 @@ urlpatterns = [
     path('/aliment_det', aliment_det),
     path('/recherche2', recherche2),
     path('/remplacement', remplacement),
+    path('/error', error),
 
     ]
