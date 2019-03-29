@@ -80,14 +80,17 @@ def recherche(request):
 
 
         if valider and username:
-            
+            current_user = request.user
             print("username : ",username,"recherche : ", valider)
             stock = controle_data_aliment(username)
             print(stock[1],"ajouter un produit")
 
             if stock[1] == True:
-                insert_food(username, valider[0])
-                
+                veri = verification_produit_pasèdeux_fois(current_user,
+                                                          valider[0])
+                if veri == True:
+                    insert_food(username, valider[0])
+
             elif stock[1] == False:
                 
                 stock_depassé = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
