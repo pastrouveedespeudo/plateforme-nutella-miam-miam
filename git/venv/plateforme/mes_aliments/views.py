@@ -204,53 +204,135 @@ def mes_aliments(request):
 def remplacement(request):
 
     if request.method == "POST":
-        print("ouiiiiiiiiiiiiiiiiiiiiiiii")
-        aliment = request.POST.get('rem')
-        print(aliment)
 
-        image = image_aliment(aliment)
-        titre = titre_aliment(aliment)
-        a = replace(str(aliment))
-
-
-
-        return render(request, 'remplacement.html',
-                      {"a":str(a[0][3]),
-                       "b":str(a[1][3]),
-                       "c":str(a[2][3]),
-                       "d":str(a[3][3]),
-                       "e":str(a[4][3]),
-                       "f":str(a[5][3]),
-                       
-                       "aa":str(a[0][0]),
-                       "bb":str(a[1][0]),
-                       "cc":str(a[2][0]),
-                       "dd":str(a[3][0]),
-                       "ee":str(a[4][0]),
-                       "ff":str(a[5][0]),
-                       
-                       "aaa":str(a[0][4]),
-                       "bbb":str(a[1][4]),
-                       "ccc":str(a[2][4]),
-                       "ddd":str(a[3][4]),
-                       "eee":str(a[4][4]),
-                       "fff":str(a[5][4]),
-
-                       "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][2]) + ".jpg >",
-                       "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][2]) + ".jpg >",
-                       "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][2]) + ".jpg >",
-                       "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][2]) + ".jpg >",
-                       "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][2]) + ".jpg >",
-                       "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][2]) + ".jpg >",
-
-                       "image":str(image[0][0]),
-                       "titre":str(titre[0][0]),
-                 
-                
-                       })
+        
+        replace_it = request.POST.getlist('remplace_food')
+        print(replace_it,"000000000084198498498498")
+        
+        if replace_it:
+            print(str(replace_it),"000000000084198498498498")
+            print("REPLACEEEEEEEEEEEEEEEEEE")
+            current_user = request.user
+            
+            liste = [[],[]]
+            element = []
+            c=0
+            for i in replace_it:
+                for j in i:
+                    if j == ",":
+                        c+=1
+                    else:
+                        liste[c].append(j)
+                c+=1
+            for i in liste:
+                i = "".join(i)
+                element.append(i)
+            print(element[0])
+            print(element[1])
+            data_replace(request, current_user,
+                         element[0], element[1]
+                         )
 
 
 
+
+
+
+            
+        else:
+
+            print("ouiiiiiiiiiiiiiiiiiiiiiiiiouais")
+            aliment = request.POST.get('rem')
+            print(aliment)
+            
+            image = image_aliment(aliment)
+            titre = titre_aliment(aliment)
+            a = replace(str(aliment))
+            
+
+
+            return render(request, 'remplacement.html',
+                          {"a":str(a[0][3]),
+                           "b":str(a[1][3]),
+                           "c":str(a[2][3]),
+                           "d":str(a[3][3]),
+                           "e":str(a[4][3]),
+                           "f":str(a[5][3]),
+                           
+                           "aa":str(a[0][0]),
+                           "bb":str(a[1][0]),
+                           "cc":str(a[2][0]),
+                           "dd":str(a[3][0]),
+                           "ee":str(a[4][0]),
+                           "ff":str(a[5][0]),
+                           
+                           "aaa":str(a[0][4]),
+                           "bbb":str(a[1][4]),
+                           "ccc":str(a[2][4]),
+                           "ddd":str(a[3][4]),
+                           "eee":str(a[4][4]),
+                           "fff":str(a[5][4]),
+
+                           "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][2]) + ".jpg >",
+                           "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][2]) + ".jpg >",
+                           "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][2]) + ".jpg >",
+                           "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][2]) + ".jpg >",
+                           "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][2]) + ".jpg >",
+                           "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][2]) + ".jpg >",
+
+                           "image":str(image[0][0]),
+                           "titre":str(titre[0][0]),
+                     
+                    
+                           })
+
+
+    current_user = request.user
+
+    food = mes_aliment_user(request.user.username)
+    a = display_food(food)
+  
+
+    
+    return render(request, 'mes_aliments.html',
+                  {"a":str(a[0][5]),
+                   "b":str(a[1][5]),
+                   "c":str(a[2][5]),
+                   "d":str(a[3][5]),
+                   "e":str(a[4][5]),
+                   "f":str(a[5][5]),
+                   
+                   "aa":str(a[0][1]),
+                   "bb":str(a[1][1]),
+                   "cc":str(a[2][1]),
+                   "dd":str(a[3][1]),
+                   "ee":str(a[4][1]),
+                   "ff":str(a[5][1]),
+                   
+                   "aaa":str(a[0][4]),
+                   "bbb":str(a[1][4]),
+                   "ccc":str(a[2][4]),
+                   "ddd":str(a[3][4]),
+                   "eee":str(a[4][4]),
+                   "fff":str(a[5][4]),
+
+                   "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][4]) + ".jpg >",
+                   "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][4]) + ".jpg >",
+                   "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][4]) + ".jpg >",
+                   "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][4]) + ".jpg >",
+                   "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][4]) + ".jpg >",
+                   "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][4]) + ".jpg >",
+
+                   "aaaaa":str(a[0][0]),
+                   "bbbbb":str(a[1][0]),
+                   "ccccc":str(a[2][0]),
+                   "ddddd":str(a[3][0]),
+                   "eeeee":str(a[4][0]),
+                   "fffff":str(a[5][0]),
+
+          
+            
+                   })
 
 
 
