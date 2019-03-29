@@ -18,6 +18,7 @@
 #selon le niveau et selon la connexion on affiche une medaille selon le niveau
 
 
+#niveau 1 un seul a, niveau 2 1 seul a avec 4 cadres en plus niveau 3 plusieurs a plusieurs selections on indique que c pas fini il reste tant de nutri a
 
 
 
