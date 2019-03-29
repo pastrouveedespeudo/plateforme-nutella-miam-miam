@@ -1,5 +1,6 @@
 #factoriser mes_aliments fini ca ! et faire le jeu ! et rajouter l'heure avec une horloge
 
+#putin de merde jcrois j'ai deux pages en trop... nik je re commencerai au pire pcque le mec il veut son site pas en moins pas en trop ni plus ni moins* pas grave
 
 
 #-----avance sur rajouter des fonctionnalités
