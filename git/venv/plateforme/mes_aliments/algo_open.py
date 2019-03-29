@@ -181,8 +181,30 @@ def replace(para):
 
 
 
+def data_replace(request, username, aliment, new_aliment):
+    
+    conn = psycopg2.connect(database="plateforme",
+                            user="postgres",
+                            host="127.0.0.1",
+                            password="tiotio")
+
+                
+    cur = conn.cursor()
+    print(aliment)
+    print(new_aliment)
+    print("GOGODANCEUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUR")
+    
+    cur.execute("""UPDATE aliment_de_{}
+                set name_aliment = '{}' where name_aliment = '{}'
+              
 
 
+                """.format(username,  new_aliment, aliment))
+
+    
+    conn.commit()
+
+        
 
 
 
