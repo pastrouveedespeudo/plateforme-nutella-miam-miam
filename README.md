@@ -1,5 +1,4 @@
-#1h a changer les aliment et a me demander pk ca change tous les aliments ta race hihihi pcque javais 6 aliments les meme dans mon panier
-
+#au pire tout faire dans le meme dossier et aux mecs on met que les fichier sans les ajouts pcque ca marche pas  
 
 
 #-----avance sur rajouter des fonctionnalités
