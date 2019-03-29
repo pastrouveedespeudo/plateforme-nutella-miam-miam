@@ -70,9 +70,17 @@ def better_nutri(para):
     indice_cat = [i[0] for i in rows]
 
 
+    cur.execute("""SELECT name_aliment, id_categorie_id, nutriscore, image,id
+    FROM public.mes_aliments_aliment
+    WHERE name_aliment = '{}'""".format(para))
 
+    conn.commit()
 
+    rows = cur.fetchall()
 
+    aliment_recherché = [i for i in rows]
+
+    
     c = 0
     for i in indice_cat:
         
@@ -92,6 +100,8 @@ def better_nutri(para):
 
 
     liste = liste[:6]
+    liste[0] = aliment_recherché[0]
+    print(liste)
     return liste
 
 
@@ -120,8 +130,6 @@ def detail_aliment(value):
     detail = [i for i in rows]
     print(detail)
     return detail
-
-
 
 
 
