@@ -205,11 +205,37 @@ def data_replace(request, username, aliment, new_aliment):
     conn.commit()
 
         
+def verification_produit_pasèdeux_fois(username, produit):
+    
+    conn = psycopg2.connect(database="plateforme",
+                            user="postgres",
+                            host="127.0.0.1",
+                            password="tiotio")
+
+                
+    cur = conn.cursor()
 
 
+    
+    cur.execute("""SELECT * from aliment_de_{}
+                WHERE name_aliment LIKE '%{}%'
+              
 
 
+                """.format(username, produit))
 
+    
+    conn.commit()
+
+
+    rows = cur.fetchall()
+
+    liste = [i for i in rows]
+
+    if liste != []:
+        return False
+    else:
+        return True
 
 
 
