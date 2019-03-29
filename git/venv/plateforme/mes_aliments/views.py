@@ -156,7 +156,7 @@ def mes_aliments(request):
 
     food = mes_aliment_user(request.user.username)
     a = display_food(food)
-    print(a)
+  
 
     
     return render(request, 'mes_aliments.html',
@@ -201,7 +201,53 @@ def mes_aliments(request):
 
 
 
+def remplacement(request):
 
+    if request.method == "POST":
+        print("ouiiiiiiiiiiiiiiiiiiiiiiii")
+        aliment = request.POST.get('rem')
+        print(aliment)
+
+        image = image_aliment(aliment)
+        titre = titre_aliment(aliment)
+        a = replace(str(aliment))
+
+
+
+        return render(request, 'remplacement.html',
+                      {"a":str(a[0][3]),
+                       "b":str(a[1][3]),
+                       "c":str(a[2][3]),
+                       "d":str(a[3][3]),
+                       "e":str(a[4][3]),
+                       "f":str(a[5][3]),
+                       
+                       "aa":str(a[0][0]),
+                       "bb":str(a[1][0]),
+                       "cc":str(a[2][0]),
+                       "dd":str(a[3][0]),
+                       "ee":str(a[4][0]),
+                       "ff":str(a[5][0]),
+                       
+                       "aaa":str(a[0][4]),
+                       "bbb":str(a[1][4]),
+                       "ccc":str(a[2][4]),
+                       "ddd":str(a[3][4]),
+                       "eee":str(a[4][4]),
+                       "fff":str(a[5][4]),
+
+                       "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][2]) + ".jpg >",
+                       "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][2]) + ".jpg >",
+                       "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][2]) + ".jpg >",
+                       "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][2]) + ".jpg >",
+                       "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][2]) + ".jpg >",
+                       "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][2]) + ".jpg >",
+
+                       "image":str(image[0][0]),
+                       "titre":str(titre[0][0]),
+                 
+                
+                       })
 
 
 
