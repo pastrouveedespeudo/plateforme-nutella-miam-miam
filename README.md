@@ -1,4 +1,6 @@
-#ca marche pas on peut pas envoyer les info depuis views grace a ajax ? merde ji comprend rien désolé a tous les mecs des video que j'ai insulté mentalement...  faire attention la boucle 1 * sur 5 ca fait planté le truk du coup vu que j'ai presque le niveau d'un 1er s j'ai reduit les issus de 3^3 avec le j=k=l en laissant le i mais bon...
+#ca marche pas on peut pas envoyer les info depuis views grace a ajax ? merde ji comprend rien désolé a tous les mecs des video que j'ai insulté mentalement...  faire attention la boucle 1 * sur 5 ca fait planté le truk du coup vu que j'ai presque le niveau d'un 1er s j'ai reduit les issus de 3^3 avec le j=k=l en laissant le i mais bon... 
+
+#si bien jdis nimporte quoi mais ca fait classe
 
 #ok en gros, les button permettent de choisir le niveau
 
