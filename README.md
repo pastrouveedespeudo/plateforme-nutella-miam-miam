@@ -1,8 +1,4 @@
-#faire aliment remplacer et faire le jeu + les 2 autres truks!
- 
-#en gros c le meme truk que recherche sauf que la tu remplaces avec un update et c oki !! par conte les input ca rend moche...
-
-#verifie que t'as tout bien enregistrer je refais pas tout demain serieux la navbarre c horrible chaque matin 
+#factoriser mes_aliments fini ca ! et faire le jeu ! et rajouter l'heure avec une horloge
 
 
 
