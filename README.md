@@ -1,5 +1,5 @@
 
-
+#oublie pas de mettre noun project, openfoodfact, bootstrap, et le nom des types des images
 
 #si le mec a bon on lui ajoute des pts a son compte personel
 
