@@ -1,7 +1,7 @@
 
 #oublie pas de mettre noun project, openfoodfact, bootstrap, et le nom des types des images + push sur heroku mais ca j'ai trop peur
 
-#si le mec a bon on lui ajoute des pts a son compte personel
+#voila pk faut toujours commit ^^ un ligne et je c pas c laquelle
 
 #si le mec a bon, on met un logo vert sinon une croix
 
