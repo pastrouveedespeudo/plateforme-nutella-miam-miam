@@ -15,7 +15,7 @@ def jeux(request):
         niveau = str(niveau)
   
         continuer = request.POST.get('data')
-        
+        continuer = str(continuer)
         if niveau == "Niveau 1":
             print('Choix de niveau: niveau 1')
             un = choix_aliment_niveau_1()
@@ -64,7 +64,11 @@ def jeux(request):
            
 
         elif continuer:
+            print(continuer)
             print('ouiiiiiiiiiiiiiiii')
+
+            #ptsscore()
+            
             un = choix_aliment_niveau_1()
             numero = ["1","2","3","4"]
             image = [un[0][2], un[1][0][0][2], un[1][1][0][2], un[1][2][0][2]]
@@ -85,7 +89,7 @@ def jeux(request):
                     j = l = k = ""
                     
             data = {"image1":i, "image2":j,"image3":k,"image4":l}
-            print(data)
+            
             return JsonResponse(data)
 
 
