@@ -8,12 +8,13 @@ from django.http import JsonResponse
 from .score import *
 from .verification_reponse import *
 
+#a changé
 
 def jeux(request):
 
     current_user = request.user
     point = score(current_user)
-
+    score_actuel =  update_score(request.user, 0)
    
     if request.method == "POST":
 
@@ -100,12 +101,15 @@ def jeux(request):
             print(nutriscore_id[0][0],"0000000000000000000000000000000000000000")
 
             if nutriscore_id[0][0] == "a":
-                update_score(request.user, 5)
+                score_actuel = update_score(request.user, +5)
+                
                 print("oui bonne réponse + 5")
                 message = "oui bonne réponse + 5"
             else:
                 print("non mauvaise réponse")
-                message = "non mauvaise réponse"
+                score_actuel =  update_score(request.user, -2)
+                
+                message = "non mauvaise réponse - 2"
             
             un = choix_aliment_niveau_1()
             numero = ["1","2","3","4"]
@@ -126,13 +130,13 @@ def jeux(request):
                 else:
                     j = l = k = ""
                     
-            data = {"image1":i, "image2":j,"image3":k,"image4":l,"message":message}
+            data = {"image1":i, "image2":j,"image3":k,"image4":l,"message":message, 'score_actuel': score_actuel}
             DATA = []
             return JsonResponse(data)
 
 
             
-    return render(request, "jeux.html", {'score':point}) 
+    return render(request, "jeux.html", {'score':point, 'score_actuel': score_actuel}) 
 
 
 
