@@ -1,5 +1,5 @@
 
-#oublie pas de mettre noun project, openfoodfact, bootstrap, et le nom des types des images
+#oublie pas de mettre noun project, openfoodfact, bootstrap, et le nom des types des images + push sur heroku mais ca j'ai trop peur
 
 #si le mec a bon on lui ajoute des pts a son compte personel
 
