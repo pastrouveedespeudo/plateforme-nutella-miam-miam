@@ -1,4 +1,6 @@
 
+#enfaite j'arrive pas a faire des fonction générale jcrois au pire jrecommencerai pas grave
+
 #si le mec a bon on lui ajoute des pts a son compte personel
 
 #si le mec a bon, on met un logo vert sinon une croix
