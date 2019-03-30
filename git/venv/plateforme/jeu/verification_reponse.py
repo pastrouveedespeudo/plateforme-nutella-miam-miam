@@ -1,5 +1,5 @@
 import psycopg2
-
+#a cahng"
 def verification(aliment):
     
     conn = psycopg2.connect(database="plateforme",
@@ -11,7 +11,7 @@ def verification(aliment):
     cur = conn.cursor()
 
     
-    cur.execute("""select nutriscore, id
+    cur.execute("""select nutriscore
                     from mes_aliments_aliment
                     where image = '{}'""".format(aliment))
 
@@ -22,7 +22,9 @@ def verification(aliment):
     rows = cur.fetchall()
 
     information = [i for i in rows]
-    
+
+    print('le nutriscore bella est de : ', information)
+    print("verification(), verification_reponse.py") 
     return information
 
 
@@ -49,6 +51,10 @@ def voir_aliment(id_aliment):
     rows = cur.fetchall()
 
     info_aliment = [i for i in rows]
+
+
+    print("voir_aliment(), verification_reponse.py")
+
 
     return info_aliment
 
