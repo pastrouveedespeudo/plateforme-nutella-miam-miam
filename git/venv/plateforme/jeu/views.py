@@ -28,6 +28,8 @@ def jeux(request):
         current_user = request.user
         point = score(current_user)
 
+        niveau_continuer = request.POST.get('data1')
+        print(niveau_continuer,'00000000000000000')
         
         if niveau == "Niveau 1":
             print('Choix de niveau: niveau 1')
@@ -69,14 +71,14 @@ def jeux(request):
 
 
         
-        elif niveau == "Niveau 2":
+        elif niveau_continuer == "Niveau 2":
             pass
 
-        elif niveau == "Niveau 3":
+        elif niveau_continuer == "Niveau 3":
             pass
            
 
-        elif continuer:
+        elif niveau_continuer == 'Niveau 1':
 
 
             liste = [[],[]]
