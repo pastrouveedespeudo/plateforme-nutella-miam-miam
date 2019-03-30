@@ -1,7 +1,8 @@
 
 #oublie pas de mettre noun project, openfoodfact, bootstrap, et le nom des types des images + push sur heroku mais ca j'ai trop peur
 
-#voila pk faut toujours commit ^^ un ligne et je c pas c laquelle
+#le score lvl 2 + et - de gain puté j'en aurai chié et la on va me dire hé oui la conception et les tdd et sinon ca serait marrant ou ?
+faut bosser ca mais... le petit truk quand tu fais une nouvelle page...
 
 #si le mec a bon, on met un logo vert sinon une croix
 
