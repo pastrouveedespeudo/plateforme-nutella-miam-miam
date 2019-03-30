@@ -98,6 +98,8 @@
 <script>
 
 
+    <!-- niveau 1 -->
+
     function choice1(){
       CHOICE = []
       document.getElementById('score').innerHTML = ""
@@ -133,9 +135,100 @@
       CHOICE.push(a)
      
       };
+
+
+
+    <!-- niveau 2 -->
+
+
+    function choice2_1(){
+      CHOICE = []
+      document.getElementById('score').innerHTML = ""
+      var a = document.getElementById('image1niveau2').src
+      CHOICE.push('image1')
+      CHOICE.push(a)
+      
+      
+      };
+    function choice2_2(){
+      CHOICE = []
+      document.getElementById('score').innerHTML = ""
+      var a = document.getElementById('image2niveau2').src
+      CHOICE.push('image2')
+      CHOICE.push(a)
+   
+      };
+
+    function choice2_3(){
+      CHOICE = []
+      document.getElementById('score').innerHTML = ""
+      var a = document.getElementById('image3niveau2').src
+      CHOICE.push('image3')
+      CHOICE.push(a)
+  
+      };
+
+    function choice2_4(){
+      CHOICE = []
+      document.getElementById('score').innerHTML = ""
+      var a = document.getElementById('image4niveau2').src
+      CHOICE.push('image4')
+      CHOICE.push(a)
+     
+      };
+
+    function choice2_5(){
+      CHOICE = []
+      document.getElementById('score').innerHTML = ""
+      var a = document.getElementById('image5niveau2').src
+      CHOICE.push('image5')
+      CHOICE.push(a)
+      
+      
+      };
+    function choice2_6(){
+      CHOICE = []
+      document.getElementById('score').innerHTML = ""
+      var a = document.getElementById('image6niveau2').src
+      CHOICE.push('image6')
+      CHOICE.push(a)
+   
+      };
+
+    function choice2_7(){
+      CHOICE = []
+      document.getElementById('score').innerHTML = ""
+      var a = document.getElementById('image7niveau2').src
+      CHOICE.push('image7')
+      CHOICE.push(a)
+  
+      };
+
+    function choice2_8(){
+      CHOICE = []
+      document.getElementById('score').innerHTML = ""
+      var a = document.getElementById('image8niveau2').src
+      CHOICE.push('image8')
+      CHOICE.push(a)
+     
+      };
+
+
+
+  <!-- niveau 3 -->
+
+
+
+
+
+
+  <!-- variables -->
+
+
       
     var LISTE = ["a"];
-    var IMAGE = []
+    var IMAGE = [];
+    var IMAGE2 = [];
     function lvl1(){
 
         document.getElementById("jeux").innerHTML = "<div class='col-xs-12-mx-auto text-center'>" +
@@ -166,25 +259,31 @@
        
         };
 
+
+  <!-- niveau 2 -->
+
+
+  
     function lvl2(){
 
+        
         
      document.getElementById("jeux").innerHTML =  "<div class='col-xs-12-mx-auto text-center'>" +
                                                         "<div class='row' id='row3'>" +
                                                             "<div style='border:1px solid blue;width:250px; height:300px; margin-left:auto;'>" +
-                                                                "<img src='{{image1}}'>" +
+                                                                "<input type='image' src='' id='image1niveau2' onclick='choice2_1()' style='width:250px; height:300px;'>" +
                                                             "</div>" +
                                                             "<div style='width:20px;'></div>" +
                                                             "<div style='border:1px solid blue;width:250px; height:300px;'>" +
-                                                                "<img src='{{image2}}'>" +
+                                                                "<input type='image' src='' id='image2niveau2' onclick='choice2_2()' style='width:250px; height:300px;'>" +
                                                             "</div>" +
                                                             "<div style='width:20px;'></div>" +
                                                             "<div style='border:1px solid blue;width:250px; height:300px;'>" +
-                                                                "<img src='{{image3}}'>" +
+                                                                "<input type='image' src='' id='image3niveau2' onclick='choice2_3()' style='width:250px; height:300px;'>" +
                                                             "</div>" +
                                                             "<div style='width:20px;'></div>" +
                                                             "<div style='border:1px solid blue;width:250px; height:300px;margin-right:auto;'>" +
-                                                                "<img src='{{image4}}'>" +
+                                                                "<input type='image' src='' id='image4niveau2' onclick='choice2_4()' style='width:250px; height:300px;'>" +
                                                             "</div>" +
                                                         "</div>" +
                                                      "</div>" +
@@ -192,22 +291,28 @@
                                                     "<div class='col-xs-12-mx-auto text-center'>" +
                                                         "<div class='row' id='row3'>" +
                                                             "<div style='border:1px solid blue;width:250px; height:300px; margin-left:auto;'>" +
-                                                                "<img src='{{image5}}'>" +
+                                                                "<input type='image' src='' id='image5niveau2' onclick='choice2_5()' style='width:250px; height:300px;'>" +
                                                             "</div>" +
                                                             "<div style='width:20px;'></div>" +
                                                             "<div style='border:1px solid blue;width:250px; height:300px;'>" +
-                                                                "<img src='{{image6}}'>" +
+                                                                "<input type='image' src='' id='image6niveau2' onclick='choice2_6()' style='width:250px; height:300px;'>" +
                                                             "</div>" +
                                                             "<div style='width:20px;'></div>" +
                                                             "<div style='border:1px solid blue;width:250px; height:300px;'>" +
-                                                                "<img src='{{image7}}'>" +
+                                                                "<input type='image' src='' id='image7niveau2' onclick='choice2_7()' style='width:250px; height:300px;'>" +
                                                             "</div>" +
                                                             "<div style='width:20px;'></div>" +
                                                             "<div style='border:1px solid blue;width:250px; height:300px;margin-right:auto;'>" +
-                                                                "<img src='{{image8}}'>" +
+                                                                "<input type='image' src='' id='image8niveau2' onclick='choice2_8()' style='width:250px; height:300px;'>" +
                                                             "</div>" +
                                                         "</div>" +
                                                      "</div>"
+
+
+        var a = document.getElementById("niveau2").value;
+        console.log(a);
+        LISTE.push(a)
+
 
         };
 
@@ -261,7 +366,7 @@
     
     $("#niveau1").on("click", function(e){
          e.preventDefault();
-      
+          document.getElementById('cont2').style.display = 'none';
           $.ajax({
               data:{
                   'data':LISTE[LISTE.length - 1],
@@ -311,6 +416,8 @@
               
           });
     });
+
+
 
   
     $("#valider1").on("click", function(e){
@@ -373,6 +480,181 @@
     });
 
 
+
+
+
+    $("#niveau2").on("click", function(e){
+         e.preventDefault();
+         document.getElementById('cont1').style.display = 'none';
+          $.ajax({
+              data:{
+                  'data':LISTE[LISTE.length - 1],
+                  csrfmiddlewaretoken:'{{ csrf_token }}'
+                  
+           
+              },
+              type:"POST",
+              url:"/jeux/jeux/"
+          })
+          .done(function(data){
+              if (data.error){
+                  $("#monCadreAlert").text(data.error);
+                  $("#is_save");
+                  
+                  
+              }
+              else{
+                  $("#is_save").html(data);
+                  $("#monCadreAlert");
+             
+                  
+                  IMAGE2.push(JSON.stringify(data['image1']))
+                  IMAGE2.push(JSON.stringify(data['image2']))
+                  IMAGE2.push(JSON.stringify(data['image3']))
+                  IMAGE2.push(JSON.stringify(data['image4']))
+                  IMAGE2.push(JSON.stringify(data['image5']))
+                  IMAGE2.push(JSON.stringify(data['image6']))
+                  IMAGE2.push(JSON.stringify(data['image7']))
+                  IMAGE2.push(JSON.stringify(data['image8']))
+                  
+              
+                  
+                  var i = IMAGE2[0]
+                  var j = i.slice(1,i.length-1)
+                  
+                  var k = IMAGE2[1]
+                  var l = k.slice(1,k.length-1)
+                  
+                  var m = IMAGE2[2]
+                  var n = m.slice(1,m.length-1)
+                  
+                  var o = IMAGE2[3]
+                  var p = o.slice(1,o.length-1)
+
+
+                  var q = IMAGE2[4]
+                  var r = p.slice(0,q.length-1)
+               
+                  
+                  var s = IMAGE2[5]
+                  var t = s.slice(1,s.length-1)
+               
+                  var u = IMAGE2[6]
+                  var v = u.slice(1,u.length-1)
+                
+                  var w = IMAGE2[7]
+                  var x = w.slice(1,w.length-1)
+                  
+
+                  
+                  
+                  document.getElementById('image1niveau2').src=j;
+                  document.getElementById('image2niveau2').src=l;
+                  document.getElementById('image3niveau2').src=n;
+                  document.getElementById('image4niveau2').src=p;
+
+                  document.getElementById('image5niveau2').src=r;
+                  document.getElementById('image6niveau2').src=t;
+                  document.getElementById('image7niveau2').src=v;
+                  document.getElementById('image8niveau2').src=x;
+
+
+                  document.getElementById('cont2').style.display ='block';
+
+                  
+              };
+              
+          });
+    });
+
+
+    <!-- niveau 2  validate-->
+
+    $("#cont2").on("click", function(e){
+    
+         e.preventDefault();
+         
+         IMAGE2 = []
+      
+          $.ajax({
+              data:{
+                  'data':String(CHOICE),
+                  'data1':'Niveau 2',
+                  csrfmiddlewaretoken:'{{ csrf_token }}'
+                  
+           
+              },
+              type:"POST",
+              url:"/jeux/jeux/"
+          })
+          .done(function(data){
+              if (data.error){
+                  $("#monCadreAlert").text(data.error);
+                  $("#is_save");
+                  
+                  
+              }
+              else{
+                  $("#is_save").html(data);
+                  $("#monCadreAlert");
+                  alert(JSON.stringify(data))
+                  alert(IMAGE2)
+                  IMAGE2.push(JSON.stringify(data['image1']))
+                  IMAGE2.push(JSON.stringify(data['image2']))
+                  IMAGE2.push(JSON.stringify(data['image3']))
+                  IMAGE2.push(JSON.stringify(data['image4']))
+
+                  IMAGE2.push(JSON.stringify(data['image5']))
+                  IMAGE2.push(JSON.stringify(data['image6']))
+                  IMAGE2.push(JSON.stringify(data['image7']))
+                  IMAGE2.push(JSON.stringify(data['image8']))
+
+                  
+                  var i = IMAGE2[0]
+                  var j = i.slice(1,i.length-1)
+                  
+                  var k = IMAGE2[1]
+                  var l = k.slice(1,k.length-1)
+                  
+                  var m = IMAGE2[2]
+                  var n = m.slice(1,m.length-1)
+                  
+                  var o = IMAGE2[3]
+                  var p = o.slice(1,o.length-1)
+                  
+
+                  var q = IMAGE2[4]
+                  var r = q.slice(1,q.length-1)
+                  
+                  var s = IMAGE2[5]
+                  var t = s.slice(1,s.length-1)
+                  
+                  var u = IMAGE2[6]
+                  var v = u.slice(1,u.length-1)
+                  
+                  var w = IMAGE2[7]
+                  var x = w.slice(1,w.length-1)
+
+
+                  document.getElementById('image1niveau2').src=j;
+                  document.getElementById('image2niveau2').src=l;
+                  document.getElementById('image3niveau2').src=n;
+                  document.getElementById('image4niveau2').src=p;
+                  
+                  document.getElementById('image5niveau2').src=r;
+                  document.getElementById('image6niveau2').src=t;
+                  document.getElementById('image7niveau2').src=v;
+                  document.getElementById('image8niveau2').src=x;
+                  
+                  document.getElementById('score').innerHTML = "Tu as :  " + String(JSON.stringify(data['score_actuel'])) +
+                                                                "points &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
+                                                                String(JSON.stringify(data['message']))
+
+
+              };
+              
+          });
+    });
 
 
              
