@@ -48,10 +48,14 @@
 
 
 
+  
+  <div id='score'></div>
 
 
+</div>
   <section class="bg-primary" id="about">
     <center><p>Selon toi, lequels de ces articles à un nutriscore de A</p></center>
+   
     <div id="jeux">
     
                                                      
@@ -93,25 +97,38 @@
 
     function choice1(){
       CHOICE = []
+      document.getElementById('score').innerHTML = "Tu as :{{score}} points"
+      var a = document.getElementById('image1niveau1').src
       CHOICE.push('image1')
+      CHOICE.push(a)
+      
       
       };
     function choice2(){
       CHOICE = []
+      document.getElementById('score').innerHTML = "Tu as :{{score}} points"
+      var a = document.getElementById('image1niveau1').src
       CHOICE.push('image2')
+      CHOICE.push(a)
    
       };
 
     function choice3(){
       CHOICE = []
+      document.getElementById('score').innerHTML = "Tu as :{{score}} points"
+      var a = document.getElementById('image1niveau1').src
       CHOICE.push('image3')
+      CHOICE.push(a)
   
       };
 
     function choice4(){
       CHOICE = []
+      document.getElementById('score').innerHTML = "Tu as :{{score}} points"
+      var a = document.getElementById('image1niveau1').src
       CHOICE.push('image4')
-      alert(CHOICE)
+      CHOICE.push(a)
+     
       };
       
     var LISTE = ["a"];
@@ -277,13 +294,13 @@
                   var o = IMAGE[3]
                   var p = o.slice(1,o.length-1)
                   
-
+                  
                   document.getElementById('image1niveau1').src=j;
                   document.getElementById('image2niveau1').src=l;
                   document.getElementById('image3niveau1').src=n;
                   document.getElementById('image4niveau1').src=p;
                   document.getElementById('valider').style.display ='block';
-                  
+
                   
               };
               
@@ -339,7 +356,8 @@
                   document.getElementById('image2niveau1').src=l;
                   document.getElementById('image3niveau1').src=n;
                   document.getElementById('image4niveau1').src=p;
-        
+                  document.getElementById('score').innerHTML = "Tu as :{{score}} points &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
+                                                                String(JSON.stringify(data['message']))
 
 
               };
