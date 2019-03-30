@@ -12,7 +12,7 @@
     background-color: rgba(255, 153, 102);
   }
   </style>
-    <div id="is_save">{{yo}}{{image1}}ooooooooo</div>
+
   <header class="masthead text-center d-flex">
     <div class="container my-auto">
       <div class="row">
@@ -33,7 +33,7 @@
           </div>
     
 
-            <form action="/jeux/jeux" method="POST">
+            <form action="/jeux/jeux/" method="POST">
             {% csrf_token %}
                 <input type="hidden" id="hid">
                 <input type="button" onclick="lvl1()" value="Niveau 1" name="niveau1" id="niveau1">
@@ -58,17 +58,17 @@
   
 
     </div>
-
-
-
-
-
-
-
+          <br><br><br><br>
+          <form action="/jeux/jeux/" methode='POST' id='validation'>
+          {% csrf_token %}
+            <center><input type='button' value='valider' style='display:none;' id='valider' name='valider' style='width:150%;'></center> 
+          </form>
+          
         </div>
       </div>
     </div>
   </section>
+ 
 
 
 
@@ -258,6 +258,7 @@
                   document.getElementById('image2niveau1').src=l;
                   document.getElementById('image3niveau1').src=n;
                   document.getElementById('image4niveau1').src=p;
+                  document.getElementById('valider').style.display ='block';
                   
                   
               };
@@ -265,7 +266,63 @@
           });
     });
 
-    
+  
+    $("#valider").on("click", function(e){
+         e.preventDefault();
+         IMAGE = []
+      
+          $.ajax({
+              data:{
+                  'data':'valider',
+                  csrfmiddlewaretoken:'{{ csrf_token }}'
+                  
+           
+              },
+              type:"POST",
+              url:"/jeux/jeux/"
+          })
+          .done(function(data){
+              if (data.error){
+                  $("#monCadreAlert").text(data.error);
+                  $("#is_save");
+                  
+                  
+              }
+              else{
+                  $("#is_save").html(data);
+                  $("#monCadreAlert");
+                  alert(JSON.stringify(data))
+                  IMAGE.push(JSON.stringify(data['image1']))
+                  IMAGE.push(JSON.stringify(data['image2']))
+                  IMAGE.push(JSON.stringify(data['image3']))
+                  IMAGE.push(JSON.stringify(data['image4']))
+  
+                  var i = IMAGE[0]
+                  var j = i.slice(1,i.length-1)
+                  
+                  var k = IMAGE[1]
+                  var l = k.slice(1,k.length-1)
+                  
+                  var m = IMAGE[2]
+                  var n = m.slice(1,m.length-1)
+                  
+                  var o = IMAGE[3]
+                  var p = o.slice(1,o.length-1)
+                  
+
+                  document.getElementById('image1niveau1').src=j;
+                  document.getElementById('image2niveau1').src=l;
+                  document.getElementById('image3niveau1').src=n;
+                  document.getElementById('image4niveau1').src=p;
+        
+
+
+              };
+              
+          });
+    });
+
+                  
 </script>
 
 
