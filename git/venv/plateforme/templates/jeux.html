@@ -63,7 +63,12 @@
           <br><br><br><br>
           <form action="/jeux/jeux/" methode='POST' id='validation'>
           {% csrf_token %}
-            <center><input type='button' value='valider' style='display:none;' id='valider' name='valider' style='width:150%;'></center> 
+          <div id='cont1' style='display:none'>
+            "<center><input type='button' value='valider1' id='valider1' name='valider'></center>"
+          </div>
+          <div id='cont2' style='display:none'>
+          "<center><input type='button' value='valider2' id='valider2' name='valider'></center>"
+          </div>
           </form>
           
         </div>
@@ -156,6 +161,8 @@
         var a = document.getElementById("niveau1").value;
         console.log(a);
         LISTE.push(a)
+
+
        
         };
 
@@ -297,7 +304,7 @@
                   document.getElementById('image2niveau1').src=l;
                   document.getElementById('image3niveau1').src=n;
                   document.getElementById('image4niveau1').src=p;
-                  document.getElementById('valider').style.display ='block';
+                  document.getElementById('cont1').style.display ='block';
 
                   
               };
@@ -306,7 +313,7 @@
     });
 
   
-    $("#valider").on("click", function(e){
+    $("#valider1").on("click", function(e){
          e.preventDefault();
        
          IMAGE = []
@@ -314,6 +321,7 @@
           $.ajax({
               data:{
                   'data':String(CHOICE),
+                  'data1':'Niveau 1',
                   csrfmiddlewaretoken:'{{ csrf_token }}'
                   
            
@@ -364,7 +372,10 @@
           });
     });
 
-                  
+
+
+
+             
 </script>
 
 
