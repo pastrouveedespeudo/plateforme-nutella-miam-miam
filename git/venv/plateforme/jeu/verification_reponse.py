@@ -12,7 +12,7 @@ def verification(aliment):
 
     
     cur.execute("""select nutriscore, id
-                    from public.mes_aliments.aliment
+                    from mes_aliments_aliment
                     where image = '{}'""".format(aliment))
 
     
@@ -39,7 +39,7 @@ def voir_aliment(id_aliment):
     cur = conn.cursor()
 
     
-    cur.execute("""select * from public.mes_aliments_aliment
+    cur.execute("""select * from mes_aliments_aliment
                 where id = {}""".format(id_aliment))
 
     
