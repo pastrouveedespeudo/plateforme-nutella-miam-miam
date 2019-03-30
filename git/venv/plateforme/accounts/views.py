@@ -8,6 +8,9 @@ from django.contrib.auth import (
     logout
     )
 
+
+from .database_score import *
+
 from .database_utilisateur import *
 
 
@@ -66,6 +69,8 @@ def register_view(request):
 
         create_database_user(user.username)
         insert_database_user(user.username)
+        create_data_score_user(user.username)
+        insert_data_score_user(user.username)
         new_user = authenticate(username=user.username, password=password)
 
         login(request, new_user)
