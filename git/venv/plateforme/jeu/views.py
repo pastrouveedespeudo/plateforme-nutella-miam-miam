@@ -7,14 +7,17 @@ import json as simplejson
 from django.http import JsonResponse
 
 def jeux(request):
+   
     if request.method == "POST":
-        print("ouiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
+
+
         niveau = request.POST.get('data')
         niveau = str(niveau)
-        print(niveau,"00000000000000000000")
-    
+  
+        continuer = request.POST.get('data')
+        
         if niveau == "Niveau 1":
-            print("niveauuuuuuuuuuuuuuuuuuuuu 1")
+            print('Choix de niveau: niveau 1')
             un = choix_aliment_niveau_1()
 
 
@@ -23,7 +26,7 @@ def jeux(request):
 
             continuer = True
             while continuer:
-                print("en cours")
+            
                 i = random.choice(image)
                 j = random.choice(image)
                 k = random.choice(image)
@@ -32,6 +35,7 @@ def jeux(request):
                    and j != k and j != l\
                    and k != l:
                     continuer = False
+                    break
                 else:
                     j = l = k = ""
                     
@@ -46,6 +50,7 @@ def jeux(request):
             print("\n")
 
             data = {"image1":i, "image2":j,"image3":k,"image4":l,"yo":"coucou"}
+            print(data)
             return JsonResponse(data)
 
 
@@ -58,7 +63,65 @@ def jeux(request):
             pass
            
 
+        elif continuer:
+            print('ouiiiiiiiiiiiiiiii')
+            un = choix_aliment_niveau_1()
+            numero = ["1","2","3","4"]
+            image = [un[0][2], un[1][0][0][2], un[1][1][0][2], un[1][2][0][2]]
+
+            continuer = True
+            while continuer:
+            
+                i = random.choice(image)
+                j = random.choice(image)
+                k = random.choice(image)
+                l = random.choice(image)
+                if i != j and i != k and i != l\
+                   and j != k and j != l\
+                   and k != l:
+                    continuer = False
+                    break
+                else:
+                    j = l = k = ""
+                    
+            data = {"image1":i, "image2":j,"image3":k,"image4":l}
+            print(data)
+            return JsonResponse(data)
 
 
-    
+            
     return render(request, "jeux.html", {}) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
