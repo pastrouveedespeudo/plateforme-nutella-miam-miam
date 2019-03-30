@@ -1,5 +1,5 @@
 
-#enfaite j'arrive pas a faire des fonction générale jcrois au pire jrecommencerai pas grave
+
 
 #si le mec a bon on lui ajoute des pts a son compte personel
 
@@ -43,3 +43,20 @@
 #des plans régimes ! des tuto régimes ! 
 
   #apprendre les régimes
+  
+  
+  
+  
+  #a changer pour le p10:
+  
+  #rassembler les database score et utilisateur mais la j'ai la flemme et faut tout refaire
+  
+  #et ^^ ta justification: pour le jury faudra présenter que le premier truk du coup vaut mieux séparer les deux
+  
+   
+  
+  
+  
+  
+  
+  
