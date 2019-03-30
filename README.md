@@ -1,15 +1,5 @@
-#c hard codé je crois que c comme python on peut faire function(element){}; mais ca marche pas..
 
-#ok en gros, les button permettent de choisir le niveau
-
-#avec js on affiche les cadres donc le niveau
-
-#avec ajax on envoie des requetes
-
-
-#avec python on recupere les info de lailiment et on renvoie a ajx
-
-#si le mec a bon on lui ajoute des pts
+#si le mec a bon on lui ajoute des pts a son compte personel
 
 #si le mec a bon, on met un logo vert sinon une croix
 
