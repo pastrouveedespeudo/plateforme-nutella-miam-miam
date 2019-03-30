@@ -1,9 +1,7 @@
 {% include "navbarre.html" %}
 
-
 {% block content %}
 {% endblock %}
-
 
 
 <style>
@@ -97,7 +95,7 @@
 
     function choice1(){
       CHOICE = []
-      document.getElementById('score').innerHTML = "Tu as :{{score}} points"
+      document.getElementById('score').innerHTML = ""
       var a = document.getElementById('image1niveau1').src
       CHOICE.push('image1')
       CHOICE.push(a)
@@ -106,7 +104,7 @@
       };
     function choice2(){
       CHOICE = []
-      document.getElementById('score').innerHTML = "Tu as :{{score}} points"
+      document.getElementById('score').innerHTML = ""
       var a = document.getElementById('image1niveau1').src
       CHOICE.push('image2')
       CHOICE.push(a)
@@ -115,7 +113,7 @@
 
     function choice3(){
       CHOICE = []
-      document.getElementById('score').innerHTML = "Tu as :{{score}} points"
+      document.getElementById('score').innerHTML = ""
       var a = document.getElementById('image1niveau1').src
       CHOICE.push('image3')
       CHOICE.push(a)
@@ -124,7 +122,7 @@
 
     function choice4(){
       CHOICE = []
-      document.getElementById('score').innerHTML = "Tu as :{{score}} points"
+      document.getElementById('score').innerHTML = ""
       var a = document.getElementById('image1niveau1').src
       CHOICE.push('image4')
       CHOICE.push(a)
@@ -356,7 +354,8 @@
                   document.getElementById('image2niveau1').src=l;
                   document.getElementById('image3niveau1').src=n;
                   document.getElementById('image4niveau1').src=p;
-                  document.getElementById('score').innerHTML = "Tu as :{{score}} points &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
+                  document.getElementById('score').innerHTML = "Tu as :" + String(JSON.stringify(data['score_actuel'])) +
+                                                                "points &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
                                                                 String(JSON.stringify(data['message']))
 
 
