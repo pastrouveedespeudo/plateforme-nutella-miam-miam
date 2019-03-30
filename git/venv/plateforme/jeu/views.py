@@ -68,11 +68,129 @@ def jeux(request):
             print(data)
             return JsonResponse(data)
 
+        
+        elif niveau == "Niveau 2":
+            
+            print('Choix de niveau: niveau 2')
+            un = choix_aliment_niveau_2()
+       
+            
+            numero = ["1","2","3","4","5","6","7","8"]
+            image = [un[0][2], un[1][0][0][2], un[1][1][0][2], un[1][2][0][2],
+                    un[1][3][0][2], un[1][4][0][2], un[1][5][0][2],un[1][6][0][2]]
+
+            Ocontinuer = True
+            while Ocontinuer:
+            
+                i = random.choice(image)
+                j = random.choice(image)
+                k = random.choice(image)
+                l = random.choice(image)
+                m = random.choice(image)
+                n = random.choice(image)
+                o = random.choice(image)
+                p = random.choice(image)
+                
+                if i != j and i != k and i != l and i != m and i != n and i != o and i != p\
+                   and j != k and j != l and j != m and j != n and j != o and j != p\
+                   and k != l and k != m and k != n and k != m and k != n and k != p\
+                   and l != m and l != n and l != o and l != p\
+                   and m != n and m != n and m != o and m != p\
+                   and n != o and n != p\
+                   and o != p:
+                    Ocontinuer = False
+                    break
+                else:
+                    j = l = k = l = m = n = o = p = ""
+            print("\n")
+            print('fini')
+            print("\n")
+            
+            data = {"image1":i, "image2":j,"image3":k,"image4":l,
+                    "image5":m, "image6":n,"image7":o,"image8":p}
+            print(data)
+            return JsonResponse(data)
+
 
 
         
         elif niveau_continuer == "Niveau 2":
-            pass
+
+            print("ouiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
+
+            liste = [[],[],[],[],[],[]]
+            c=0
+            for i in continuer:
+                if i == ',':
+                    c+=1
+                else:
+                    liste[c].append(i)
+
+            liste = ["".join(i) for i in liste]
+
+            
+            print(liste)
+            
+            print("l'utilisateur a choisis : ", liste[0])
+            print("le produit est : ", liste[1])
+            
+            current_user = request.user
+            
+            nutriscore_id = verification(liste[1])
+
+
+            if nutriscore_id[0][0] == "a":
+                score_actuel = update_score(request.user, +5)
+                
+                print("oui bonne réponse + 5")
+                message = "oui bonne réponse + 5"
+            else:
+                print("non mauvaise réponse")
+                score_actuel =  update_score(request.user, -2)
+                
+                message = "non mauvaise réponse - 2"
+            
+            un = choix_aliment_niveau_2()
+            
+            numero = ["1","2","3","4","5","6","7","8"]
+            image = [un[0][2], un[1][0][0][2], un[1][1][0][2], un[1][2][0][2],
+                    un[1][3][0][2], un[1][4][0][2], un[1][5][0][2],un[1][6][0][2]]
+
+            Ocontinuer = True
+            while Ocontinuer:
+            
+                i = random.choice(image)
+                j = random.choice(image)
+                k = random.choice(image)
+                l = random.choice(image)
+                m = random.choice(image)
+                n = random.choice(image)
+                o = random.choice(image)
+                p = random.choice(image)
+                
+                if i != j and i != k and i != l and i != m and i != n and i != o and i != p\
+                   and j != k and j != l and j != m and j != n and j != o and j != p\
+                   and k != l and k != m and k != n and k != m and k != n and k != p\
+                   and l != m and l != n and l != o and l != p\
+                   and m != n and m != n and m != o and m != p\
+                   and n != o and n != p\
+                   and o != p:
+                    Ocontinuer = False
+                    break
+                else:
+                    j = l = k = l = m = n = o = p = ""
+
+                    
+            data = {"image1":i, "image2":j,"image3":k,"image4":l,
+                    "image5":m, "image6":n,"image7":o,"image8":p
+                    ,"message":message, 'score_actuel': score_actuel}
+            
+            DATA = []
+            return JsonResponse(data)
+
+
+
+
 
         elif niveau_continuer == "Niveau 3":
             pass
@@ -137,7 +255,7 @@ def jeux(request):
             return JsonResponse(data)
 
 
-            
+    print('merdeeeeeeeeeeeeeeeeeeeeeeeeee')
     return render(request, "jeux.html", {'score':point, 'score_actuel': score_actuel}) 
 
 
