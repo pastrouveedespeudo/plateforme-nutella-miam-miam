@@ -1,8 +1,15 @@
 
 #oublie pas de mettre noun project, openfoodfact, bootstrap, et le nom des types des images + push sur heroku mais ca j'ai trop peur
 
-#le score lvl 2 + et - de gain puté j'en aurai chié et la on va me dire hé oui la conception et les tdd et sinon ca serait marrant ou ?
-faut bosser ca mais... le petit truk quand tu fais une nouvelle page...
+#wowoowowow HEROKU marche du 2eme 
+
+#coup faire le truk database
+
+#finir le dernier niveau faut ste fois metttre plusieurs nutri a et une liste qui envoie tous les choix du mec peut etre 
+
+#mettre un logo de chargement pour dire au mec que vu que le code est pas factorisé ca lag
+
+#ca bug sa mere
 
 #si le mec a bon, on met un logo vert sinon une croix
 
