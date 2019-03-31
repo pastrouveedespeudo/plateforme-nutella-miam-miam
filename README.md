@@ -1,6 +1,7 @@
 
 #ALLLLLLLLLLLLLLLLLLLLLLLLER NIK T AGRABND MERE SA MARCHE AVEC CHOLOAT AU LAIT
 
+#mettre plus de produits, faire si nom != nom pour la recherche y'a trop de double produits, faireun truk ou on peut voir tous les produits aussi, enleve les alert
 
 #oublie pas de mettre noun project, openfoodfact, bootstrap, et le nom des types des images + push sur heroku mais ca j'ai trop peur
 
