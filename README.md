@@ -1,4 +1,7 @@
 
+#ALLLLLLLLLLLLLLLLLLLLLLLLER NIK T AGRABND MERE SA MARCHE AVEC CHOLOAT AU LAIT
+
+
 #oublie pas de mettre noun project, openfoodfact, bootstrap, et le nom des types des images + push sur heroku mais ca j'ai trop peur
 
 #heroku c horrible ca prend 10 ans a charger tu dois tout changer pfffff et pfff pk on peut pas juste mettre not database en ligne... e t en plus on a changer dheure jvai devoir me lever hyper tot mtn
