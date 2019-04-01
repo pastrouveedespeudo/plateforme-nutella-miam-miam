@@ -1,3 +1,5 @@
+#oki pu de bug ah si lentilles/xartvertes dernier bug
+
 
 #le projet doit durer que 20h, le jeu + les medailles c suffisan
 
