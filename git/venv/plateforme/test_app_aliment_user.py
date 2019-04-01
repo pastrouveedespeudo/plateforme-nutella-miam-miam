@@ -1,0 +1,15 @@
+import mes_aliments.mes_aliments_preferer_user  as script
+
+def test_mes_aliment_user():
+    parametre = 'ginettedu2666'
+    sortie = ['chocolat au lait', 'chips saveur wasabi', 'chocolat noir 70%', 'cranberry', 'semoule de blé spéciale\xa0\ndessert', 'lentilles\xa0verte']
+    
+    assert script.mes_aliment_user(parametre) == sortie
+
+
+def test_display_food():
+    parametre = ['chocolat au lait', 'chips saveur wasabi', 'chocolat noir 70%', 'cranberry', 'semoule de blé spéciale\xa0\ndessert', 'lentilles\xa0verte']
+
+    sortie = [('Chocolat au lait', '3017760826174', 'Farine de _blé_ 38 %, chocolat au lait 29 % (sucre, pâte et beurre de cacao, lactose et protéines de _lait_, _lait_ écrémé en poudre, matière grasse végétale, _beurre_ pâtissier, sirop de glucose, émulsifiants : lécithine de _soja_, E476, arôme), matière grasse végétale, sucre, farine complète de _blé_ 10,5 %, sirop de sucre, poudre à lever : carbonate acide de sodium, carbonate acide dammonium, sel, acidifiant : acide citrique, son de _blé_.', 'e', 'https://static.openfoodfacts.org/images/products/301/776/082/6174/front_fr.5.400.jpg', '', 'LU,Mondelez,Granola'), ('Chips saveur Wasabi', '3222475049941', 'Pommes de terre - huile de tournesol 34% - assaisonnement saveur Wasabi [farine de _blé_  - dextrose - chapelure (farine de _blé_ - sel - poudre à lever : carbonates dammonium) - arômes - extrait de levure - sel - acidifiants : acétate de sodium, acide citrique - poudre doignon - colorant : complexes cuivriques des chlorophylles - huile de tournesol] - sel. Traces de lait, céleri et _moutarde_.', 'c', 'https://static.openfoodfacts.org/images/products/322/247/504/9941/front_fr.8.400.jpg', 'Casino', 'Casino'), ('Chocolat noir 70%', '3033490306014', '_Lait_ demi-écrémé et _lait_ écrémé concentré ou en poudre (75,6 %), sucre, crème (_lait_), cacao maigre, chocolat 2 % (sucre, pâte de cacao, cacao maigre en poudre, émulsifiant : lécithine de _soja_, arôme : vanilline), épaississants (E 1442, E 407), amidon.', 'c', 'https://static.openfoodfacts.org/images/products/303/349/030/6014/front_fr.57.400.jpg', 'Leclerc,Carrefour,Intermarché, Magasins U', 'Danone,Danette'), ('Cranberry', '3229820782560', 'Flocons d_avoine_ 55.9%, raisins secs 24%, (raisins secs, huile de tournesol), flocons d_épeautre_ complet 10%, flocons de _blé_, _amandes_ entières 3%, baies 2,1% (cassis, cranberries, myrtilles).', 'a', 'https://static.openfoodfacts.org/images/products/322/982/078/2560/front_fr.52.400.jpg', 'Leclerc,Auchan,Magasins U', 'Bjorg'), ('Semoule de blé spéciale\xa0\nDessert', '3560070823987', 'Contient du gluten.', 'a', 'https://static.openfoodfacts.org/images/products/356/007/082/3987/front_fr.19.400.jpg', 'Carrefour', 'Carrefour'), ('Lentilles\xa0verte', '3270190128403', 'Lentilles vertes issues de lagriculture biologique.', 'a', 'https://static.openfoodfacts.org/images/products/327/019/012/8403/front_fr.13.400.jpg', 'Carrefour', 'Carrefour,Carrefour bio')]
+    
+    assert script.display_food(parametre) == sortie
