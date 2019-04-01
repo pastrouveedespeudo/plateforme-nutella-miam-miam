@@ -250,12 +250,12 @@ def remplacement(request):
                            "ee":str(a[4][0]),
                            "ff":str(a[5][0]),
                            
-                           "aaa":str(a[0][4]),
-                           "bbb":str(a[1][4]),
-                           "ccc":str(a[2][4]),
-                           "ddd":str(a[3][4]),
-                           "eee":str(a[4][4]),
-                           "fff":str(a[5][4]),
+                           "aaa":str(a[0][3]),
+                           "bbb":str(a[1][3]),
+                           "ccc":str(a[2][3]),
+                           "ddd":str(a[3][3]),
+                           "eee":str(a[4][3]),
+                           "fff":str(a[5][3]),
 
                            "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][2]) + ".jpg >",
                            "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][2]) + ".jpg >",
@@ -265,8 +265,7 @@ def remplacement(request):
                            "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][2]) + ".jpg >",
 
                            "image":str(image[0][0]),
-                           "titre":str(titre[0][0]),
-                     
+                           "titre":str(titre[0][0])
                     
                            })
 
