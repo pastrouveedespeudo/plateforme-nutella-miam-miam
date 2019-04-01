@@ -30,6 +30,7 @@ def image_aliment(para):
 
     return image
 
+
 def titre_aliment(para):
     """Here we search title picture """
 
@@ -57,9 +58,11 @@ def titre_aliment(para):
 
 
 def better_nutri(para):
-    """ """
+    """Here we search best of 6 food from same categorie"""
 
     para = para.lower()
+    
+
     
     conn = psycopg2.connect(database="ddgh06joqvm83k",
                                 user="giervvxxoatsci",
@@ -82,7 +85,7 @@ def better_nutri(para):
     indice_cat = indice_cat[0]
 
 
-    cur.execute("""SELECT LOWER(name_aliment), id_categorie_id, nutriscore, image,id
+    cur.execute("""SELECT name_aliment, id_categorie_id, nutriscore, image,id
     FROM public.mes_aliments_aliment
     WHERE LOWER(name_aliment) = '{}'""".format(para))
 
@@ -94,10 +97,11 @@ def better_nutri(para):
    
 
 
+    liste2 = []
     c = 0
-    for i in range(6):
+    for i in range(20):
   
-        cur.execute("""SELECT LOWER(name_aliment), id_categorie_id, nutriscore, image,id
+        cur.execute("""SELECT DISTINCT name_aliment, id_categorie_id, nutriscore, image
         FROM public.mes_aliments_aliment
         WHERE id_categorie_id = {} and nutriscore != 'No_found' and image != 'No_found'
         ORDER BY nutriscore ASC""".format(indice_cat))
@@ -107,11 +111,13 @@ def better_nutri(para):
         rows = cur.fetchall()
 
         liste = [i for i in rows]
+            
 
             
         c+=1
 
- 
+    liste = set(liste)
+    liste = list(liste)
     liste = liste[:6]
     liste[0] = aliment_recherché[0]
 
@@ -122,13 +128,9 @@ def better_nutri(para):
 
 
 
-
 def detail_aliment(value):
     """ """
 
- 
-
-    
     detail = []
 
 
@@ -157,8 +159,8 @@ def detail_aliment(value):
 
 def replace(para):
     """ """
-
-
+    
+    para = para.lower()
     
     conn = psycopg2.connect(database="ddgh06joqvm83k",
                                 user="giervvxxoatsci",
@@ -183,7 +185,7 @@ def replace(para):
     c = 0
     for i in indice_cat:
         
-        cur.execute("""SELECT name_aliment, id_categorie_id, nutriscore, image,id
+        cur.execute("""SELECT distinct LOWER(name_aliment), id_categorie_id, nutriscore, image,id
         FROM public.mes_aliments_aliment
         WHERE id_categorie_id = {} and nutriscore != 'No_found' and image != 'No_found'
         and LOWER(name_aliment) != '{}'
