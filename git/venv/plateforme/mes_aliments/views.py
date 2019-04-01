@@ -14,16 +14,16 @@ from django.shortcuts import redirect
 def aliment_det(request):
     
     if request.method == "POST":
-        print("ouiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
+  
         recherche = request.POST.get('produit')
-        print(recherche,"123132132132123132132")
+      
      
         detail = detail_aliment(recherche) 
         url_nutri = detail[0][4]
         aliment = detail[0][1]
         
         #on recherche selon l'aliment et on redef l'url nutri et aliment
-        print(aliment,"YOOOOOOOOOOOOOOOOOOOOOOOOOOO")
+     
 
         
 
@@ -50,6 +50,8 @@ def aliment_det(request):
 
 @csrf_exempt
 def recherche(request):
+
+    print('processus de recherche')
                   
     liste_recherche = []
     stock_depassé = ""
@@ -138,33 +140,34 @@ def recherche(request):
 def mes_aliments(request):
     current_user = request.user
 
+    print('mes aliments')
     
     food = mes_aliment_user(request.user.username)
     a = display_food(food)
-    print(a)
+
     try:
         return render(request, 'mes_aliments.html',
-                      {"a":str(a[0][5]),
-                       "b":str(a[1][5]),
-                       "c":str(a[2][5]),
-                       "d":str(a[3][5]),
-                       "e":str(a[4][5]),
-                       "f":str(a[5][5]),
+                      {"a":str(a[0][4]),
+                       "b":str(a[1][4]),
+                       "c":str(a[2][4]),
+                       "d":str(a[3][4]),
+                       "e":str(a[4][4]),
+                       "f":str(a[5][4]),
                        
-                       "aa":str(a[0][1]),
-                       "bb":str(a[1][1]),
-                       "cc":str(a[2][1]),
-                       "dd":str(a[3][1]),
-                       "ee":str(a[4][1]),
-                       "ff":str(a[5][1]),
+                       "aa":str(a[0][0]),
+                       "bb":str(a[1][0]),
+                       "cc":str(a[2][0]),
+                       "dd":str(a[3][0]),
+                       "ee":str(a[4][0]),
+                       "ff":str(a[5][0]),
 
 
-                       "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][4]) + ".jpg >",
-                       "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][4]) + ".jpg >",
-                       "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][4]) + ".jpg >",
-                       "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][4]) + ".jpg >",
-                       "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][4]) + ".jpg >",
-                       "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][4]) + ".jpg >",
+                       "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][3]) + ".jpg >",
+                       "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][3]) + ".jpg >",
+                       "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][3]) + ".jpg >",
+                       "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][3]) + ".jpg >",
+                       "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][3]) + ".jpg >",
+                       "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][3]) + ".jpg >",
 
                        "aaaaa":str(a[0][0]),
                        "bbbbb":str(a[1][0]),
@@ -182,15 +185,17 @@ def mes_aliments(request):
 
 def remplacement(request):
 
+    print('processus de remplacement')
+
     if request.method == "POST":
 
         
         replace_it = request.POST.getlist('remplace_food')
-        print(replace_it,"000000000084198498498498")
+    
         
         if replace_it:
-            print(str(replace_it),"000000000084198498498498")
-            print("REPLACEEEEEEEEEEEEEEEEEE")
+      
+     
             current_user = request.user
             
             liste = [[],[]]
@@ -214,7 +219,7 @@ def remplacement(request):
 
         else:
 
-            print("ouiiiiiiiiiiiiiiiiiiiiiiiiouais")
+      
             aliment = request.POST.get('rem')
             print(aliment)
             
