@@ -269,7 +269,7 @@ def remplacement(request):
                     
                            })
 
-    print('yo')
+ 
     current_user = request.user
 
     food = mes_aliment_user(request.user.username)
@@ -278,33 +278,27 @@ def remplacement(request):
 
     
     return render(request, 'mes_aliments.html',
-                  {"a":str(a[0][5]),
-                   "b":str(a[1][5]),
-                   "c":str(a[2][5]),
-                   "d":str(a[3][5]),
-                   "e":str(a[4][5]),
-                   "f":str(a[5][5]),
+                  {"a":str(a[0][4]),
+                   "b":str(a[1][4]),
+                   "c":str(a[2][4]),
+                   "d":str(a[3][4]),
+                   "e":str(a[4][4]),
+                   "f":str(a[5][4]),
                    
-                   "aa":str(a[0][1]),
-                   "bb":str(a[1][1]),
-                   "cc":str(a[2][1]),
-                   "dd":str(a[3][1]),
-                   "ee":str(a[4][1]),
-                   "ff":str(a[5][1]),
-                   
-                   "aaa":str(a[0][4]),
-                   "bbb":str(a[1][4]),
-                   "ccc":str(a[2][4]),
-                   "ddd":str(a[3][4]),
-                   "eee":str(a[4][4]),
-                   "fff":str(a[5][4]),
+                   "aa":str(a[0][0]),
+                   "bb":str(a[1][0]),
+                   "cc":str(a[2][0]),
+                   "dd":str(a[3][0]),
+                   "ee":str(a[4][0]),
+                   "ff":str(a[5][0]),
 
-                   "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][4]) + ".jpg >",
-                   "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][4]) + ".jpg >",
-                   "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][4]) + ".jpg >",
-                   "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][4]) + ".jpg >",
-                   "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][4]) + ".jpg >",
-                   "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][4]) + ".jpg >",
+
+                   "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][3]) + ".jpg >",
+                   "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][3]) + ".jpg >",
+                   "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][3]) + ".jpg >",
+                   "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][3]) + ".jpg >",
+                   "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][3]) + ".jpg >",
+                   "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][3]) + ".jpg >",
 
                    "aaaaa":str(a[0][0]),
                    "bbbbb":str(a[1][0]),
