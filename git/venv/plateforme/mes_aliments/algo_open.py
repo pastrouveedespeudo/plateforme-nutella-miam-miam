@@ -101,10 +101,11 @@ def better_nutri(para):
     c = 0
     for i in range(20):
   
-        cur.execute("""SELECT DISTINCT name_aliment, id_categorie_id, nutriscore, image
+        cur.execute("""SELECT name_aliment, id_categorie_id, nutriscore, image
         FROM public.mes_aliments_aliment
         WHERE id_categorie_id = {} and nutriscore != 'No_found' and image != 'No_found'
-        ORDER BY nutriscore ASC""".format(indice_cat))
+        and LOWER(name_aliment) != '{}'
+        ORDER BY nutriscore ASC""".format(indice_cat, para))
 
         conn.commit()
         
@@ -122,6 +123,16 @@ def better_nutri(para):
     liste[0] = aliment_recherché[0]
 
     return liste
+
+
+a = better_nutri('chocolat au lait')
+
+print(a)
+
+
+
+
+
 
 
 
@@ -180,16 +191,17 @@ def replace(para):
     rows = cur.fetchall()
     
     indice_cat = [i[0] for i in rows]
+    indice_cat = indice_cat[0]
 
 
     c = 0
-    for i in indice_cat:
+    for i in range(20):
         
-        cur.execute("""SELECT distinct LOWER(name_aliment), id_categorie_id, nutriscore, image,id
+        cur.execute("""SELECT distinct LOWER(name_aliment), id_categorie_id, nutriscore, image
         FROM public.mes_aliments_aliment
         WHERE id_categorie_id = {} and nutriscore != 'No_found' and image != 'No_found'
         and LOWER(name_aliment) != '{}'
-        ORDER BY nutriscore ASC""".format(indice_cat[c], para))
+        ORDER BY nutriscore ASC""".format(indice_cat, para))
 
         conn.commit()
         
@@ -200,12 +212,12 @@ def replace(para):
             
         c+=1
 
-
+    liste = set(liste)
+    liste = list(liste)
     liste = liste[:6]
  
    
     return liste
-
 
 
 def data_replace(request, username, aliment, new_aliment):
