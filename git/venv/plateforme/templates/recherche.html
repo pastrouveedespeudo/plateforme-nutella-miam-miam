@@ -117,9 +117,9 @@
                 <form action="/mes_aliments/recherche/" method="POST">
                     
                     <div>
-                        <input type="checkbox" style="width: 20px; height: 20px;"
-                            "name="is_save1" id="product1" onclick="pushlist1()" value="{{aa}}"
-                        /> Sauvegarder
+                        <input type="checkbox" style="width: 20px; height: 20px;"\
+                            "name="is_save1" id="product1" onclick='pushlist("product1", "user", "stock", "is_save1")' value="{{aa}}"/>
+                            Sauvegarder
                     
                         <div id="is_save1"></div>
 
@@ -154,7 +154,7 @@
                <br>
                {% if user.is_authenticated %}
                 <input type="checkbox" style="width: 20px; height: 20px;"
-               id="product2" onclick="pushlist2()" name="is_save2" value="{{bb}}" /> Sauvegarder
+               id="product2" onclick='pushlist("product2", "user", "stock", "is_save2")' name="is_save2" value="{{bb}}" /> Sauvegarder
                <div id="is_save2"></div>
                {% endif %}
              </form>
@@ -178,7 +178,7 @@
                <br>
                {% if user.is_authenticated %}
                 <input type="checkbox" style="width: 20px; height: 20px;"
-               id="product3" onclick="pushlist3()" value="{{cc}}" name="is_save3"> Sauvegarder
+               id="product3" onclick='pushlist("product3", "user", "stock", "is_save3")' value="{{cc}}" name="is_save3"> Sauvegarder
                <div id="is_save3"></div>
                {% endif %}
              </form>
@@ -202,7 +202,7 @@
                <br>
                {% if user.is_authenticated %}
               <input type="checkbox" style="width: 20px; height: 20px;"
-               id="product4" onclick="pushlist4()" value="{{dd}}" name="is_save4"> Sauvegarder
+               id="product4" onclick='pushlist("product4", "user", "stock", "is_save4")' value="{{dd}}" name="is_save4"> Sauvegarder
                <div id="is_save4"></div>
                {% endif %}
              </form>
@@ -225,7 +225,7 @@
                <br>
                {% if user.is_authenticated %}
                 <input type="checkbox" style="width: 20px; height: 20px;"
-               id="product5" onclick="pushlist5()" value="{{ee}}"name="is_save5"> Sauvegarder
+               id="product5" onclick='pushlist("product5", "user", "stock", "is_save5")' value="{{ee}}"name="is_save5"> Sauvegarder
                <div id="is_save5"></div>
                {% endif %}
              </form>
@@ -247,7 +247,7 @@
                <br>
                {% if user.is_authenticated %}
                 <input type="checkbox" style="width: 20px; height: 20px;"
-               id="product6" onclick="pushlist6()" name="is_save6" value='{{ff}}'/> Sauvegarder
+               id="product6" onclick='pushlist("product6", "user", "stock", "is_save6")' name="is_save6" value='{{ff}}'/> Sauvegarder
                <div id="is_save6"></div>
                {% endif %}
              </form>
@@ -318,165 +318,38 @@
           });
 
     });
-  
 
 
-    function pushlist1(){
+
+
+    function pushlist(id_product, user, stock, is_save){
         
-        var a = document.getElementById("product1").value;
-        var b = document.getElementById("product1").name;
-        var c = document.getElementById("user").innerHTML;
+        var a = document.getElementById(id_product).value;
+        var b = document.getElementById(id_product).name;
+        var c = document.getElementById(user).innerHTML;
         USER.push(c)
         LISTE.push(a)
         LISTE_NAME.push(b)
         
-        d = document.getElementById("stock").innerHTML;
+        d = document.getElementById(stock).innerHTML;
         console.log(d)
 
         if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
             console.log("trop d\'aliment pour ce compte")
-            document.getElementById("is_save1").innerHTML = "";
-            document.getElementById("is_save1").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
+            document.getElementById(is_save).innerHTML = "";
+            document.getElementById(is_save).innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
         +'  <i>Vous avez trop d\'alement</i>';
         }
         else{
-            document.getElementById("is_save1").innerHTML = "";
-            document.getElementById("is_save1").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
+            document.getElementById(is_save).innerHTML = "";
+            document.getElementById(is_save).innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
         +'  <i>Enregistrement effectué</i>';
         };
         };
         
 
 
-        
-
-    
-    function pushlist2(){
-        
-        var a = document.getElementById("product2").value;
-        var b = document.getElementById("product2").name;
-        var c = document.getElementById("user").innerHTML;
-        USER.push(c)
-        LISTE.push(a)
-        LISTE_NAME.push(b)
-        
-        d = document.getElementById("stock").innerHTML;
-        console.log(d)
-
-        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
-            console.log("trop d\'aliment pour ce compte")
-            document.getElementById("is_save2").innerHTML = "";
-            document.getElementById("is_save2").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
-        +'  <i>Vous avez trop d\'alement</i>';
-        }
-        else{
-            document.getElementById("is_save2").innerHTML = "";
-            document.getElementById("is_save2").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
-        +'  <i>Enregistrement effectué</i>';
-        };
-        };
-
-    function pushlist3(){
-        
-        var a = document.getElementById("product3").value;
-        var b = document.getElementById("product3").name;
-        var c = document.getElementById("user").innerHTML;
-        USER.push(c)
-        LISTE.push(a)
-        LISTE_NAME.push(b)
-        
-        d = document.getElementById("stock").innerHTML;
-        console.log(d)
-
-        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
-            console.log("trop d\'aliment pour ce compte")
-            document.getElementById("is_save3").innerHTML = "";
-            document.getElementById("is_save3").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
-        +'  <i>Vous avez trop d\'alement</i>';
-        }
-        else{
-            document.getElementById("is_save3").innerHTML = "";
-            document.getElementById("is_save3").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
-        +'  <i>Enregistrement effectué</i>';
-        };
-        };
-
-
-    function pushlist4(){
-        
-        var a = document.getElementById("product4").value;
-        var b = document.getElementById("product4").name;
-        var c = document.getElementById("user").innerHTML;
-        USER.push(c)
-        LISTE.push(a)
-        LISTE_NAME.push(b)
-        
-        d = document.getElementById("stock").innerHTML;
-        console.log(d)
-
-        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
-            console.log("trop d\'aliment pour ce compte")
-            document.getElementById("is_save4").innerHTML = "";
-            document.getElementById("is_save4").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
-        +'  <i>Vous avez trop d\'alement</i>';
-        }
-        else{
-            document.getElementById("is_save4").innerHTML = "";
-            document.getElementById("is_save4").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
-        +'  <i>Enregistrement effectué</i>';
-        };
-        };
-    function pushlist5(){
-        
-        var a = document.getElementById("product5").value;
-        var b = document.getElementById("product5").name;
-        var c = document.getElementById("user").innerHTML;
-        USER.push(c)
-        LISTE.push(a)
-        LISTE_NAME.push(b)
-        
-        d = document.getElementById("stock").innerHTML;
-        console.log(d)
-
-        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
-            console.log("trop d\'aliment pour ce compte")
-            document.getElementById("is_save5").innerHTML = "";
-            document.getElementById("is_save5").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
-        +'  <i>Vous avez trop d\'alement</i>';
-        }
-        else{
-            document.getElementById("is_save5").innerHTML = "";
-            document.getElementById("is_save5").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
-        +'  <i>Enregistrement effectué</i>';
-        };
-        };
-
-    function pushlist6(){
-        
-        var a = document.getElementById("product6").value;
-        var b = document.getElementById("product6").name;
-        var c = document.getElementById("user").innerHTML;
-        USER.push(c)
-        LISTE.push(a)
-        LISTE_NAME.push(b)
-  
-        d = document.getElementById("stock").innerHTML;
-        console.log(d)
-
-        if (d == "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"){
-            console.log("trop d\'aliment pour ce compte")
-            document.getElementById("is_save6").innerHTML = "";
-            document.getElementById("is_save6").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
-        +'  <i>Vous avez trop d\'alement</i>';
-        }
-        else{
-            document.getElementById("is_save6").innerHTML = "";
-            document.getElementById("is_save6").innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
-        +'  <i>Enregistrement effectué</i>';
-        };
-        };
-
-    
+ 
     var c = document.getElementById("user").innerHTML;
     USER.push(c)
     console.log(USER)
