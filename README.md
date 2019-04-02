@@ -1,4 +1,4 @@
-#plus de bug mais...soit c pcque jai telecharger adob flash 10 fois soit pcque l'algo est trop nul
+#plus de bug mais...soit c pcque jai telecharger adob flash 10 fois soit pcque l'algo est trop nul des putin de gamin de 10 ans me defonce a tetris pfffff
 
 
 #le projet doit durer que 20h, le jeu + les medailles c suffisan
