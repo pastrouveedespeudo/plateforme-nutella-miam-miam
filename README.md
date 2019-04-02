@@ -1,4 +1,4 @@
-#oki pu de bug ah si lentilles/xartvertes dernier bug
+#plus de bug mais...soit c pcque jai telecharger adob flash 10 fois soit pcque l'algo est trop nul
 
 
 #le projet doit durer que 20h, le jeu + les medailles c suffisan
