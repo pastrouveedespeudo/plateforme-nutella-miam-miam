@@ -201,11 +201,11 @@ def remplacement(request):
     
         
         if replace_it:
-            print(replace_it)
+            print(replace_it[0])
             print("oui")
             current_user = request.user
-            b = verification_remplacement(current_user, replace_it[0])
             
+   
             liste = [[],[]]
             element = []
             c=0
@@ -219,18 +219,24 @@ def remplacement(request):
             for i in liste:
                 i = "".join(i)
                 element.append(i)
-            if b == False:
+
+            print("".join(liste[-1]),'12132123' )   
+            b = verification_remplacement(current_user, "".join(liste[-1]))
+            
+
+            
+            if b == True:
                 data_replace(request, current_user,
                              element[0], element[1]
                              )
-            else:
+            elif b == False:
                 message = 'vous avez deja cet aliment'
                 
         else:
             print("nan")
             
             aliment = request.POST.get('rem')
-    
+            print(aliment,'44444444444444444444444444444444444444444444')
             current_user = request.user
 
             image = image_aliment(aliment)
