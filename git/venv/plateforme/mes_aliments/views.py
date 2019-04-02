@@ -11,7 +11,7 @@ from .mes_aliments_preferer_user import *
 from django.shortcuts import redirect
 
 def aliment_det(request):
-    
+    message=''
     if request.method == "POST":
   
         recherche = request.POST.get('produit')
@@ -201,9 +201,10 @@ def remplacement(request):
     
         
         if replace_it:
-      
-           
+            print(replace_it)
+            print("oui")
             current_user = request.user
+            b = verification_remplacement(current_user, replace_it[0])
             
             liste = [[],[]]
             element = []
@@ -218,61 +219,61 @@ def remplacement(request):
             for i in liste:
                 i = "".join(i)
                 element.append(i)
-
-            data_replace(request, current_user,
-                         element[0], element[1]
-                         )
-
+            if b == False:
+                data_replace(request, current_user,
+                             element[0], element[1]
+                             )
+            else:
+                message = 'vous avez deja cet aliment'
+                
         else:
-
+            print("nan")
             
             aliment = request.POST.get('rem')
     
             current_user = request.user
-            b = verification_remplacement(current_user, aliment)
+
+            image = image_aliment(aliment)
+            titre = titre_aliment(aliment)
             
-            
-            if b == True:
-                image = image_aliment(aliment)
-                titre = titre_aliment(aliment)
-                
-                a = replace(str(aliment))
+            a = replace(str(aliment))
                 
             
 
-                return render(request, 'remplacement.html',
-                              {"a":str(a[0][3]),
-                               "b":str(a[1][3]),
-                               "c":str(a[2][3]),
-                               "d":str(a[3][3]),
-                               "e":str(a[4][3]),
-                               "f":str(a[5][3]),
-                               
-                               "aa":str(a[0][0]),
-                               "bb":str(a[1][0]),
-                               "cc":str(a[2][0]),
-                               "dd":str(a[3][0]),
-                               "ee":str(a[4][0]),
-                               "ff":str(a[5][0]),
-                               
-                               "aaa":str(a[0][3]),
-                               "bbb":str(a[1][3]),
-                               "ccc":str(a[2][3]),
-                               "ddd":str(a[3][3]),
-                               "eee":str(a[4][3]),
-                               "fff":str(a[5][3]),
+            return render(request, 'remplacement.html',
+                          {"a":str(a[0][3]),
+                           "b":str(a[1][3]),
+                           "c":str(a[2][3]),
+                           "d":str(a[3][3]),
+                           "e":str(a[4][3]),
+                           "f":str(a[5][3]),
+                           
+                           "aa":str(a[0][0]),
+                           "bb":str(a[1][0]),
+                           "cc":str(a[2][0]),
+                           "dd":str(a[3][0]),
+                           "ee":str(a[4][0]),
+                           "ff":str(a[5][0]),
+                           
+                           "aaa":str(a[0][3]),
+                           "bbb":str(a[1][3]),
+                           "ccc":str(a[2][3]),
+                           "ddd":str(a[3][3]),
+                           "eee":str(a[4][3]),
+                           "fff":str(a[5][3]),
 
-                               "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][2]) + ".jpg >",
-                               "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][2]) + ".jpg >",
-                               "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][2]) + ".jpg >",
-                               "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][2]) + ".jpg >",
-                               "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][2]) + ".jpg >",
-                               "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][2]) + ".jpg >",
+                           "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][2]) + ".jpg >",
+                           "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][2]) + ".jpg >",
+                           "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][2]) + ".jpg >",
+                           "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][2]) + ".jpg >",
+                           "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][2]) + ".jpg >",
+                           "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][2]) + ".jpg >",
 
-                               "image":str(image[0][0]),
-                               "titre":str(titre[0][0])
-                        
-                               })
+                           "image":str(image[0][0]),
+                           "titre":str(titre[0][0]),
+                           'message':message
+                    
+                           })
 
             
     current_user = request.user
