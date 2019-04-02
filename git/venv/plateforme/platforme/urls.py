@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from .views import home
+from .views import mention
 
 from accounts.views import login_view
 from accounts.views import essais1
@@ -22,7 +23,8 @@ urlpatterns = [
     
     path('admin/', admin.site.urls),
     path('', home),
-
+    path('mention', mention),
+    
     path('accounts/login/', login_view),
     path('accounts/essais/', essais),
     path('accounts/essais1/', essais1),
