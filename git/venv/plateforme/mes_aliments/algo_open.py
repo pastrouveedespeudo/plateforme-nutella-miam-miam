@@ -18,7 +18,7 @@ def image_aliment(para):
     
     cur.execute("""select image, LOWER(name_aliment)
                 from public.mes_aliments_aliment
-                where LOWER(name_aliment) = '{}';
+                where LOWER(name_aliment) LIKE '%{}%';
                 """.format(para))
     
     conn.commit()
@@ -45,7 +45,7 @@ def titre_aliment(para):
 
     cur.execute("""SELECT LOWER(name_aliment)
                     FROM public.mes_aliments_aliment
-                    WHERE LOWER(name_aliment) = '{}'""".format(para))
+                    WHERE LOWER(name_aliment) LIKE '%{}%'""".format(para))
     conn.commit()
     
     rows = cur.fetchall()
