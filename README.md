@@ -1,3 +1,5 @@
+"100 ans a essayer de faire des "'" + '"' + "'" oh sté horrible
+
 #faire les messgae dalerte 
 
 #y'a des test qui affiche a chaque fois de nouveau produits...
