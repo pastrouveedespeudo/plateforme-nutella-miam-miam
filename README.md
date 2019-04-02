@@ -1,4 +1,6 @@
-#plus de bug mais...soit c pcque jai telecharger adob flash 10 fois soit pcque l'algo est trop nul des putin de gamin de 10 ans me defonce a tetris pfffff 10 games tu te fais linch la 11eme tu dois payer 
+#faire les messgae dalerte 
+
+#faire les test
 
 
 #le projet doit durer que 20h, le jeu + les medailles c suffisan
