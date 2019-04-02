@@ -74,15 +74,16 @@
        <div class="col-md-5" id="block2">
 
            <div id="droiteMenuTop">
-           
-               <a>
-                 <input id="inputChercher" name="cool" type="text" placeholder="Chercher"/>
+               
+               <div style='text-align:center'>
+                 <input id="inputChercher" name="cool" type="text" placeholder="Chercher" style='width:80%;'/>
                  {% csrf_token %}
                  <input type="submit" style="background:#a6a6a6;">
                  {% csrf_token %}
-               </a>
+               </div>
                
                {% if user.is_authenticated %}
+               <div style='text-align:center'>
                <a href='/accounts/mon_compte' OnMouseOver="document.all.texte.innerText='Mon compte !'">
                  <img id="compte" src="/static/img/portfolio/menu-haut/compte.png">
                </a>
@@ -94,6 +95,16 @@
                <a href='/jeux/jeux' OnMouseOver="document.all.texte.innerText='Jouez !'">
                  <img id="carotte" src="/static/img/portfolio/menu-haut/game.png"
                </a>
+                
+              
+                 <a href='#' OnMouseOver="document.all.texte.innerText='Aide !'">
+                   <img id="login" src="{% static 'img/portfolio/menu-haut/aide.png' %}"
+                 </a>
+               
+                 <a href='/accounts/logout_view' OnMouseOver="document.all.texte.innerText='Se deconnecter !'">
+                   <img id="deco" src="{% static 'img/portfolio/menu-haut/deco.png' %}">
+                 </a>
+               </div>
                {% else %}
                
                
@@ -113,17 +124,7 @@
                {% endif %}
 
                
-               {% if user.is_authenticated %}
 
-               <a href='#' OnMouseOver="document.all.texte.innerText='Aide !'">
-                 <img id="login" src="{% static 'img/portfolio/menu-haut/aide.png' %}"
-               </a>
-               
-               <a href='/accounts/logout_view' OnMouseOver="document.all.texte.innerText='Se deconnecter !'">
-                 <img id="deco" src="{% static 'img/portfolio/menu-haut/deco.png' %}">
-               </a>
-               {% endif %}
-               
                <center><p id="texte"><br></p></center>
 
            </div>
