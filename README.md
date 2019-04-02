@@ -1,16 +1,11 @@
 #faire les messgae dalerte 
 
-#faire les test
+#y'a des test qui affiche a chaque fois de nouveau produits...
 
-
-#le projet doit durer que 20h, le jeu + les medailles c suffisan
 
 #go uml
 
-#mais le soir: faie les tuto, finir le jeu, les medailles
-
-   
-  #trop cool jadore les textes a trou
+#trop cool jadore les textes a trou tu l'as effacer sans faire expres...
   
   
   
