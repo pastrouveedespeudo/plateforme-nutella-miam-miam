@@ -127,7 +127,8 @@
                         <div id="nan1"></div>
 
                       
-                     <input type="image" onclick="choice1()" id="im1" class="fit-picture" src="{{a}}"/>
+                     <input type="image" onclick="choice('im1', 'image1', 'detail1', 'remplacement1', 'nan1', '{{a}}' )"
+                         id="im1" class="fit-picture" src="{{a}}"/>
                     
                      </div>
                    <div id="nomAliment1">{{aa}}</div>
@@ -173,7 +174,8 @@
                         </form>
 
                         <div id="nan2"></div>
-                <input type="image" onclick="choice2()" id="im2" value={{aa}} class="fit-picture" src="{{b}}"/>
+                <input type="image" onclick="choice('im2', 'image2', 'detail2', 'remplacement2', 'nan2','{{b}}')"
+                    id="im2" value={{aa}} class="fit-picture" src="{{b}}"/>
                  
                </div>
                <div id="nomAliment2">{{bb}}</div>
@@ -217,7 +219,8 @@
                         </form>
 
                         <div id="nan3"></div>
-                <div id="imm3"><input type="image" onclick="choice3()" id="im3" value={{cc}} class="fit-picture" src="{{c}}"/></a></div>
+                <div id="imm3"><input type="image" onclick="choice('im3', 'image3', 'detail3', 'remplacement3', 'nan3', '{{c}}')"
+                        id="im3" value={{cc}} class="fit-picture" src="{{c}}"/></a></div>
                 
                 </div>
                 <div id="nomAliment2">{{cc}}</div>
@@ -260,7 +263,8 @@
                         </form>
 
                         <div id="nan4"></div>
-                <div id="imm4"><input type="image" onclick="choice4()" id="im4" value={{dd}} class="fit-picture" src="{{d}}"/></a></div>
+                <div id="imm4"><input type="image" onclick="choice('im4', 'image4', 'detail4', 'remplacement4', 'nan4', '{{d}}')"
+                                id="im4" value={{dd}} class="fit-picture" src="{{d}}"/></a></div>
                 
                 </div>
                 <div id="nomAliment2">{{dd}}</div>
@@ -301,7 +305,8 @@
                         </form>
 
                         <div id="nan5"></div>
-                <div id="imm5"><input type="image" onclick="choice5()" id="im5" value={{ee}} class="fit-picture" src="{{e}}"/></a></div>
+                <div id="imm5"><input type="image" onclick="choice('im5', 'image5', 'detail5', 'remplacement5', 'nan5', '{{e}}')"
+                                id="im5" value={{ee}} class="fit-picture" src="{{e}}"/></a></div>
                  
                 </div>
                 <div id="nomAliment2">{{ee}}</div>
@@ -343,7 +348,8 @@
                         </form>
 
                         <div id="nan6"></div>
-                <input type="image" onclick="choice6()" id="im6" value={{ff}} class="fit-picture" src="{{f}}"/>
+                <input type="image" onclick="choice('im6', 'image6', 'detail6', 'remplacement6', 'nan6', '{{f}}')"
+                                id="im6" value={{ff}} class="fit-picture" src="{{f}}"/>
                 
                  </div>
                  <div id="nomAliment2">{{ff}}</div>
@@ -378,136 +384,40 @@
 
 
 <script>
-
-    function choice1(){
-        document.getElementById("im1").style.display = "none";
-        document.getElementById("image1").innerHTML = "<center><img src={{a}} style='padding:10px;width:60%;height:90px;'></center>"
-        document.getElementById("detail1").innerHTML = "<center><input type='submit'" +
+    CHOISEN = []
+    function choice(im, image, detail, remplacement, nan, gabarit){
+        var a = "<center><img src=" + gabarit + " style='padding:10px;width:60%;height:90px;'></center>"
+        document.getElementById(im).style.display = "none";
+        document.getElementById(image).innerHTML = a
+        document.getElementById(detail).innerHTML = "<center><input type='submit'" +
                                                         "style='color:black;' value='Détails aliment' />" +
                                                         "</center><br>";
-        document.getElementById("remplacement1").innerHTML = "<center><input type='submit' style='color:black;" + 
+        document.getElementById(remplacement).innerHTML = "<center><input type='submit' style='color:black;" + 
                                                             "'value='Remplacer cette aliment' /></center><br>";
-        document.getElementById("nan1").innerHTML = "<center><input type='button' onclick='nanrien1()'" +
+
+
+       document.getElementById(nan).innerHTML = "<center><input type='button' onclick='nanrien()'" +
                                                     "style='color:black;' value='Enfete non rien'/></center>";
-                      
-    };                                        
 
- 
-    function choice2(){
-        document.getElementById("im2").style.display = "none";
-        document.getElementById("image2").innerHTML = "<center><img src={{b}} style='padding:10px;width:60%;height:90px;'></center>"
-        document.getElementById("detail2").innerHTML = "<center><input type='submit'" +
-                                                        "style='color:black;' value='Détails aliment' />" +
-                                                        "</center><br>";
-        document.getElementById("remplacement2").innerHTML = "<center><input type='submit' style='color:black;'"+
-                                                            "value='Remplacer cette aliment' /></center><br>";
-        document.getElementById("nan2").innerHTML = "<center><input type='button' onclick='nanrien2()'" +
-                                                    "style='color:black;' value='Enfete non rien'/></center>";               
-    };                                        
+       CHOISEN.push(im, image, detail, remplacement, nan)
+    };
 
 
-    function choice3(){
-        document.getElementById("im3").style.display = "none";
-        document.getElementById("image3").innerHTML = "<center><img src={{c}} style='padding:10px;width:60%;height:90px;'></center>"
-        document.getElementById("detail3").innerHTML = "<center><input type='submit'" +
-                                                        "style='color:black;' value='Détails aliment' />" +
-                                                        "</center><br>";
-        document.getElementById("remplacement3").innerHTML = "<center><input type='submit' style='color:black;" +
-                                                            "'value='Remplacer cette aliment' /></center><br>";
-        document.getElementById("nan3").innerHTML = "<center><input type='button' onclick='nanrien3()'" +
-                                                    "style='color:black;' value='Enfete non rien'/></center>";
-        }
-
-    function choice4(){
-        document.getElementById("im4").style.display = "none";
-        document.getElementById("image4").innerHTML = "<center><img src={{d}} style='padding:10px;width:60%;height:90px;'></center>"
-        document.getElementById("detail4").innerHTML = "<center><input type='submit'" +
-                                                        "style='color:black;' value='Détails aliment' />" +
-                                                        "</center><br>";
-        document.getElementById("remplacement4").innerHTML = "<center><input type='submit' style='color:black;" +
-                                                            "'value='Remplacer cette aliment' /></center><br>";
-        document.getElementById("nan4").innerHTML = "<center><input type='button' onclick='nanrien4()' style='color:black;'" +
-                                                    "value='Enfete non rien'/></center>";
-        }
-
-    function choice5(){
-        document.getElementById("im5").style.display = "none";
-        document.getElementById("image5").innerHTML = "<center><img src={{e}} style='padding:10px;width:60%;height:90px;'></center>"
-        document.getElementById("detail5").innerHTML = "<center><input type='submit'" +
-                                                        "style='color:black;' value='Détails aliment' />" +
-                                                        "</center><br>";
-        document.getElementById("remplacement5").innerHTML = "<center><input type='submit' style='color:black;'" +
-                                                                "value='Remplacer cette aliment' /></center><br>";
-        document.getElementById("nan5").innerHTML = "<center><input type='button' onclick='nanrien5()'" +
-                                                    "style='color:black;' value='Enfete non rien'/></center>";
-        }
-
-
-    function choice6(){
-        document.getElementById("im6").style.display = "none";
-        document.getElementById("image6").innerHTML = "<center><img src={{f}} style='padding:10px;"+
-                                                        "width:60%;height:90px;'></center>"
-        document.getElementById("detail6").innerHTML = "<center><input type='submit'" +
-                                                        "style='color:black;' value='Détails aliment' />" +
-                                                        "</center><br>";
-        document.getElementById("remplacement6").innerHTML = "<center><input type='submit' style='color:black;" + 
-                                                            "'value='Remplacer cette aliment' /></center><br>";
-        document.getElementById("nan6").innerHTML = "<center><input type='button' onclick='nanrien6()' style='color:black;'" +
-                                                    "value='Enfete non rien'/></center>";
-        }
 
     
-    function nanrien1(){
-        document.getElementById("im1").style.display = "block";
-        document.getElementById("image1").innerHTML = "";
-        document.getElementById("detail1").innerHTML = "";    
-        document.getElementById("remplacement1").innerHTML = "";
-        document.getElementById("nan1").innerHTML = "";
-
-        };
-    function nanrien2(){
-        document.getElementById("im2").style.display = "block";
-        document.getElementById("image2").innerHTML = "";
-        document.getElementById("detail2").innerHTML = "";    
-        document.getElementById("remplacement2").innerHTML = "";
-        document.getElementById("nan2").innerHTML = "";
-
-        };
-    function nanrien3(){
-        document.getElementById("im3").style.display = "block";
-        document.getElementById("image3").innerHTML = "";
-        document.getElementById("detail3").innerHTML = "";    
-        document.getElementById("remplacement3").innerHTML = "";
-        document.getElementById("nan3").innerHTML = "";
+    function nanrien(){
+        
+        document.getElementById(CHOISEN[0]).style.display = "block";
+        document.getElementById(CHOISEN[1]).innerHTML = "";
+        document.getElementById(CHOISEN[2]).innerHTML = "";    
+        document.getElementById(CHOISEN[3]).innerHTML = "";
+        document.getElementById(CHOISEN[CHOISEN.length - 1 ]).innerHTML = "";
+        CHOISEN = []
 
         };
 
-    function nanrien4(){
-        document.getElementById("im4").style.display = "block";
-        document.getElementById("image4").innerHTML = "";
-        document.getElementById("detail4").innerHTML = "";    
-        document.getElementById("remplacement4").innerHTML = "";
-        document.getElementById("nan4").innerHTML = "";
 
-        };
 
-    function nanrien5(){
-        document.getElementById("im5").style.display = "block";
-        document.getElementById("image5").innerHTML = "";
-        document.getElementById("detail5").innerHTML = "";    
-        document.getElementById("remplacement5").innerHTML = "";
-        document.getElementById("nan5").innerHTML = "";
-
-        };
-
-    function nanrien6(){
-        document.getElementById("im6").style.display = "block";
-        document.getElementById("image6").innerHTML = "";
-        document.getElementById("detail6").innerHTML = "";    
-        document.getElementById("remplacement6").innerHTML = "";
-        document.getElementById("nan6").innerHTML = "";
-
-        };
 
 </script>
 
