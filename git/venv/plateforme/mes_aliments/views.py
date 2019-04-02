@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.db import models
 from .algo_open import *
-import sqlite3
 from django.http import HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
@@ -17,9 +16,10 @@ def aliment_det(request):
   
         recherche = request.POST.get('produit')
       
-     
-        detail = detail_aliment(recherche) 
-        url_nutri = detail[0][4]
+       
+        detail = detail_aliment(recherche)
+
+        url_nutri = detail[0][3]
         aliment = detail[0][1]
         
         #on recherche selon l'aliment et on redef l'url nutri et aliment
@@ -39,8 +39,7 @@ def aliment_det(request):
                        'aliment': aliment
                        })
 
-    if request.POST:
-        print("ouiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
+
 
     
     return render(request, 'aliment_det.html')
@@ -51,7 +50,7 @@ def aliment_det(request):
 @csrf_exempt
 def recherche(request):
 
-    print('processus de recherche')
+    
                   
     liste_recherche = []
     stock_depassé = ""
@@ -64,38 +63,40 @@ def recherche(request):
 
         if valider and username:
             current_user = request.user
-            print("username : ",username,"recherche : ", valider)
+        
             stock = controle_data_aliment(username)
-            print(stock[1],"ajouter un produit")
+
 
             if stock[1] == True:
-                veri = verification_produit_pasèdeux_fois(current_user,
+                veri = verification_produit_pas_deux_fois(current_user,
                                                           valider[0])
+                print(veri)
                 if veri == True:
                     insert_food(username, valider[0])
-
+                    print("aliment pas deja")
             elif stock[1] == False:
-                
+                print('aliment deja')
                 stock_depassé = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
                 
-                print(stock_depassé)
+      
         
         if recherche:
             
             current_user = request.user
             if current_user.is_authenticated:
-                print(request.user.username)
+           
                 stock = controle_data_aliment(str(request.user.username))
-                print(stock[1],"ajouter un produit")
+             
                  
                 if stock[1] == False:
                     stock_depassé = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
                 
-            print("etape recherche")
+     
             image = image_aliment(recherche)
             titre = titre_aliment(recherche)
-            a = better_nutri(recherche)
             try:
+                a = better_nutri(recherche)
+            
             
                 return render(request, 'recherche.html',
                               {"a":str(a[0][3]),
@@ -134,7 +135,7 @@ def recherche(request):
             
             except:
                 #lentille verte -> lentillex/a6verte
-                message = "oups l'aliment est mal ecrit en database"
+                message = "oups nous n'avons pas cet aliment en database"
                 return render(request, 'error.html', {"message":message})
         
     image = '/static/img/header1.jpg'
@@ -146,7 +147,7 @@ def recherche(request):
 def mes_aliments(request):
     current_user = request.user
 
-    print('mes aliments')
+  
     
     food = mes_aliment_user(request.user.username)
     a = display_food(food)
@@ -190,8 +191,8 @@ def mes_aliments(request):
         return render(request, 'error.html', {"message":message})
 
 def remplacement(request):
+    message = ''
 
-    print('processus de remplacement')
 
     if request.method == "POST":
 
@@ -217,8 +218,7 @@ def remplacement(request):
             for i in liste:
                 i = "".join(i)
                 element.append(i)
-            print(element[0])
-            print(element[1])
+
             data_replace(request, current_user,
                          element[0], element[1]
                          )
@@ -227,56 +227,59 @@ def remplacement(request):
 
             
             aliment = request.POST.get('rem')
-            print(aliment)
+    
+            current_user = request.user
+            b = verification_remplacement(current_user, aliment)
             
-            image = image_aliment(aliment)
-            titre = titre_aliment(aliment)
-            a = replace(str(aliment))
+            
+            if b == True:
+                image = image_aliment(aliment)
+                titre = titre_aliment(aliment)
+                
+                a = replace(str(aliment))
+                
             
 
+                return render(request, 'remplacement.html',
+                              {"a":str(a[0][3]),
+                               "b":str(a[1][3]),
+                               "c":str(a[2][3]),
+                               "d":str(a[3][3]),
+                               "e":str(a[4][3]),
+                               "f":str(a[5][3]),
+                               
+                               "aa":str(a[0][0]),
+                               "bb":str(a[1][0]),
+                               "cc":str(a[2][0]),
+                               "dd":str(a[3][0]),
+                               "ee":str(a[4][0]),
+                               "ff":str(a[5][0]),
+                               
+                               "aaa":str(a[0][3]),
+                               "bbb":str(a[1][3]),
+                               "ccc":str(a[2][3]),
+                               "ddd":str(a[3][3]),
+                               "eee":str(a[4][3]),
+                               "fff":str(a[5][3]),
 
-            return render(request, 'remplacement.html',
-                          {"a":str(a[0][3]),
-                           "b":str(a[1][3]),
-                           "c":str(a[2][3]),
-                           "d":str(a[3][3]),
-                           "e":str(a[4][3]),
-                           "f":str(a[5][3]),
-                           
-                           "aa":str(a[0][0]),
-                           "bb":str(a[1][0]),
-                           "cc":str(a[2][0]),
-                           "dd":str(a[3][0]),
-                           "ee":str(a[4][0]),
-                           "ff":str(a[5][0]),
-                           
-                           "aaa":str(a[0][3]),
-                           "bbb":str(a[1][3]),
-                           "ccc":str(a[2][3]),
-                           "ddd":str(a[3][3]),
-                           "eee":str(a[4][3]),
-                           "fff":str(a[5][3]),
+                               "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][2]) + ".jpg >",
+                               "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][2]) + ".jpg >",
+                               "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][2]) + ".jpg >",
+                               "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][2]) + ".jpg >",
+                               "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][2]) + ".jpg >",
+                               "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][2]) + ".jpg >",
 
-                           "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][2]) + ".jpg >",
-                           "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][2]) + ".jpg >",
-                           "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][2]) + ".jpg >",
-                           "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][2]) + ".jpg >",
-                           "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][2]) + ".jpg >",
-                           "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][2]) + ".jpg >",
+                               "image":str(image[0][0]),
+                               "titre":str(titre[0][0])
+                        
+                               })
 
-                           "image":str(image[0][0]),
-                           "titre":str(titre[0][0])
-                    
-                           })
-
- 
+            
     current_user = request.user
 
     food = mes_aliment_user(request.user.username)
     a = display_food(food)
-  
-
-    
+      
     return render(request, 'mes_aliments.html',
                   {"a":str(a[0][4]),
                    "b":str(a[1][4]),
@@ -306,7 +309,7 @@ def remplacement(request):
                    "ddddd":str(a[3][0]),
                    "eeeee":str(a[4][0]),
                    "fffff":str(a[5][0]),
-
+                   'message':message
           
             
                    })
