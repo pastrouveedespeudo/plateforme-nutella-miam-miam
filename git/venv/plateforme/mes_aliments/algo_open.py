@@ -288,7 +288,7 @@ def verification_remplacement(username, produit):
     rows = cur.fetchall()
 
     liste = [i for i in rows]
-    print(liste)
+   
     if liste != []:
         return False
     else:
