@@ -282,10 +282,10 @@ def verification_remplacement(username, produit):
 
     liste = [i for i in rows]
    
-    if liste != []:
-        return False
-    else:
+    if liste == []:
         return True
+    else:
+        return False
 
 
     
