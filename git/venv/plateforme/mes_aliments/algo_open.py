@@ -57,12 +57,12 @@ def titre_aliment(para):
     return titre
 
 
+
+
 def better_nutri(para):
-    """Here we search best of 6 food from same categorie"""
+
 
     para = para.lower()
-    
-
     
     conn = psycopg2.connect(database="ddgh06joqvm83k",
                                 user="giervvxxoatsci",
@@ -73,39 +73,34 @@ def better_nutri(para):
     cur = conn.cursor()
 
 
-    cur.execute("""SELECT id_categorie_id
-    FROM public.mes_aliments_aliment
-    WHERE LOWER(name_aliment) = '{}'""".format(para))
 
+    cur.execute("""SELECT name_aliment from mes_aliments_aliment
+                where LOWER(name_aliment) LIKE '%{}%'""".format(para))
     conn.commit()
 
     rows = cur.fetchall()
-    
-    indice_cat = [i[0] for i in rows]
-    indice_cat = indice_cat[0]
 
 
     cur.execute("""SELECT name_aliment, id_categorie_id, nutriscore, image,id
-    FROM public.mes_aliments_aliment
-    WHERE LOWER(name_aliment) = '{}'""".format(para))
+        FROM public.mes_aliments_aliment
+        WHERE LOWER(name_aliment) = '{}'""".format(rows[0][0].lower()))
 
     conn.commit()
 
     rows = cur.fetchall()
 
     aliment_recherché = [i for i in rows]
-   
 
 
     liste2 = []
     c = 0
     for i in range(20):
-  
+
         cur.execute("""SELECT name_aliment, id_categorie_id, nutriscore, image
         FROM public.mes_aliments_aliment
         WHERE id_categorie_id = {} and nutriscore != 'No_found' and image != 'No_found'
         and LOWER(name_aliment) != '{}'
-        ORDER BY nutriscore ASC""".format(indice_cat, para))
+        ORDER BY nutriscore ASC""".format(aliment_recherché[0][1], para))
 
         conn.commit()
         
@@ -117,15 +112,13 @@ def better_nutri(para):
             
         c+=1
 
+
     liste = set(liste)
     liste = list(liste)
     liste = liste[:6]
     liste[0] = aliment_recherché[0]
 
     return liste
-
-
-
 
 
 def detail_aliment(value):
