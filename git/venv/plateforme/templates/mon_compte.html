@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col-lg-5 mx-auto">
           <h1 id="ya">
-            <strong>ALOY !</strong>
+            <div style='color:white;font-size:4vw;'><strong>ALOY !</strong></div>
           </h1>
           <hr>
         </div>
@@ -17,7 +17,7 @@
         
         <div class="col-lg-8 mx-auto">
           <div class="text-faded mb-5">
-              {% if user.is_authenticated %}<h2 id="texteMilieu">ALOY ! {{user.username}}</h2>{%endif%}
+              <div style="font-size:3.5vw; color:red;">{% if user.is_authenticated %}ALOY ! {{user.username}}{%endif%}</div>
               
           </div>
         </div>
@@ -34,27 +34,19 @@
     
       <div class="row">
       
-        <div class="col-lg-8 mx-auto text-center">
+        <div class="col-lg-12 mx-auto text-center">
         
-          <h2 class="section-heading text-white" id="yo">Mail</h2>
+          <h2 class="section-heading text-white" id="yo" style="font-size:3vw;">Information du compte</h2>
           <hr class="light my-4">
           
           <p class="text-faded mb-4" id="coletteTexte">
-           <strong>Info sur toi</strong>
+           <div style="font-size:2.5vw;"><strong>Info sur toi</strong></div>
            {% if user.is_authenticated %}
-           : {{user.username}}
+           <p style='font-size:2vw;'> Nom du compte :  {{user.username}}</p>
            <br>
-           {{user.email}}
+           <p style="font-size:2vw;">Adresse Mail : {{user.email}}</p>
            <br>
-           job
-           <br>
-           amis
-           <br>
-           sexe
-           <br>
-           historic
-           <br>
-           suggestion amis
+
            {%endif%}
           </p>
 
