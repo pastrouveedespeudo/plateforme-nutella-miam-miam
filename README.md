@@ -1,4 +1,4 @@
-"100 ans a essayer de faire des "'" + '"' + "'" oh sté horrible
+par contre pep8 et tout remettre dans css et js ca va etre hyper ...
 
 #faire les messgae dalerte 
 
