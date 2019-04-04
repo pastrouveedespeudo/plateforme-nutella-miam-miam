@@ -285,44 +285,45 @@ def remplacement(request):
 
             
     current_user = request.user
-
-    food = mes_aliment_user(request.user.username)
-    a = display_food(food)
-      
-    return render(request, 'mes_aliments.html',
-                  {"a":str(a[0][4]),
-                   "b":str(a[1][4]),
-                   "c":str(a[2][4]),
-                   "d":str(a[3][4]),
-                   "e":str(a[4][4]),
-                   "f":str(a[5][4]),
-                   
-                   "aa":str(a[0][0]),
-                   "bb":str(a[1][0]),
-                   "cc":str(a[2][0]),
-                   "dd":str(a[3][0]),
-                   "ee":str(a[4][0]),
-                   "ff":str(a[5][0]),
-
-
-                   "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][3]) + ".jpg >",
-                   "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][3]) + ".jpg >",
-                   "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][3]) + ".jpg >",
-                   "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][3]) + ".jpg >",
-                   "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][3]) + ".jpg >",
-                   "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][3]) + ".jpg >",
-
-                   "aaaaa":str(a[0][0]),
-                   "bbbbb":str(a[1][0]),
-                   "ccccc":str(a[2][0]),
-                   "ddddd":str(a[3][0]),
-                   "eeeee":str(a[4][0]),
-                   "fffff":str(a[5][0]),
-                   'message':message
+    try:
+        food = mes_aliment_user(request.user.username)
+        a = display_food(food)
           
-            
-                   })
+        return render(request, 'mes_aliments.html',
+                      {"a":str(a[0][4]),
+                       "b":str(a[1][4]),
+                       "c":str(a[2][4]),
+                       "d":str(a[3][4]),
+                       "e":str(a[4][4]),
+                       "f":str(a[5][4]),
+                       
+                       "aa":str(a[0][0]),
+                       "bb":str(a[1][0]),
+                       "cc":str(a[2][0]),
+                       "dd":str(a[3][0]),
+                       "ee":str(a[4][0]),
+                       "ff":str(a[5][0]),
 
+
+                       "aaaa":"/static/img/portfolio/nutriscore/" + str(a[0][3]) + ".jpg >",
+                       "bbbb":"/static/img/portfolio/nutriscore/" + str(a[1][3]) + ".jpg >",
+                       "cccc":"/static/img/portfolio/nutriscore/" + str(a[2][3]) + ".jpg >",
+                       "dddd":"/static/img/portfolio/nutriscore/" + str(a[3][3]) + ".jpg >",
+                       "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][3]) + ".jpg >",
+                       "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][3]) + ".jpg >",
+
+                       "aaaaa":str(a[0][0]),
+                       "bbbbb":str(a[1][0]),
+                       "ccccc":str(a[2][0]),
+                       "ddddd":str(a[3][0]),
+                       "eeeee":str(a[4][0]),
+                       "fffff":str(a[5][0]),
+                       'message':message
+              
+                
+                       })
+    except:
+        return render(request, 'mes_aliments.html')
 
 def error(request):
     return render(request, "error.html")
