@@ -96,6 +96,7 @@ def recherche(request):
             titre = titre_aliment(recherche)
             try:
                 a = better_nutri(recherche)
+                print(a)
             
             
                 return render(request, 'recherche.html',
@@ -148,11 +149,12 @@ def mes_aliments(request):
     current_user = request.user
 
   
-    
-    food = mes_aliment_user(request.user.username)
-    a = display_food(food)
-
     try:
+        
+        food = mes_aliment_user(request.user.username)
+        a = display_food(food)
+
+    
         return render(request, 'mes_aliments.html',
                       {"a":str(a[0][4]),
                        "b":str(a[1][4]),
