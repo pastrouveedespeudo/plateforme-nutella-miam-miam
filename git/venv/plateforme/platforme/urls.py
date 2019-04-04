@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, handler404, handler500
 
 from .views import home
 from .views import mention
@@ -18,6 +18,11 @@ from mes_aliments.views import remplacement
 from mes_aliments.views import error
 
 from jeux.views import jeux
+
+
+
+handler404 = "plateforme.views.handler404"
+handler500 = "plateforme.views.handler500"
 
 urlpatterns = [
     
