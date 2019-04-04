@@ -40,31 +40,32 @@ def display_food(liste_aliment):
     cur = conn.cursor()
 
     liste_ali = []
-    
-    for i in liste_aliment:
+    try:
+        for i in liste_aliment:
 
-        cur.execute("""SELECT distinct name_aliment,
-                    code_product_food,description,nutriscore,
-                    image,name_store,name_brand
-                    FROM public.mes_aliments_aliment
-                    where LOWER(name_aliment) = '{}'
-                    """.format(i))
+            cur.execute("""SELECT distinct name_aliment,
+                        code_product_food,description,nutriscore,
+                        image,name_store,name_brand
+                        FROM public.mes_aliments_aliment
+                        where LOWER(name_aliment) = '{}'
+                        """.format(i))
 
-        conn.commit()
-        
+            conn.commit()
+            
 
-        rows = cur.fetchall()
-        
-        for i in rows:
-            liste_ali.append(i)
-          
-    c=0
-
-
-    return liste_ali
+            rows = cur.fetchall()
+            
+            for i in rows:
+                liste_ali.append(i)
+              
+        c=0
 
 
+        return liste_ali
 
+
+    except:
+        pass
 
 
 
