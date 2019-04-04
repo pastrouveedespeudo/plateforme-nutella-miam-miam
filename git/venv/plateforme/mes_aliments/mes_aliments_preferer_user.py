@@ -9,22 +9,28 @@ def mes_aliment_user(username):
                                 password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")
           
     cur = conn.cursor()
+    
+    try:
+        cur.execute("""SELECT * FROM aliment_de_{0}
+                    """.format(username))
 
-    cur.execute("""SELECT * FROM aliment_de_{0}
-                """.format(username))
+        conn.commit()
 
-    conn.commit()
-
-    rows = cur.fetchall()
-    food_user = [i for i in rows]
-    food = [i[1] for i in food_user[1:]]
-  
-    return food
-
+        rows = cur.fetchall()
+        food_user = [i for i in rows]
+        food = [i[1] for i in food_user[1:]]
+        
+    
+        return food
+    
+    except:
+        pass
 
 
 
 def display_food(liste_aliment):
+
+ 
  
     conn = psycopg2.connect(database="ddgh06joqvm83k",
                                 user="giervvxxoatsci",
@@ -54,12 +60,7 @@ def display_food(liste_aliment):
           
     c=0
 
-        
-      
-            
-  
 
- 
     return liste_ali
 
 
