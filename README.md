@@ -1,6 +1,5 @@
-par contre pep8 
 
-tout remettre dans css et js ca va etre hyper ...
+tout remettre dans css et js ca va etre hyper hypoer putin de chiant, oobligé de renomé le fichier, de le recrer, dans html ca marche dans css ca marche pas pfffffff mais avant ca marchait pk ca marche pas la ?
 
 #faire le dossier config, lalternative form pour aliment et l'injection de code
 
