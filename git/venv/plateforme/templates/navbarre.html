@@ -26,7 +26,7 @@
 
   <!-- Custom styles for this template -->
   
-  <link href="/static/css/homehome.css" rel="stylesheet">
+  <link href="/static/css/homehome1.css" rel="stylesheet">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
   
@@ -36,21 +36,6 @@
 
 
  
-    <style>#inputChercher{
-            text-align:center;
-            margin-top:12px;
-            background: #A9A9A9;
-            border: 1px solid;
-            font-style:italic;
-            }
-            #deco{
-            background-size: cover;
-            margin-left:15px;
-            width: 50x;
-            height: 50px;
-            }
-    </style>
-    
 <form action="/mes_aliments/recherche/" method="POST">
 <div class="container-fluid" id="Menu-TOP">
     <div class="row" id="row1">
@@ -58,12 +43,12 @@
        <div class="col-md-7" id="block">
        
           <a href='/'>
-            <img style="width:3.5%;" id="pur_beurre_logo" src="{% static 'img/portfolio/menu-haut/pur_beurre.png' %}">
+            <img id="pur_beurre_logo" src="{% static 'img/portfolio/menu-haut/pur_beurre.png' %}">
           </a>
-          <a  style="font-size:2vw;" id="nom">Pur Beurre</a>
+          <a id="nom">Pur Beurre</a>
 
           {% if user.is_authenticated %}
-          <div style="font-size:2vw;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div id='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           Welcome back <strong>{{user.username}} !</strong>
         </div>
         {% endif %}
@@ -77,11 +62,10 @@
                
                <div style='text-align:center'>
 
-                 <input id="inputChercher" name="cool" type="text" placeholder="Chercher"
-                  style='width:60%; height:100%; font-size:1.5vw;'/>
+                 <input id="inputrecherche" name="cool" type="text" placeholder="Chercher"/>
                  {% csrf_token %}
-                &nbsp;&nbsp;
-                 <input type="submit" style="background:#a6a6a6; font-size:1.25vw;">
+                  &nbsp;&nbsp;
+                 <input type="submit" id="soubmit">
                  {% csrf_token %}
                </div>
                <br>
@@ -89,7 +73,7 @@
                {% if user.is_authenticated %}
                <div style='text-align:center'>
                <a href='/accounts/mon_compte' OnMouseOver="document.all.texte.innerText='Mon compte !'">
-                 <img style="width:12%; height:50%;" id="compte" src="/static/img/portfolio/menu-haut/compte.png">
+                 <img id="compte" src="/static/img/portfolio/menu-haut/compte.png">
                </a>
 
                <a href='/mes_aliments/mes_aliments' OnMouseOver="document.all.texte.innerText='Mes Aliments !'">
@@ -97,7 +81,7 @@
                </a>
 
                <a href='/jeux/jeux' OnMouseOver="document.all.texte.innerText='Jouez !'">
-                 <img style="width:12%; height:15%;" id="carotte" src="/static/img/portfolio/menu-haut/game.png"
+                 <img id="carotte" src="/static/img/portfolio/menu-haut/game.png"
                </a>
                 
               
@@ -106,7 +90,7 @@
                  </a>
                
                  <a href='/accounts/logout_view' OnMouseOver="document.all.texte.innerText='Se deconnecter !'">
-                   <img style="width:15%; height:15%;" id="deco" src="{% static 'img/portfolio/menu-haut/deco.png' %}">
+                   <img id="deco" src="{% static 'img/portfolio/menu-haut/deco.png' %}">
                  </a>
 
                </div>
@@ -114,16 +98,16 @@
                
                <div style='text-align:center'>
                  <a href='/accounts/login' OnMouseOver="document.all.texte.innerText='Se connecter !'">
-                   <img style="width:15%; height:15%;" id="login" src="/static/img/portfolio/menu-haut/login.png">
+                   <img id="login" src="/static/img/portfolio/menu-haut/login.png">
                  </a>
 
                  <a href='/mes_aliments/mes_aliments' OnMouseOver="document.all.texte.innerText='Aide !'">
-                   <img style="width:12%; height:15%;" id="carotte" src="/static/img/portfolio/aide.png"
+                   <img id="carotte" src="/static/img/portfolio/aide.png"
                  </a>
 
                  
                  <a href='/accounts/register_view' OnMouseOver="document.all.texte.innerText='S\'inscrire !'">
-                   <img style="width:12%; height:15%;" id="inscription" src="{% static 'img/portfolio/menu-haut/inscription2.png' %}">
+                   <img id="inscription" src="{% static 'img/portfolio/menu-haut/inscription2.png' %}">
                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               
                  </a>
