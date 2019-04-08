@@ -17,6 +17,7 @@ def controle_data_food(username):
     c = food_account()
 
     number = 0
+    
     verify(c.name_aliment1, number)
     verify(c.name_aliment2, number)
     verify(c.name_aliment3, number)
@@ -37,10 +38,26 @@ def insert_food(username, food_name):
 
     u = User.objects.get(username=username)
     
+    c = food_account()
+    variable = ""
     
-    #u.name_aliment1 = food_name
-    #print(u.name_aliment1)
+    verify2(c.name_aliment1, food_name, variable)
+    verify2(c.name_aliment2, food_name, variable)
+    verify2(c.name_aliment3, food_name, variable)
+    verify2(c.name_aliment4, food_name, variable)
+    verify2(c.name_aliment5, food_name, variable)
+    verify2(c.name_aliment6, food_name, variable)
 
+    if variable == False:
+        return ""
+
+    else:
+        verify3(c.name_aliment1, food_name)
+        verify3(c.name_aliment2, food_name)
+        verify3(c.name_aliment3, food_name)
+        verify3(c.name_aliment4, food_name)
+        verify3(c.name_aliment5, food_name)
+        verify3(c.name_aliment6, food_name)
 
 
 
@@ -52,11 +69,16 @@ def verify(data, liste):
 
     
 
+def verify2(data, food_name, variable):
+    if data == food_name:
+        variable =  False
 
 
-
-
-
+def verify3(data, food_name):
+    if data == "":
+        data = food_name
+    else:
+        pass
 
 
 
