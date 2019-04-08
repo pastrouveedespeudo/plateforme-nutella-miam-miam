@@ -8,6 +8,7 @@ t'as oublier de faire des classes mais enfaite faut juste rajouter la classe dev
 
 refait la mise en page des templates c tellement chiant 
 
+faire aliment comme remplacement non jdis ben vous preferez la responsivité des aliments ou du remplacements ? 
   
   
   
