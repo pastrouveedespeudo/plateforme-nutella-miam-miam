@@ -1,2 +1,7 @@
-c quapres avoir effacer ta database que tu regardes les settings
-  
+en gros hier t'as fais:
+
+reset database
+
+changement de config
+
+et d'autres truk mais chai plus 
