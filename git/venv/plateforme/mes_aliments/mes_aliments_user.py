@@ -1,27 +1,31 @@
-import psycopg2
+"""This is functions for searching from database"""
 
 
-def controle_data_aliment(username):
-    
-    conn = psycopg2.connect(database="plateforme",
-                            user="postgres",
-                            host="127.0.0.1",
-                            password="tiotio")
+from .config import DATABASE, USER, HOST, PASSWORD
+from django.contrib.auth import get_user_model
+from accounts.models import food_account
 
-                
-    cur = conn.cursor()
+User = get_user_model()
 
+def controle_data_food(username):
+    """Here we watch if user have 6 products,
+    if he has -6 we ask him to select products
+    else we warned him to modify his selection"""
 
-    cur.execute("""SELECT COUNT(name_aliment) FROM aliment_de_{0}
-                    """.format(username))
+    u = User.objects.get(username=username)
 
-    conn.commit()
+    c = food_account()
 
-    rows = cur.fetchall()
+    number = 0
+    verify(c.name_aliment1, number)
+    verify(c.name_aliment2, number)
+    verify(c.name_aliment3, number)
+    verify(c.name_aliment4, number)
+    verify(c.name_aliment5, number)
+    verify(c.name_aliment6, number)
 
-    count_food = [i for i in rows]
-
-    if count_food[0][0] >= 6:
+ 
+    if number >= 6:
         return "nombre de produit suppérieur a 6", False
     
     else:
@@ -29,24 +33,25 @@ def controle_data_aliment(username):
 
 
 def insert_food(username, food_name):
+    """He we insert food"""
 
-    conn = psycopg2.connect(database="plateforme",
-                            user="postgres",
-                            host="127.0.0.1",
-                            password="tiotio")
-
-                
-    cur = conn.cursor()
-
-
-
-    cur.execute("""INSERT INTO aliment_de_{}
-                    (name_aliment, username)
-                    VALUES ('{}', '{}');""".format(username, food_name, username))
+    u = User.objects.get(username=username)
+    
+    
+    #u.name_aliment1 = food_name
+    #print(u.name_aliment1)
 
 
 
-    conn.commit()
+
+def verify(data, liste):
+    if data == "":
+        pass
+    else:
+        number += 1
+
+    
+
 
 
 
