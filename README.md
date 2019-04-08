@@ -6,7 +6,7 @@ l'injection de code
 
 t'as oublier de faire des classes mais enfaite faut juste rajouter la classe devant
 
-
+refait la mise en page des templates c tellement chiant 
 
   
   
