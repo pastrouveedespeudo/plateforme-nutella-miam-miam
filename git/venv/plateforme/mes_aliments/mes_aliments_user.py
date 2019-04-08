@@ -3,7 +3,7 @@
 
 from .config import DATABASE, USER, HOST, PASSWORD
 from django.contrib.auth import get_user_model
-from accounts.models import food_account
+from accounts.models import foodAccount
 
 User = get_user_model()
 
@@ -14,7 +14,7 @@ def controle_data_food(username):
 
     u = User.objects.get(username=username)
 
-    c = food_account()
+    c = foodAccount()
 
     number = 0
     
@@ -38,28 +38,40 @@ def insert_food(username, food_name):
 
     u = User.objects.get(username=username)
     
-    c = food_account()
+
+    c = foodAccount()
     variable = ""
-    
+
     verify2(c.name_aliment1, food_name, variable)
     verify2(c.name_aliment2, food_name, variable)
     verify2(c.name_aliment3, food_name, variable)
     verify2(c.name_aliment4, food_name, variable)
     verify2(c.name_aliment5, food_name, variable)
     verify2(c.name_aliment6, food_name, variable)
+    
 
+
+    variable2 = ""
+    
     if variable == False:
         return ""
 
     else:
-        verify3(c.name_aliment1, food_name)
-        verify3(c.name_aliment2, food_name)
-        verify3(c.name_aliment3, food_name)
-        verify3(c.name_aliment4, food_name)
-        verify3(c.name_aliment5, food_name)
-        verify3(c.name_aliment6, food_name)
+        print("yoooooooooooooooooooooooo")
 
+##        verify3(c.name_aliment1, food_name, variable2, c)
+##        verify3(c.name_aliment2, food_name, variable2, c)
+##        verify3(c.name_aliment3, food_name, variable2, c)
+##        verify3(c.name_aliment4, food_name, variable2, c)
+##        verify3(c.name_aliment5, food_name, variable2, c)
+##        verify3(c.name_aliment6, food_name, variable2, c)
 
+        print(c.name_aliment1,"0000000000000000000000")
+        print(c.name_aliment2,"0000000000000000000000")
+        print(c.name_aliment3,"0000000000000000000000")
+        print(c.name_aliment4,"0000000000000000000000")
+        print(c.name_aliment5,"0000000000000000000000")
+        print(c.name_aliment6,"0000000000000000000000")
 
 def verify(data, liste):
     if data == "":
@@ -72,11 +84,13 @@ def verify(data, liste):
 def verify2(data, food_name, variable):
     if data == food_name:
         variable =  False
+    print(variable)
 
-
-def verify3(data, food_name):
-    if data == "":
+def verify3(data, food_name, variable, c):
+    if data == "" and variable != False:
         data = food_name
+        c.save()
+        variable2 = False
     else:
         pass
 
