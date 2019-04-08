@@ -38,33 +38,52 @@ def insert_food(username, food_name):
 
     u = User.objects.get(username=username)
     
+    c = foodAccount.objects.get(name=username)
+    print(c.name_aliment1,'0000000000000000')
 
-    c = foodAccount()
-    variable = ""
-
-    verify2(c.name_aliment1, food_name, variable)
-    verify2(c.name_aliment2, food_name, variable)
-    verify2(c.name_aliment3, food_name, variable)
-    verify2(c.name_aliment4, food_name, variable)
-    verify2(c.name_aliment5, food_name, variable)
-    verify2(c.name_aliment6, food_name, variable)
     
+    Continue = True
+
+    while Continue:
+
+        verify2(c.name_aliment1, food_name, Continue)
+        verify2(c.name_aliment2, food_name, Continue)
+        verify2(c.name_aliment3, food_name, Continue)
+        verify2(c.name_aliment4, food_name, Continue)
+        verify2(c.name_aliment5, food_name, Continue)
+        verify2(c.name_aliment6, food_name, Continue)
+        Continue = False
 
 
     variable2 = ""
     
-    if variable == False:
+    if Continue == False:
         return ""
 
     else:
-        print("yoooooooooooooooooooooooo")
-
-##        verify3(c.name_aliment1, food_name, variable2, c)
-##        verify3(c.name_aliment2, food_name, variable2, c)
-##        verify3(c.name_aliment3, food_name, variable2, c)
-##        verify3(c.name_aliment4, food_name, variable2, c)
-##        verify3(c.name_aliment5, food_name, variable2, c)
-##        verify3(c.name_aliment6, food_name, variable2, c)
+        if c.name_aliment1 == "":
+            c.name_aliment1 = food_name
+            c.save()
+            
+        elif c.name_aliment2 == "":
+            c.name_aliment1 = food_name
+            c.save()
+            
+        elif c.name_aliment3 == "":
+            c.name_aliment1 = food_name
+            c.save()
+            
+        elif c.name_aliment4 == "":
+            c.name_aliment1 = food_name
+            c.save()
+            
+        elif c.name_aliment5 == "":
+            c.name_aliment1 = food_name
+            c.save()
+            
+        elif c.name_aliment6 == "":
+            c.name_aliment1 = food_name
+            c.save()
 
         print(c.name_aliment1,"0000000000000000000000")
         print(c.name_aliment2,"0000000000000000000000")
@@ -73,6 +92,9 @@ def insert_food(username, food_name):
         print(c.name_aliment5,"0000000000000000000000")
         print(c.name_aliment6,"0000000000000000000000")
 
+
+
+ 
 def verify(data, liste):
     if data == "":
         pass
@@ -82,14 +104,22 @@ def verify(data, liste):
     
 
 def verify2(data, food_name, variable):
+    print(data, food_name)
     if data == food_name:
+        print("ouiiiiiiiiiiiiiii")
         variable =  False
     print(variable)
 
-def verify3(data, food_name, variable, c):
+def verify3(data, food_name, variable, c, food):
     if data == "" and variable != False:
-        data = food_name
+        data = '{}'.format(food_name)
+
+        
         c.save()
+
+
+
+        
         variable2 = False
     else:
         pass
