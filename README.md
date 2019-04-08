@@ -1,6 +1,6 @@
-ca marche pas ste merde la relation n'existe pas mais va chier bien sur qu'elle existe 5 h
+jvai pas l'avoir j'ai regarder le site des autres mecs... pffffffffffffff
 
-les databases se creent pas c relou serieux 
+c pas beau je peux pas faire le truk aliment et tu bombardes 
   
   
   
