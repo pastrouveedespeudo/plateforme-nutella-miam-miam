@@ -12,24 +12,26 @@ def controle_data_food(username):
     if he has -6 we ask him to select products
     else we warned him to modify his selection"""
 
-    u = User.objects.get(username=username)
+    c = foodAccount.objects.get(name=username)
 
-    c = foodAccount()
+    liste = [c.name_aliment1, c.name_aliment2, c.name_aliment3,
+             c.name_aliment4, c.name_aliment5, c.name_aliment6,]
 
     number = 0
+    for i in liste:
+        print(i)
+        print(number)
+        if i != "":
+            number += 1
     
-    verify(c.name_aliment1, number)
-    verify(c.name_aliment2, number)
-    verify(c.name_aliment3, number)
-    verify(c.name_aliment4, number)
-    verify(c.name_aliment5, number)
-    verify(c.name_aliment6, number)
 
  
     if number >= 6:
+        print("nombre de produit suppérieur a 6")
         return "nombre de produit suppérieur a 6", False
     
     else:
+        print("stockage du produit possible")
         return "stockage du produit possible", True
 
 
@@ -68,15 +70,7 @@ def insert_food(username, food_name):
     else:
         print("trop d'aliment")
 
-    print(c.name_aliment1)
-    print(c.name_aliment2)
-    print(c.name_aliment3)
-    print(c.name_aliment4)
-    print(c.name_aliment5)
-    print(c.name_aliment6)
 
-
- 
 def verify(data, liste):
     if data == "":
         pass
@@ -85,11 +79,11 @@ def verify(data, liste):
     
 
 def verify2(data, food_name, variable):
-    print(data, food_name)
+   
     if data == food_name:
-        print("ouiiiiiiiiiiiiiii")
+    
         variable =  False
-    print(variable)
+ 
 
 def verify3(data, food_name, variable, c, food):
     if data == "" and variable != False:
@@ -98,9 +92,6 @@ def verify3(data, food_name, variable, c, food):
         
         c.save()
 
-
-
-        
         variable2 = False
     else:
         pass
