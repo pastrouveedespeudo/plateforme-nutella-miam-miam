@@ -4,6 +4,7 @@ from .config import DATABASE, USER, HOST, PASSWORD
 from .models import aliment
 from django.db import connection
 from accounts.models import foodAccount
+from django.db.models.functions import Lower
 
 def image_aliment(para):
     """Here we search food picture """
@@ -15,22 +16,12 @@ def image_aliment(para):
 
 def titre_aliment(para):
     """Here we search title picture """
+    
+    food = aliment.objects.get(name_aliment=para)
+    title = food.name_aliment
+    return title
 
-    para = para.lower()
-    conn = psycopg2.connect(database=DATABASE,
-                            user=USER,
-                            host=HOST,
-                            password=PASSWORD) 
-
-    cur = conn.cursor()
-    cur.execute("""SELECT LOWER(name_aliment)
-                    FROM public.mes_aliments_aliment
-                    WHERE LOWER(name_aliment) LIKE '%{}%'""".format(para))
-    conn.commit()
-    rows = cur.fetchall()
-    titre = [i for i in rows]
-    return titre
-
+   
 
 def better_nutri(para):
     """Here we search best nutriscore from category
@@ -55,6 +46,15 @@ def better_nutri(para):
     conn.commit()
     rows = cur.fetchall()
     aliment_recherché = [i for i in rows]
+    
+   
+    food = aliment.objects.get(name_aliment=para)
+    liste = [food.name_aliment, food.id_categorie_id,
+             food.nutriscore, food.image, food.id]
+    
+    print(liste)
+
+
 
     liste2 = []
     c = 0
