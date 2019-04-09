@@ -4,6 +4,8 @@ food from user database"""
 import psycopg2
 from .config import DATABASE, USER, HOST, PASSWORD
 from accounts.models import *
+from mes_aliments.models import *
+
 
 def mes_aliment_user(username):
     """Here we take user food"""
@@ -17,29 +19,24 @@ def mes_aliment_user(username):
 
 def display_food(liste_aliment):
     """Here we take informations food for template"""
- 
-    conn = psycopg2.connect(database=DATABASE,
-                            user=USER,
-                            host=HOST,
-                            password=PASSWORD) 
-    cur = conn.cursor()
+
+    
+
+   
     liste_ali = []
     try:
         for i in liste_aliment:
-            cur.execute("""SELECT distinct name_aliment,
-                        code_product_food,description,nutriscore,
-                        image,name_store,name_brand
-                        FROM public.mes_aliments_aliment
-                        where LOWER(name_aliment) = '{}'
-                        """.format(i))
-            conn.commit()
+             z = aliment.objects.get(name_aliment=i)
+             liste = []
+             liste = [z.name_aliment, z.code_product_food,
+                      z.description, z.nutriscore,
+                      z.image, z.name_store, z.name_brand]
 
-            rows = cur.fetchall()
-            for i in rows:
-                liste_ali.append(i)
-        c=0
+             liste_ali.append(liste)
+     
 
         return liste_ali
-
+    
     except:
         pass
+     
