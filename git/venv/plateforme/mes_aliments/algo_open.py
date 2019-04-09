@@ -9,72 +9,61 @@ from django.db.models.functions import Lower
 def image_aliment(para):
     """Here we search food picture """
 
-    food = aliment.objects.get(name_aliment=para)
-    image = food.image
-    return image
+    try:
+        food = aliment.objects.get(name_aliment__contains='{}'.format(para))
+        food = aliment.objects.get(name_aliment=para)
+        image = food.image
+        return image
+    except:
 
+        para = para.split()
+        food = aliment.objects.get(name_aliment__contains=str(para[0]))
+        image = food.image
+        return image
 
+    
 def titre_aliment(para):
     """Here we search title picture """
+    try:
+        food = aliment.objects.get(name_aliment=para)
+        title = food.name_aliment
+        return title
     
-    food = aliment.objects.get(name_aliment=para)
-    title = food.name_aliment
-    return title
+    except:
 
+        para = para.split()
+        food = aliment.objects.get(name_aliment__contains=str(para[0]))
+        title = food.name_aliment
+        return title
    
 
 def better_nutri(para):
     """Here we search best nutriscore from category
     from food search"""
 
-    para = para.lower()
-    conn = psycopg2.connect(database=DATABASE,
-                            user=USER,
-                            host=HOST,
-                            password=PASSWORD) 
-    cur = conn.cursor()
-
-    cur.execute("""SELECT name_aliment from mes_aliments_aliment
-                where LOWER(name_aliment) LIKE '%{}%'""".format(para))
-    conn.commit()
-    rows = cur.fetchall()
-
-    cur.execute("""SELECT name_aliment, id_categorie_id, nutriscore, image,id
-        FROM public.mes_aliments_aliment
-        WHERE LOWER(name_aliment) = '{}'""".format(rows[0][0].lower()))
-
-    conn.commit()
-    rows = cur.fetchall()
-    aliment_recherché = [i for i in rows]
-    
-   
     food = aliment.objects.get(name_aliment=para)
-    liste = [food.name_aliment, food.id_categorie_id,
+    aliment_recherché = [food.name_aliment, food.id_categorie_id,
              food.nutriscore, food.image, food.id]
+  
+    category = aliment.objects.filter(id_categorie_id=food.id_categorie_id)
+
+    liste = []
+
+    count = 0
+    for i in category:
+        if count == 20:
+            break
+        else:
+            a = []
+            a = [i.name_aliment, i.id_categorie_id,
+                 i.nutriscore, i.image]
+            liste.append(a)
     
-    print(liste)
+        count += 1
 
 
-
-    liste2 = []
-    c = 0
-    for i in range(20):
-        cur.execute("""SELECT name_aliment, id_categorie_id, nutriscore, image
-        FROM public.mes_aliments_aliment
-        WHERE id_categorie_id = {} and nutriscore != 'No_found' and image != 'No_found'
-        and LOWER(name_aliment) != '{}'
-        ORDER BY nutriscore ASC""".format(aliment_recherché[0][1], para))
-
-        conn.commit()
-        rows = cur.fetchall()
-        liste = [i for i in rows]
- 
-        c+=1
-
-    liste = set(liste)
-    liste = list(liste)
     liste = liste[:6]
-    liste[0] = aliment_recherché[0]
+    liste[0] = aliment_recherché
 
     return liste
 
