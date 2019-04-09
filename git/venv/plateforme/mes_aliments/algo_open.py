@@ -7,23 +7,9 @@ from accounts.models import foodAccount
 
 def image_aliment(para):
     """Here we search food picture """
- 
-    para = para.lower()
-    conn = psycopg2.connect(database=DATABASE,
-                            user=USER,
-                            host=HOST,
-                            password=PASSWORD) 
-    cur = conn.cursor()
 
-    cur.execute("""select image, LOWER(name_aliment)
-                from public.mes_aliments_aliment
-                where LOWER(name_aliment) LIKE '%{}%';
-                """.format(para))
-
-    conn.commit()
-    rows = cur.fetchall()
-    image = [i for i in rows]
-
+    food = aliment.objects.get(name_aliment=para)
+    image = food.image
     return image
 
 
