@@ -51,14 +51,14 @@ def searching(request):
         stock = controle_data_food(current_user)
         
         if validate and username:
-            print("ouiiiiii")
+        
             current_user = request.user
             stock = controle_data_food(username)
-            print(stock, "srockkkk")
+           
             if stock[1] == True:
                 veri = verification_product_not_two(current_user,
                                                     validate[0])
-                print(veri)
+       
                 if veri == True:
                    
                     insert_food(username, validate[0])
@@ -134,7 +134,6 @@ def my_food(request):
 
     try:
         food = mes_aliment_user(request.user.username)
-        print(food)
         a = display_food(food)
 
         return render(request, 'mes_aliments.html',{"a":str(a[0][4]),
@@ -172,7 +171,8 @@ def my_food(request):
 
 def replacing(request):
     """This is functionality for replace food from my food"""
-
+    print("ouiiiiiiiiiiiiiiiiiiii")
+    
     message = ''
 
     if request.method == "POST":
@@ -199,8 +199,7 @@ def replacing(request):
 
             if b == True:
                 data_replace(request, current_user,
-                             element[0], element[1]
-                             )
+                             element[0], element[1])
             elif b == False:
                 message = 'vous avez deja cet aliment'
 
@@ -239,8 +238,8 @@ def replacing(request):
                                                            "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][2]) + ".jpg >",
                                                            "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][2]) + ".jpg >",
 
-                                                           "image":str(image[0][0]),
-                                                           "titre":str(titre[0][0]),
+                                                           "image":str(image),
+                                                           "titre":str(titre),
                                                            'message':message
                                                     
                                                            })
