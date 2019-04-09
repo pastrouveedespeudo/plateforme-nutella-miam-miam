@@ -14,8 +14,8 @@ def image_aliment(para):
         food = aliment.objects.get(name_aliment=para)
         image = food.image
         return image
+    
     except:
-
         para = para.split()
         food = aliment.objects.get(name_aliment__contains=str(para[0]))
         image = food.image
@@ -30,7 +30,6 @@ def titre_aliment(para):
         return title
     
     except:
-
         para = para.split()
         food = aliment.objects.get(name_aliment__contains=str(para[0]))
         title = food.name_aliment
@@ -43,7 +42,7 @@ def better_nutri(para):
 
     food = aliment.objects.get(name_aliment=para)
     aliment_recherché = [food.name_aliment, food.id_categorie_id,
-             food.nutriscore, food.image, food.id]
+                        food.nutriscore, food.image, food.id]
   
     category = aliment.objects.filter(id_categorie_id=food.id_categorie_id)
 
@@ -147,36 +146,26 @@ def verification_product_not_two(username, produit):
        c.name_aliment3  == produit or c.name_aliment4  == produit or\
        c.name_aliment5  == produit or c.name_aliment1  == produit:
         return False    
-    
+    else:
+        return True
+
 
 def verification_remplacement(username, produit):
     """We verify food isnt already present""" 
 
-    conn = psycopg2.connect(database=DATABASE,
-                            user=USER,
-                            host=HOST,
-                            password=PASSWORD) 
-                
-    cur = conn.cursor()
+    c = foodAccount.objects.get(name=username)
 
-    cur.execute("""SELECT name_aliment from aliment_de_{}
-                WHERE name_aliment LIKE LOWER('%{}%')"""
-                .format(username, produit))
+    food = [c.name_aliment1, c.name_aliment2, c.name_aliment3,
+            c.name_aliment4, c.name_aliment5, c.name_aliment6]
+
+
+    for i in food:
+        if produit == i:
+            print("produit deja dans")
+            return False
+    print("pas produit deja !")
+    return True
+
     
-    conn.commit()
-
-
-    rows = cur.fetchall()
-
-    liste = [i for i in rows]
-   
-    if liste == []:
-        return True
-    else:
-        return False
-
-
-
-
 
 
