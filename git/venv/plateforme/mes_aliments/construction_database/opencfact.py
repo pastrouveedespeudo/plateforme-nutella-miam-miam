@@ -162,7 +162,7 @@ class data:
                                        self.number_product.lower(),
                                        self.description_product.lower(),
                                        self.nutriscore.lower(),
-                                       d.lower(), self.store_product.lower(),self.brandss.lower() ))
+                                       d, self.store_product.lower(),self.brandss.lower() ))
        
                 conn.commit()
 
