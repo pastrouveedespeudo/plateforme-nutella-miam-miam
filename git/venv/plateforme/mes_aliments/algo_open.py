@@ -122,8 +122,40 @@ def replace(para):
 def data_replace(request, username, aliment, new_aliment):
     """ """   
 
-
+    c = foodAccount.objects.get(name=username)
     
+
+    food = [c.name_aliment1, c.name_aliment2, c.name_aliment3,
+            c.name_aliment4, c.name_aliment5, c.name_aliment6]
+
+
+    if c.name_aliment1 == aliment:
+        c.name_aliment1 = new_aliment
+        c.save()
+        
+    elif c.name_aliment2 == aliment:
+        c.name_aliment2 = new_aliment
+        c.save()
+        
+    elif c.name_aliment3 == aliment:
+        c.name_aliment3 = new_aliment
+        c.save()
+        
+    elif c.name_aliment4 == aliment:
+        c.name_aliment4 = new_aliment
+        c.save()
+        
+    elif c.name_aliment5 == aliment:
+        c.name_aliment5 = new_aliment
+        c.save()
+        
+    elif c.name_aliment6 == aliment:
+        c.name_aliment6 = new_aliment
+        c.save()
+        
+
+
+
     conn = psycopg2.connect(database=DATABASE,
                             user=USER,
                             host=HOST,
