@@ -58,10 +58,12 @@ def searching(request):
             if stock[1] == True:
                 veri = verification_product_not_two(current_user,
                                                     validate[0])
+                
                 if veri == True:
-                    print("")
+                   
                     insert_food(username, validate[0])
                     print("aliment pas deja")
+                    
             elif stock[1] == False:
                 print('aliment deja')
                 exceeded_stock = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
@@ -79,8 +81,9 @@ def searching(request):
             title = titre_aliment(search)
 
             try:
+ 
                 a = better_nutri(search)
-                print(a)
+     
                 return render(request, 'recherche.html',
                               {"a":str(a[0][3]),
                                "b":str(a[1][3]),
@@ -110,8 +113,8 @@ def searching(request):
                                "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][2]) + ".jpg >",
                                "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][2]) + ".jpg >",
 
-                               "image":str(image[0][0]),
-                               "titre":str(title[0][0]),
+                               "image":str(image),
+                               "titre":str(title),
                                "stock_depassé":exceeded_stock,
                                })
 
