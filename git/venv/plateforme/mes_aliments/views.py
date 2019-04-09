@@ -54,11 +54,11 @@ def searching(request):
             print("ouiiiiii")
             current_user = request.user
             stock = controle_data_food(username)
-
+            print(stock, "srockkkk")
             if stock[1] == True:
                 veri = verification_product_not_two(current_user,
                                                     validate[0])
-                
+                print(veri)
                 if veri == True:
                    
                     insert_food(username, validate[0])
@@ -134,6 +134,7 @@ def my_food(request):
 
     try:
         food = mes_aliment_user(request.user.username)
+        print(food)
         a = display_food(food)
 
         return render(request, 'mes_aliments.html',{"a":str(a[0][4]),
