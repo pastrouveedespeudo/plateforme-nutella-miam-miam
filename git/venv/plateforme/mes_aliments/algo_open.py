@@ -79,43 +79,31 @@ def food_details(value):
 
 def replace(para):
     """We replace food from my_food"""
+  
+    food = aliment.objects.get(name_aliment=para)
+    aliment_recherché = [food.name_aliment, food.id_categorie_id,
+                        food.nutriscore, food.image, food.id]
+  
+    category = aliment.objects.filter(id_categorie_id=food.id_categorie_id)
+
+    liste = []
+
+    count = 0
+    for i in category:
+        if count == 20:
+            break
+        else:
+            a = []
+            a = [i.name_aliment, i.id_categorie_id,
+                 i.nutriscore, i.image]
+            liste.append(a)
     
-    para = para.lower()
-    conn = psycopg2.connect(database=DATABASE,
-                            user=USER,
-                            host=HOST,
-                            password=PASSWORD) 
+        count += 1
 
-    cur = conn.cursor()
 
-    cur.execute("""SELECT id_categorie_id
-    FROM public.mes_aliments_aliment
-    WHERE LOWER(name_aliment) = '{}'""".format(para))
-
-    conn.commit()
-    rows = cur.fetchall()
-    indice_cat = [i[0] for i in rows]
-    indice_cat = indice_cat[0]
-
-    c = 0
-    for i in range(20):
-        
-        cur.execute("""SELECT distinct LOWER(name_aliment), id_categorie_id, nutriscore, image
-        FROM public.mes_aliments_aliment
-        WHERE id_categorie_id = {} and nutriscore != 'No_found' and image != 'No_found'
-        and LOWER(name_aliment) != '{}'
-        ORDER BY nutriscore ASC""".format(indice_cat, para))
-
-        conn.commit()
-        rows = cur.fetchall()
-        liste = [i for i in rows]
-            
-        c+=1
-
-    liste = set(liste)
-    liste = list(liste)
     liste = liste[:6]
- 
+    liste[0] = aliment_recherché
+
     return liste
 
 
@@ -198,6 +186,4 @@ def verification_remplacement(username, produit):
     print("pas produit deja !")
     return True
 
-    
-
-
+   
