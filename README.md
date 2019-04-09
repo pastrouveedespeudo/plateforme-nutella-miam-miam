@@ -1,7 +1,3 @@
-en gros hier t'as fais:
+6h a comprendre qu'il fallait  reset et pas détruire la database et qu'il fallait faire python manage.py et non pas manage.py...
 
-reset database
-
-changement de config
-
-et d'autres truk mais chai plus 
+et l'autre qui demande a son evaluateur s'il est une ia grokon... 
