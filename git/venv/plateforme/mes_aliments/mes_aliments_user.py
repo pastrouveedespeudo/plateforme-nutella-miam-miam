@@ -39,59 +39,41 @@ def insert_food(username, food_name):
     u = User.objects.get(username=username)
     
     c = foodAccount.objects.get(name=username)
-    print(c.name_aliment1,'0000000000000000')
 
+  
+    if c.name_aliment1 == "":
+        c.name_aliment1 = food_name
+        c.save()
+        
+    elif c.name_aliment2 == "":
+        c.name_aliment2 = food_name
+        c.save()
+        
+    elif c.name_aliment3 == "":
+        c.name_aliment3 = food_name
+        c.save()
+        
+    elif c.name_aliment4 == "":
+        c.name_aliment4 = food_name
+        c.save()
+        
+    elif c.name_aliment5 == "":
+        c.name_aliment5 = food_name
+        c.save()
+        
+    elif c.name_aliment6 == "":
+        c.name_aliment6 = food_name
+        c.save()
     
-    Continue = True
-
-    while Continue:
-
-        verify2(c.name_aliment1, food_name, Continue)
-        verify2(c.name_aliment2, food_name, Continue)
-        verify2(c.name_aliment3, food_name, Continue)
-        verify2(c.name_aliment4, food_name, Continue)
-        verify2(c.name_aliment5, food_name, Continue)
-        verify2(c.name_aliment6, food_name, Continue)
-        Continue = False
-
-
-    variable2 = ""
-    
-    if Continue == False:
-        return ""
-
     else:
-        if c.name_aliment1 == "":
-            c.name_aliment1 = food_name
-            c.save()
-            
-        elif c.name_aliment2 == "":
-            c.name_aliment1 = food_name
-            c.save()
-            
-        elif c.name_aliment3 == "":
-            c.name_aliment1 = food_name
-            c.save()
-            
-        elif c.name_aliment4 == "":
-            c.name_aliment1 = food_name
-            c.save()
-            
-        elif c.name_aliment5 == "":
-            c.name_aliment1 = food_name
-            c.save()
-            
-        elif c.name_aliment6 == "":
-            c.name_aliment1 = food_name
-            c.save()
+        print("trop d'aliment")
 
-        print(c.name_aliment1,"0000000000000000000000")
-        print(c.name_aliment2,"0000000000000000000000")
-        print(c.name_aliment3,"0000000000000000000000")
-        print(c.name_aliment4,"0000000000000000000000")
-        print(c.name_aliment5,"0000000000000000000000")
-        print(c.name_aliment6,"0000000000000000000000")
-
+    print(c.name_aliment1)
+    print(c.name_aliment2)
+    print(c.name_aliment3)
+    print(c.name_aliment4)
+    print(c.name_aliment5)
+    print(c.name_aliment6)
 
 
  
@@ -100,7 +82,6 @@ def verify(data, liste):
         pass
     else:
         number += 1
-
     
 
 def verify2(data, food_name, variable):
