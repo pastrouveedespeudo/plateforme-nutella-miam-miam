@@ -6,4 +6,4 @@
 
 #faire une presentation de dingue 
 
-roooo puté une fois ca me dit lapp une autre fois la secret key une autre fois les setting  ..i..
+ben ok mtn c une utre erruer puti nmais et l'autre y dis faite alter user createdb hé connard je fais ca comment putin depuis ce matin ji suis jcrois jvai devenir dinguo
