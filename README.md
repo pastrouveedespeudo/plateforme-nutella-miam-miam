@@ -1,8 +1,16 @@
-#refaire les tets
+#finir les tests demain           2j
 
-#faire un moock
+#faire un moock de openfactfood   1h
 
+#pouvoir faire la recherche sans session    5h
 
-#pouvoir faire la recherche sans session
+#depuis la recherche pouvoir remplacer un aliment 6h
 
-bon au moins c'est de nouvelles erreurs ^^
+#tableau trello 5min
+
+#mention legales 30 min
+
+#presentation  4h
+
+#truk finale pdf 1h 
+
