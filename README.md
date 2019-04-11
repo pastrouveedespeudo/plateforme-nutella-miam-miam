@@ -14,3 +14,4 @@
 
 #truk finale pdf 1h 
 
+#ils viennent de ruiné mon paladin impaires c gros batards
