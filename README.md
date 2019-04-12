@@ -2,8 +2,6 @@
 
 #faire un moock de openfactfood   1h
 
-#pouvoir faire la recherche sans session    5h
-
 #depuis la recherche pouvoir remplacer un aliment 6h
 
 #tableau trello 5min
@@ -14,4 +12,4 @@
 
 #truk finale pdf 1h 
 
-#ils viennent de ruiné mon paladin impaires c gros batards
+
