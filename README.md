@@ -2,7 +2,7 @@
 
 #faire un moock de openfactfood   1h
 
-#depuis la recherche pouvoir remplacer un aliment 6h par conte c pas ecrit dans les pages et kevin m'a dit de ne pas mettre des fonctionalités en plus... mais comment le type peut changer ses aliments avec ce qu'il veut ?... arf
+fractionner le code a mort avec des list comprhéension et mettre oui jaurai pu faire une fonction qui renvoie direct le str mais sinon ca aurait été chiant de pas traiter les jquerry...
 
 #tableau trello 5min
 
