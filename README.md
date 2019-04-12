@@ -2,7 +2,7 @@
 
 #faire un moock de openfactfood   1h
 
-#depuis la recherche pouvoir remplacer un aliment 6h
+#depuis la recherche pouvoir remplacer un aliment 6h par conte c pas ecrit dans les pages et kevin m'a dit de ne pas mettre des fonctionalités en plus... mais comment le type peut changer ses aliments avec ce qu'il veut ?... arf
 
 #tableau trello 5min
 
