@@ -1,7 +1,9 @@
 
-#presentation  4h
+#presentation  6h
 
-#truk finale pdf 1h 
+#truk finale pdf 10h (relecture, wouhla c trop chiant a faire) 
 
-#bien les faires
+#user stories 30 min
+
+
 
