@@ -44,21 +44,23 @@ def searching(request):
     current_user = request.user
     
     if request.method == "POST":
+
         search = request.POST.get('cool')
         username = request.POST.get('username')
         validate = request.POST.getlist('data[]')
-
-        stock = controle_data_food(current_user)
-        
+        try:
+            stock = controle_data_food(current_user)
+        except:
+            pass
         if validate and username:
-        
+
             current_user = request.user
             stock = controle_data_food(username)
-           
+            print(stock)
             if stock[1] == True:
                 veri = verification_product_not_two(current_user,
                                                     validate[0])
-       
+
                 if veri == True:
                    
                     insert_food(username, validate[0])
@@ -69,14 +71,16 @@ def searching(request):
                 exceeded_stock = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
 
         if search:
+      
             current_user = request.user
 
             if current_user.is_authenticated:
+
                 stock = controle_data_food(current_user)
 
                 if stock[1] == False:
                     exceeded_stock = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
-
+        
             image = image_aliment(search)
             title = titre_aliment(search)
 
@@ -126,12 +130,15 @@ def searching(request):
     return render(request, 'recherche.html', {'image':image})
 
 
-
+@csrf_exempt
 def my_food(request):
     """Here we acced to user product"""
 
     current_user = request.user
-
+    if request.method == "POST":
+        search = request.POST.get('yo')
+        print(search,'00000000000000000000000000000000000000000')
+    
     try:
         food = mes_aliment_user(request.user.username)
         a = display_food(food)
@@ -171,13 +178,13 @@ def my_food(request):
 
 def replacing(request):
     """This is functionality for replace food from my food"""
-    print("ouiiiiiiiiiiiiiiiiiiii")
+
     
     message = ''
 
     if request.method == "POST":
         replace_it = request.POST.getlist('remplace_food')
-
+        print(replace_it,"555555555555555556")
         if replace_it:
             current_user = request.user
             
