@@ -65,12 +65,13 @@ def jeux(request):
             
             print('Choix de niveau: niveau 2')
             un = choix_aliment_niveau_2()
-       
-            
-            numero = ["1","2","3","4","5","6","7","8"]
-            image = [un[0][2], un[1][0][0][2], un[1][1][0][2], un[1][2][0][2],
-                    un[1][3][0][2], un[1][4][0][2], un[1][5][0][2],un[1][6][0][2]]
 
+            numero = ["1","2","3","4","5","6","7","8"]
+
+            print(str(un[1][2]),'000000000000000000000000000')
+            image = [str(un[0][0]), str(un[1][0]), str(un[1][1]), str(un[1][2]), str(un[1][3]), str(un[1][4]),
+                     str(un[1][5]), str(un[1][6])]
+            
             Ocontinuer = True
             while Ocontinuer:
             
@@ -100,7 +101,7 @@ def jeux(request):
             
             data = {"image1":i, "image2":j,"image3":k,"image4":l,
                     "image5":m, "image6":n,"image7":o,"image8":p}
-            print(data)
+          
             return JsonResponse(data)
 
 
@@ -108,7 +109,7 @@ def jeux(request):
         
         elif niveau_continuer == "Niveau 2":
 
-            print("ouiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
+
 
             liste = [[],[],[],[],[],[]]
             c=0
@@ -121,20 +122,20 @@ def jeux(request):
             liste = ["".join(i) for i in liste]
 
             
-            print(liste)
+     
             
             print("l'utilisateur a choisis : ", liste[0])
             print("le produit est : ", liste[1])
             
             current_user = request.user
             
-            nutriscore_id = verification(liste[1])
+            food_choose = aliment.objects.get(image=liste[1])
+            nutriscore_id = food_choose.nutriscore
 
 
-            if nutriscore_id[0][0] == "a":
+            if nutriscore_id == "a":
 
-                
-                print("oui bonne réponse + 5")
+                print("oui bonne réponse")
                 message = "oui bonne réponse"
             else:
                 print("non mauvaise réponse")
@@ -145,8 +146,9 @@ def jeux(request):
             un = choix_aliment_niveau_2()
             
             numero = ["1","2","3","4","5","6","7","8"]
-            image = [un[0][2], un[1][0][0][2], un[1][1][0][2], un[1][2][0][2],
-                    un[1][3][0][2], un[1][4][0][2], un[1][5][0][2],un[1][6][0][2]]
+            
+            image = [str(un[0][0]), str(un[1][0]), str(un[1][1]), str(un[1][2]), str(un[1][3]), str(un[1][4]),
+                     str(un[1][5]), str(un[1][6])]
 
             Ocontinuer = True
             while Ocontinuer:
@@ -175,7 +177,7 @@ def jeux(request):
                     
             data = {"image1":i, "image2":j,"image3":k,"image4":l,
                     "image5":m, "image6":n,"image7":o,"image8":p
-                    ,"message":message, 'score_actuel': score_actuel}
+                    ,"message":message}
             
             DATA = []
             return JsonResponse(data)
