@@ -5,17 +5,15 @@ from django.template.loader import render_to_string
 from django.http import HttpResponse
 import json as simplejson
 from django.http import JsonResponse
-from .score import *
 from .verification_reponse import *
+import random
 
-#a changé
 
 def jeux(request):
 
     current_user = request.user
-    point = score(current_user)
-    score_actuel =  update_score(request.user, 0)
-   
+
+
     if request.method == "POST":
 
 
@@ -26,7 +24,7 @@ def jeux(request):
         continuer = str(continuer)
 
         current_user = request.user
-        point = score(current_user)
+ 
 
         niveau_continuer = request.POST.get('data1')
         print(niveau_continuer,'00000000000000000')
@@ -140,15 +138,15 @@ def jeux(request):
 
 
             if nutriscore_id[0][0] == "a":
-                score_actuel = update_score(request.user, +5)
+
                 
                 print("oui bonne réponse + 5")
-                message = "oui bonne réponse + 5"
+                message = "oui bonne réponse"
             else:
                 print("non mauvaise réponse")
-                score_actuel =  update_score(request.user, -2)
+
                 
-                message = "non mauvaise réponse - 2"
+                message = "non mauvaise réponse"
             
             un = choix_aliment_niveau_2()
             
@@ -189,13 +187,6 @@ def jeux(request):
             return JsonResponse(data)
 
 
-
-
-
-        elif niveau_continuer == "Niveau 3":
-            pass
-           
-
         elif niveau_continuer == 'Niveau 1':
 
 
@@ -221,15 +212,17 @@ def jeux(request):
             print(nutriscore_id[0][0],"0000000000000000000000000000000000000000")
 
             if nutriscore_id[0][0] == "a":
-                score_actuel = update_score(request.user, +5)
+                liste = ['bien joué', 'particpe a top chef', 'formidable']
+                message = random.choice(liste)
                 
-                print("oui bonne réponse + 5")
-                message = "oui bonne réponse + 5"
+ 
+
             else:
-                print("non mauvaise réponse")
-                score_actuel =  update_score(request.user, -2)
+                liste = ['nul']
                 
-                message = "non mauvaise réponse - 2"
+                message = random.choice(liste)
+                
+
             
             un = choix_aliment_niveau_1()
             numero = ["1","2","3","4"]
@@ -250,14 +243,14 @@ def jeux(request):
                 else:
                     j = l = k = ""
                     
-            data = {"image1":i, "image2":j,"image3":k,"image4":l,"message":message, 'score_actuel': score_actuel}
+            data = {"image1":i, "image2":j,"image3":k,"image4":l,"message":message}
             DATA = []
             return JsonResponse(data)
 
 
     print('merdeeeeeeeeeeeeeeeeeeeeeeeeee')
-    return render(request, "jeux.html", {'score':point, 'score_actuel': score_actuel}) 
-
+    #return render(request, "jeux.html", {'score':point, 'score_actuel': score_actuel}) 
+    return render(request, "jeux.html")
 
 
 
