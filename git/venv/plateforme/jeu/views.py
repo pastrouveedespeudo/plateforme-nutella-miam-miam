@@ -27,7 +27,7 @@ def jeux(request):
  
 
         niveau_continuer = request.POST.get('data1')
-        print(niveau_continuer,'00000000000000000')
+     
         
         if niveau == "Niveau 1":
             print('Choix de niveau: niveau 1')
@@ -35,7 +35,9 @@ def jeux(request):
 
 
             numero = ["1","2","3","4"]
-            image = [un[0][2], un[1][0][0][2], un[1][1][0][2], un[1][2][0][2]]
+
+
+            image = [str(un[0][2]), str(un[1][0][2]), str(un[1][1][2]), str(un[1][2][2])]
 
             continuer = True
             while continuer:
@@ -51,19 +53,11 @@ def jeux(request):
                     break
                 else:
                     j = l = k = ""
-                    
-            print('fini')
-            print(i)
-            print("\n")
-            print(j)
-            print("\n")
-            print(k)
-            print("\n")
-            print(l)
-            print("\n")
 
+
+                    
             data = {"image1":i, "image2":j,"image3":k,"image4":l,"yo":"coucou"}
-            print(data)
+
             return JsonResponse(data)
 
         
@@ -188,34 +182,29 @@ def jeux(request):
 
 
         elif niveau_continuer == 'Niveau 1':
-
-
-            liste = [[],[]]
-            c=0
+  
+            liste = [[], []]
+            c = 0
             for i in continuer:
-                if i == ',':
-                    c+=1
-                else:
-                    liste[c].append(i)
+                for j in i:
+                    if j == ',':
+                        c+=1
+                    else:
+                        liste[c].append(j)
 
-            liste = ["".join(i) for i in liste]
+            liste2 = []
+            for i in liste:
+                liste2.append("".join(i))
+            
+   
 
-            
-            print(liste)
-            
-            print("l'utilisateur a choisis : ", liste[0])
-            print("le produit est : ", liste[1])
-            
-            current_user = request.user
-            
-            nutriscore_id = verification(liste[1])
-            print(nutriscore_id[0][0],"0000000000000000000000000000000000000000")
-
-            if nutriscore_id[0][0] == "a":
+            food = aliment.objects.get(image=str(liste2[1]))
+            verif_nutri = food.nutriscore
+ 
+            if verif_nutri == "a":
                 liste = ['bien joué', 'particpe a top chef', 'formidable']
                 message = random.choice(liste)
-                
- 
+
 
             else:
                 liste = ['nul']
@@ -226,7 +215,7 @@ def jeux(request):
             
             un = choix_aliment_niveau_1()
             numero = ["1","2","3","4"]
-            image = [un[0][2], un[1][0][0][2], un[1][1][0][2], un[1][2][0][2]]
+            image = [str(un[0][2]), str(un[1][0][2]), str(un[1][1][2]), str(un[1][2][2])]
 
             continuer = True
             while continuer:
