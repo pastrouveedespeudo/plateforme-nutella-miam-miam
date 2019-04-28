@@ -34,49 +34,25 @@ def choix_aliment_niveau_1():
 
 def choix_aliment_niveau_2():
 
-    conn = psycopg2.connect(database=DATABASE,
-                                user=USER,
-                                host=HOST,
-                                password=PASSWORD)                    
-    cur = conn.cursor()
-    
-    nutriscore = {}
+    choice = aliment.objects.all().filter(nutriscore='a')
+    food = random.choice(choice)
+    picture = food.image
 
-    cur.execute("""SELECT name_aliment, nutriscore,
-                image
-                from public.mes_aliments_aliment
-                where nutriscore = 'a' and name_aliment != 'No_found' and
-                image != 'No_found'
-                order by random()
-                limit 1;
-                """)
+    liste_food_a = [picture]
 
-    rows = cur.fetchall()
-    aliment_nutri_a = [i for i in rows]
- 
 
-    seven_other = []
+    liste = []
+    choice2 = aliment.objects.all().exclude(nutriscore='a')
 
+    for i in choice2:
+        liste.append(i.image)
+
+    liste2 = []
     for i in range(7):
-        cur.execute("""SELECT name_aliment, nutriscore,
-                    image
-                    from public.mes_aliments_aliment
-                    where nutriscore != 'a' and name_aliment != 'No_found' and
-                    image != 'No_found'
-                    order by random()
-                    limit 1;
-                    """)
+        random_food = random.choice(liste)
+        liste2.append(random_food)
         
-        conn.commit()
-
-        rows = cur.fetchall()
-        seven_other.append([i for i in rows])
-        
-
-
-    return aliment_nutri_a[0], seven_other
-
-
+    return liste_food_a, liste2
 
 
 
