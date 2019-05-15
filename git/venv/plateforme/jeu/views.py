@@ -101,12 +101,10 @@ def niveau1_continuer(continuer):
     
 
     liste10 = []
+    
     food = aliment.objects.filter(image=str(liste2[1])).all()
     for i in food:
         liste10.append(i.nutriscore)
-
-    for i in liste10:
-        print(i)
 
     verif_nutri = liste10[0]
 
@@ -137,11 +135,6 @@ def niveau2_continuer(continuer):
     liste = ["".join(i) for i in liste]
 
     
-
-    
-    print("l'utilisateur a choisis : ", liste[0])
-    print("le produit est : ", liste[1])
-    
     liste10 = []
     
     food_choose = aliment.objects.filter(image=liste[1]).all()
@@ -149,8 +142,6 @@ def niveau2_continuer(continuer):
     for i in food_choose:
         liste10.append(i.nutriscore)
 
-    for i in liste10:
-        print(i)
 
     nutriscore_id = liste10[0]
 
