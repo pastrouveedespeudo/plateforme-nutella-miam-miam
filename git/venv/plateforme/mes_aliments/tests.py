@@ -1,6 +1,7 @@
 from django.urls import reverse
 from django.test import TestCase
 from .models import *
+from accounts.models import *
 
 class test_page_aliment(TestCase):
 
@@ -294,7 +295,7 @@ class test_aliment(TestCase):
 
         out = liste
 
-        self.assertEqual(out, [['carotte', 1,'a','htps://carotte.com',9],
+        self.assertEqual(out, [['carotte', 1,'a','htps://carotte.com',10],
                                ['cassoulet', 1,'a','htps://carotte.com'],
                                ['epinard',1,'a','htps://carotte.com'],
                                ['olive', 1,'a','htps://carotte.com'],
@@ -305,7 +306,40 @@ class test_aliment(TestCase):
 
     
 
+    def test_page_mes_aliments(self):
 
+
+
+
+        
+        a = foodAccount.objects.create(name='jb')
+        
+        a.name_aliment1='marshmallow'
+        a.save()
+        
+        a.name_aliment2='dragibus'
+        a.save()
+        
+        a.name_aliment3='coca ou fanta'
+        a.save()
+        
+        a.name_aliment4='ice tea !!'
+        a.save()
+        
+        a.name_aliment4='salade'
+        a.save()
+        
+        a.name_aliment4='chien'
+        a.save()
+        
+        a.name_aliment6='pomme pour se sentir non coupable'
+        a.save()
+
+
+
+        
+        response = self.client.get(reverse('mes_aliments'))
+        self.assertEqual(response.status_code,200)
 
 
 
