@@ -31,7 +31,7 @@
           </div>
       
     
-            <form action="/jeux/jeux/" method="POST">
+            <form action="/jeux/jeux" method="POST">
             {% csrf_token %}
                 <input type="hidden" id="hid">
                 <input type="button" onclick="lvl1()" value="Niveau 1" name="niveau1" id="niveau1">
@@ -60,7 +60,7 @@
 
     </div>
           <br><br><br><br>
-          <form action="/jeux/jeux/" methode='POST' id='validation'>
+          <form action="/jeux/jeux" methode='POST' id='validation'>
           {% csrf_token %}
           <div id='cont1' style='display:none'>
             "<center><input type='button' value='valider' id='valider1' name='valider'></center>"
@@ -329,7 +329,7 @@
            
               },
               type:"POST",
-              url:"/jeux/jeux/"
+              url:"/jeux/jeux"
           })
           .done(function(data){
               if (data.error){
@@ -388,7 +388,7 @@
            
               },
               type:"POST",
-              url:"/jeux/jeux/"
+              url:"/jeux/jeux"
           })
           .done(function(data){
               if (data.error){
@@ -446,7 +446,7 @@
            
               },
               type:"POST",
-              url:"/jeux/jeux/"
+              url:"/jeux/jeux"
           })
           .done(function(data){
               if (data.error){
@@ -537,7 +537,7 @@
            
               },
               type:"POST",
-              url:"/jeux/jeux/"
+              url:"/jeux/jeux"
           })
           .done(function(data){
               if (data.error){
