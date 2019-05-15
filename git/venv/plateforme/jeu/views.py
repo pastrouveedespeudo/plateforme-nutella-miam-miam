@@ -1,19 +1,22 @@
 from django.shortcuts import render
-from .jeux import *
-import random
 from django.template.loader import render_to_string
 from django.http import HttpResponse
-import json as simplejson
 from django.http import JsonResponse
-from .verification_reponse import *
+
 import random
 
+import json as simplejson
+
+from .verification_reponse import *
+from .jeux import *
+
+
 def niveau1(message):
-
+    'this is function for lvl1'
+    
     un = choix_aliment_niveau_1()
-
+    
     numero = ["1","2","3","4"]
-
 
     image = [str(un[0][2]), str(un[1][0][2]), str(un[1][1][2]), str(un[1][2][2])]
 
@@ -32,17 +35,13 @@ def niveau1(message):
         else:
             j = l = k = ""
 
-
-            
     data = {"image1":i, "image2":j,"image3":k,"image4":l,"yo":"coucou", 'message':message}
 
     return data
 
 
-
-    
 def niveau2(message):
-    
+    'this is function for lvl2'
 
     un = choix_aliment_niveau_2()
 
@@ -75,7 +74,6 @@ def niveau2(message):
         else:
             j = l = k = l = m = n = o = p = ""
 
-    
     data = {"image1":i, "image2":j,"image3":k,"image4":l,
             "image5":m, "image6":n,"image7":o,"image8":p, 'message':message}
   
@@ -83,8 +81,9 @@ def niveau2(message):
 
 
 
-        
+    
 def niveau1_continuer(continuer):
+    'this is function lvl1 continue'
     
     liste = [[], []]
     c = 0
@@ -99,7 +98,6 @@ def niveau1_continuer(continuer):
     for i in liste:
         liste2.append("".join(i))
     
-
     liste10 = []
     
     food = aliment.objects.filter(image=str(liste2[1])).all()
@@ -115,14 +113,14 @@ def niveau1_continuer(continuer):
         liste = ['nul']
         
         message = random.choice(liste)
-        
 
-    
+        
     niv1 = niveau1(message)
     return niv1
 
 
 def niveau2_continuer(continuer):
+    'this is function lvl2 continue'
     
     liste = [[],[],[],[],[],[]]
     c=0
@@ -134,7 +132,6 @@ def niveau2_continuer(continuer):
 
     liste = ["".join(i) for i in liste]
 
-    
     liste10 = []
     
     food_choose = aliment.objects.filter(image=liste[1]).all()
@@ -142,15 +139,12 @@ def niveau2_continuer(continuer):
     for i in food_choose:
         liste10.append(i.nutriscore)
 
-
     nutriscore_id = liste10[0]
 
 
     if nutriscore_id == "a":
-
         message = "oui bonne réponse"
     else:
-
         message = "non mauvaise réponse"
     
     a = niveau2(message)
@@ -171,10 +165,8 @@ def jeux(request):
 
         current_user = request.user
  
-
         niveau_continuer = request.POST.get('data1')
      
-        
         if niveau == "Niveau 1":
             lvl1 = niveau1('')
             return JsonResponse(lvl1)
@@ -194,36 +186,4 @@ def jeux(request):
 
 
     return render(request, "jeux.html")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
