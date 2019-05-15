@@ -550,8 +550,6 @@
               else{
                   $("#is_save").html(data);
                   $("#monCadreAlert");
-                  alert(JSON.stringify(data))
-                  alert(IMAGE2)
                   IMAGE2.push(JSON.stringify(data['image1']))
                   IMAGE2.push(JSON.stringify(data['image2']))
                   IMAGE2.push(JSON.stringify(data['image3']))
@@ -599,7 +597,9 @@
                   document.getElementById('image7niveau2').src=v;
                   document.getElementById('image8niveau2').src=x;
                   
-                  document.getElementById('score').innerHTML = String(JSON.stringify(data['message']))
+                  document.getElementById('score').innerHTML = "<h2><strong><center>"  +
+                                                              String(JSON.stringify(data['message']))+
+                                                              "</h2></storng></center>"
 
 
               };
